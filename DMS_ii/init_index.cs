@@ -170,6 +170,7 @@ namespace DMS_ii
         {
             SW();           //System_SettabControl分頁<更新> 
         }
+
         private void System_filebutton_Click(object sender, EventArgs e)            //環境_PRD<財產卡><選擇>
         {
             MYFBD(this.System_tb_01);
