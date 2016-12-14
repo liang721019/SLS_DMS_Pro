@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FileManager));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DMS_panel1 = new System.Windows.Forms.Panel();
             this.tb_DMS_文件NO = new System.Windows.Forms.TextBox();
             this.dTP_DMS_ReportDate = new System.Windows.Forms.DateTimePicker();
@@ -103,7 +103,10 @@
             this.dTP_Query_EndDate = new System.Windows.Forms.DateTimePicker();
             this.dTP_Query_StartDate = new System.Windows.Forms.DateTimePicker();
             this.DMS_DGV2_contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.開啟檔案ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.DMS_tStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.刪除ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.DMS_tStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.DMS_panel1.SuspendLayout();
             this.DMS_panel2.SuspendLayout();
             this.DMS_toolStrip1.SuspendLayout();
@@ -541,8 +544,8 @@
             // 
             this.DMS_dataGridView1.AllowUserToAddRows = false;
             this.DMS_dataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.DMS_dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.DMS_dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.DMS_dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -550,8 +553,8 @@
             this.DMS_dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.DMS_dataGridView1.Name = "DMS_dataGridView1";
             this.DMS_dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.DMS_dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.DMS_dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle14;
             this.DMS_dataGridView1.RowTemplate.Height = 24;
             this.DMS_dataGridView1.Size = new System.Drawing.Size(1089, 300);
             this.DMS_dataGridView1.TabIndex = 0;
@@ -573,8 +576,8 @@
             // 
             this.DMS_dataGridView2.AllowUserToAddRows = false;
             this.DMS_dataGridView2.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.DMS_dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.DMS_dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle15;
             this.DMS_dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DMS_dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DMS_DGV2_Column1,
@@ -587,8 +590,8 @@
             this.DMS_dataGridView2.Location = new System.Drawing.Point(3, 3);
             this.DMS_dataGridView2.Name = "DMS_dataGridView2";
             this.DMS_dataGridView2.ReadOnly = true;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.DMS_dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.DMS_dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle16;
             this.DMS_dataGridView2.RowTemplate.Height = 24;
             this.DMS_dataGridView2.Size = new System.Drawing.Size(1089, 300);
             this.DMS_dataGridView2.TabIndex = 0;
@@ -702,6 +705,7 @@
             this.DMS_Query_DOCNO.Name = "DMS_Query_DOCNO";
             this.DMS_Query_DOCNO.Size = new System.Drawing.Size(100, 29);
             this.DMS_Query_DOCNO.TabIndex = 108;
+            this.DMS_Query_DOCNO.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DMS_Query_DOCNO_KeyDown);
             // 
             // label13
             // 
@@ -781,16 +785,37 @@
             // 
             this.DMS_DGV2_contextMenuStrip.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.DMS_DGV2_contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.刪除ToolStripMenuItem});
+            this.開啟檔案ToolStripMenuItem,
+            this.DMS_tStripSeparator1,
+            this.刪除ToolStripMenuItem,
+            this.DMS_tStripSeparator2});
             this.DMS_DGV2_contextMenuStrip.Name = "DMS_DGV2_contextMenuStrip";
-            this.DMS_DGV2_contextMenuStrip.Size = new System.Drawing.Size(111, 28);
+            this.DMS_DGV2_contextMenuStrip.ShowImageMargin = false;
+            this.DMS_DGV2_contextMenuStrip.Size = new System.Drawing.Size(118, 64);
+            // 
+            // 開啟檔案ToolStripMenuItem
+            // 
+            this.開啟檔案ToolStripMenuItem.Name = "開啟檔案ToolStripMenuItem";
+            this.開啟檔案ToolStripMenuItem.Size = new System.Drawing.Size(117, 24);
+            this.開啟檔案ToolStripMenuItem.Text = "開啟檔案";
+            this.開啟檔案ToolStripMenuItem.Click += new System.EventHandler(this.開啟檔案ToolStripMenuItem_Click);
+            // 
+            // DMS_tStripSeparator1
+            // 
+            this.DMS_tStripSeparator1.Name = "DMS_tStripSeparator1";
+            this.DMS_tStripSeparator1.Size = new System.Drawing.Size(114, 6);
             // 
             // 刪除ToolStripMenuItem
             // 
             this.刪除ToolStripMenuItem.Name = "刪除ToolStripMenuItem";
-            this.刪除ToolStripMenuItem.Size = new System.Drawing.Size(110, 24);
-            this.刪除ToolStripMenuItem.Text = "刪除";
+            this.刪除ToolStripMenuItem.Size = new System.Drawing.Size(117, 24);
+            this.刪除ToolStripMenuItem.Text = "刪除檔案";
             this.刪除ToolStripMenuItem.Click += new System.EventHandler(this.刪除ToolStripMenuItem_Click);
+            // 
+            // DMS_tStripSeparator2
+            // 
+            this.DMS_tStripSeparator2.Name = "DMS_tStripSeparator2";
+            this.DMS_tStripSeparator2.Size = new System.Drawing.Size(114, 6);
             // 
             // FileManager
             // 
@@ -871,8 +896,6 @@
         private System.Windows.Forms.DataGridView DMS_dataGridView2;
         private System.Windows.Forms.StatusStrip DMS_statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel DMS_MACLable;
-        private System.Windows.Forms.ToolStripStatusLabel DMS_MAC_Value;
-        private System.Windows.Forms.Label Status_info;
         private System.Windows.Forms.ToolStripButton DMS_儲存toolStripButton;
         private System.Windows.Forms.ToolStripButton DMS_取消toolStripButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
@@ -899,8 +922,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DMS_DGV2_Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn DMS_DGV2_Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn DMS_DGV2_Column6;
-        internal System.Windows.Forms.ToolStripStatusLabel DMS_UID_Value;
         private System.Windows.Forms.ToolStripStatusLabel DMS_UIDLabel;
         public System.Windows.Forms.ToolStripStatusLabel DMS_Service_ENVtoolStripStatusLabel;
+        private System.Windows.Forms.ToolStripMenuItem 開啟檔案ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator DMS_tStripSeparator1;
+        private System.Windows.Forms.ToolStripSeparator DMS_tStripSeparator2;
+        public System.Windows.Forms.ToolStripStatusLabel DMS_UID_Value;
+        public System.Windows.Forms.ToolStripStatusLabel DMS_MAC_Value;
+        public System.Windows.Forms.Label Status_info;
     }
 }

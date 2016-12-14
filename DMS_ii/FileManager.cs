@@ -81,6 +81,30 @@ namespace DMS_ii
             get;
         }
 
+        public string FileStorage_Location      //檔案存放位置
+        {
+            get 
+            {
+                Query_DB = @"SELECT [info_2] AS FileAccess FROM [TEST_SLSYHI].[dbo].[SLS_DMS_ENVinfo] where [info_1] = '"+DMS_Service_ENVtoolStripStatusLabel.Text+"'";
+                fun.ProductDB_ds(Query_DB);
+                //fun.ds_index.Tables[0].Rows[0]["FileAccess"].ToString();
+                //fun.ds_index.Tables[0].Rows[0]["編號"].ToString(); 
+                return fun.ds_index.Tables[0].Rows[0]["FileAccess"].ToString();
+            }
+        }
+
+        public string Get_filename           //取得檔案名稱
+        {
+            set;
+            get;
+        }
+
+        public string Get_AllFileAcc        //取得檔案絕對位置
+        {
+            set;
+            get;
+        }
+
 
         
         #endregion
@@ -95,7 +119,7 @@ namespace DMS_ii
                 case "新增":
                     {
                         #region 新增內容
-                        Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_DMS_insert]  " +
+                        Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_DMS_Insert]  " +
                                     @"'" + dTP_DMS_DOC_DATE.Text.Replace("/", "") +      //日期
                                     @"','" + tb_DMS_Content.Text.Trim()+              //內容
                                     @"','" + tb_DMS_TEST_ITEM.Text.Trim() +             //檢驗項目
@@ -116,8 +140,8 @@ namespace DMS_ii
                     {
                         #region 修改內容
                         Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_DMS_Update] '" +
-                                    tb_DMS_DOC_NO.Text+"'"+      //編號
-                                    @"'" + dTP_DMS_DOC_DATE.Text.Replace("/", "") +      //日期;
+                                    tb_DMS_DOC_NO.Text +       //編號
+                                    @"','" + dTP_DMS_DOC_DATE.Text.Replace("/", "") +      //日期;
                                     @"','" + tb_DMS_Content.Text.Trim() +              //內容
                                     @"','" + tb_DMS_TEST_ITEM.Text.Trim() +             //檢驗項目
                                     @"','" + tb_DMS_文件NO.Text.Trim() +               //文件NO
@@ -128,8 +152,8 @@ namespace DMS_ii
                                     @"','" + dTP_DMS_ReportDate.Text.Replace("/", "") +        //出報告日期
                                     @"','" + dTP_DMS_PReportDate.Text.Replace("/", "") +       //預計出報告日期
                                     @"','" + tb_DMS_Applicant.Text +          //申請人
-                                    @"','" + DMS_UID_Value.Text +        //修改ID       
-                                    @"'";
+                                    @"','" + DMS_UID_Value.Text + "'";     //修改ID       
+                                    
                         break;
                         #endregion
                     }
@@ -147,13 +171,16 @@ namespace DMS_ii
                 case "刪除":
                     {
                         #region 刪除內容
+                        Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_DMS_Del]" +
+                                    @"'" + tb_DMS_DOC_NO.Text +      //編號                                    
+                                    @"','" + DMS_UID_Value.Text + "'";      //查詢結束日期
 
                         break;
                         #endregion
                     }                
                 case "DGV1_檔案查詢":
                     {
-                        Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_DMS_FileQuery]" +
+                        Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_DMS_File_Query]" +
                                     @"'" + rr + "'";      //編號
 
                         break;
@@ -230,6 +257,7 @@ namespace DMS_ii
                 DMS_儲存toolStripButton.Enabled = false;
                 DMS_取消toolStripButton.Enabled = false;
                 DMS_Query_DOCNO.Focus();
+                DMS_tabControl1.SelectedIndex = 0;
                 
             }
             else if (xx == DMS_儲存toolStripButton)
@@ -358,6 +386,11 @@ namespace DMS_ii
 
         }
 
+        public void DGV1_SetColumns()           //DGV1自定顯示欄位
+        {
+
+        }
+
         public void DGV2_SetColumns()           //DGV2自定顯示欄位
         {
             DMS_dataGridView2.AutoGenerateColumns = false;
@@ -379,31 +412,44 @@ namespace DMS_ii
 
         public void Del_File()          //刪除文件內容 DB資料及檔案
         {
-            #region DB-刪除資料
-            Get_DGV_Value_1 = DMS_dataGridView2.SelectedRows[0].Cells[0].Value.ToString();  //編號
-            Get_DGV_Value_2 = DMS_dataGridView2.SelectedRows[0].Cells[1].Value.ToString();  //序號
-            Get_DGV_Value_3 = DMS_dataGridView2.SelectedRows[0].Cells[2].Value.ToString();  //檔名
-            Query_DB = @"EXEC [TEST_SLSYHI].[dbo].[SLS_DMS_File_Update] '" +
-                            Get_DGV_Value_1 + "','" + Get_DGV_Value_2 + "'";
-            fun.DMS_file_modify(Query_DB, "已成功《刪除》資料", "DMS");
-            
-            #endregion
-
-            #region 刪除檔案
-            if (fun.Check_error == false)
+            if (MessageBox.Show("確定要刪除？", "警告!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                string Del_File = @"D:\文件管理系統" + "\\" + Get_DGV_Value_3;
+                #region 刪除檔案
+                Get_DGV_Value_1 = DMS_dataGridView2.SelectedRows[0].Cells[0].Value.ToString();  //編號
+                Get_DGV_Value_2 = DMS_dataGridView2.SelectedRows[0].Cells[1].Value.ToString();  //序號
+                Get_DGV_Value_3 = DMS_dataGridView2.SelectedRows[0].Cells[2].Value.ToString();  //檔名
+
+                string Del_File = FileStorage_Location + "\\" + Get_DGV_Value_3;
                 fun.DMS_File_Del(Del_File);
-            }           
+                                 
 
-            #endregion
+                #endregion
 
-            if (fun.Check_error == false)
-            {
-                MessageBox.Show("已成功《刪除》資料", "DMS");
+                #region DB-刪除資料
+                if (fun.Check_error == false)
+                {
+                    Query_DB = @"EXEC [TEST_SLSYHI].[dbo].[SLS_DMS_File_Del] '" +
+                                Get_DGV_Value_1 + "','" + Get_DGV_Value_2 + "','"+DMS_UID_Value.Text+"'";
+                    fun.DMS_file_modify(Query_DB);                    
+                }
 
-            }
+                #endregion
+                if (fun.Check_error == false)
+                {
+                    MessageBox.Show("已成功《刪除》資料", "DMS");
 
+                }
+            }            
+
+            
+
+        }
+
+        public void OpenFile()          //打開檔案
+        {
+            Get_filename = DMS_dataGridView2.CurrentRow.Cells[2].Value.ToString();
+            Get_AllFileAcc = FileStorage_Location + "\\" + Get_filename;
+            fun.openPdf(Get_AllFileAcc);
         }
 
 
@@ -441,8 +487,24 @@ namespace DMS_ii
 
         private void DMS_刪除toolStripButton_Click(object sender, EventArgs e)
         {
-            
-            MessageBox.Show("目前沒有權限!!\n", "文件管理系統");
+            if (tb_DMS_DOC_NO.Text != "")
+            {
+                if (MessageBox.Show("確定要刪除？", "警告!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    fun.Check_error = false;
+                    GetSQL("刪除", null, null, null);    //語法丟進fun.Query_DB
+                    fun.DMS_file_modify(Query_DB);         //連接DB-執行DB指令 
+                    if (fun.Check_error == false)
+                    {
+                        MessageBox.Show("資料成功刪除!!", "DMS");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("沒有文件編號!!","DMS");
+            }
+                                  
 
         }
 
@@ -451,20 +513,40 @@ namespace DMS_ii
             
             if (Status_info.Text == "新增")
             {
+                #region 內容
+                if (MessageBox.Show("確定要新增？", "警告!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    GetSQL("新增", null, null, null);
+                    fun.DMS_insert(Query_DB, "資料《新增》成功!!", "DMS");
+                }
+                #endregion
 
-                GetSQL("新增", null, null, null);
-                fun.DMS_insert(Query_DB, "資料《新增》成功!!" , "DMS");                
             }
             else if (Status_info.Text == "修改")
             {
-                GetSQL("修改",null,null,null);
-                mBox = "資料《修改》成功!!";
-                FText = "DMS";
-                fun.DMS_modify(Query_DB, mBox, FText);
-                //db_sum = SQL語法            
-                //mBox = 成功執行後的訊息
-                //FText = MessageBox.form.Text
+                #region 內容
+                if (tb_DMS_DOC_NO.Text != "")
+                {
+                    if (MessageBox.Show("確定要修改？", "警告!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        GetSQL("修改", null, null, null);
+                        mBox = "資料《修改》成功!!";
+                        FText = "DMS";
+                        fun.DMS_modify(Query_DB, mBox, FText);
+                        //db_sum = SQL語法            
+                        //mBox = 成功執行後的訊息
+                        //FText = MessageBox.form.Text
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("沒有文件編號!!不能修改","DMS");
+                }
+                
+                #endregion
+
             }
+            
             start_status(DMS_儲存toolStripButton);        //啟動狀態
 
             
@@ -542,9 +624,10 @@ namespace DMS_ii
                     #region 檔案上傳內容
                     Query_DB = @"select ISNULL(MAX([LineNum]),0)+1 AS num  FROM [TEST_SLSYHI].[dbo].[SLS_DMS_ii_File] where [DOC_NO] ='" + tb_DMS_DOC_NO.Text + "'";//取得序號                              
                     fun.ProductDB_ds(Query_DB);           //取得要新增檔案的序號
-                    string DFU_x = DMS_FileUp.Items[i].ToString();                    
-                    string DFU_y = @"D:\文件管理系統";            //檔案路徑                    
-                    string DFU_z = tb_DMS_DOC_NO.Text.Trim() +"-"+ fun.ds_index.Tables[0].Rows[0]["num"].ToString();
+                    string Lnu = fun.ds_index.Tables[0].Rows[0]["num"].ToString();
+                    string DFU_x = DMS_FileUp.Items[i].ToString();
+                    string DFU_y = FileStorage_Location;            //檔案路徑                    
+                    string DFU_z = tb_DMS_DOC_NO.Text + "-" + Lnu;
                     fun.DMS_File_UP(DFU_x, DFU_y, DFU_z);      //檔案COPY到指定目錄
                     #endregion
                     #region DB-新增資料
@@ -611,9 +694,7 @@ namespace DMS_ii
         {
             if (e.RowIndex >= 0)
             {
-                string get_filename = DMS_dataGridView2.CurrentRow.Cells[2].Value.ToString();
-                string get_acc = @"D:\文件管理系統" + "\\" + get_filename;                
-                fun.openPdf(get_acc);
+                OpenFile();
             }
 
         }
@@ -671,6 +752,26 @@ namespace DMS_ii
         private void 刪除ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Del_File();
+            GetSQL("DGV1_檔案查詢", Get_DGV_Value_1, null, null);    //語法丟進fun.Query_DB
+            fun.xxx_DB(Query_DB, DMS_dataGridView2);         //連接DB-執行DB指令
+        }
+
+        private void 開啟檔案ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFile();
+        }
+
+        private void DMS_Query_DOCNO_KeyDown(object sender, KeyEventArgs e)         //DMS_Query_DOCNO按Enter
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                #region  按Enter之後執行
+                start_status(DMS_查詢toolStripButton);        //啟動狀態            
+                GetSQL("查詢", DMS_Query_DOCNO.Text, dTP_Query_StartDate.Text.Replace("/", ""), dTP_Query_EndDate.Text.Replace("/", ""));
+                //GetSQL("查詢",編號,開始日期,結束日期)
+                fun.xxx_DB(Query_DB, DMS_dataGridView1);
+                #endregion
+            }
         }
 
         
