@@ -699,7 +699,7 @@
             // 
             // DMS_Query_DOCNO
             // 
-            this.DMS_Query_DOCNO.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.DMS_Query_DOCNO.BackColor = System.Drawing.Color.White;
             this.DMS_Query_DOCNO.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.DMS_Query_DOCNO.Location = new System.Drawing.Point(156, 4);
             this.DMS_Query_DOCNO.Name = "DMS_Query_DOCNO";

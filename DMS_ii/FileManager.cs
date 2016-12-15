@@ -157,6 +157,17 @@ namespace DMS_ii
                         break;
                         #endregion
                     }
+                case "快速查詢":
+                    {
+                        #region 快速查詢內容
+                        Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_DMS_Query]" +
+                                    @"'" + rr +      //編號
+                                    @"','" + startDate +      //查詢開始日期
+                                    @"','" + endDate +        //查詢結束日期                                    
+                                    "'";
+                        break;
+                        #endregion
+                    }
 
                 case "查詢":
                     {
@@ -164,7 +175,16 @@ namespace DMS_ii
                         Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_DMS_Query]" +
                                     @"'" + rr +      //編號
                                     @"','" + startDate +      //查詢開始日期
-                                    @"','" + endDate + "'";      //查詢結束日期                        
+                                    @"','" + endDate +        //查詢結束日期
+                                    @"','" +tb_DMS_Content.Text +       //內容
+                                    @"','" + tb_DMS_TEST_ITEM.Text +      //檢驗項目
+                                    @"','" + tb_DMS_文件NO.Text +       //文件NO
+                                    @"','" + tb_DMS_LotNo.Text +        //LOTNO
+                                    @"','" + tb_DMS_原廠COA.Text +      //原廠COA
+                                    @"','" + tb_DMS_檢驗報告.Text +      //檢驗報告
+                                    @"','" + tb_DMS_結果.Text +      //結果
+                                    @"','" + tb_DMS_Applicant.Text +      //申請人
+                                    "'";                          
                         break;
                         #endregion                        
                     }
@@ -475,7 +495,7 @@ namespace DMS_ii
         private void DMS_查詢toolStripButton_Click(object sender, EventArgs e)
         {
             start_status(DMS_查詢toolStripButton);        //啟動狀態            
-            GetSQL("查詢", DMS_Query_DOCNO.Text, dTP_Query_StartDate.Text.Replace("/", ""), dTP_Query_EndDate.Text.Replace("/", ""));
+            GetSQL("快速查詢", DMS_Query_DOCNO.Text, dTP_Query_StartDate.Text.Replace("/", ""), dTP_Query_EndDate.Text.Replace("/", ""));
             //GetSQL("查詢",編號,開始日期,結束日期)
             fun.xxx_DB(Query_DB, DMS_dataGridView1);
         }
@@ -641,7 +661,10 @@ namespace DMS_ii
                 if (fun.Check_error == false)
                 {
                     MessageBox.Show("資料及檔案新增成功!!","DMS");
-                }   
+                }
+                GetSQL("DGV1_檔案查詢", tb_DMS_DOC_NO.Text, null, null);    //語法丟進fun.Query_DB
+                fun.xxx_DB(Query_DB, DMS_dataGridView2);         //連接DB-執行DB指令
+ 
             }
             else
             {
@@ -678,7 +701,7 @@ namespace DMS_ii
                     string startDate = DMS_dataGridView1.CurrentRow.Cells[1].Value.ToString();                    
                     string endDate = DMS_dataGridView1.CurrentRow.Cells[1].Value.ToString();
 
-                    GetSQL("查詢", s_ID, startDate, endDate);    //語法丟進fun.Query_DB                    
+                    GetSQL("快速查詢", s_ID, startDate, endDate);    //語法丟進fun.Query_DB                    
                     fun.ProductDB_ds(Query_DB);         //連接DB-執行DB指令
                     DGV2_SetColumns();          //自定顯示欄位
                     sub_();

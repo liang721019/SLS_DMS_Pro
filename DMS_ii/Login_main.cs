@@ -22,7 +22,13 @@ namespace DMS_ii
             InitializeComponent();
         }
 
-        public string UPW
+        public string App_LoginPW 
+        {
+            set;
+            get;
+        }
+
+        public string App_LoginNewPW
         {
             set;
             get;
@@ -35,18 +41,22 @@ namespace DMS_ii
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;//視窗在中央打開
             DMS_Login_ServerCB.Items.Add("PRD");
             DMS_Login_ServerCB.Items.Add("QAS");
-            DMS_Login_ServerCB.Items.Add("DEV");
+            DMS_Login_ServerCB.Items.Add("DEV");           
+            DMS_LoginMOD_ServerCB.Items.Add("PRD");
+            DMS_LoginMOD_ServerCB.Items.Add("QAS");
+            DMS_LoginMOD_ServerCB.Items.Add("DEV");
+
 
         }
 
-        private void DMS_Login_Button_Click(object sender, EventArgs e)
+        private void DMS_Login_Button_Click(object sender, EventArgs e)     //登入
         {
             if (DMS_Login_ServerCB.Text != "")
             {
-                UPW = fun.desEncrypt_A(DMS_Login_PWD_tb.Text, "naturalbiokeyLogin");
+                App_LoginPW = fun.desEncrypt_A(DMS_Login_PWD_tb.Text, "naturalbiokeyLogin");
                 fun.Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_DMS_Login] '" +
                                     DMS_Login_ID_tb.Text +
-                                    @"','" + UPW + "'";
+                                    @"','" + App_LoginPW + "'";
                 fun.ProductDB_ds(fun.Query_DB);
                 if (fun.ds_index.Tables[0].Rows.Count != 0)
                 {
@@ -75,6 +85,57 @@ namespace DMS_ii
         private void DMS_Login_Cancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void DMS_LoginMOD_Button_Click(object sender, EventArgs e)      //修改密碼<確定>
+        {
+            if (DMS_LoginMOD_ServerCB.Text != "")
+            {                
+                App_LoginPW = fun.desEncrypt_A(DMS_LoginOLD_PWD_tb.Text, "naturalbiokeyLogin");
+                fun.Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_DMS_Login] '" +
+                                    DMS_LoginMOD_ID_tb.Text +
+                                    @"','" + App_LoginPW + "'";
+                fun.ProductDB_ds(fun.Query_DB);
+                if (fun.ds_index.Tables[0].Rows.Count == 0)
+                {
+                    MessageBox.Show("帳密不正確!!", this.Text);
+                }
+                else
+                {
+                    if (MessageBox.Show("確定要修改密碼？", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        App_LoginNewPW = fun.desEncrypt_A(DMS_LoginNEW_PWD_tb.Text, "naturalbiokeyLogin");
+                        fun.Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_DMS_Login_ModifyPWD] '" +
+                                        DMS_LoginMOD_ID_tb.Text +
+                                        @"','" + App_LoginNewPW + "'";
+                        fun.DMS_modify(fun.Query_DB, null, null);
+                        if (!fun.Check_error)
+                        {
+                            MessageBox.Show("密碼修改成功!!", this.Text);
+                            fun.clearAir(DMS_Modify_panel);
+                            DMS_Login_tabControl.SelectedIndex = 0;
+                        }
+
+                    }
+                    
+                }
+                
+                
+            }
+            else
+            {
+                MessageBox.Show("請選擇伺服器!!", this.Text);
+
+            }
+
+
+        }
+
+        private void DMS_LoginCancel_Button_Click(object sender, EventArgs e)
+        {
+            fun.clearAir(DMS_Modify_panel);
+            //fun.Disabled_Panel(DMS_Modify_panel);
+            DMS_Login_tabControl.SelectedIndex = 0;
         }
     }
 }
