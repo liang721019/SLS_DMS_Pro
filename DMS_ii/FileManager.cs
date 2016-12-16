@@ -22,6 +22,7 @@ namespace DMS_ii
         }
         
         #region 變數
+
         public string Query_DB      //SQL語法變數
         {
             set;
@@ -105,13 +106,35 @@ namespace DMS_ii
             get;
         }
 
+        public static string GETsaric
+        {
+            set;
+            get;
+        }
 
-        
+        public string QuickQueryType     //設定或取得快速查詢類型
+        {
+            set;
+            get;
+        }
+
+        public string QueryStartDate        //查詢開始日期
+        {
+            set;
+            get;
+        }
+
+        public string QueryEndDate          //查詢結束日期
+        {
+            set;
+            get;
+        }
+
         #endregion
 
         #region 方法
         //================================================================================================
-        public void GetSQL(string  uu , string rr ,string startDate ,string endDate)
+        public void GetSQL(string  uu , string rr )
         {
             switch (uu)
             {
@@ -160,22 +183,23 @@ namespace DMS_ii
                 case "快速查詢":
                     {
                         #region 快速查詢內容
-                        Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_DMS_Query]" +
+                        Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_DMS_QuickQuery]" +
                                     @"'" + rr +      //編號
-                                    @"','" + startDate +      //查詢開始日期
-                                    @"','" + endDate +        //查詢結束日期                                    
+                                    @"','" + QueryStartDate+      //查詢開始日期
+                                    @"','" + QueryEndDate +        //查詢結束日期
+                                    @"','" + QuickQueryType +        //查詢結束日期 
                                     "'";
                         break;
                         #endregion
                     }
-
+                
                 case "查詢":
                     {
                         #region 查詢內容
                         Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_DMS_Query]" +
                                     @"'" + rr +      //編號
-                                    @"','" + startDate +      //查詢開始日期
-                                    @"','" + endDate +        //查詢結束日期
+                                    @"','" + QueryStartDate +      //查詢開始日期
+                                    @"','" + QueryEndDate +        //查詢結束日期
                                     @"','" +tb_DMS_Content.Text +       //內容
                                     @"','" + tb_DMS_TEST_ITEM.Text +      //檢驗項目
                                     @"','" + tb_DMS_文件NO.Text +       //文件NO
@@ -200,10 +224,11 @@ namespace DMS_ii
                     }                
                 case "DGV1_檔案查詢":
                     {
+                        #region DGV1_檔案查詢內容
                         Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_DMS_File_Query]" +
                                     @"'" + rr + "'";      //編號
-
                         break;
+                        #endregion
                     }
 
                 #endregion
@@ -220,6 +245,8 @@ namespace DMS_ii
             DMS_取消toolStripButton.Visible = false;
             fun.Format_Panel_dTP(DMS_panel1, "yyyy/MM/dd");     //自訂日期格式
             fun.Format_Panel_dTP(DMS_UP_Controls_panel, "yyyy/MM/dd");          //自訂日期格式
+            DGV1_SetColumns();          //DGV1自定顯示欄位
+            DGV2_SetColumns();           //DGV2自定顯示欄位
             Status_info.Visible = false;
             DMS_panel2.Visible = false;
         }
@@ -381,6 +408,7 @@ namespace DMS_ii
             try
             {
                 #region 內容
+                fun.Check_error = true;
                 tb_DMS_DOC_NO.Text = fun.ds_index.Tables[0].Rows[0]["編號"].ToString();               
                 string DOC_DATE = fun.ds_index.Tables[0].Rows[0]["日期"].ToString();
                 dTP_DMS_DOC_DATE.Text = DOC_DATE.Substring(0, 4) + "/" + DOC_DATE.Substring(4, 2) + "/" + DOC_DATE.Substring(6, 2);
@@ -401,6 +429,7 @@ namespace DMS_ii
             }
             catch (Exception z)
             {
+                fun.Check_error = true;
                 System.Windows.Forms.MessageBox.Show(z.Message);
             }
 
@@ -408,6 +437,22 @@ namespace DMS_ii
 
         public void DGV1_SetColumns()           //DGV1自定顯示欄位
         {
+            DMS_dataGridView1.AutoGenerateColumns = false;
+            DMS_DGV1_Column1.DataPropertyName = "編號";
+            DMS_DGV1_Column2.DataPropertyName = "日期";
+            DMS_DGV1_Column3.DataPropertyName = "內容";
+            DMS_DGV1_Column4.DataPropertyName = "檢驗項目";
+            DMS_DGV1_Column5.DataPropertyName = "文件NO";
+            DMS_DGV1_Column6.DataPropertyName = "LotNO";
+            DMS_DGV1_Column7.DataPropertyName = "原廠COA";
+            DMS_DGV1_Column8.DataPropertyName = "檢驗報告";
+            DMS_DGV1_Column9.DataPropertyName = "結果";
+            DMS_DGV1_Column10.DataPropertyName = "出報告日期";
+            DMS_DGV1_Column11.DataPropertyName = "預計出報日期";
+            DMS_DGV1_Column12.DataPropertyName = "申請人";
+            DMS_DGV1_Column1.Frozen = true; //凍結窗格
+            DMS_DGV1_Column2.Frozen = true; //凍結窗格
+
 
         }
 
@@ -470,7 +515,7 @@ namespace DMS_ii
             Get_filename = DMS_dataGridView2.CurrentRow.Cells[2].Value.ToString();
             Get_AllFileAcc = FileStorage_Location + "\\" + Get_filename;
             fun.openPdf(Get_AllFileAcc);
-        }
+        }        
 
 
 
@@ -494,11 +539,17 @@ namespace DMS_ii
 
         private void DMS_查詢toolStripButton_Click(object sender, EventArgs e)
         {
+            QueryStartDate = dTP_Query_StartDate.Text.Replace("/", "");
+            QueryEndDate = dTP_Query_EndDate.Text.Replace("/", "");
+            QuickQueryType = "A";
             start_status(DMS_查詢toolStripButton);        //啟動狀態            
-            GetSQL("快速查詢", DMS_Query_DOCNO.Text, dTP_Query_StartDate.Text.Replace("/", ""), dTP_Query_EndDate.Text.Replace("/", ""));
+            GetSQL("快速查詢", DMS_Query_DOCNO.Text);
             //GetSQL("查詢",編號,開始日期,結束日期)
             fun.xxx_DB(Query_DB, DMS_dataGridView1);
+           
+             
         }
+         
 
         private void DMS_修改toolStripButton_Click(object sender, EventArgs e)
         {
@@ -512,7 +563,7 @@ namespace DMS_ii
                 if (MessageBox.Show("確定要刪除？", "警告!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     fun.Check_error = false;
-                    GetSQL("刪除", null, null, null);    //語法丟進fun.Query_DB
+                    GetSQL("刪除", null);    //語法丟進fun.Query_DB
                     fun.DMS_file_modify(Query_DB);         //連接DB-執行DB指令 
                     if (fun.Check_error == false)
                     {
@@ -536,7 +587,7 @@ namespace DMS_ii
                 #region 內容
                 if (MessageBox.Show("確定要新增？", "警告!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    GetSQL("新增", null, null, null);
+                    GetSQL("新增", null);
                     fun.DMS_insert(Query_DB, "資料《新增》成功!!", "DMS");
                 }
                 #endregion
@@ -549,7 +600,7 @@ namespace DMS_ii
                 {
                     if (MessageBox.Show("確定要修改？", "警告!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        GetSQL("修改", null, null, null);
+                        GetSQL("修改", null);
                         mBox = "資料《修改》成功!!";
                         FText = "DMS";
                         fun.DMS_modify(Query_DB, mBox, FText);
@@ -604,7 +655,7 @@ namespace DMS_ii
         {
             if (tb_DMS_DOC_NO.Text != "")
             {
-                GetSQL("DGV1_檔案查詢", tb_DMS_DOC_NO.Text, null, null);    //語法丟進fun.Query_DB
+                GetSQL("DGV1_檔案查詢", tb_DMS_DOC_NO.Text);    //語法丟進fun.Query_DB
                 fun.xxx_DB(Query_DB, DMS_dataGridView2);         //連接DB-執行DB指令
             }                           
             
@@ -662,7 +713,7 @@ namespace DMS_ii
                 {
                     MessageBox.Show("資料及檔案新增成功!!","DMS");
                 }
-                GetSQL("DGV1_檔案查詢", tb_DMS_DOC_NO.Text, null, null);    //語法丟進fun.Query_DB
+                GetSQL("DGV1_檔案查詢", tb_DMS_DOC_NO.Text);    //語法丟進fun.Query_DB
                 fun.xxx_DB(Query_DB, DMS_dataGridView2);         //連接DB-執行DB指令
  
             }
@@ -671,7 +722,6 @@ namespace DMS_ii
                 MessageBox.Show("沒有編號!!請選擇文件編號!!","DMS");
             }
             #endregion
-
         }
 
         //=====================================================================================================
@@ -683,7 +733,7 @@ namespace DMS_ii
             {
                 string get_ID = DMS_dataGridView1.CurrentRow.Cells[0].Value.ToString();                
 
-                GetSQL("DGV1_檔案查詢", get_ID, null, null);    //語法丟進fun.Query_DB
+                GetSQL("DGV1_檔案查詢", get_ID);    //語法丟進fun.Query_DB
                 fun.xxx_DB(Query_DB, DMS_dataGridView2);         //連接DB-執行DB指令                 
                 DMS_tabControl1.SelectedIndex = 1;
                 
@@ -698,19 +748,16 @@ namespace DMS_ii
                 if (e.RowIndex >= 0)
                 {
                     string s_ID = DMS_dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                    string startDate = DMS_dataGridView1.CurrentRow.Cells[1].Value.ToString();                    
-                    string endDate = DMS_dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                    QueryStartDate = DMS_dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                    QueryEndDate = DMS_dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                    QuickQueryType = "B";
 
-                    GetSQL("快速查詢", s_ID, startDate, endDate);    //語法丟進fun.Query_DB                    
+                    GetSQL("快速查詢", s_ID);    //語法丟進fun.Query_DB                    
                     fun.ProductDB_ds(Query_DB);         //連接DB-執行DB指令
-                    DGV2_SetColumns();          //自定顯示欄位
+                    //DGV2_SetColumns();          //自定顯示欄位
                     sub_();
-                  
                 }
-                
-
             }
-
         }
 
         private void DMS_dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)          //DMS_dataGridView2左鍵雙擊二下
@@ -775,7 +822,7 @@ namespace DMS_ii
         private void 刪除ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Del_File();
-            GetSQL("DGV1_檔案查詢", Get_DGV_Value_1, null, null);    //語法丟進fun.Query_DB
+            GetSQL("DGV1_檔案查詢", Get_DGV_Value_1);    //語法丟進fun.Query_DB
             fun.xxx_DB(Query_DB, DMS_dataGridView2);         //連接DB-執行DB指令
         }
 
@@ -789,14 +836,34 @@ namespace DMS_ii
             if (e.KeyCode == Keys.Enter)
             {
                 #region  按Enter之後執行
-                start_status(DMS_查詢toolStripButton);        //啟動狀態            
-                GetSQL("查詢", DMS_Query_DOCNO.Text, dTP_Query_StartDate.Text.Replace("/", ""), dTP_Query_EndDate.Text.Replace("/", ""));
-                //GetSQL("查詢",編號,開始日期,結束日期)
+                start_status(DMS_查詢toolStripButton);        //啟動狀態
+                QueryStartDate = dTP_Query_StartDate.Text.Replace("/", "");
+                QueryEndDate = dTP_Query_EndDate.Text.Replace("/", "");
+                QuickQueryType = "A";
+                GetSQL("快速查詢", DMS_Query_DOCNO.Text);
+                //GetSQL("查詢",編號)
                 fun.xxx_DB(Query_DB, DMS_dataGridView1);
+                
                 #endregion
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //tb_DMS_結果.Text
+            bool fIsM = fun.IsMatch(tb_DMS_結果.Text,"^[0-9]{8}$");
+            if (fIsM)
+            {
+                MessageBox.Show(tb_DMS_結果.Text);
+            }
+            else
+            {
+                MessageBox.Show("日期格式不對!!\n日    期:2016/08/30 \n輸入格式:20160830 ");
+            }
+            
+        }
+
+        
         
         //================================================================================================
         #endregion

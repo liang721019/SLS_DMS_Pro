@@ -32,8 +32,7 @@ namespace DMS_ii
         {
             set;
             get;
-        }
-        
+        }        
 
         private void Login_main_Load(object sender, EventArgs e)
         {
@@ -77,12 +76,10 @@ namespace DMS_ii
             {
                 MessageBox.Show("請選擇伺服器!!", this.Text);
 
-            }
-            
-            
+            } 
         }
 
-        private void DMS_Login_Cancel_Click(object sender, EventArgs e)
+        private void DMS_Login_Cancel_Click(object sender, EventArgs e)     //取消
         {
             this.Close();
         }
@@ -115,27 +112,20 @@ namespace DMS_ii
                             fun.clearAir(DMS_Modify_panel);
                             DMS_Login_tabControl.SelectedIndex = 0;
                         }
-
-                    }
-                    
+                    }                    
                 }
-                
-                
             }
             else
             {
                 MessageBox.Show("請選擇伺服器!!", this.Text);
-
             }
-
-
         }
 
-        private void DMS_LoginCancel_Button_Click(object sender, EventArgs e)
+        private void DMS_LoginCancel_Button_Click(object sender, EventArgs e)       //修改密碼<取消>
         {
-            fun.clearAir(DMS_Modify_panel);
-            //fun.Disabled_Panel(DMS_Modify_panel);
+            fun.clearAir(DMS_Modify_panel);            
             DMS_Login_tabControl.SelectedIndex = 0;
         }
-    }
+    }    
+    
 }

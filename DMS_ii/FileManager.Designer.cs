@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FileManager));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DMS_panel1 = new System.Windows.Forms.Panel();
             this.tb_DMS_文件NO = new System.Windows.Forms.TextBox();
             this.dTP_DMS_ReportDate = new System.Windows.Forms.DateTimePicker();
@@ -107,6 +107,18 @@
             this.DMS_tStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.刪除ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DMS_tStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.DMS_DGV1_Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_DGV1_Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_DGV1_Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_DGV1_Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_DGV1_Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_DGV1_Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_DGV1_Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_DGV1_Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_DGV1_Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_DGV1_Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_DGV1_Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_DGV1_Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DMS_panel1.SuspendLayout();
             this.DMS_panel2.SuspendLayout();
             this.DMS_toolStrip1.SuspendLayout();
@@ -544,17 +556,30 @@
             // 
             this.DMS_dataGridView1.AllowUserToAddRows = false;
             this.DMS_dataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.DMS_dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.DMS_dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.DMS_dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DMS_dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DMS_dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DMS_DGV1_Column1,
+            this.DMS_DGV1_Column2,
+            this.DMS_DGV1_Column3,
+            this.DMS_DGV1_Column4,
+            this.DMS_DGV1_Column5,
+            this.DMS_DGV1_Column6,
+            this.DMS_DGV1_Column7,
+            this.DMS_DGV1_Column8,
+            this.DMS_DGV1_Column9,
+            this.DMS_DGV1_Column10,
+            this.DMS_DGV1_Column11,
+            this.DMS_DGV1_Column12});
             this.DMS_dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.DMS_dataGridView1.Name = "DMS_dataGridView1";
             this.DMS_dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.DMS_dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.DMS_dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.DMS_dataGridView1.RowTemplate.Height = 24;
             this.DMS_dataGridView1.Size = new System.Drawing.Size(1089, 300);
             this.DMS_dataGridView1.TabIndex = 0;
@@ -576,8 +601,8 @@
             // 
             this.DMS_dataGridView2.AllowUserToAddRows = false;
             this.DMS_dataGridView2.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.DMS_dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.DMS_dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.DMS_dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DMS_dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DMS_DGV2_Column1,
@@ -590,8 +615,8 @@
             this.DMS_dataGridView2.Location = new System.Drawing.Point(3, 3);
             this.DMS_dataGridView2.Name = "DMS_dataGridView2";
             this.DMS_dataGridView2.ReadOnly = true;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.DMS_dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.DMS_dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.DMS_dataGridView2.RowTemplate.Height = 24;
             this.DMS_dataGridView2.Size = new System.Drawing.Size(1089, 300);
             this.DMS_dataGridView2.TabIndex = 0;
@@ -817,6 +842,81 @@
             this.DMS_tStripSeparator2.Name = "DMS_tStripSeparator2";
             this.DMS_tStripSeparator2.Size = new System.Drawing.Size(114, 6);
             // 
+            // DMS_DGV1_Column1
+            // 
+            this.DMS_DGV1_Column1.HeaderText = "編號";
+            this.DMS_DGV1_Column1.Name = "DMS_DGV1_Column1";
+            this.DMS_DGV1_Column1.ReadOnly = true;
+            // 
+            // DMS_DGV1_Column2
+            // 
+            this.DMS_DGV1_Column2.HeaderText = "日期";
+            this.DMS_DGV1_Column2.Name = "DMS_DGV1_Column2";
+            this.DMS_DGV1_Column2.ReadOnly = true;
+            // 
+            // DMS_DGV1_Column3
+            // 
+            this.DMS_DGV1_Column3.HeaderText = "內容";
+            this.DMS_DGV1_Column3.Name = "DMS_DGV1_Column3";
+            this.DMS_DGV1_Column3.ReadOnly = true;
+            // 
+            // DMS_DGV1_Column4
+            // 
+            this.DMS_DGV1_Column4.HeaderText = "檢驗項目";
+            this.DMS_DGV1_Column4.Name = "DMS_DGV1_Column4";
+            this.DMS_DGV1_Column4.ReadOnly = true;
+            // 
+            // DMS_DGV1_Column5
+            // 
+            this.DMS_DGV1_Column5.HeaderText = "文件NO";
+            this.DMS_DGV1_Column5.Name = "DMS_DGV1_Column5";
+            this.DMS_DGV1_Column5.ReadOnly = true;
+            // 
+            // DMS_DGV1_Column6
+            // 
+            this.DMS_DGV1_Column6.HeaderText = "LotNO";
+            this.DMS_DGV1_Column6.Name = "DMS_DGV1_Column6";
+            this.DMS_DGV1_Column6.ReadOnly = true;
+            // 
+            // DMS_DGV1_Column7
+            // 
+            this.DMS_DGV1_Column7.HeaderText = "原廠COA";
+            this.DMS_DGV1_Column7.Name = "DMS_DGV1_Column7";
+            this.DMS_DGV1_Column7.ReadOnly = true;
+            this.DMS_DGV1_Column7.Width = 120;
+            // 
+            // DMS_DGV1_Column8
+            // 
+            this.DMS_DGV1_Column8.HeaderText = "檢驗報告";
+            this.DMS_DGV1_Column8.Name = "DMS_DGV1_Column8";
+            this.DMS_DGV1_Column8.ReadOnly = true;
+            // 
+            // DMS_DGV1_Column9
+            // 
+            this.DMS_DGV1_Column9.HeaderText = "結果";
+            this.DMS_DGV1_Column9.Name = "DMS_DGV1_Column9";
+            this.DMS_DGV1_Column9.ReadOnly = true;
+            // 
+            // DMS_DGV1_Column10
+            // 
+            this.DMS_DGV1_Column10.HeaderText = "出報告日期";
+            this.DMS_DGV1_Column10.Name = "DMS_DGV1_Column10";
+            this.DMS_DGV1_Column10.ReadOnly = true;
+            this.DMS_DGV1_Column10.Width = 150;
+            // 
+            // DMS_DGV1_Column11
+            // 
+            this.DMS_DGV1_Column11.HeaderText = "預計出報告日期";
+            this.DMS_DGV1_Column11.Name = "DMS_DGV1_Column11";
+            this.DMS_DGV1_Column11.ReadOnly = true;
+            this.DMS_DGV1_Column11.Width = 160;
+            // 
+            // DMS_DGV1_Column12
+            // 
+            this.DMS_DGV1_Column12.HeaderText = "申請人";
+            this.DMS_DGV1_Column12.Name = "DMS_DGV1_Column12";
+            this.DMS_DGV1_Column12.ReadOnly = true;
+            // 
             // FileManager
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -930,5 +1030,17 @@
         public System.Windows.Forms.ToolStripStatusLabel DMS_UID_Value;
         public System.Windows.Forms.ToolStripStatusLabel DMS_MAC_Value;
         public System.Windows.Forms.Label Status_info;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DMS_DGV1_Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DMS_DGV1_Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DMS_DGV1_Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DMS_DGV1_Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DMS_DGV1_Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DMS_DGV1_Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DMS_DGV1_Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DMS_DGV1_Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DMS_DGV1_Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DMS_DGV1_Column10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DMS_DGV1_Column11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DMS_DGV1_Column12;
     }
 }
