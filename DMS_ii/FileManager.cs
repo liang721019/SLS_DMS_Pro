@@ -247,8 +247,11 @@ namespace DMS_ii
             fun.Format_Panel_dTP(DMS_UP_Controls_panel, "yyyy/MM/dd");          //自訂日期格式
             DGV1_SetColumns();          //DGV1自定顯示欄位
             DGV2_SetColumns();           //DGV2自定顯示欄位
-            Status_info.Visible = false;
-            DMS_panel2.Visible = false;
+            Status_info.Visible = false;        //狀態不顯示
+            DMS_panel2.Visible = false;         //檔案上傳的Panel不顯示
+            DMS_MACLable.Visible = false;       //MAC_Lable不顯示
+            DMS_MAC_Value.Visible = false;      //MAC值不顯示
+            DMS_IP_Value.Visible = false;       //IP位置不顯示
         }
 
         public void start_status(ToolStripButton xx)        //啟動狀態
@@ -525,7 +528,7 @@ namespace DMS_ii
         private void FileManager_Load(object sender, EventArgs e)
         {             
             default_status();
-            fun.ReMAC(DMS_MAC_Value, null);
+            fun.ReMAC(DMS_MAC_Value, DMS_IP_Value);
             //DMS_panel1.Visible = false;
             //SYS_Status_Key();
         }
