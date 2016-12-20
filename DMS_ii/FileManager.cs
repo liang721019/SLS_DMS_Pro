@@ -143,18 +143,24 @@ namespace DMS_ii
                     {
                         #region 新增內容
                         Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_DMS_Insert]  " +
-                                    @"'" + dTP_DMS_DOC_DATE.Text.Replace("/", "") +      //日期
-                                    @"','" + tb_DMS_Content.Text.Trim()+              //內容
-                                    @"','" + tb_DMS_TEST_ITEM.Text.Trim() +             //檢驗項目
-                                    @"','" + tb_DMS_文件NO.Text.Trim() +               //文件NO
-                                    @"','" + tb_DMS_LotNo.Text.Trim() +                //LOTNO
-                                    @"','" + tb_DMS_原廠COA.Text.Trim() +             //原廠COA
-                                    @"','" + tb_DMS_檢驗報告.Text.Trim() +                //檢驗報告
-                                    @"','" + tb_DMS_結果.Text.Trim() +                    //結果
-                                    @"','" + dTP_DMS_ReportDate.Text.Replace("/", "") +        //出報告日期
-                                    @"','" + dTP_DMS_PReportDate.Text.Replace("/", "") +       //預計出報告日期
-                                    @"','" + tb_DMS_Applicant.Text +          //申請人
-                                    @"','" + DMS_UID_Value.Text +        //建立者ID       
+                                    @"'" + dTP_DMS_DOC_DATE.Text +      //日期 dTP_DMS_DOC_DATE.Text.Replace("/", "")
+                                    @"','" + tb_DMS_SAMPLE.Text.Trim() +              //樣品名稱
+                                    @"','" + tb_DMS_BATCH_NO.Text.Trim() +             //樣品編號
+                                    @"','" + tb_DMS_Order.Text.Trim() +               //訂單編號
+                                    @"','" + tb_DMS_ENT_Dent.Text.Trim() +               //委託單位
+                                    @"','" + tb_DMS_ENT_User.Text.Trim() +               //委託者
+                                    @"','" + tb_DMS_Purpose.Text.Trim() +               //送樣目的
+                                    @"','" + tb_DMS_Report_NO.Text.Trim() +               //品保報告/編號
+                                    @"','" + tb_DMS_KEEP_NO.Text.Trim() +               //留樣編號
+                                    @"','" + tb_DMS_Result.Text.Trim() +               //審查結果-判定
+                                    @"','" + tb_DMS_Result_DATE.Text.Trim() +               //審查結果-日期
+                                    @"','" + dTP_DMS_PReportDate.Text +       //預計出報告日期
+                                    @"','" + tb_DMS_Remark.Text.Trim() +               //備註                                    
+                                    @"','" + DMS_UID_Value.Text +        //建立者ID
+                                    @"','" + tb_DMS_Out_NO.Text.Trim() +        //委外報告編號   
+                                    @"','" + tb_DMS_Out_Item.Text.Trim() +        //外檢項目  
+                                    @"','" + tb_DMS_Self_NO.Text.Trim() +        //自檢項目   
+                                    @"','" + tb_DMS_Self_Item.Text.Trim() +        //TAF實驗室報告編號
                                     @"'";
                         break;
                         #endregion
@@ -164,18 +170,25 @@ namespace DMS_ii
                         #region 修改內容
                         Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_DMS_Update] '" +
                                     tb_DMS_DOC_NO.Text +       //編號
-                                    @"','" + dTP_DMS_DOC_DATE.Text.Replace("/", "") +      //日期;
-                                    @"','" + tb_DMS_Content.Text.Trim() +              //內容
-                                    @"','" + tb_DMS_TEST_ITEM.Text.Trim() +             //檢驗項目
-                                    @"','" + tb_DMS_文件NO.Text.Trim() +               //文件NO
-                                    @"','" + tb_DMS_LotNo.Text.Trim() +                //LOTNO
-                                    @"','" + tb_DMS_原廠COA.Text.Trim() +             //原廠COA
-                                    @"','" + tb_DMS_檢驗報告.Text.Trim() +                //檢驗報告
-                                    @"','" + tb_DMS_結果.Text.Trim() +                    //結果
-                                    @"','" + dTP_DMS_ReportDate.Text.Replace("/", "") +        //出報告日期
-                                    @"','" + dTP_DMS_PReportDate.Text.Replace("/", "") +       //預計出報告日期
-                                    @"','" + tb_DMS_Applicant.Text +          //申請人
-                                    @"','" + DMS_UID_Value.Text + "'";     //修改ID       
+                                    @"','" + dTP_DMS_DOC_DATE.Text +      //日期  dTP_DMS_DOC_DATE.Text.Replace("/", "")
+                                    @"','" + tb_DMS_SAMPLE.Text.Trim() +              //樣品名稱
+                                    @"','" + tb_DMS_BATCH_NO.Text.Trim() +             //樣品編號
+                                    @"','" + tb_DMS_Order.Text.Trim() +               //訂單編號
+                                    @"','" + tb_DMS_ENT_Dent.Text.Trim() +               //委託單位
+                                    @"','" + tb_DMS_ENT_User.Text.Trim() +               //委託者
+                                    @"','" + tb_DMS_Purpose.Text.Trim() +               //送樣目的
+                                    @"','" + tb_DMS_Report_NO.Text.Trim() +               //品保報告/編號
+                                    @"','" + tb_DMS_KEEP_NO.Text.Trim() +               //留樣編號
+                                    @"','" + tb_DMS_Result.Text.Trim() +               //審查結果-判定
+                                    @"','" + tb_DMS_Result_DATE.Text.Trim() +               //審查結果-日期
+                                    @"','" + dTP_DMS_PReportDate.Text +       //預計出報告日期
+                                    @"','" + tb_DMS_Remark.Text.Trim() +               //備註                                    
+                                    @"','" + DMS_UID_Value.Text +        //建立者ID
+                                    @"','" + tb_DMS_Out_NO.Text.Trim() +        //委外報告編號   
+                                    @"','" + tb_DMS_Out_Item.Text.Trim() +        //外檢項目  
+                                    @"','" + tb_DMS_Self_NO.Text.Trim() +        //自檢項目   
+                                    @"','" + tb_DMS_Self_Item.Text.Trim() +        //TAF實驗室報告編號
+                                    @"'";
                                     
                         break;
                         #endregion
@@ -187,8 +200,7 @@ namespace DMS_ii
                                     @"'" + rr +      //編號
                                     @"','" + QueryStartDate+      //查詢開始日期
                                     @"','" + QueryEndDate +        //查詢結束日期
-                                    @"','" + QuickQueryType +        //查詢結束日期 
-                                    "'";
+                                    @"','" + QuickQueryType + "'";
                         break;
                         #endregion
                     }
@@ -200,15 +212,7 @@ namespace DMS_ii
                                     @"'" + rr +      //編號
                                     @"','" + QueryStartDate +      //查詢開始日期
                                     @"','" + QueryEndDate +        //查詢結束日期
-                                    @"','" +tb_DMS_Content.Text +       //內容
-                                    @"','" + tb_DMS_TEST_ITEM.Text +      //檢驗項目
-                                    @"','" + tb_DMS_文件NO.Text +       //文件NO
-                                    @"','" + tb_DMS_LotNo.Text +        //LOTNO
-                                    @"','" + tb_DMS_原廠COA.Text +      //原廠COA
-                                    @"','" + tb_DMS_檢驗報告.Text +      //檢驗報告
-                                    @"','" + tb_DMS_結果.Text +      //結果
-                                    @"','" + tb_DMS_Applicant.Text +      //申請人
-                                    "'";                          
+                                    @"','" + QuickQueryType + "'";                          
                         break;
                         #endregion                        
                     }
@@ -216,8 +220,8 @@ namespace DMS_ii
                     {
                         #region 刪除內容
                         Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_DMS_Del]" +
-                                    @"'" + tb_DMS_DOC_NO.Text +      //編號                                    
-                                    @"','" + DMS_UID_Value.Text + "'";      //查詢結束日期
+                                    @"'" + tb_DMS_DOC_NO.Text +      //委託單編號                                    
+                                    @"','" + DMS_UID_Value.Text + "'";      //使用者ID
 
                         break;
                         #endregion
@@ -412,21 +416,32 @@ namespace DMS_ii
             {
                 #region 內容
                 fun.Check_error = true;
-                tb_DMS_DOC_NO.Text = fun.ds_index.Tables[0].Rows[0]["編號"].ToString();               
-                string DOC_DATE = fun.ds_index.Tables[0].Rows[0]["日期"].ToString();
-                dTP_DMS_DOC_DATE.Text = DOC_DATE.Substring(0, 4) + "/" + DOC_DATE.Substring(4, 2) + "/" + DOC_DATE.Substring(6, 2);
-                tb_DMS_TEST_ITEM.Text = fun.ds_index.Tables[0].Rows[0]["檢驗項目"].ToString();
-                tb_DMS_Content.Text = fun.ds_index.Tables[0].Rows[0]["內容"].ToString();
-                tb_DMS_文件NO.Text = fun.ds_index.Tables[0].Rows[0]["文件NO"].ToString();
-                tb_DMS_LotNo.Text = fun.ds_index.Tables[0].Rows[0]["LotNO"].ToString();
-                tb_DMS_原廠COA.Text = fun.ds_index.Tables[0].Rows[0]["原廠COA"].ToString();
-                tb_DMS_檢驗報告.Text = fun.ds_index.Tables[0].Rows[0]["檢驗報告"].ToString();
-                tb_DMS_結果.Text = fun.ds_index.Tables[0].Rows[0]["結果"].ToString();
-                string PReportDate = fun.ds_index.Tables[0].Rows[0]["預計出報告日期"].ToString();
-                dTP_DMS_PReportDate.Text = PReportDate.Substring(0, 4) + "/" + PReportDate.Substring(4, 2) + "/" + PReportDate.Substring(6, 2);
-                string ReportDate = fun.ds_index.Tables[0].Rows[0]["出報告日期"].ToString();
-                dTP_DMS_ReportDate.Text = ReportDate.Substring(0, 4) + "/" + ReportDate.Substring(4, 2) + "/" + ReportDate.Substring(6, 2);
-                tb_DMS_Applicant.Text = fun.ds_index.Tables[0].Rows[0]["申請人"].ToString();  
+                tb_DMS_DOC_NO.Text = fun.ds_index.Tables[0].Rows[0]["委託單編號"].ToString();                
+                dTP_DMS_DOC_DATE.Text = fun.ds_index.Tables[0].Rows[0]["委託日期"].ToString();
+                tb_DMS_SAMPLE.Text = fun.ds_index.Tables[0].Rows[0]["樣品名稱"].ToString();
+                tb_DMS_BATCH_NO.Text = fun.ds_index.Tables[0].Rows[0]["樣品批號"].ToString();
+                tb_DMS_ENT_Dent.Text = fun.ds_index.Tables[0].Rows[0]["委託單位"].ToString();
+                tb_DMS_ENT_User.Text = fun.ds_index.Tables[0].Rows[0]["委託者"].ToString();
+                tb_DMS_Purpose.Text = fun.ds_index.Tables[0].Rows[0]["送樣目的"].ToString();
+                tb_DMS_Report_NO.Text = fun.ds_index.Tables[0].Rows[0]["品保報告編號"].ToString();
+                tb_DMS_Order.Text = fun.ds_index.Tables[0].Rows[0]["訂單編號"].ToString();
+                tb_DMS_KEEP_NO.Text = fun.ds_index.Tables[0].Rows[0]["留樣編號"].ToString();
+                tb_DMS_Result.Text = fun.ds_index.Tables[0].Rows[0]["審查結果判定"].ToString();
+                tb_DMS_Result_DATE.Text = fun.ds_index.Tables[0].Rows[0]["審查結果日期"].ToString();
+                dTP_DMS_PReportDate.Text = fun.ds_index.Tables[0].Rows[0]["預計出報告日期"].ToString();
+                tb_DMS_Remark.Text = fun.ds_index.Tables[0].Rows[0]["備註"].ToString();
+
+                tb_DMS_Out_NO.Text = fun.ds_index.Tables[0].Rows[0]["委外報告編號"].ToString();
+                tb_DMS_Out_Item.Text = fun.ds_index.Tables[0].Rows[0]["外檢項目"].ToString();
+                tb_DMS_Self_NO.Text = fun.ds_index.Tables[0].Rows[0]["TAF實驗室報告編號"].ToString();
+                tb_DMS_Self_Item.Text = fun.ds_index.Tables[0].Rows[0]["自檢項目"].ToString();
+
+                //string DOC_DATE = fun.ds_index.Tables[0].Rows[0]["委託日期"].ToString();
+                //dTP_DMS_DOC_DATE.Text = DOC_DATE.Substring(0, 4) + "/" + DOC_DATE.Substring(4, 2) + "/" + DOC_DATE.Substring(6, 2);
+                //string PReportDate = fun.ds_index.Tables[0].Rows[0]["預計出報告日期"].ToString();
+                //dTP_DMS_PReportDate.Text = PReportDate.Substring(0, 4) + "/" + PReportDate.Substring(4, 2) + "/" + PReportDate.Substring(6, 2);
+                //string ReportDate = fun.ds_index.Tables[0].Rows[0]["出報告日期"].ToString();                
+                //tb_DMS_ENT_User.Text = fun.ds_index.Tables[0].Rows[0]["申請人"].ToString();  
 
                 #endregion
             }
@@ -441,18 +456,24 @@ namespace DMS_ii
         public void DGV1_SetColumns()           //DGV1自定顯示欄位
         {
             DMS_dataGridView1.AutoGenerateColumns = false;
-            DMS_DGV1_Column1.DataPropertyName = "編號";
-            DMS_DGV1_Column2.DataPropertyName = "日期";
-            DMS_DGV1_Column3.DataPropertyName = "內容";
-            DMS_DGV1_Column4.DataPropertyName = "檢驗項目";
-            DMS_DGV1_Column5.DataPropertyName = "文件NO";
-            DMS_DGV1_Column6.DataPropertyName = "LotNO";
-            DMS_DGV1_Column7.DataPropertyName = "原廠COA";
-            DMS_DGV1_Column8.DataPropertyName = "檢驗報告";
-            DMS_DGV1_Column9.DataPropertyName = "結果";
-            DMS_DGV1_Column10.DataPropertyName = "出報告日期";
-            DMS_DGV1_Column11.DataPropertyName = "預計出報日期";
-            DMS_DGV1_Column12.DataPropertyName = "申請人";
+            DMS_DGV1_Column1.DataPropertyName = "委託單編號";
+            DMS_DGV1_Column2.DataPropertyName = "委託日期";
+            DMS_DGV1_Column3.DataPropertyName = "樣品名稱";
+            DMS_DGV1_Column4.DataPropertyName = "樣品批號";
+            DMS_DGV1_Column5.DataPropertyName = "訂單編號";
+            DMS_DGV1_Column6.DataPropertyName = "委託單位";
+            DMS_DGV1_Column7.DataPropertyName = "委託者";
+            DMS_DGV1_Column8.DataPropertyName = "送樣目的";
+            DMS_DGV1_Column9.DataPropertyName = "品保報告編號";
+            DMS_DGV1_Column10.DataPropertyName = "留樣編號";
+            DMS_DGV1_Column11.DataPropertyName = "審查結果判定";
+            DMS_DGV1_Column12.DataPropertyName = "審查結果日期";
+            DMS_DGV1_Column13.DataPropertyName = "預計出報告日期";
+            DMS_DGV1_Column14.DataPropertyName = "備註";
+            DMS_DGV1_Column15.DataPropertyName = "外檢項目";
+            DMS_DGV1_Column16.DataPropertyName = "委外報告編號";
+            DMS_DGV1_Column17.DataPropertyName = "自檢項目";
+            DMS_DGV1_Column18.DataPropertyName = "TAF實驗室報告編號";
             DMS_DGV1_Column1.Frozen = true; //凍結窗格
             DMS_DGV1_Column2.Frozen = true; //凍結窗格
 
@@ -521,7 +542,6 @@ namespace DMS_ii
         }        
 
 
-
         //================================================================================================
         #endregion
 
@@ -542,17 +562,15 @@ namespace DMS_ii
 
         private void DMS_查詢toolStripButton_Click(object sender, EventArgs e)
         {
-            QueryStartDate = dTP_Query_StartDate.Text.Replace("/", "");
-            QueryEndDate = dTP_Query_EndDate.Text.Replace("/", "");
+            QueryStartDate = dTP_Query_StartDate.Text;
+            QueryEndDate = dTP_Query_EndDate.Text;
             QuickQueryType = "A";
             start_status(DMS_查詢toolStripButton);        //啟動狀態            
             GetSQL("快速查詢", DMS_Query_DOCNO.Text);
             //GetSQL("查詢",編號,開始日期,結束日期)
-            fun.xxx_DB(Query_DB, DMS_dataGridView1);
-           
+            fun.xxx_DB(Query_DB, DMS_dataGridView1); 
              
-        }
-         
+        }         
 
         private void DMS_修改toolStripButton_Click(object sender, EventArgs e)
         {
@@ -730,6 +748,23 @@ namespace DMS_ii
         //=====================================================================================================
         #endregion
 
+        private void DMS_Query_DOCNO_KeyDown(object sender, KeyEventArgs e)         //DMS_Query_DOCNO按Enter
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                #region  按Enter之後執行
+                start_status(DMS_查詢toolStripButton);        //啟動狀態
+                QueryStartDate = dTP_Query_StartDate.Text.Replace("/", "");
+                QueryEndDate = dTP_Query_EndDate.Text.Replace("/", "");
+                QuickQueryType = "A";
+                GetSQL("快速查詢", DMS_Query_DOCNO.Text);
+                //GetSQL("查詢",編號)
+                fun.xxx_DB(Query_DB, DMS_dataGridView1);
+
+                #endregion
+            }
+        }
+
         private void DMS_dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)      //DMS_dataGridView1雙擊二下
         {
             if (e.RowIndex >= 0)
@@ -834,37 +869,9 @@ namespace DMS_ii
             OpenFile();
         }
 
-        private void DMS_Query_DOCNO_KeyDown(object sender, KeyEventArgs e)         //DMS_Query_DOCNO按Enter
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                #region  按Enter之後執行
-                start_status(DMS_查詢toolStripButton);        //啟動狀態
-                QueryStartDate = dTP_Query_StartDate.Text.Replace("/", "");
-                QueryEndDate = dTP_Query_EndDate.Text.Replace("/", "");
-                QuickQueryType = "A";
-                GetSQL("快速查詢", DMS_Query_DOCNO.Text);
-                //GetSQL("查詢",編號)
-                fun.xxx_DB(Query_DB, DMS_dataGridView1);
-                
-                #endregion
-            }
-        }
+        
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //tb_DMS_結果.Text
-            bool fIsM = fun.IsMatch(tb_DMS_結果.Text,"^[0-9]{8}$");
-            if (fIsM)
-            {
-                MessageBox.Show(tb_DMS_結果.Text);
-            }
-            else
-            {
-                MessageBox.Show("日期格式不對!!\n日    期:2016/08/30 \n輸入格式:20160830 ");
-            }
-            
-        }
+        
 
         
         
