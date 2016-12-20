@@ -130,6 +130,12 @@ namespace DMS_ii
             get;
         }
 
+        public string QueryOLOD         //查詢條件
+        {
+            set;
+            get;
+        }
+
         #endregion
 
         #region 方法
@@ -208,11 +214,50 @@ namespace DMS_ii
                 case "查詢":
                     {
                         #region 查詢內容
-                        Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_DMS_Query]" +
-                                    @"'" + rr +      //編號
-                                    @"','" + QueryStartDate +      //查詢開始日期
-                                    @"','" + QueryEndDate +        //查詢結束日期
-                                    @"','" + QuickQueryType + "'";                          
+                        Query_DB = @"SELECT   A.[DOC_NO]		AS 委託單編號
+			                                ,[DOC_DATE]	AS 委託日期
+			                                ,[SAMPLE]		AS 樣品名稱
+			                                ,[BATCH_NO]	AS 樣品批號
+			                                ,[ORDER_NO]	AS 訂單編號
+			                                ,[ENT_DEPT]	AS 委託單位
+			                                ,[ENT_USER]	AS 委託者
+			                                ,[PURPOS]		AS 送樣目的
+			                                ,[REPORT_NO]	AS 品保報告編號
+			                                ,[KEEP_NO]	AS 留樣編號
+			                                ,[RESULT]		AS 審查結果判定
+			                                ,[RESULT_DATE]	AS 審查結果日期
+			                                ,[REPORT_DATE]	AS 預計出報告日期
+			                                ,[REMARK]			AS 備註
+			                                ,B.[Out_Item]		AS 外檢項目
+			                                ,B.[Out_NO]			AS 委外報告編號
+			                                ,B.[Self_Item]		AS 自檢項目
+			                                ,B.[Self_NO]		AS TAF實驗室報告編號
+	                                FROM [TEST_SLSYHI].[dbo].[SLS_DMS_ii]	AS A
+	                                left join [TEST_SLSYHI].[dbo].[SLS_DMS_ii_Detail_SampleAnalysis]	AS B
+	                                on A.[DOC_NO] = B.[DOC_NO]
+	                                where A.[DEL_Flag] = 'N'";
+
+                        //Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_DMS_Query] " +
+                        //            @"'"+tb_DMS_DOC_NO.Text +       //委託單編號
+                        //            @"','" + dTP_DMS_DOC_DATE.Text +      //日期  dTP_DMS_DOC_DATE.Text.Replace("/", "")
+                        //            @"','" + tb_DMS_SAMPLE.Text.Trim() +              //樣品名稱
+                        //            @"','" + tb_DMS_BATCH_NO.Text.Trim() +             //樣品編號
+                        //            @"','" + tb_DMS_Order.Text.Trim() +               //訂單編號
+                        //            @"','" + tb_DMS_ENT_Dent.Text.Trim() +               //委託單位
+                        //            @"','" + tb_DMS_ENT_User.Text.Trim() +               //委託者
+                        //            @"','" + tb_DMS_Purpose.Text.Trim() +               //送樣目的
+                        //            @"','" + tb_DMS_Report_NO.Text.Trim() +               //品保報告/編號
+                        //            @"','" + tb_DMS_KEEP_NO.Text.Trim() +               //留樣編號
+                        //            @"','" + tb_DMS_Result.Text.Trim() +               //審查結果-判定
+                        //            @"','" + tb_DMS_Result_DATE.Text.Trim() +               //審查結果-日期
+                        //            @"','" + dTP_DMS_PReportDate.Text +       //預計出報告日期
+                        //            @"','" + tb_DMS_Remark.Text.Trim() +               //備註                                    
+                        //            @"','" + DMS_UID_Value.Text +        //建立者ID
+                        //            @"','" + tb_DMS_Out_NO.Text.Trim() +        //委外報告編號   
+                        //            @"','" + tb_DMS_Out_Item.Text.Trim() +        //外檢項目  
+                        //            @"','" + tb_DMS_Self_NO.Text.Trim() +        //自檢項目   
+                        //            @"','" + tb_DMS_Self_Item.Text.Trim() +        //TAF實驗室報告編號
+                        //            @"'";                          
                         break;
                         #endregion                        
                     }
@@ -244,9 +289,11 @@ namespace DMS_ii
             this.Text = "文件管理系統";
             fun.check_MAC_OK = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;//視窗在中央打開
-            fun.Disabled_Panel(DMS_panel1);            
+            fun.Disabled_Panel(DMS_panel1);
+            fun.EoD_Panel_CheckBOX(DMS_panel1, false);
             DMS_儲存toolStripButton.Visible = false;
             DMS_取消toolStripButton.Visible = false;
+            DMS_Query_button.Enabled = false;
             fun.Format_Panel_dTP(DMS_panel1, "yyyy/MM/dd");     //自訂日期格式
             fun.Format_Panel_dTP(DMS_UP_Controls_panel, "yyyy/MM/dd");          //自訂日期格式
             DGV1_SetColumns();          //DGV1自定顯示欄位
@@ -304,18 +351,22 @@ namespace DMS_ii
             {
                 Status_info.Visible = true;
                 Status_info.Text = "查詢";
-                fun.Disabled_Panel(DMS_panel1);
-                fun.EoD_toolStripButton_Tab(DMS_toolStrip1, true);
+                fun.Enabled_Panel(DMS_panel1);
+                fun.EoD_Panel_CheckBOX(DMS_panel1, true);
+                fun.EoD_toolStripButton_Tab(DMS_toolStrip1, false);
                 DMS_儲存toolStripButton.Visible = false;
                 DMS_取消toolStripButton.Visible = false;
                 DMS_儲存toolStripButton.Enabled = false;
                 DMS_取消toolStripButton.Enabled = false;
+                DMS_Query_button.Enabled = true;
                 DMS_Query_DOCNO.Focus();
                 DMS_tabControl1.SelectedIndex = 0;
                 
             }
+            
             else if (xx == DMS_儲存toolStripButton)
             {
+
                 Status_info.Visible = false;
                 fun.clearAir(DMS_panel1);
                 fun.Disabled_Panel(DMS_panel1);
@@ -324,7 +375,7 @@ namespace DMS_ii
                 DMS_取消toolStripButton.Visible = false;
                 DMS_儲存toolStripButton.Enabled = false;
                 DMS_取消toolStripButton.Enabled = false;
-                
+
             }
             else if (xx == DMS_取消toolStripButton)
             {
@@ -332,14 +383,27 @@ namespace DMS_ii
                 Status_info.Text = "";
                 fun.Disabled_Panel(DMS_panel1);
                 fun.EoD_toolStripButton_Tab(DMS_toolStrip1, true);
+                fun.EoD_Panel_CheckBOX(DMS_panel1, false);
                 DMS_儲存toolStripButton.Visible = false;
                 DMS_取消toolStripButton.Visible = false;
                 DMS_儲存toolStripButton.Enabled = false;
                 DMS_取消toolStripButton.Enabled = false;
-                
-            }
-            
 
+            }
+        }
+
+        public void start_status(Button x)          //啟動狀態
+        {
+            if (x == DMS_Query_button)
+            {
+                fun.clearAir(DMS_panel1);
+                fun.Disabled_Panel(DMS_panel1);
+                fun.EoD_toolStripButton_Tab(DMS_toolStrip1, true);
+                DMS_儲存toolStripButton.Enabled = false;
+                DMS_儲存toolStripButton.Visible = false;
+                fun.EoD_Panel_CheckBOX(DMS_panel1, false);
+                DMS_Query_button.Enabled = false;
+            }
         }
 
         public void File_SAccress_Get(string x, string y)
@@ -534,14 +598,87 @@ namespace DMS_ii
 
         }
 
-        public void OpenFile()          //打開檔案
+        public void OpenFile(string x)          //打開檔案
         {
-            Get_filename = DMS_dataGridView2.CurrentRow.Cells[2].Value.ToString();
-            Get_AllFileAcc = FileStorage_Location + "\\" + Get_filename;
+            //Get_filename = DMS_dataGridView2.CurrentRow.Cells[2].Value.ToString();
+            Get_AllFileAcc = FileStorage_Location + "\\" + x;
             fun.openPdf(Get_AllFileAcc);
-        }        
+        }
+
+        public void QueryCheckBox()         //設定QueryOLOD的值=>查詢條件
+        {
+            #region 內容
+            QueryOLOD = "";
+            if (DMS_DOC_NO_Check.Checked)       //委託單編號
+            {
+                QueryOLOD += @"and A.[DOC_NO] like N'" + tb_DMS_DOC_NO.Text+ "%'";
+            }
+            if (DMS_DOC_DATE_Check.Checked)     //委託日期
+            {
+                QueryOLOD += @"and A.[DOC_DATE] = '" + dTP_DMS_DOC_DATE.Text + "'";
+            }
+            if (DMS_BATCH_NO_Check.Checked)     //樣品批號
+            {
+                QueryOLOD += @"and A.[BATCH_NO]  like N'" + tb_DMS_BATCH_NO.Text + "%'";
+            }
+            if (DMS_SAMPLE_Check.Checked)     //樣品名稱
+            {
+                QueryOLOD += @"and A.[SAMPLE] like N'" + tb_DMS_SAMPLE.Text + "%'";
+            }
+            if (DMS_Order_Check.Checked)     //訂單編號
+            {
+                QueryOLOD += @"and A.[ORDER_NO] like N'" + tb_DMS_Order.Text + "%'";
+            }
+            if (DMS_Report_NO_Check.Checked)     //品保報告編號
+            {
+                QueryOLOD += @"and A.[REPORT_NO] like N'" + tb_DMS_Report_NO.Text + "%'";
+            }
+            if (DMS_Purpose_Check.Checked)     //送樣目的
+            {
+                QueryOLOD += @"and A.[PURPOS] like N'" + tb_DMS_Purpose.Text + "%'";
+            }
+            if (DMS_KEEP_NO_Check.Checked)     //留樣編號
+            {
+                QueryOLOD += @"and A.[KEEP_NO] like N'" + tb_DMS_KEEP_NO.Text + "%'";
+            }
+            if (DMS_Result_Check.Checked)     //審查結果判定
+            {
+                QueryOLOD += @"and A.[RESULT] like N'" + tb_DMS_Result.Text + "%'";
+            }
+            if (DMS_Result_DATE_Check.Checked)     //審查結果日期
+            {
+                QueryOLOD += @"and A.[RESULT_DATE] like N'" + tb_DMS_Result_DATE.Text + "%'";
+            }
+            if (DMS_Out_NO_Check.Checked)     //委外報告編號
+            {
+                QueryOLOD += @"and B.[Out_NO] like N'" + tb_DMS_Out_NO.Text + "%'"; ;
+            }
+            if (DMS_Out_Item_Check.Checked)     //外檢項目
+            {
+                QueryOLOD += @"and B.[Out_Item] like N'" + tb_DMS_Out_Item.Text + "%'";
+            }
+            if (DMS_Self_NO_Check.Checked)     //委外報告編號
+            {
+                QueryOLOD += @"and B.[Self_NO] like N'" + tb_DMS_Self_NO.Text + "%'";
+            }
+            if (DMS_Self_Item_Check.Checked)     //自檢項目
+            {
+                QueryOLOD += @"and B.[Self_Item] like N'" + tb_DMS_Self_Item.Text + "%'";
+            }
+            if (DMS_ENT_Dent_Check.Checked)     //委託單位
+            {
+                QueryOLOD += @"and B.[ENT_DEPT] like N'" + tb_DMS_ENT_Dent.Text + "%'";
+            }
+            if (DMS_ENT_User_Check.Checked)     //委託者
+            {
+                QueryOLOD += @"and B.[ENT_USER] like N'" + tb_DMS_ENT_User.Text + "%'";
+            }
 
 
+
+            
+            #endregion
+        }
         //================================================================================================
         #endregion
 
@@ -562,14 +699,7 @@ namespace DMS_ii
 
         private void DMS_查詢toolStripButton_Click(object sender, EventArgs e)
         {
-            QueryStartDate = dTP_Query_StartDate.Text;
-            QueryEndDate = dTP_Query_EndDate.Text;
-            QuickQueryType = "A";
-            start_status(DMS_查詢toolStripButton);        //啟動狀態            
-            GetSQL("快速查詢", DMS_Query_DOCNO.Text);
-            //GetSQL("查詢",編號,開始日期,結束日期)
-            fun.xxx_DB(Query_DB, DMS_dataGridView1); 
-             
+            start_status(DMS_查詢toolStripButton);        //啟動狀態
         }         
 
         private void DMS_修改toolStripButton_Click(object sender, EventArgs e)
@@ -638,7 +768,6 @@ namespace DMS_ii
                 #endregion
 
             }
-            
             start_status(DMS_儲存toolStripButton);        //啟動狀態
 
             
@@ -652,13 +781,13 @@ namespace DMS_ii
 
         private void DMS_tabControl1_DoubleClick(object sender, EventArgs e)        //DMS_tabControl1雙擊二下
         {
-            
+
             //if (DMS_panel1.Visible)
             //{
             //    DMS_panel1.Visible = false;
             //    DMS_panel2.Visible = false;
             //    DMS_tabControl1.Location = DMS_panel1.Location;
-                
+
             //    //DMS_tabControl1.Size = new System.Drawing.Size(984, 600);
 
             //}
@@ -666,8 +795,8 @@ namespace DMS_ii
             //{
             //    DMS_panel1.Visible = true;
             //    DMS_panel2.Visible = true;
-            //    DMS_tabControl1.Location = new Point(12,366);                 
-            //    //DMS_tabControl1.Size = new System.Drawing.Size(984, 280);
+            //    DMS_tabControl1.Location = new Point(12, 82);
+            //    //DMS_tabControl1.Size = new System.Drawing.Size(984, 280);12, 82
             //}
             
         }
@@ -708,41 +837,52 @@ namespace DMS_ii
 
         private void DMS_File_UPbutton_Click(object sender, EventArgs e)        //上傳檔案
         {
-            #region 上傳檔案~新增資料庫的內容            
+            #region 上傳檔案~新增資料庫的內容
             if (tb_DMS_DOC_NO.Text != "")
-            {                
-                for (int i = 0; i < DMS_FileUp.Items.Count; i++)
+            {
+
+                if (MessageBox.Show("確定要上傳檔案？", "警告!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    #region 檔案上傳內容
-                    Query_DB = @"select ISNULL(MAX([LineNum]),0)+1 AS num  FROM [TEST_SLSYHI].[dbo].[SLS_DMS_ii_File] where [DOC_NO] ='" + tb_DMS_DOC_NO.Text + "'";//取得序號                              
-                    fun.ProductDB_ds(Query_DB);           //取得要新增檔案的序號
-                    string Lnu = fun.ds_index.Tables[0].Rows[0]["num"].ToString();
-                    string DFU_x = DMS_FileUp.Items[i].ToString();
-                    string DFU_y = FileStorage_Location;            //檔案路徑                    
-                    string DFU_z = tb_DMS_DOC_NO.Text + "-" + Lnu;
-                    fun.DMS_File_UP(DFU_x, DFU_y, DFU_z);      //檔案COPY到指定目錄
-                    #endregion
-                    #region DB-新增資料
-                    //string info_FileName = Path.GetFileName(DFU_x);         //取得檔名
-                    string info_FileName = DFU_z +"-"+ Path.GetFileName(DFU_x);         //取得檔名
-                    string insert_DB = @"EXEC [TEST_SLSYHI].[dbo].[SLS_DMS_File_insert] '" + tb_DMS_DOC_NO.Text + "','" + info_FileName + "','" + DMS_UID_Value.Text + "'";//新增資料
-                    fun.DMS_file_insert(insert_DB);       //新增資料   
+                    #region 確定上傳的內容
+                    for (int i = 0; i < DMS_FileUp.Items.Count; i++)
+                    {
+                        #region 檔案上傳內容
+                        Query_DB = @"select ISNULL(MAX([LineNum]),0)+1 AS num  FROM [TEST_SLSYHI].[dbo].[SLS_DMS_ii_File] where [DOC_NO] ='" + tb_DMS_DOC_NO.Text + "'";//取得序號                              
+                        fun.ProductDB_ds(Query_DB);           //取得要新增檔案的序號
+                        string Lnu = fun.ds_index.Tables[0].Rows[0]["num"].ToString();
+                        string DFU_x = DMS_FileUp.Items[i].ToString();
+                        string DFU_y = FileStorage_Location;            //檔案路徑                    
+                        string DFU_z = tb_DMS_DOC_NO.Text + "-" + Lnu;
+                        fun.DMS_File_UP(DFU_x, DFU_y, DFU_z);      //檔案COPY到指定目錄
+                        #endregion
+                        #region DB-新增資料
+                        //string info_FileName = Path.GetFileName(DFU_x);         //取得檔名
+                        string info_FileName = DFU_z + "-" + Path.GetFileName(DFU_x);         //取得檔名
+                        string insert_DB = @"EXEC [TEST_SLSYHI].[dbo].[SLS_DMS_File_insert] '" + tb_DMS_DOC_NO.Text + "','" + info_FileName + "','" + DMS_UID_Value.Text + "'";//新增資料
+                        fun.DMS_file_insert(insert_DB);       //新增資料   
+                        #endregion
+                    }
+                    DMS_FileUp.Items.Clear();       //清除Listbox內容
+                    if (fun.Check_error == false)
+                    {
+                        MessageBox.Show("資料及檔案新增成功!!", "DMS");
+                    }
+                    GetSQL("DGV1_檔案查詢", tb_DMS_DOC_NO.Text);    //語法丟進fun.Query_DB
+                    fun.xxx_DB(Query_DB, DMS_dataGridView2);         //連接DB-執行DB指令
                     #endregion
                 }
-                DMS_FileUp.Items.Clear();       //清除Listbox內容
-                if (fun.Check_error == false)
-                {
-                    MessageBox.Show("資料及檔案新增成功!!","DMS");
-                }
-                GetSQL("DGV1_檔案查詢", tb_DMS_DOC_NO.Text);    //語法丟進fun.Query_DB
-                fun.xxx_DB(Query_DB, DMS_dataGridView2);         //連接DB-執行DB指令
- 
             }
             else
             {
                 MessageBox.Show("沒有編號!!請選擇文件編號!!","DMS");
             }
             #endregion
+        }
+
+        private void DMS_Clear_FileUP_button_Click(object sender, EventArgs e)      //上傳清除
+        {
+            //DMS_FileUp.ClearSelected();     //清除所選項目
+            DMS_FileUp.Items.Clear();       //清空ListBox中所有的項目
         }
 
         //=====================================================================================================
@@ -802,7 +942,8 @@ namespace DMS_ii
         {
             if (e.RowIndex >= 0)
             {
-                OpenFile();
+                Get_filename = DMS_dataGridView2.CurrentRow.Cells[2].Value.ToString();
+                OpenFile(Get_filename);
             }
 
         }
@@ -857,23 +998,48 @@ namespace DMS_ii
 
         }
 
-        private void 刪除ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void 刪除ToolStripMenuItem_Click(object sender, EventArgs e)      //DGV2右鍵-刪除
         {
             Del_File();
             GetSQL("DGV1_檔案查詢", Get_DGV_Value_1);    //語法丟進fun.Query_DB
             fun.xxx_DB(Query_DB, DMS_dataGridView2);         //連接DB-執行DB指令
         }
 
-        private void 開啟檔案ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void 開啟檔案ToolStripMenuItem_Click(object sender, EventArgs e)        //DGV2右鍵-開啟檔案
         {
-            OpenFile();
+            Get_filename = DMS_dataGridView2.CurrentRow.Cells[2].Value.ToString();
+            OpenFile(Get_filename);
         }
 
-        
+        private void DMS_FileUp_MouseDoubleClick(object sender, MouseEventArgs e)       //ListBox雙擊左鍵二下
+        {
+            Get_filename = DMS_FileUp.SelectedItem.ToString();
+            fun.openPdf(Get_filename);
+        }
 
-        
-
-        
+        private void DMS_Query_button_Click(object sender, EventArgs e)         //查詢Button
+        {
+            #region 內容
+            if (DMS_Start_QQuery.Checked)
+            {
+                QueryStartDate = dTP_Query_StartDate.Text;
+                QueryEndDate = dTP_Query_EndDate.Text;
+                QuickQueryType = "A";
+                DMS_tabControl1.SelectedIndex = 0;                     
+                GetSQL("快速查詢", DMS_Query_DOCNO.Text);
+                //GetSQL("查詢",編號,開始日期,結束日期)
+                fun.xxx_DB(Query_DB, DMS_dataGridView1);
+                start_status(DMS_Query_button);         //啟動狀態
+            }
+            else
+            {
+                GetSQL("查詢", null);
+                QueryCheckBox();       //設定QueryOLOD的值
+                fun.xxx_DB(Query_DB + QueryOLOD, DMS_dataGridView1);
+                start_status(DMS_Query_button);         //啟動狀態   
+            }
+            #endregion
+        }
         
         //================================================================================================
         #endregion

@@ -91,35 +91,6 @@
             this.DMS_tabControl1 = new System.Windows.Forms.TabControl();
             this.DMS_tabPage1 = new System.Windows.Forms.TabPage();
             this.DMS_dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.DMS_tabPage2 = new System.Windows.Forms.TabPage();
-            this.DMS_dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.DMS_DGV2_Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DMS_DGV2_Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DMS_DGV2_Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DMS_DGV2_Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DMS_DGV2_Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DMS_DGV2_Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DMS_statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.DMS_Service_ENVtoolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.DMS_UIDLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.DMS_UID_Value = new System.Windows.Forms.ToolStripStatusLabel();
-            this.DMS_MACLable = new System.Windows.Forms.ToolStripStatusLabel();
-            this.DMS_MAC_Value = new System.Windows.Forms.ToolStripStatusLabel();
-            this.DMS_IP_Value = new System.Windows.Forms.ToolStripStatusLabel();
-            this.Status_info = new System.Windows.Forms.Label();
-            this.DMS_Query_DOCNO = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.DMS_UP_Controls_panel = new System.Windows.Forms.Panel();
-            this.DMS_查詢條件 = new System.Windows.Forms.Label();
-            this.dTP_Query_EndDate = new System.Windows.Forms.DateTimePicker();
-            this.dTP_Query_StartDate = new System.Windows.Forms.DateTimePicker();
-            this.DMS_DGV2_contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.開啟檔案ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.DMS_tStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.刪除ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.DMS_tStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.DMS_DGV1_Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DMS_DGV1_Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DMS_DGV1_Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -138,6 +109,54 @@
             this.DMS_DGV1_Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DMS_DGV1_Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DMS_DGV1_Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_tabPage2 = new System.Windows.Forms.TabPage();
+            this.DMS_dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.DMS_DGV2_Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_DGV2_Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_DGV2_Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_DGV2_Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_DGV2_Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_DGV2_Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.DMS_Service_ENVtoolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.DMS_UIDLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.DMS_UID_Value = new System.Windows.Forms.ToolStripStatusLabel();
+            this.DMS_MACLable = new System.Windows.Forms.ToolStripStatusLabel();
+            this.DMS_MAC_Value = new System.Windows.Forms.ToolStripStatusLabel();
+            this.DMS_IP_Value = new System.Windows.Forms.ToolStripStatusLabel();
+            this.Status_info = new System.Windows.Forms.Label();
+            this.DMS_UP_Controls_panel = new System.Windows.Forms.Panel();
+            this.DMS_DGV2_contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.開啟檔案ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.DMS_tStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.刪除ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.DMS_tStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.DMS_Query_button = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.DMS_Query_DOCNO = new System.Windows.Forms.TextBox();
+            this.dTP_Query_StartDate = new System.Windows.Forms.DateTimePicker();
+            this.dTP_Query_EndDate = new System.Windows.Forms.DateTimePicker();
+            this.DMS_Start_QQuery = new System.Windows.Forms.CheckBox();
+            this.DMS_DOC_NO_Check = new System.Windows.Forms.CheckBox();
+            this.DMS_DOC_DATE_Check = new System.Windows.Forms.CheckBox();
+            this.DMS_BATCH_NO_Check = new System.Windows.Forms.CheckBox();
+            this.DMS_SAMPLE_Check = new System.Windows.Forms.CheckBox();
+            this.DMS_Purpose_Check = new System.Windows.Forms.CheckBox();
+            this.DMS_Out_NO_Check = new System.Windows.Forms.CheckBox();
+            this.DMS_Out_Item_Check = new System.Windows.Forms.CheckBox();
+            this.DMS_Order_Check = new System.Windows.Forms.CheckBox();
+            this.DMS_Report_NO_Check = new System.Windows.Forms.CheckBox();
+            this.DMS_KEEP_NO_Check = new System.Windows.Forms.CheckBox();
+            this.DMS_Result_Check = new System.Windows.Forms.CheckBox();
+            this.DMS_Result_DATE_Check = new System.Windows.Forms.CheckBox();
+            this.DMS_Self_NO_Check = new System.Windows.Forms.CheckBox();
+            this.DMS_Self_Item_Check = new System.Windows.Forms.CheckBox();
+            this.DMS_ENT_Dent_Check = new System.Windows.Forms.CheckBox();
+            this.DMS_ENT_User_Check = new System.Windows.Forms.CheckBox();
+            this.DMS_Remark_Check = new System.Windows.Forms.CheckBox();
+            this.DMS_PReportDate_Check = new System.Windows.Forms.CheckBox();
             this.DMS_panel1.SuspendLayout();
             this.DMS_panel2.SuspendLayout();
             this.DMS_toolStrip1.SuspendLayout();
@@ -153,6 +172,24 @@
             // 
             // DMS_panel1
             // 
+            this.DMS_panel1.Controls.Add(this.DMS_PReportDate_Check);
+            this.DMS_panel1.Controls.Add(this.DMS_Remark_Check);
+            this.DMS_panel1.Controls.Add(this.DMS_ENT_User_Check);
+            this.DMS_panel1.Controls.Add(this.DMS_ENT_Dent_Check);
+            this.DMS_panel1.Controls.Add(this.DMS_Self_Item_Check);
+            this.DMS_panel1.Controls.Add(this.DMS_Self_NO_Check);
+            this.DMS_panel1.Controls.Add(this.DMS_Result_DATE_Check);
+            this.DMS_panel1.Controls.Add(this.DMS_Result_Check);
+            this.DMS_panel1.Controls.Add(this.DMS_KEEP_NO_Check);
+            this.DMS_panel1.Controls.Add(this.DMS_Report_NO_Check);
+            this.DMS_panel1.Controls.Add(this.DMS_Order_Check);
+            this.DMS_panel1.Controls.Add(this.DMS_Out_Item_Check);
+            this.DMS_panel1.Controls.Add(this.DMS_Out_NO_Check);
+            this.DMS_panel1.Controls.Add(this.DMS_Purpose_Check);
+            this.DMS_panel1.Controls.Add(this.DMS_SAMPLE_Check);
+            this.DMS_panel1.Controls.Add(this.DMS_BATCH_NO_Check);
+            this.DMS_panel1.Controls.Add(this.DMS_DOC_DATE_Check);
+            this.DMS_panel1.Controls.Add(this.DMS_DOC_NO_Check);
             this.DMS_panel1.Controls.Add(this.tb_DMS_Purpose);
             this.DMS_panel1.Controls.Add(this.label22);
             this.DMS_panel1.Controls.Add(this.tb_DMS_Self_Item);
@@ -199,7 +236,7 @@
             // 
             this.tb_DMS_Purpose.Location = new System.Drawing.Point(132, 157);
             this.tb_DMS_Purpose.Name = "tb_DMS_Purpose";
-            this.tb_DMS_Purpose.Size = new System.Drawing.Size(252, 29);
+            this.tb_DMS_Purpose.Size = new System.Drawing.Size(229, 29);
             this.tb_DMS_Purpose.TabIndex = 5;
             // 
             // label22
@@ -213,22 +250,22 @@
             // 
             // tb_DMS_Self_Item
             // 
-            this.tb_DMS_Self_Item.Location = new System.Drawing.Point(535, 239);
+            this.tb_DMS_Self_Item.Location = new System.Drawing.Point(554, 239);
             this.tb_DMS_Self_Item.Name = "tb_DMS_Self_Item";
-            this.tb_DMS_Self_Item.Size = new System.Drawing.Size(238, 29);
+            this.tb_DMS_Self_Item.Size = new System.Drawing.Size(207, 29);
             this.tb_DMS_Self_Item.TabIndex = 14;
             // 
             // tb_DMS_Report_NO
             // 
-            this.tb_DMS_Report_NO.Location = new System.Drawing.Point(535, 50);
+            this.tb_DMS_Report_NO.Location = new System.Drawing.Point(554, 50);
             this.tb_DMS_Report_NO.Name = "tb_DMS_Report_NO";
-            this.tb_DMS_Report_NO.Size = new System.Drawing.Size(238, 29);
+            this.tb_DMS_Report_NO.Size = new System.Drawing.Size(207, 29);
             this.tb_DMS_Report_NO.TabIndex = 7;
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(401, 207);
+            this.label21.Location = new System.Drawing.Point(420, 207);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(128, 20);
             this.label21.TabIndex = 6;
@@ -237,7 +274,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(413, 53);
+            this.label18.Location = new System.Drawing.Point(432, 53);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(116, 20);
             this.label18.TabIndex = 24;
@@ -245,9 +282,9 @@
             // 
             // tb_DMS_Self_NO
             // 
-            this.tb_DMS_Self_NO.Location = new System.Drawing.Point(535, 204);
+            this.tb_DMS_Self_NO.Location = new System.Drawing.Point(554, 204);
             this.tb_DMS_Self_NO.Name = "tb_DMS_Self_NO";
-            this.tb_DMS_Self_NO.Size = new System.Drawing.Size(238, 29);
+            this.tb_DMS_Self_NO.Size = new System.Drawing.Size(207, 29);
             this.tb_DMS_Self_NO.TabIndex = 13;
             // 
             // tb_DMS_ENT_Dent
@@ -260,7 +297,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(452, 242);
+            this.label20.Location = new System.Drawing.Point(471, 242);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(77, 20);
             this.label20.TabIndex = 4;
@@ -279,7 +316,7 @@
             // 
             this.tb_DMS_Out_NO.Location = new System.Drawing.Point(132, 204);
             this.tb_DMS_Out_NO.Name = "tb_DMS_Out_NO";
-            this.tb_DMS_Out_NO.Size = new System.Drawing.Size(252, 29);
+            this.tb_DMS_Out_NO.Size = new System.Drawing.Size(229, 29);
             this.tb_DMS_Out_NO.TabIndex = 11;
             // 
             // label19
@@ -293,21 +330,21 @@
             // 
             // tb_DMS_Order
             // 
-            this.tb_DMS_Order.Location = new System.Drawing.Point(535, 15);
+            this.tb_DMS_Order.Location = new System.Drawing.Point(554, 15);
             this.tb_DMS_Order.Name = "tb_DMS_Order";
-            this.tb_DMS_Order.Size = new System.Drawing.Size(238, 29);
+            this.tb_DMS_Order.Size = new System.Drawing.Size(207, 29);
             this.tb_DMS_Order.TabIndex = 6;
             // 
             // tb_DMS_Out_Item
             // 
             this.tb_DMS_Out_Item.Location = new System.Drawing.Point(132, 239);
             this.tb_DMS_Out_Item.Name = "tb_DMS_Out_Item";
-            this.tb_DMS_Out_Item.Size = new System.Drawing.Size(252, 29);
+            this.tb_DMS_Out_Item.Size = new System.Drawing.Size(229, 29);
             this.tb_DMS_Out_Item.TabIndex = 12;
             // 
             // dTP_DMS_PReportDate
             // 
-            this.dTP_DMS_PReportDate.Location = new System.Drawing.Point(623, 356);
+            this.dTP_DMS_PReportDate.Location = new System.Drawing.Point(611, 356);
             this.dTP_DMS_PReportDate.Name = "dTP_DMS_PReportDate";
             this.dTP_DMS_PReportDate.Size = new System.Drawing.Size(150, 29);
             this.dTP_DMS_PReportDate.TabIndex = 18;
@@ -325,7 +362,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(492, 359);
+            this.label12.Location = new System.Drawing.Point(480, 359);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(125, 20);
             this.label12.TabIndex = 21;
@@ -333,7 +370,7 @@
             // 
             // tb_DMS_ENT_User
             // 
-            this.tb_DMS_ENT_User.Location = new System.Drawing.Point(280, 356);
+            this.tb_DMS_ENT_User.Location = new System.Drawing.Point(317, 356);
             this.tb_DMS_ENT_User.Name = "tb_DMS_ENT_User";
             this.tb_DMS_ENT_User.Size = new System.Drawing.Size(104, 29);
             this.tb_DMS_ENT_User.TabIndex = 17;
@@ -341,7 +378,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(213, 359);
+            this.label11.Location = new System.Drawing.Point(250, 359);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(61, 20);
             this.label11.TabIndex = 19;
@@ -352,7 +389,7 @@
             this.tb_DMS_Remark.Location = new System.Drawing.Point(132, 287);
             this.tb_DMS_Remark.Multiline = true;
             this.tb_DMS_Remark.Name = "tb_DMS_Remark";
-            this.tb_DMS_Remark.Size = new System.Drawing.Size(641, 57);
+            this.tb_DMS_Remark.Size = new System.Drawing.Size(629, 57);
             this.tb_DMS_Remark.TabIndex = 15;
             // 
             // label9
@@ -366,15 +403,15 @@
             // 
             // tb_DMS_Result_DATE
             // 
-            this.tb_DMS_Result_DATE.Location = new System.Drawing.Point(535, 155);
+            this.tb_DMS_Result_DATE.Location = new System.Drawing.Point(554, 155);
             this.tb_DMS_Result_DATE.Name = "tb_DMS_Result_DATE";
-            this.tb_DMS_Result_DATE.Size = new System.Drawing.Size(238, 29);
+            this.tb_DMS_Result_DATE.Size = new System.Drawing.Size(207, 29);
             this.tb_DMS_Result_DATE.TabIndex = 10;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(413, 158);
+            this.label8.Location = new System.Drawing.Point(432, 158);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(116, 20);
             this.label8.TabIndex = 14;
@@ -382,15 +419,15 @@
             // 
             // tb_DMS_Result
             // 
-            this.tb_DMS_Result.Location = new System.Drawing.Point(535, 120);
+            this.tb_DMS_Result.Location = new System.Drawing.Point(554, 120);
             this.tb_DMS_Result.Name = "tb_DMS_Result";
-            this.tb_DMS_Result.Size = new System.Drawing.Size(238, 29);
+            this.tb_DMS_Result.Size = new System.Drawing.Size(207, 29);
             this.tb_DMS_Result.TabIndex = 9;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(413, 125);
+            this.label7.Location = new System.Drawing.Point(432, 125);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(116, 20);
             this.label7.TabIndex = 12;
@@ -398,15 +435,15 @@
             // 
             // tb_DMS_KEEP_NO
             // 
-            this.tb_DMS_KEEP_NO.Location = new System.Drawing.Point(535, 85);
+            this.tb_DMS_KEEP_NO.Location = new System.Drawing.Point(554, 85);
             this.tb_DMS_KEEP_NO.Name = "tb_DMS_KEEP_NO";
-            this.tb_DMS_KEEP_NO.Size = new System.Drawing.Size(238, 29);
+            this.tb_DMS_KEEP_NO.Size = new System.Drawing.Size(207, 29);
             this.tb_DMS_KEEP_NO.TabIndex = 8;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(452, 88);
+            this.label6.Location = new System.Drawing.Point(471, 88);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(77, 20);
             this.label6.TabIndex = 10;
@@ -415,7 +452,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(452, 18);
+            this.label5.Location = new System.Drawing.Point(471, 18);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(77, 20);
             this.label5.TabIndex = 8;
@@ -425,7 +462,7 @@
             // 
             this.tb_DMS_BATCH_NO.Location = new System.Drawing.Point(132, 85);
             this.tb_DMS_BATCH_NO.Name = "tb_DMS_BATCH_NO";
-            this.tb_DMS_BATCH_NO.Size = new System.Drawing.Size(252, 29);
+            this.tb_DMS_BATCH_NO.Size = new System.Drawing.Size(229, 29);
             this.tb_DMS_BATCH_NO.TabIndex = 3;
             // 
             // label4
@@ -441,7 +478,7 @@
             // 
             this.tb_DMS_SAMPLE.Location = new System.Drawing.Point(132, 120);
             this.tb_DMS_SAMPLE.Name = "tb_DMS_SAMPLE";
-            this.tb_DMS_SAMPLE.Size = new System.Drawing.Size(252, 29);
+            this.tb_DMS_SAMPLE.Size = new System.Drawing.Size(229, 29);
             this.tb_DMS_SAMPLE.TabIndex = 4;
             // 
             // label3
@@ -457,7 +494,7 @@
             // 
             this.dTP_DMS_DOC_DATE.Location = new System.Drawing.Point(132, 50);
             this.dTP_DMS_DOC_DATE.Name = "dTP_DMS_DOC_DATE";
-            this.dTP_DMS_DOC_DATE.Size = new System.Drawing.Size(252, 29);
+            this.dTP_DMS_DOC_DATE.Size = new System.Drawing.Size(229, 29);
             this.dTP_DMS_DOC_DATE.TabIndex = 2;
             // 
             // label2
@@ -473,7 +510,7 @@
             // 
             this.tb_DMS_DOC_NO.Location = new System.Drawing.Point(132, 15);
             this.tb_DMS_DOC_NO.Name = "tb_DMS_DOC_NO";
-            this.tb_DMS_DOC_NO.Size = new System.Drawing.Size(252, 29);
+            this.tb_DMS_DOC_NO.Size = new System.Drawing.Size(229, 29);
             this.tb_DMS_DOC_NO.TabIndex = 1;
             // 
             // label1
@@ -516,6 +553,7 @@
             this.DMS_Clear_FileUP_button.TabIndex = 3;
             this.DMS_Clear_FileUP_button.Text = "清除";
             this.DMS_Clear_FileUP_button.UseVisualStyleBackColor = true;
+            this.DMS_Clear_FileUP_button.Click += new System.EventHandler(this.DMS_Clear_FileUP_button_Click);
             // 
             // DMS_File_UPbutton
             // 
@@ -548,6 +586,7 @@
             this.DMS_FileUp.TabIndex = 0;
             this.DMS_FileUp.DragDrop += new System.Windows.Forms.DragEventHandler(this.DMS_FileUp_DragDrop);
             this.DMS_FileUp.DragEnter += new System.Windows.Forms.DragEventHandler(this.DMS_FileUp_DragEnter);
+            this.DMS_FileUp.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.DMS_FileUp_MouseDoubleClick);
             // 
             // DMS_toolStrip1
             // 
@@ -720,269 +759,6 @@
             this.DMS_dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DMS_dataGridView1_CellDoubleClick);
             this.DMS_dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DMS_dataGridView1_CellMouseClick);
             // 
-            // DMS_tabPage2
-            // 
-            this.DMS_tabPage2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.DMS_tabPage2.Controls.Add(this.DMS_dataGridView2);
-            this.DMS_tabPage2.Location = new System.Drawing.Point(4, 29);
-            this.DMS_tabPage2.Name = "DMS_tabPage2";
-            this.DMS_tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.DMS_tabPage2.Size = new System.Drawing.Size(1127, 366);
-            this.DMS_tabPage2.TabIndex = 1;
-            this.DMS_tabPage2.Text = "內容";
-            // 
-            // DMS_dataGridView2
-            // 
-            this.DMS_dataGridView2.AllowUserToAddRows = false;
-            this.DMS_dataGridView2.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.DMS_dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            this.DMS_dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DMS_dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.DMS_DGV2_Column1,
-            this.DMS_DGV2_Column2,
-            this.DMS_DGV2_Column3,
-            this.DMS_DGV2_Column4,
-            this.DMS_DGV2_Column5,
-            this.DMS_DGV2_Column6});
-            this.DMS_dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DMS_dataGridView2.Location = new System.Drawing.Point(3, 3);
-            this.DMS_dataGridView2.Name = "DMS_dataGridView2";
-            this.DMS_dataGridView2.ReadOnly = true;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.DMS_dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle8;
-            this.DMS_dataGridView2.RowTemplate.Height = 24;
-            this.DMS_dataGridView2.Size = new System.Drawing.Size(1121, 360);
-            this.DMS_dataGridView2.TabIndex = 0;
-            this.DMS_dataGridView2.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DMS_dataGridView2_CellDoubleClick);
-            this.DMS_dataGridView2.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DMS_dataGridView2_CellMouseDown);
-            // 
-            // DMS_DGV2_Column1
-            // 
-            this.DMS_DGV2_Column1.HeaderText = "編號";
-            this.DMS_DGV2_Column1.Name = "DMS_DGV2_Column1";
-            this.DMS_DGV2_Column1.ReadOnly = true;
-            // 
-            // DMS_DGV2_Column2
-            // 
-            this.DMS_DGV2_Column2.HeaderText = "序號";
-            this.DMS_DGV2_Column2.Name = "DMS_DGV2_Column2";
-            this.DMS_DGV2_Column2.ReadOnly = true;
-            this.DMS_DGV2_Column2.Width = 70;
-            // 
-            // DMS_DGV2_Column3
-            // 
-            this.DMS_DGV2_Column3.HeaderText = "檔名名稱";
-            this.DMS_DGV2_Column3.Name = "DMS_DGV2_Column3";
-            this.DMS_DGV2_Column3.ReadOnly = true;
-            this.DMS_DGV2_Column3.Width = 150;
-            // 
-            // DMS_DGV2_Column4
-            // 
-            this.DMS_DGV2_Column4.HeaderText = "建檔使用者";
-            this.DMS_DGV2_Column4.Name = "DMS_DGV2_Column4";
-            this.DMS_DGV2_Column4.ReadOnly = true;
-            this.DMS_DGV2_Column4.Width = 120;
-            // 
-            // DMS_DGV2_Column5
-            // 
-            this.DMS_DGV2_Column5.HeaderText = "建檔日期";
-            this.DMS_DGV2_Column5.Name = "DMS_DGV2_Column5";
-            this.DMS_DGV2_Column5.ReadOnly = true;
-            this.DMS_DGV2_Column5.Width = 120;
-            // 
-            // DMS_DGV2_Column6
-            // 
-            this.DMS_DGV2_Column6.HeaderText = "建檔時間";
-            this.DMS_DGV2_Column6.Name = "DMS_DGV2_Column6";
-            this.DMS_DGV2_Column6.ReadOnly = true;
-            this.DMS_DGV2_Column6.Width = 120;
-            // 
-            // DMS_statusStrip1
-            // 
-            this.DMS_statusStrip1.BackColor = System.Drawing.Color.White;
-            this.DMS_statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.DMS_Service_ENVtoolStripStatusLabel,
-            this.DMS_UIDLabel,
-            this.DMS_UID_Value,
-            this.DMS_MACLable,
-            this.DMS_MAC_Value,
-            this.DMS_IP_Value});
-            this.DMS_statusStrip1.Location = new System.Drawing.Point(0, 957);
-            this.DMS_statusStrip1.Name = "DMS_statusStrip1";
-            this.DMS_statusStrip1.Size = new System.Drawing.Size(1162, 22);
-            this.DMS_statusStrip1.TabIndex = 4;
-            this.DMS_statusStrip1.Text = "statusStrip1";
-            // 
-            // DMS_Service_ENVtoolStripStatusLabel
-            // 
-            this.DMS_Service_ENVtoolStripStatusLabel.Name = "DMS_Service_ENVtoolStripStatusLabel";
-            this.DMS_Service_ENVtoolStripStatusLabel.Size = new System.Drawing.Size(111, 17);
-            this.DMS_Service_ENVtoolStripStatusLabel.Text = "DMS_Service_ENV";
-            // 
-            // DMS_UIDLabel
-            // 
-            this.DMS_UIDLabel.BackColor = System.Drawing.Color.White;
-            this.DMS_UIDLabel.Name = "DMS_UIDLabel";
-            this.DMS_UIDLabel.Size = new System.Drawing.Size(38, 17);
-            this.DMS_UIDLabel.Text = "UID : ";
-            // 
-            // DMS_UID_Value
-            // 
-            this.DMS_UID_Value.Name = "DMS_UID_Value";
-            this.DMS_UID_Value.Size = new System.Drawing.Size(32, 17);
-            this.DMS_UID_Value.Text = "root";
-            // 
-            // DMS_MACLable
-            // 
-            this.DMS_MACLable.Name = "DMS_MACLable";
-            this.DMS_MACLable.Size = new System.Drawing.Size(45, 17);
-            this.DMS_MACLable.Text = "MAC : ";
-            // 
-            // DMS_MAC_Value
-            // 
-            this.DMS_MAC_Value.Name = "DMS_MAC_Value";
-            this.DMS_MAC_Value.Size = new System.Drawing.Size(69, 17);
-            this.DMS_MAC_Value.Text = "DMS_MAC";
-            // 
-            // DMS_IP_Value
-            // 
-            this.DMS_IP_Value.Name = "DMS_IP_Value";
-            this.DMS_IP_Value.Size = new System.Drawing.Size(51, 17);
-            this.DMS_IP_Value.Text = "DMS_IP";
-            // 
-            // Status_info
-            // 
-            this.Status_info.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Status_info.AutoSize = true;
-            this.Status_info.BackColor = System.Drawing.Color.White;
-            this.Status_info.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.Status_info.Location = new System.Drawing.Point(1106, 959);
-            this.Status_info.Name = "Status_info";
-            this.Status_info.Size = new System.Drawing.Size(41, 20);
-            this.Status_info.TabIndex = 105;
-            this.Status_info.Text = "測試";
-            // 
-            // DMS_Query_DOCNO
-            // 
-            this.DMS_Query_DOCNO.BackColor = System.Drawing.Color.White;
-            this.DMS_Query_DOCNO.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.DMS_Query_DOCNO.Location = new System.Drawing.Point(156, 4);
-            this.DMS_Query_DOCNO.Name = "DMS_Query_DOCNO";
-            this.DMS_Query_DOCNO.Size = new System.Drawing.Size(115, 29);
-            this.DMS_Query_DOCNO.TabIndex = 108;
-            this.DMS_Query_DOCNO.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DMS_Query_DOCNO_KeyDown);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label13.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label13.Location = new System.Drawing.Point(281, 7);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(77, 20);
-            this.label13.TabIndex = 109;
-            this.label13.Text = "委託日期:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label14.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label14.Location = new System.Drawing.Point(106, 9);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(45, 20);
-            this.label14.TabIndex = 110;
-            this.label14.Text = "編號:";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(534, 8);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(21, 20);
-            this.label15.TabIndex = 111;
-            this.label15.Text = "~";
-            // 
-            // DMS_UP_Controls_panel
-            // 
-            this.DMS_UP_Controls_panel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.DMS_UP_Controls_panel.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.DMS_UP_Controls_panel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.DMS_UP_Controls_panel.Controls.Add(this.DMS_查詢條件);
-            this.DMS_UP_Controls_panel.Controls.Add(this.dTP_Query_EndDate);
-            this.DMS_UP_Controls_panel.Controls.Add(this.dTP_Query_StartDate);
-            this.DMS_UP_Controls_panel.Controls.Add(this.DMS_Query_DOCNO);
-            this.DMS_UP_Controls_panel.Controls.Add(this.label15);
-            this.DMS_UP_Controls_panel.Controls.Add(this.label14);
-            this.DMS_UP_Controls_panel.Controls.Add(this.label13);
-            this.DMS_UP_Controls_panel.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.DMS_UP_Controls_panel.Location = new System.Drawing.Point(0, 27);
-            this.DMS_UP_Controls_panel.Name = "DMS_UP_Controls_panel";
-            this.DMS_UP_Controls_panel.Size = new System.Drawing.Size(1162, 40);
-            this.DMS_UP_Controls_panel.TabIndex = 112;
-            // 
-            // DMS_查詢條件
-            // 
-            this.DMS_查詢條件.AutoSize = true;
-            this.DMS_查詢條件.BackColor = System.Drawing.SystemColors.Highlight;
-            this.DMS_查詢條件.Location = new System.Drawing.Point(3, 9);
-            this.DMS_查詢條件.Name = "DMS_查詢條件";
-            this.DMS_查詢條件.Size = new System.Drawing.Size(97, 20);
-            this.DMS_查詢條件.TabIndex = 114;
-            this.DMS_查詢條件.Text = "查詢條件>>";
-            // 
-            // dTP_Query_EndDate
-            // 
-            this.dTP_Query_EndDate.Location = new System.Drawing.Point(562, 3);
-            this.dTP_Query_EndDate.Name = "dTP_Query_EndDate";
-            this.dTP_Query_EndDate.Size = new System.Drawing.Size(157, 29);
-            this.dTP_Query_EndDate.TabIndex = 113;
-            // 
-            // dTP_Query_StartDate
-            // 
-            this.dTP_Query_StartDate.Location = new System.Drawing.Point(364, 3);
-            this.dTP_Query_StartDate.Name = "dTP_Query_StartDate";
-            this.dTP_Query_StartDate.Size = new System.Drawing.Size(164, 29);
-            this.dTP_Query_StartDate.TabIndex = 112;
-            // 
-            // DMS_DGV2_contextMenuStrip
-            // 
-            this.DMS_DGV2_contextMenuStrip.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.DMS_DGV2_contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.開啟檔案ToolStripMenuItem,
-            this.DMS_tStripSeparator1,
-            this.刪除ToolStripMenuItem,
-            this.DMS_tStripSeparator2});
-            this.DMS_DGV2_contextMenuStrip.Name = "DMS_DGV2_contextMenuStrip";
-            this.DMS_DGV2_contextMenuStrip.ShowImageMargin = false;
-            this.DMS_DGV2_contextMenuStrip.Size = new System.Drawing.Size(118, 64);
-            // 
-            // 開啟檔案ToolStripMenuItem
-            // 
-            this.開啟檔案ToolStripMenuItem.Name = "開啟檔案ToolStripMenuItem";
-            this.開啟檔案ToolStripMenuItem.Size = new System.Drawing.Size(117, 24);
-            this.開啟檔案ToolStripMenuItem.Text = "開啟檔案";
-            this.開啟檔案ToolStripMenuItem.Click += new System.EventHandler(this.開啟檔案ToolStripMenuItem_Click);
-            // 
-            // DMS_tStripSeparator1
-            // 
-            this.DMS_tStripSeparator1.Name = "DMS_tStripSeparator1";
-            this.DMS_tStripSeparator1.Size = new System.Drawing.Size(114, 6);
-            // 
-            // 刪除ToolStripMenuItem
-            // 
-            this.刪除ToolStripMenuItem.Name = "刪除ToolStripMenuItem";
-            this.刪除ToolStripMenuItem.Size = new System.Drawing.Size(117, 24);
-            this.刪除ToolStripMenuItem.Text = "刪除檔案";
-            this.刪除ToolStripMenuItem.Click += new System.EventHandler(this.刪除ToolStripMenuItem_Click);
-            // 
-            // DMS_tStripSeparator2
-            // 
-            this.DMS_tStripSeparator2.Name = "DMS_tStripSeparator2";
-            this.DMS_tStripSeparator2.Size = new System.Drawing.Size(114, 6);
-            // 
             // DMS_DGV1_Column1
             // 
             this.DMS_DGV1_Column1.HeaderText = "委託單編號";
@@ -1106,6 +882,442 @@
             this.DMS_DGV1_Column18.ReadOnly = true;
             this.DMS_DGV1_Column18.Width = 180;
             // 
+            // DMS_tabPage2
+            // 
+            this.DMS_tabPage2.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.DMS_tabPage2.Controls.Add(this.DMS_dataGridView2);
+            this.DMS_tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.DMS_tabPage2.Name = "DMS_tabPage2";
+            this.DMS_tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.DMS_tabPage2.Size = new System.Drawing.Size(1127, 413);
+            this.DMS_tabPage2.TabIndex = 1;
+            this.DMS_tabPage2.Text = "內容";
+            // 
+            // DMS_dataGridView2
+            // 
+            this.DMS_dataGridView2.AllowUserToAddRows = false;
+            this.DMS_dataGridView2.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.DMS_dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.DMS_dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DMS_dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DMS_DGV2_Column1,
+            this.DMS_DGV2_Column2,
+            this.DMS_DGV2_Column3,
+            this.DMS_DGV2_Column4,
+            this.DMS_DGV2_Column5,
+            this.DMS_DGV2_Column6});
+            this.DMS_dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DMS_dataGridView2.Location = new System.Drawing.Point(3, 3);
+            this.DMS_dataGridView2.Name = "DMS_dataGridView2";
+            this.DMS_dataGridView2.ReadOnly = true;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.DMS_dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            this.DMS_dataGridView2.RowTemplate.Height = 24;
+            this.DMS_dataGridView2.Size = new System.Drawing.Size(1121, 407);
+            this.DMS_dataGridView2.TabIndex = 0;
+            this.DMS_dataGridView2.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DMS_dataGridView2_CellDoubleClick);
+            this.DMS_dataGridView2.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DMS_dataGridView2_CellMouseDown);
+            // 
+            // DMS_DGV2_Column1
+            // 
+            this.DMS_DGV2_Column1.HeaderText = "編號";
+            this.DMS_DGV2_Column1.Name = "DMS_DGV2_Column1";
+            this.DMS_DGV2_Column1.ReadOnly = true;
+            // 
+            // DMS_DGV2_Column2
+            // 
+            this.DMS_DGV2_Column2.HeaderText = "序號";
+            this.DMS_DGV2_Column2.Name = "DMS_DGV2_Column2";
+            this.DMS_DGV2_Column2.ReadOnly = true;
+            this.DMS_DGV2_Column2.Width = 70;
+            // 
+            // DMS_DGV2_Column3
+            // 
+            this.DMS_DGV2_Column3.HeaderText = "檔名名稱";
+            this.DMS_DGV2_Column3.Name = "DMS_DGV2_Column3";
+            this.DMS_DGV2_Column3.ReadOnly = true;
+            this.DMS_DGV2_Column3.Width = 150;
+            // 
+            // DMS_DGV2_Column4
+            // 
+            this.DMS_DGV2_Column4.HeaderText = "建檔使用者";
+            this.DMS_DGV2_Column4.Name = "DMS_DGV2_Column4";
+            this.DMS_DGV2_Column4.ReadOnly = true;
+            this.DMS_DGV2_Column4.Width = 120;
+            // 
+            // DMS_DGV2_Column5
+            // 
+            this.DMS_DGV2_Column5.HeaderText = "建檔日期";
+            this.DMS_DGV2_Column5.Name = "DMS_DGV2_Column5";
+            this.DMS_DGV2_Column5.ReadOnly = true;
+            this.DMS_DGV2_Column5.Width = 120;
+            // 
+            // DMS_DGV2_Column6
+            // 
+            this.DMS_DGV2_Column6.HeaderText = "建檔時間";
+            this.DMS_DGV2_Column6.Name = "DMS_DGV2_Column6";
+            this.DMS_DGV2_Column6.ReadOnly = true;
+            this.DMS_DGV2_Column6.Width = 120;
+            // 
+            // DMS_statusStrip1
+            // 
+            this.DMS_statusStrip1.BackColor = System.Drawing.Color.White;
+            this.DMS_statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.DMS_Service_ENVtoolStripStatusLabel,
+            this.DMS_UIDLabel,
+            this.DMS_UID_Value,
+            this.DMS_MACLable,
+            this.DMS_MAC_Value,
+            this.DMS_IP_Value});
+            this.DMS_statusStrip1.Location = new System.Drawing.Point(0, 957);
+            this.DMS_statusStrip1.Name = "DMS_statusStrip1";
+            this.DMS_statusStrip1.Size = new System.Drawing.Size(1162, 22);
+            this.DMS_statusStrip1.TabIndex = 4;
+            this.DMS_statusStrip1.Text = "statusStrip1";
+            // 
+            // DMS_Service_ENVtoolStripStatusLabel
+            // 
+            this.DMS_Service_ENVtoolStripStatusLabel.Name = "DMS_Service_ENVtoolStripStatusLabel";
+            this.DMS_Service_ENVtoolStripStatusLabel.Size = new System.Drawing.Size(111, 17);
+            this.DMS_Service_ENVtoolStripStatusLabel.Text = "DMS_Service_ENV";
+            // 
+            // DMS_UIDLabel
+            // 
+            this.DMS_UIDLabel.BackColor = System.Drawing.Color.White;
+            this.DMS_UIDLabel.Name = "DMS_UIDLabel";
+            this.DMS_UIDLabel.Size = new System.Drawing.Size(38, 17);
+            this.DMS_UIDLabel.Text = "UID : ";
+            // 
+            // DMS_UID_Value
+            // 
+            this.DMS_UID_Value.Name = "DMS_UID_Value";
+            this.DMS_UID_Value.Size = new System.Drawing.Size(32, 17);
+            this.DMS_UID_Value.Text = "root";
+            // 
+            // DMS_MACLable
+            // 
+            this.DMS_MACLable.Name = "DMS_MACLable";
+            this.DMS_MACLable.Size = new System.Drawing.Size(45, 17);
+            this.DMS_MACLable.Text = "MAC : ";
+            // 
+            // DMS_MAC_Value
+            // 
+            this.DMS_MAC_Value.Name = "DMS_MAC_Value";
+            this.DMS_MAC_Value.Size = new System.Drawing.Size(69, 17);
+            this.DMS_MAC_Value.Text = "DMS_MAC";
+            // 
+            // DMS_IP_Value
+            // 
+            this.DMS_IP_Value.Name = "DMS_IP_Value";
+            this.DMS_IP_Value.Size = new System.Drawing.Size(51, 17);
+            this.DMS_IP_Value.Text = "DMS_IP";
+            // 
+            // Status_info
+            // 
+            this.Status_info.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Status_info.AutoSize = true;
+            this.Status_info.BackColor = System.Drawing.Color.White;
+            this.Status_info.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.Status_info.Location = new System.Drawing.Point(1106, 959);
+            this.Status_info.Name = "Status_info";
+            this.Status_info.Size = new System.Drawing.Size(41, 20);
+            this.Status_info.TabIndex = 105;
+            this.Status_info.Text = "測試";
+            // 
+            // DMS_UP_Controls_panel
+            // 
+            this.DMS_UP_Controls_panel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DMS_UP_Controls_panel.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.DMS_UP_Controls_panel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.DMS_UP_Controls_panel.Controls.Add(this.DMS_Query_button);
+            this.DMS_UP_Controls_panel.Controls.Add(this.DMS_Start_QQuery);
+            this.DMS_UP_Controls_panel.Controls.Add(this.dTP_Query_EndDate);
+            this.DMS_UP_Controls_panel.Controls.Add(this.dTP_Query_StartDate);
+            this.DMS_UP_Controls_panel.Controls.Add(this.DMS_Query_DOCNO);
+            this.DMS_UP_Controls_panel.Controls.Add(this.label15);
+            this.DMS_UP_Controls_panel.Controls.Add(this.label14);
+            this.DMS_UP_Controls_panel.Controls.Add(this.label13);
+            this.DMS_UP_Controls_panel.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.DMS_UP_Controls_panel.Location = new System.Drawing.Point(0, 27);
+            this.DMS_UP_Controls_panel.Name = "DMS_UP_Controls_panel";
+            this.DMS_UP_Controls_panel.Size = new System.Drawing.Size(1162, 40);
+            this.DMS_UP_Controls_panel.TabIndex = 112;
+            // 
+            // DMS_DGV2_contextMenuStrip
+            // 
+            this.DMS_DGV2_contextMenuStrip.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.DMS_DGV2_contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.開啟檔案ToolStripMenuItem,
+            this.DMS_tStripSeparator1,
+            this.刪除ToolStripMenuItem,
+            this.DMS_tStripSeparator2});
+            this.DMS_DGV2_contextMenuStrip.Name = "DMS_DGV2_contextMenuStrip";
+            this.DMS_DGV2_contextMenuStrip.ShowImageMargin = false;
+            this.DMS_DGV2_contextMenuStrip.Size = new System.Drawing.Size(118, 64);
+            // 
+            // 開啟檔案ToolStripMenuItem
+            // 
+            this.開啟檔案ToolStripMenuItem.Name = "開啟檔案ToolStripMenuItem";
+            this.開啟檔案ToolStripMenuItem.Size = new System.Drawing.Size(117, 24);
+            this.開啟檔案ToolStripMenuItem.Text = "開啟檔案";
+            this.開啟檔案ToolStripMenuItem.Click += new System.EventHandler(this.開啟檔案ToolStripMenuItem_Click);
+            // 
+            // DMS_tStripSeparator1
+            // 
+            this.DMS_tStripSeparator1.Name = "DMS_tStripSeparator1";
+            this.DMS_tStripSeparator1.Size = new System.Drawing.Size(114, 6);
+            // 
+            // 刪除ToolStripMenuItem
+            // 
+            this.刪除ToolStripMenuItem.Name = "刪除ToolStripMenuItem";
+            this.刪除ToolStripMenuItem.Size = new System.Drawing.Size(117, 24);
+            this.刪除ToolStripMenuItem.Text = "刪除檔案";
+            this.刪除ToolStripMenuItem.Click += new System.EventHandler(this.刪除ToolStripMenuItem_Click);
+            // 
+            // DMS_tStripSeparator2
+            // 
+            this.DMS_tStripSeparator2.Name = "DMS_tStripSeparator2";
+            this.DMS_tStripSeparator2.Size = new System.Drawing.Size(114, 6);
+            // 
+            // DMS_Query_button
+            // 
+            this.DMS_Query_button.Location = new System.Drawing.Point(10, 5);
+            this.DMS_Query_button.Name = "DMS_Query_button";
+            this.DMS_Query_button.Size = new System.Drawing.Size(82, 28);
+            this.DMS_Query_button.TabIndex = 116;
+            this.DMS_Query_button.Text = "查詢";
+            this.DMS_Query_button.UseVisualStyleBackColor = true;
+            this.DMS_Query_button.Click += new System.EventHandler(this.DMS_Query_button_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label13.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label13.Location = new System.Drawing.Point(328, 9);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(77, 20);
+            this.label13.TabIndex = 109;
+            this.label13.Text = "委託日期:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label14.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label14.Location = new System.Drawing.Point(106, 9);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(93, 20);
+            this.label14.TabIndex = 110;
+            this.label14.Text = "委託單編號:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(583, 7);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(21, 20);
+            this.label15.TabIndex = 111;
+            this.label15.Text = "~";
+            // 
+            // DMS_Query_DOCNO
+            // 
+            this.DMS_Query_DOCNO.BackColor = System.Drawing.Color.White;
+            this.DMS_Query_DOCNO.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.DMS_Query_DOCNO.Location = new System.Drawing.Point(206, 4);
+            this.DMS_Query_DOCNO.Name = "DMS_Query_DOCNO";
+            this.DMS_Query_DOCNO.Size = new System.Drawing.Size(115, 29);
+            this.DMS_Query_DOCNO.TabIndex = 108;
+            this.DMS_Query_DOCNO.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DMS_Query_DOCNO_KeyDown);
+            // 
+            // dTP_Query_StartDate
+            // 
+            this.dTP_Query_StartDate.Location = new System.Drawing.Point(412, 4);
+            this.dTP_Query_StartDate.Name = "dTP_Query_StartDate";
+            this.dTP_Query_StartDate.Size = new System.Drawing.Size(164, 29);
+            this.dTP_Query_StartDate.TabIndex = 112;
+            // 
+            // dTP_Query_EndDate
+            // 
+            this.dTP_Query_EndDate.Location = new System.Drawing.Point(608, 4);
+            this.dTP_Query_EndDate.Name = "dTP_Query_EndDate";
+            this.dTP_Query_EndDate.Size = new System.Drawing.Size(157, 29);
+            this.dTP_Query_EndDate.TabIndex = 113;
+            // 
+            // DMS_Start_QQuery
+            // 
+            this.DMS_Start_QQuery.AutoSize = true;
+            this.DMS_Start_QQuery.Location = new System.Drawing.Point(771, 9);
+            this.DMS_Start_QQuery.Name = "DMS_Start_QQuery";
+            this.DMS_Start_QQuery.Size = new System.Drawing.Size(124, 24);
+            this.DMS_Start_QQuery.TabIndex = 115;
+            this.DMS_Start_QQuery.Text = "啟動快速查詢";
+            this.DMS_Start_QQuery.UseVisualStyleBackColor = true;
+            // 
+            // DMS_DOC_NO_Check
+            // 
+            this.DMS_DOC_NO_Check.AutoSize = true;
+            this.DMS_DOC_NO_Check.Location = new System.Drawing.Point(367, 24);
+            this.DMS_DOC_NO_Check.Name = "DMS_DOC_NO_Check";
+            this.DMS_DOC_NO_Check.Size = new System.Drawing.Size(15, 14);
+            this.DMS_DOC_NO_Check.TabIndex = 27;
+            this.DMS_DOC_NO_Check.UseVisualStyleBackColor = true;
+            // 
+            // DMS_DOC_DATE_Check
+            // 
+            this.DMS_DOC_DATE_Check.AutoSize = true;
+            this.DMS_DOC_DATE_Check.Location = new System.Drawing.Point(367, 57);
+            this.DMS_DOC_DATE_Check.Name = "DMS_DOC_DATE_Check";
+            this.DMS_DOC_DATE_Check.Size = new System.Drawing.Size(15, 14);
+            this.DMS_DOC_DATE_Check.TabIndex = 28;
+            this.DMS_DOC_DATE_Check.UseVisualStyleBackColor = true;
+            // 
+            // DMS_BATCH_NO_Check
+            // 
+            this.DMS_BATCH_NO_Check.AutoSize = true;
+            this.DMS_BATCH_NO_Check.Location = new System.Drawing.Point(367, 92);
+            this.DMS_BATCH_NO_Check.Name = "DMS_BATCH_NO_Check";
+            this.DMS_BATCH_NO_Check.Size = new System.Drawing.Size(15, 14);
+            this.DMS_BATCH_NO_Check.TabIndex = 29;
+            this.DMS_BATCH_NO_Check.UseVisualStyleBackColor = true;
+            // 
+            // DMS_SAMPLE_Check
+            // 
+            this.DMS_SAMPLE_Check.AutoSize = true;
+            this.DMS_SAMPLE_Check.Location = new System.Drawing.Point(367, 127);
+            this.DMS_SAMPLE_Check.Name = "DMS_SAMPLE_Check";
+            this.DMS_SAMPLE_Check.Size = new System.Drawing.Size(15, 14);
+            this.DMS_SAMPLE_Check.TabIndex = 30;
+            this.DMS_SAMPLE_Check.UseVisualStyleBackColor = true;
+            // 
+            // DMS_Purpose_Check
+            // 
+            this.DMS_Purpose_Check.AutoSize = true;
+            this.DMS_Purpose_Check.Location = new System.Drawing.Point(367, 164);
+            this.DMS_Purpose_Check.Name = "DMS_Purpose_Check";
+            this.DMS_Purpose_Check.Size = new System.Drawing.Size(15, 14);
+            this.DMS_Purpose_Check.TabIndex = 31;
+            this.DMS_Purpose_Check.UseVisualStyleBackColor = true;
+            // 
+            // DMS_Out_NO_Check
+            // 
+            this.DMS_Out_NO_Check.AutoSize = true;
+            this.DMS_Out_NO_Check.Location = new System.Drawing.Point(367, 210);
+            this.DMS_Out_NO_Check.Name = "DMS_Out_NO_Check";
+            this.DMS_Out_NO_Check.Size = new System.Drawing.Size(15, 14);
+            this.DMS_Out_NO_Check.TabIndex = 32;
+            this.DMS_Out_NO_Check.UseVisualStyleBackColor = true;
+            // 
+            // DMS_Out_Item_Check
+            // 
+            this.DMS_Out_Item_Check.AutoSize = true;
+            this.DMS_Out_Item_Check.Location = new System.Drawing.Point(367, 248);
+            this.DMS_Out_Item_Check.Name = "DMS_Out_Item_Check";
+            this.DMS_Out_Item_Check.Size = new System.Drawing.Size(15, 14);
+            this.DMS_Out_Item_Check.TabIndex = 33;
+            this.DMS_Out_Item_Check.UseVisualStyleBackColor = true;
+            // 
+            // DMS_Order_Check
+            // 
+            this.DMS_Order_Check.AutoSize = true;
+            this.DMS_Order_Check.Location = new System.Drawing.Point(767, 22);
+            this.DMS_Order_Check.Name = "DMS_Order_Check";
+            this.DMS_Order_Check.Size = new System.Drawing.Size(15, 14);
+            this.DMS_Order_Check.TabIndex = 34;
+            this.DMS_Order_Check.UseVisualStyleBackColor = true;
+            // 
+            // DMS_Report_NO_Check
+            // 
+            this.DMS_Report_NO_Check.AutoSize = true;
+            this.DMS_Report_NO_Check.Location = new System.Drawing.Point(767, 57);
+            this.DMS_Report_NO_Check.Name = "DMS_Report_NO_Check";
+            this.DMS_Report_NO_Check.Size = new System.Drawing.Size(15, 14);
+            this.DMS_Report_NO_Check.TabIndex = 35;
+            this.DMS_Report_NO_Check.UseVisualStyleBackColor = true;
+            // 
+            // DMS_KEEP_NO_Check
+            // 
+            this.DMS_KEEP_NO_Check.AutoSize = true;
+            this.DMS_KEEP_NO_Check.Location = new System.Drawing.Point(767, 94);
+            this.DMS_KEEP_NO_Check.Name = "DMS_KEEP_NO_Check";
+            this.DMS_KEEP_NO_Check.Size = new System.Drawing.Size(15, 14);
+            this.DMS_KEEP_NO_Check.TabIndex = 36;
+            this.DMS_KEEP_NO_Check.UseVisualStyleBackColor = true;
+            // 
+            // DMS_Result_Check
+            // 
+            this.DMS_Result_Check.AutoSize = true;
+            this.DMS_Result_Check.Location = new System.Drawing.Point(767, 127);
+            this.DMS_Result_Check.Name = "DMS_Result_Check";
+            this.DMS_Result_Check.Size = new System.Drawing.Size(15, 14);
+            this.DMS_Result_Check.TabIndex = 37;
+            this.DMS_Result_Check.UseVisualStyleBackColor = true;
+            // 
+            // DMS_Result_DATE_Check
+            // 
+            this.DMS_Result_DATE_Check.AutoSize = true;
+            this.DMS_Result_DATE_Check.Location = new System.Drawing.Point(767, 164);
+            this.DMS_Result_DATE_Check.Name = "DMS_Result_DATE_Check";
+            this.DMS_Result_DATE_Check.Size = new System.Drawing.Size(15, 14);
+            this.DMS_Result_DATE_Check.TabIndex = 38;
+            this.DMS_Result_DATE_Check.UseVisualStyleBackColor = true;
+            // 
+            // DMS_Self_NO_Check
+            // 
+            this.DMS_Self_NO_Check.AutoSize = true;
+            this.DMS_Self_NO_Check.Location = new System.Drawing.Point(767, 211);
+            this.DMS_Self_NO_Check.Name = "DMS_Self_NO_Check";
+            this.DMS_Self_NO_Check.Size = new System.Drawing.Size(15, 14);
+            this.DMS_Self_NO_Check.TabIndex = 39;
+            this.DMS_Self_NO_Check.UseVisualStyleBackColor = true;
+            // 
+            // DMS_Self_Item_Check
+            // 
+            this.DMS_Self_Item_Check.AutoSize = true;
+            this.DMS_Self_Item_Check.Location = new System.Drawing.Point(767, 246);
+            this.DMS_Self_Item_Check.Name = "DMS_Self_Item_Check";
+            this.DMS_Self_Item_Check.Size = new System.Drawing.Size(15, 14);
+            this.DMS_Self_Item_Check.TabIndex = 40;
+            this.DMS_Self_Item_Check.UseVisualStyleBackColor = true;
+            // 
+            // DMS_ENT_Dent_Check
+            // 
+            this.DMS_ENT_Dent_Check.AutoSize = true;
+            this.DMS_ENT_Dent_Check.Location = new System.Drawing.Point(212, 363);
+            this.DMS_ENT_Dent_Check.Name = "DMS_ENT_Dent_Check";
+            this.DMS_ENT_Dent_Check.Size = new System.Drawing.Size(15, 14);
+            this.DMS_ENT_Dent_Check.TabIndex = 41;
+            this.DMS_ENT_Dent_Check.UseVisualStyleBackColor = true;
+            // 
+            // DMS_ENT_User_Check
+            // 
+            this.DMS_ENT_User_Check.AutoSize = true;
+            this.DMS_ENT_User_Check.Location = new System.Drawing.Point(427, 363);
+            this.DMS_ENT_User_Check.Name = "DMS_ENT_User_Check";
+            this.DMS_ENT_User_Check.Size = new System.Drawing.Size(15, 14);
+            this.DMS_ENT_User_Check.TabIndex = 42;
+            this.DMS_ENT_User_Check.UseVisualStyleBackColor = true;
+            // 
+            // DMS_Remark_Check
+            // 
+            this.DMS_Remark_Check.AutoSize = true;
+            this.DMS_Remark_Check.Location = new System.Drawing.Point(767, 308);
+            this.DMS_Remark_Check.Name = "DMS_Remark_Check";
+            this.DMS_Remark_Check.Size = new System.Drawing.Size(15, 14);
+            this.DMS_Remark_Check.TabIndex = 43;
+            this.DMS_Remark_Check.UseVisualStyleBackColor = true;
+            // 
+            // DMS_PReportDate_Check
+            // 
+            this.DMS_PReportDate_Check.AutoSize = true;
+            this.DMS_PReportDate_Check.Location = new System.Drawing.Point(767, 365);
+            this.DMS_PReportDate_Check.Name = "DMS_PReportDate_Check";
+            this.DMS_PReportDate_Check.Size = new System.Drawing.Size(15, 14);
+            this.DMS_PReportDate_Check.TabIndex = 44;
+            this.DMS_PReportDate_Check.UseVisualStyleBackColor = true;
+            // 
             // FileManager
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1186,15 +1398,8 @@
         private System.Windows.Forms.ToolStripButton DMS_儲存toolStripButton;
         private System.Windows.Forms.ToolStripButton DMS_取消toolStripButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
-        private System.Windows.Forms.TextBox DMS_Query_DOCNO;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Panel DMS_UP_Controls_panel;
         private System.Windows.Forms.ToolStripButton DMS_查詢toolStripButton;
-        private System.Windows.Forms.DateTimePicker dTP_Query_StartDate;
-        private System.Windows.Forms.DateTimePicker dTP_Query_EndDate;
-        private System.Windows.Forms.Label DMS_查詢條件;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ListBox DMS_FileUp;
         private System.Windows.Forms.Button DMS_File_UPbutton;
@@ -1250,5 +1455,31 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DMS_DGV1_Column16;
         private System.Windows.Forms.DataGridViewTextBoxColumn DMS_DGV1_Column17;
         private System.Windows.Forms.DataGridViewTextBoxColumn DMS_DGV1_Column18;
+        private System.Windows.Forms.Button DMS_Query_button;
+        private System.Windows.Forms.CheckBox DMS_Start_QQuery;
+        private System.Windows.Forms.DateTimePicker dTP_Query_EndDate;
+        private System.Windows.Forms.DateTimePicker dTP_Query_StartDate;
+        private System.Windows.Forms.TextBox DMS_Query_DOCNO;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.CheckBox DMS_DOC_NO_Check;
+        private System.Windows.Forms.CheckBox DMS_ENT_User_Check;
+        private System.Windows.Forms.CheckBox DMS_ENT_Dent_Check;
+        private System.Windows.Forms.CheckBox DMS_Self_Item_Check;
+        private System.Windows.Forms.CheckBox DMS_Self_NO_Check;
+        private System.Windows.Forms.CheckBox DMS_Result_DATE_Check;
+        private System.Windows.Forms.CheckBox DMS_Result_Check;
+        private System.Windows.Forms.CheckBox DMS_KEEP_NO_Check;
+        private System.Windows.Forms.CheckBox DMS_Report_NO_Check;
+        private System.Windows.Forms.CheckBox DMS_Order_Check;
+        private System.Windows.Forms.CheckBox DMS_Out_Item_Check;
+        private System.Windows.Forms.CheckBox DMS_Out_NO_Check;
+        private System.Windows.Forms.CheckBox DMS_Purpose_Check;
+        private System.Windows.Forms.CheckBox DMS_SAMPLE_Check;
+        private System.Windows.Forms.CheckBox DMS_BATCH_NO_Check;
+        private System.Windows.Forms.CheckBox DMS_DOC_DATE_Check;
+        private System.Windows.Forms.CheckBox DMS_PReportDate_Check;
+        private System.Windows.Forms.CheckBox DMS_Remark_Check;
     }
 }
