@@ -350,8 +350,9 @@ namespace DMS_ii
             else if (xx == DMS_查詢toolStripButton)
             {
                 Status_info.Visible = true;
-                Status_info.Text = "查詢";
+                Status_info.Text = "查詢";                
                 fun.Enabled_Panel(DMS_panel1);
+                fun.clearAir(DMS_panel1);
                 fun.EoD_Panel_CheckBOX(DMS_panel1, true);
                 fun.EoD_toolStripButton_Tab(DMS_toolStrip1, false);
                 DMS_儲存toolStripButton.Visible = false;
@@ -649,6 +650,14 @@ namespace DMS_ii
             {
                 QueryOLOD += @"and A.[RESULT_DATE] like N'" + tb_DMS_Result_DATE.Text + "%'";
             }
+            if (DMS_Remark_Check.Checked)     //備註
+            {
+                QueryOLOD += @"and A.[REMARK] like N'" + tb_DMS_Remark.Text + "%'";
+            }
+            if (DMS_PReportDate_Check.Checked)     //預計出報告日期
+            {
+                QueryOLOD += @"and A.[REPORT_DATE] = '" + dTP_DMS_PReportDate.Text + "'";
+            }
             if (DMS_Out_NO_Check.Checked)     //委外報告編號
             {
                 QueryOLOD += @"and B.[Out_NO] like N'" + tb_DMS_Out_NO.Text + "%'"; ;
@@ -657,7 +666,7 @@ namespace DMS_ii
             {
                 QueryOLOD += @"and B.[Out_Item] like N'" + tb_DMS_Out_Item.Text + "%'";
             }
-            if (DMS_Self_NO_Check.Checked)     //委外報告編號
+            if (DMS_Self_NO_Check.Checked)     //TAF實驗室報告編號
             {
                 QueryOLOD += @"and B.[Self_NO] like N'" + tb_DMS_Self_NO.Text + "%'";
             }
@@ -665,6 +674,7 @@ namespace DMS_ii
             {
                 QueryOLOD += @"and B.[Self_Item] like N'" + tb_DMS_Self_Item.Text + "%'";
             }
+            
             if (DMS_ENT_Dent_Check.Checked)     //委託單位
             {
                 QueryOLOD += @"and B.[ENT_DEPT] like N'" + tb_DMS_ENT_Dent.Text + "%'";
@@ -673,6 +683,8 @@ namespace DMS_ii
             {
                 QueryOLOD += @"and B.[ENT_USER] like N'" + tb_DMS_ENT_User.Text + "%'";
             }
+            
+
 
 
 
