@@ -549,6 +549,9 @@ namespace DMS_ii
             DMS_DGV1_Column16.DataPropertyName = "委外報告編號";
             DMS_DGV1_Column17.DataPropertyName = "自檢項目";
             DMS_DGV1_Column18.DataPropertyName = "TAF實驗室報告編號";
+            DMS_DGV1_Column19.DataPropertyName = "外檢價格";
+            DMS_DGV1_Column20.DataPropertyName = "自檢價格";
+
             DMS_DGV1_Column1.Frozen = true; //凍結窗格
             DMS_DGV1_Column2.Frozen = true; //凍結窗格
 
