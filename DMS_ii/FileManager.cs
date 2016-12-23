@@ -506,8 +506,10 @@ namespace DMS_ii
 
                 tb_DMS_Out_NO.Text = fun.ds_index.Tables[0].Rows[0]["委外報告編號"].ToString();
                 tb_DMS_Out_Item.Text = fun.ds_index.Tables[0].Rows[0]["外檢項目"].ToString();
+                tb_DMS_Out_Price.Text = fun.ds_index.Tables[0].Rows[0]["外檢價格"].ToString();
                 tb_DMS_Self_NO.Text = fun.ds_index.Tables[0].Rows[0]["TAF實驗室報告編號"].ToString();
                 tb_DMS_Self_Item.Text = fun.ds_index.Tables[0].Rows[0]["自檢項目"].ToString();
+                tb_DMS_Self_Price.Text = fun.ds_index.Tables[0].Rows[0]["自檢價格"].ToString();
 
                 //string DOC_DATE = fun.ds_index.Tables[0].Rows[0]["委託日期"].ToString();
                 //dTP_DMS_DOC_DATE.Text = DOC_DATE.Substring(0, 4) + "/" + DOC_DATE.Substring(4, 2) + "/" + DOC_DATE.Substring(6, 2);
@@ -582,9 +584,7 @@ namespace DMS_ii
                 Get_DGV_Value_3 = DMS_dataGridView2.SelectedRows[0].Cells[2].Value.ToString();  //檔名
                 fun.Check_error = false;
                 string Del_File = FileStorage_Location + "\\" + Get_DGV_Value_3;
-                fun.DMS_File_Del(Del_File);
-                                 
-
+                fun.DMS_File_Del(Del_File); 
                 #endregion
 
                 #region DB-刪除資料
@@ -677,13 +677,21 @@ namespace DMS_ii
             {
                 QueryOLOD += @"and B.[Out_Item] like N'%" + tb_DMS_Out_Item.Text + "%'";
             }
-            if (tb_DMS_Order.Text != "")     //TAF實驗室報告編號
+            if (tb_DMS_Out_Price.Text != "")     //外檢價格
+            {
+                QueryOLOD += @"and B.[Out_Price] ='" + tb_DMS_Out_Price.Text + "'";
+            }
+            if (tb_DMS_Self_NO.Text != "")     //TAF實驗室報告編號
             {
                 QueryOLOD += @"and B.[Self_NO] like N'%" + tb_DMS_Self_NO.Text + "%'";
             }
             if (tb_DMS_Self_Item.Text != "")     //自檢項目
             {
                 QueryOLOD += @"and B.[Self_Item] like N'%" + tb_DMS_Self_Item.Text + "%'";
+            }
+            if (tb_DMS_Self_Price.Text != "")     //自檢價格
+            {
+                QueryOLOD += @"and B.[Self_Price] = '" + tb_DMS_Self_Price.Text + "'";
             }
 
             if (tb_DMS_ENT_Dent.Text != "")     //委託單位
@@ -867,7 +875,7 @@ namespace DMS_ii
                 QueryEndDate = dTP_Query_EndDate.Text;
                 DMS_tabControl1.SelectedIndex = 0;
                 GetSQL("查詢", null);
-                QueryCheckBox();       //設定QueryOLOD的值
+                QueryCheckBox();       //設定QueryOLOD的值 =>查詢條件
                 fun.xxx_DB(Query_DB + QueryOLOD, DMS_dataGridView1);
                 start_status(DMS_Query_button);         //啟動狀態
             }
