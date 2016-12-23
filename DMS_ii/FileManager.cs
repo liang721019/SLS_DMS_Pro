@@ -357,8 +357,7 @@ namespace DMS_ii
                 DMS_儲存toolStripButton.Enabled = false;
                 DMS_取消toolStripButton.Enabled = true;
                 DMS_Query_button.Enabled = true;
-                DMS_QueryClear_button.Enabled = true;
-                dTP_DMS_DOC_DATE.Enabled = false;
+                DMS_QueryClear_button.Enabled = true;                
                 dTP_DMS_PReportDate.Enabled = false;
                 tb_DMS_DOC_NO.Focus();
                 DMS_tabControl1.SelectedIndex = 0;
