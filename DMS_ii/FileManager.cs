@@ -299,6 +299,9 @@ namespace DMS_ii
             DMS_MAC_Value.Visible = false;      //MAC值不顯示
             DMS_IP_Value.Visible = false;       //IP位置不顯示            
             fun.EoD_Panel_All(DMS_UP_Controls_panel, false);
+            CLBox_list();
+
+            
         }
 
         public void start_status(ToolStripButton xx)        //啟動狀態
@@ -744,6 +747,38 @@ namespace DMS_ii
             }
 
         }
+
+        public void DMS_CLBox_Get()
+        {            
+            string ssaa = "";           
+            for (int i = 0; i < DMS_送樣目的_CLBox.Items.Count; i++)
+            {
+                try
+                {
+                    if (DMS_送樣目的_CLBox.GetItemChecked(i))
+                    {
+                        ssaa += DMS_送樣目的_CLBox.Items[i].ToString();
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("資料庫連線有問題", "警告!!");
+                }
+            }
+
+            MessageBox.Show(ssaa, "DMS");
+        }
+
+        public void CLBox_list()        //
+        {
+            fun.Query_DB = @"SELECT [SN_NAME]  FROM [TEST_SLSYHI].[dbo].[SLS_DMS_ii_SN] where [SN_ID] = '送樣目的'";
+            fun.ProductDB_ds(fun.Query_DB);            
+            for (int i = 0; i < fun.ds_index.Tables[0].Rows.Count; i++)
+            {
+                DMS_送樣目的_CLBox.Items.Add(fun.ds_index.Tables[0].Rows[i]["SN_NAME"].ToString());
+            }
+            
+        }
         
         //================================================================================================
         #endregion
@@ -1022,7 +1057,7 @@ namespace DMS_ii
             {
                 if (e.RowIndex >= 0)
                 {
-                    if (Status_info.Text != "查詢")
+                    if (Status_info.Text == "")
                     {
                         string s_ID = DMS_dataGridView1.CurrentRow.Cells[0].Value.ToString();
                         QueryStartDate = DMS_dataGridView1.CurrentRow.Cells[1].Value.ToString();
@@ -1151,6 +1186,18 @@ namespace DMS_ii
                 label15.Visible = true;
                 dTP_Query_EndDate.Visible = true;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+
+            //foreach( string item in CheckedListBox.CheckedItemCollection checkedListBox.CheckedItems )
+            //{
+            //MessageBox.Show( item );
+            //}                
+            //checkedListBox1.SetItemChecked(i, true);
+            
         }
 
         
