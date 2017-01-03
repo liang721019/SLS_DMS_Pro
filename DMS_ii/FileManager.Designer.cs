@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FileManager));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DMS_panel2 = new System.Windows.Forms.Panel();
             this.bt_DMS_Update = new System.Windows.Forms.Button();
             this.DMS_Clear_FileUP_button = new System.Windows.Forms.Button();
@@ -144,12 +144,6 @@
             this.label23 = new System.Windows.Forms.Label();
             this.tb_DMS_Out_Price = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.DMS_送樣目的_CLBox = new System.Windows.Forms.CheckedListBox();
-            this.DMS_panel3 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.DMS_內容tabControl = new System.Windows.Forms.TabControl();
-            this.DMS_送樣目的_tabPage1 = new System.Windows.Forms.TabPage();
-            this.DMS_外檢項目_tabPage2 = new System.Windows.Forms.TabPage();
             this.DMS_panel2.SuspendLayout();
             this.DMS_toolStrip1.SuspendLayout();
             this.DMS_tabControl1.SuspendLayout();
@@ -161,9 +155,6 @@
             this.DMS_UP_Controls_panel.SuspendLayout();
             this.DMS_DGV2_contextMenuStrip.SuspendLayout();
             this.DMS_panel1.SuspendLayout();
-            this.DMS_panel3.SuspendLayout();
-            this.DMS_內容tabControl.SuspendLayout();
-            this.DMS_送樣目的_tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // DMS_panel2
@@ -174,14 +165,14 @@
             this.DMS_panel2.Controls.Add(this.label16);
             this.DMS_panel2.Controls.Add(this.DMS_FileUp);
             this.DMS_panel2.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.DMS_panel2.Location = new System.Drawing.Point(1099, 304);
+            this.DMS_panel2.Location = new System.Drawing.Point(1099, 73);
             this.DMS_panel2.Name = "DMS_panel2";
-            this.DMS_panel2.Size = new System.Drawing.Size(392, 166);
+            this.DMS_panel2.Size = new System.Drawing.Size(392, 251);
             this.DMS_panel2.TabIndex = 1;
             // 
             // bt_DMS_Update
             // 
-            this.bt_DMS_Update.Location = new System.Drawing.Point(284, 104);
+            this.bt_DMS_Update.Location = new System.Drawing.Point(301, 104);
             this.bt_DMS_Update.Name = "bt_DMS_Update";
             this.bt_DMS_Update.Size = new System.Drawing.Size(84, 29);
             this.bt_DMS_Update.TabIndex = 4;
@@ -191,7 +182,7 @@
             // 
             // DMS_Clear_FileUP_button
             // 
-            this.DMS_Clear_FileUP_button.Location = new System.Drawing.Point(284, 66);
+            this.DMS_Clear_FileUP_button.Location = new System.Drawing.Point(301, 66);
             this.DMS_Clear_FileUP_button.Name = "DMS_Clear_FileUP_button";
             this.DMS_Clear_FileUP_button.Size = new System.Drawing.Size(84, 29);
             this.DMS_Clear_FileUP_button.TabIndex = 3;
@@ -201,7 +192,7 @@
             // 
             // DMS_File_UPbutton
             // 
-            this.DMS_File_UPbutton.Location = new System.Drawing.Point(284, 30);
+            this.DMS_File_UPbutton.Location = new System.Drawing.Point(301, 30);
             this.DMS_File_UPbutton.Name = "DMS_File_UPbutton";
             this.DMS_File_UPbutton.Size = new System.Drawing.Size(84, 29);
             this.DMS_File_UPbutton.TabIndex = 2;
@@ -227,7 +218,7 @@
             this.DMS_FileUp.Location = new System.Drawing.Point(3, 30);
             this.DMS_FileUp.MultiColumn = true;
             this.DMS_FileUp.Name = "DMS_FileUp";
-            this.DMS_FileUp.Size = new System.Drawing.Size(275, 124);
+            this.DMS_FileUp.Size = new System.Drawing.Size(275, 204);
             this.DMS_FileUp.TabIndex = 0;
             this.DMS_FileUp.DragDrop += new System.Windows.Forms.DragEventHandler(this.DMS_FileUp_DragDrop);
             this.DMS_FileUp.DragEnter += new System.Windows.Forms.DragEventHandler(this.DMS_FileUp_DragEnter);
@@ -368,8 +359,8 @@
             // 
             this.DMS_dataGridView1.AllowUserToAddRows = false;
             this.DMS_dataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.DMS_dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.DMS_dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DMS_dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -398,8 +389,8 @@
             this.DMS_dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.DMS_dataGridView1.Name = "DMS_dataGridView1";
             this.DMS_dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.DMS_dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.DMS_dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.DMS_dataGridView1.RowTemplate.Height = 24;
             this.DMS_dataGridView1.Size = new System.Drawing.Size(1465, 348);
             this.DMS_dataGridView1.TabIndex = 0;
@@ -556,8 +547,8 @@
             // 
             this.DMS_dataGridView2.AllowUserToAddRows = false;
             this.DMS_dataGridView2.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.DMS_dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.DMS_dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.DMS_dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DMS_dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DMS_DGV2_Column1,
@@ -570,8 +561,8 @@
             this.DMS_dataGridView2.Location = new System.Drawing.Point(3, 3);
             this.DMS_dataGridView2.Name = "DMS_dataGridView2";
             this.DMS_dataGridView2.ReadOnly = true;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.DMS_dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.DMS_dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.DMS_dataGridView2.RowTemplate.Height = 24;
             this.DMS_dataGridView2.Size = new System.Drawing.Size(1465, 348);
             this.DMS_dataGridView2.TabIndex = 0;
@@ -1178,73 +1169,11 @@
             this.label14.TabIndex = 27;
             this.label14.Text = "外檢價格:";
             // 
-            // DMS_送樣目的_CLBox
-            // 
-            this.DMS_送樣目的_CLBox.FormattingEnabled = true;
-            this.DMS_送樣目的_CLBox.Location = new System.Drawing.Point(3, 5);
-            this.DMS_送樣目的_CLBox.Name = "DMS_送樣目的_CLBox";
-            this.DMS_送樣目的_CLBox.Size = new System.Drawing.Size(216, 148);
-            this.DMS_送樣目的_CLBox.TabIndex = 113;
-            // 
-            // DMS_panel3
-            // 
-            this.DMS_panel3.Controls.Add(this.DMS_內容tabControl);
-            this.DMS_panel3.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.DMS_panel3.Location = new System.Drawing.Point(1099, 73);
-            this.DMS_panel3.Name = "DMS_panel3";
-            this.DMS_panel3.Size = new System.Drawing.Size(392, 201);
-            this.DMS_panel3.TabIndex = 114;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(228, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(84, 28);
-            this.button1.TabIndex = 114;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // DMS_內容tabControl
-            // 
-            this.DMS_內容tabControl.Controls.Add(this.DMS_送樣目的_tabPage1);
-            this.DMS_內容tabControl.Controls.Add(this.DMS_外檢項目_tabPage2);
-            this.DMS_內容tabControl.Location = new System.Drawing.Point(7, 6);
-            this.DMS_內容tabControl.Name = "DMS_內容tabControl";
-            this.DMS_內容tabControl.SelectedIndex = 0;
-            this.DMS_內容tabControl.Size = new System.Drawing.Size(378, 192);
-            this.DMS_內容tabControl.TabIndex = 0;
-            // 
-            // DMS_送樣目的_tabPage1
-            // 
-            this.DMS_送樣目的_tabPage1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.DMS_送樣目的_tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.DMS_送樣目的_tabPage1.Controls.Add(this.button1);
-            this.DMS_送樣目的_tabPage1.Controls.Add(this.DMS_送樣目的_CLBox);
-            this.DMS_送樣目的_tabPage1.Location = new System.Drawing.Point(4, 29);
-            this.DMS_送樣目的_tabPage1.Name = "DMS_送樣目的_tabPage1";
-            this.DMS_送樣目的_tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.DMS_送樣目的_tabPage1.Size = new System.Drawing.Size(370, 159);
-            this.DMS_送樣目的_tabPage1.TabIndex = 0;
-            this.DMS_送樣目的_tabPage1.Text = "送樣目的";
-            // 
-            // DMS_外檢項目_tabPage2
-            // 
-            this.DMS_外檢項目_tabPage2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.DMS_外檢項目_tabPage2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.DMS_外檢項目_tabPage2.Location = new System.Drawing.Point(4, 29);
-            this.DMS_外檢項目_tabPage2.Name = "DMS_外檢項目_tabPage2";
-            this.DMS_外檢項目_tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.DMS_外檢項目_tabPage2.Size = new System.Drawing.Size(370, 159);
-            this.DMS_外檢項目_tabPage2.TabIndex = 1;
-            this.DMS_外檢項目_tabPage2.Text = "外檢項目";
-            // 
             // FileManager
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(1506, 905);
-            this.Controls.Add(this.DMS_panel3);
             this.Controls.Add(this.DMS_panel1);
             this.Controls.Add(this.DMS_UP_Controls_panel);
             this.Controls.Add(this.Status_info);
@@ -1273,9 +1202,6 @@
             this.DMS_DGV2_contextMenuStrip.ResumeLayout(false);
             this.DMS_panel1.ResumeLayout(false);
             this.DMS_panel1.PerformLayout();
-            this.DMS_panel3.ResumeLayout(false);
-            this.DMS_內容tabControl.ResumeLayout(false);
-            this.DMS_送樣目的_tabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1393,11 +1319,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DMS_DGV1_Column18;
         private System.Windows.Forms.DataGridViewTextBoxColumn DMS_DGV1_Column19;
         private System.Windows.Forms.DataGridViewTextBoxColumn DMS_DGV1_Column20;
-        private System.Windows.Forms.CheckedListBox DMS_送樣目的_CLBox;
-        private System.Windows.Forms.Panel DMS_panel3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TabControl DMS_內容tabControl;
-        private System.Windows.Forms.TabPage DMS_送樣目的_tabPage1;
-        private System.Windows.Forms.TabPage DMS_外檢項目_tabPage2;
     }
 }

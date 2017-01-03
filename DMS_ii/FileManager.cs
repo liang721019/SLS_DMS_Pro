@@ -298,8 +298,7 @@ namespace DMS_ii
             DMS_MACLable.Visible = false;       //MAC_Lable不顯示
             DMS_MAC_Value.Visible = false;      //MAC值不顯示
             DMS_IP_Value.Visible = false;       //IP位置不顯示            
-            fun.EoD_Panel_All(DMS_UP_Controls_panel, false);
-            CLBox_list();
+            fun.EoD_Panel_All(DMS_UP_Controls_panel, false);            
 
             
         }
@@ -768,17 +767,6 @@ namespace DMS_ii
 
             MessageBox.Show(ssaa, "DMS");
         }
-
-        public void CLBox_list()        //
-        {
-            fun.Query_DB = @"SELECT [SN_NAME]  FROM [TEST_SLSYHI].[dbo].[SLS_DMS_ii_SN] where [SN_ID] = '送樣目的'";
-            fun.ProductDB_ds(fun.Query_DB);            
-            for (int i = 0; i < fun.ds_index.Tables[0].Rows.Count; i++)
-            {
-                DMS_送樣目的_CLBox.Items.Add(fun.ds_index.Tables[0].Rows[i]["SN_NAME"].ToString());
-            }
-            
-        }
         
         //================================================================================================
         #endregion
@@ -1190,7 +1178,19 @@ namespace DMS_ii
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            tb_DMS_Out_Item.Text = "";
+            for(int x=0;x<DMS_送樣目的_CLBox.Items.Count; x++)
+            {
+                if (DMS_送樣目的_CLBox.GetItemChecked(x))
+                {
+                    //tb_DMS_Purpose.Text += DMS_送樣目的_CLBox.GetItemText(DMS_送樣目的_CLBox.Items[x]);
+                    tb_DMS_Out_Item.Text += DMS_送樣目的_CLBox.Items[x].ToString()+" ";
+
+                }
+
+            }
+            //DMS_送樣目的_CLBox.SetItemChecked(i, true);
+            //DMS_送樣目的_CLBox
 
             //foreach( string item in CheckedListBox.CheckedItemCollection checkedListBox.CheckedItems )
             //{

@@ -44,8 +44,6 @@ namespace DMS_ii
             DMS_LoginMOD_ServerCB.Items.Add("PRD");
             DMS_LoginMOD_ServerCB.Items.Add("QAS");
             DMS_LoginMOD_ServerCB.Items.Add("DEV");
-
-
         }
 
         private void DMS_Login_Button_Click(object sender, EventArgs e)     //登入
