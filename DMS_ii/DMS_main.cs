@@ -34,9 +34,7 @@ namespace DMS_ii
 
         private void 需求單查詢ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AESManager FM = new AESManager();
-            FM.MdiParent = this;
-            FM.Show();
+            
             
         }
     }

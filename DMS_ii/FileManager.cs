@@ -747,26 +747,7 @@ namespace DMS_ii
 
         }
 
-        public void DMS_CLBox_Get()
-        {            
-            string ssaa = "";           
-            for (int i = 0; i < DMS_送樣目的_CLBox.Items.Count; i++)
-            {
-                try
-                {
-                    if (DMS_送樣目的_CLBox.GetItemChecked(i))
-                    {
-                        ssaa += DMS_送樣目的_CLBox.Items[i].ToString();
-                    }
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("資料庫連線有問題", "警告!!");
-                }
-            }
-
-            MessageBox.Show(ssaa, "DMS");
-        }
+       
         
         //================================================================================================
         #endregion
@@ -775,9 +756,7 @@ namespace DMS_ii
         {             
             default_status();
             fun.ReMAC(DMS_MAC_Value, DMS_IP_Value);
-            QueryComboBox();         //查詢工具列的ComboBox選項  
-            //DMS_panel1.Visible = false;
-            //SYS_Status_Key();
+            QueryComboBox();         //查詢工具列的ComboBox選項            
         }
         
         #region Button
@@ -1176,29 +1155,7 @@ namespace DMS_ii
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            tb_DMS_Out_Item.Text = "";
-            for(int x=0;x<DMS_送樣目的_CLBox.Items.Count; x++)
-            {
-                if (DMS_送樣目的_CLBox.GetItemChecked(x))
-                {
-                    //tb_DMS_Purpose.Text += DMS_送樣目的_CLBox.GetItemText(DMS_送樣目的_CLBox.Items[x]);
-                    tb_DMS_Out_Item.Text += DMS_送樣目的_CLBox.Items[x].ToString()+" ";
-
-                }
-
-            }
-            //DMS_送樣目的_CLBox.SetItemChecked(i, true);
-            //DMS_送樣目的_CLBox
-
-            //foreach( string item in CheckedListBox.CheckedItemCollection checkedListBox.CheckedItems )
-            //{
-            //MessageBox.Show( item );
-            //}                
-            //checkedListBox1.SetItemChecked(i, true);
-            
-        }
+        
 
         
         

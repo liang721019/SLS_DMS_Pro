@@ -81,23 +81,11 @@
     <Compile Include="DMS_main.Designer.cs">
       <DependentUpon>DMS_main.cs</DependentUpon>
     </Compile>
-    <Compile Include="AESManager.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AESManager.Designer.cs">
-      <DependentUpon>AESManager.cs</DependentUpon>
-    </Compile>
     <Compile Include="FileManager.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FileManager.Designer.cs">
       <DependentUpon>FileManager.cs</DependentUpon>
-    </Compile>
-    <Compile Include="init_index.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="init_index.Designer.cs">
-      <DependentUpon>init_index.cs</DependentUpon>
     </Compile>
     <Compile Include="Login_main.cs">
       <SubType>Form</SubType>
@@ -110,14 +98,8 @@
     <EmbeddedResource Include="DMS_main.resx">
       <DependentUpon>DMS_main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AESManager.resx">
-      <DependentUpon>AESManager.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FileManager.resx">
       <DependentUpon>FileManager.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="init_index.resx">
-      <DependentUpon>init_index.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login_main.resx">
       <DependentUpon>Login_main.cs</DependentUpon>
