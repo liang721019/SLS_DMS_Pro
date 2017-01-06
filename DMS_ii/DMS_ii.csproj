@@ -75,6 +75,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="binx\TextPJ_int.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="binx\TextPJ_int.Designer.cs">
+      <DependentUpon>TextPJ_int.cs</DependentUpon>
+    </Compile>
+    <Compile Include="binx\TextPJ_out.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="binx\TextPJ_out.Designer.cs">
+      <DependentUpon>TextPJ_out.cs</DependentUpon>
+    </Compile>
     <Compile Include="DMS_main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +107,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="binx\TextPJ_int.resx">
+      <DependentUpon>TextPJ_int.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="binx\TextPJ_out.resx">
+      <DependentUpon>TextPJ_out.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DMS_main.resx">
       <DependentUpon>DMS_main.cs</DependentUpon>
     </EmbeddedResource>

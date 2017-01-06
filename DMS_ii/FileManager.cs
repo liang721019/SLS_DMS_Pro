@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using function.lib;
 using System.IO;
+using DMS_ii.binx;
+
 
 namespace DMS_ii
 {
@@ -24,6 +26,12 @@ namespace DMS_ii
         #region 變數
 
         public string Query_DB      //SQL語法變數
+        {
+            set;
+            get;
+        }
+
+        public string TxPJ_Query_DB      //SQL語法變數
         {
             set;
             get;
@@ -137,6 +145,8 @@ namespace DMS_ii
         }
 
         
+
+        
         #endregion
 
         #region 方法
@@ -164,10 +174,10 @@ namespace DMS_ii
                                     @"','" + dTP_DMS_PReportDate.Text +       //預計出報告日期
                                     @"','" + tb_DMS_Remark.Text.Trim() +               //備註                                    
                                     @"','" + DMS_UID_Value.Text +        //建立者ID
-                                    @"','" + tb_DMS_Out_Item.Text.Trim() +        //外檢項目
+                                    //@"','" + tb_DMS_Out_Item.Text.Trim() +        //外檢項目
                                     @"','" + tb_DMS_Out_NO.Text.Trim() +        //委外報告編號                                       
                                     @"','" + tb_DMS_Out_Price.Text.Trim() +        //外檢價格
-                                    @"','" + tb_DMS_Self_Item.Text.Trim() +        //自檢項目
+                                    //@"','" + tb_DMS_Self_Item.Text.Trim() +        //自檢項目
                                     @"','" + tb_DMS_Self_NO.Text.Trim() +        //TAF實驗室報告編號                                    
                                     @"','" + tb_DMS_Self_Price.Text.Trim() +        //自檢價格
                                     @"'";
@@ -193,10 +203,10 @@ namespace DMS_ii
                                     @"','" + dTP_DMS_PReportDate.Text +       //預計出報告日期
                                     @"','" + tb_DMS_Remark.Text.Trim() +               //備註                                    
                                     @"','" + DMS_UID_Value.Text +        //建立者ID
-                                    @"','" + tb_DMS_Out_Item.Text.Trim() +        //外檢項目 
+                                    //@"','" + tb_DMS_Out_Item.Text.Trim() +        //外檢項目 
                                     @"','" + tb_DMS_Out_NO.Text.Trim() +        //委外報告編號
                                     @"','" + tb_DMS_Out_Price.Text.Trim() +        //外檢價格
-                                    @"','" + tb_DMS_Self_Item.Text.Trim() +        //自檢項目
+                                    //@"','" + tb_DMS_Self_Item.Text.Trim() +        //自檢項目
                                     @"','" + tb_DMS_Self_NO.Text.Trim() +        //TAF實驗室報告編號  
                                     @"','" + tb_DMS_Self_Price.Text.Trim() +        //自檢價格
                                     @"'";
@@ -222,6 +232,8 @@ namespace DMS_ii
                                     @"','" + QueryEndDate +        //查詢結束日期
                                     @"','" + QuickQueryType +
                                     @"','" + rr + "'";       //委託單編號
+                        ////TxPJ_Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_DMS_QuickQuery]"+
+                        //                @"'" + rr + "'";       //委託單編號;
 
                         break;
                         #endregion
@@ -242,11 +254,9 @@ namespace DMS_ii
 			                                ,A.[RESULT]		AS 審查結果判定
 			                                ,A.[RESULT_DATE]	AS 審查結果日期
 			                                ,A.[REPORT_DATE]	AS 預計出報告日期
-			                                ,A.[REMARK]			AS 備註
-			                                ,B.[Out_Item]		AS 外檢項目
+			                                ,A.[REMARK]			AS 備註			                                
 			                                ,B.[Out_NO]			AS 委外報告編號
-                                            ,B.[Out_Price]		AS 外檢價格
-			                                ,B.[Self_Item]		AS 自檢項目
+                                            ,B.[Out_Price]		AS 外檢價格			                                
 			                                ,B.[Self_NO]		AS TAF實驗室報告編號
                                             ,B.[Self_Price]		AS 自檢價格
 	                                FROM [TEST_SLSYHI].[dbo].[SLS_DMS_ii]	AS A
@@ -312,6 +322,8 @@ namespace DMS_ii
                 fun.clearAir(DMS_panel1);
                 fun.Enabled_Panel(DMS_panel1);                
                 fun.EoD_toolStripButton_Tab(DMS_toolStrip1, false);
+                tb_DMS_Out_Item.ReadOnly = true;
+                tb_DMS_Self_Item.ReadOnly = true;
                 tb_DMS_DOC_NO.Enabled = false;
                 DMS_儲存toolStripButton.Visible = true;
                 DMS_取消toolStripButton.Visible = true;
@@ -326,6 +338,8 @@ namespace DMS_ii
                 Status_info.Text = "修改";
                 fun.Enabled_Panel(DMS_panel1);
                 fun.EoD_toolStripButton_Tab(DMS_toolStrip1, false);
+                tb_DMS_Out_Item.ReadOnly = true;
+                tb_DMS_Self_Item.ReadOnly = true;
                 tb_DMS_DOC_NO.Enabled = false;
                 DMS_儲存toolStripButton.Visible = true;
                 DMS_取消toolStripButton.Visible = true;
@@ -368,7 +382,7 @@ namespace DMS_ii
             
             else if (xx == DMS_儲存toolStripButton)
             {
-
+                Status_info.Text = "";
                 Status_info.Visible = false;
                 fun.clearAir(DMS_panel1);
                 fun.Disabled_Panel(DMS_panel1);
@@ -489,7 +503,6 @@ namespace DMS_ii
             try
             {
                 #region 內容
-                fun.Check_error = true;
                 tb_DMS_DOC_NO.Text = fun.ds_index.Tables[0].Rows[0]["委託單編號"].ToString();                
                 dTP_DMS_DOC_DATE.Text = fun.ds_index.Tables[0].Rows[0]["委託日期"].ToString();
                 tb_DMS_SAMPLE.Text = fun.ds_index.Tables[0].Rows[0]["樣品名稱"].ToString();
@@ -504,21 +517,33 @@ namespace DMS_ii
                 tb_DMS_Result_DATE.Text = fun.ds_index.Tables[0].Rows[0]["審查結果日期"].ToString();
                 dTP_DMS_PReportDate.Text = fun.ds_index.Tables[0].Rows[0]["預計出報告日期"].ToString();
                 tb_DMS_Remark.Text = fun.ds_index.Tables[0].Rows[0]["備註"].ToString();
-
                 tb_DMS_Out_NO.Text = fun.ds_index.Tables[0].Rows[0]["委外報告編號"].ToString();
-                tb_DMS_Out_Item.Text = fun.ds_index.Tables[0].Rows[0]["外檢項目"].ToString();
+                //tb_DMS_Out_Item.Text = fun.ds_index.Tables[0].Rows[0]["外檢項目"].ToString();
                 tb_DMS_Out_Price.Text = fun.ds_index.Tables[0].Rows[0]["外檢價格"].ToString();
                 tb_DMS_Self_NO.Text = fun.ds_index.Tables[0].Rows[0]["TAF實驗室報告編號"].ToString();
-                tb_DMS_Self_Item.Text = fun.ds_index.Tables[0].Rows[0]["自檢項目"].ToString();
+                //tb_DMS_Self_Item.Text = fun.ds_index.Tables[0].Rows[0]["自檢項目"].ToString();
                 tb_DMS_Self_Price.Text = fun.ds_index.Tables[0].Rows[0]["自檢價格"].ToString();
+                
+                  
 
-                //string DOC_DATE = fun.ds_index.Tables[0].Rows[0]["委託日期"].ToString();
-                //dTP_DMS_DOC_DATE.Text = DOC_DATE.Substring(0, 4) + "/" + DOC_DATE.Substring(4, 2) + "/" + DOC_DATE.Substring(6, 2);
-                //string PReportDate = fun.ds_index.Tables[0].Rows[0]["預計出報告日期"].ToString();
-                //dTP_DMS_PReportDate.Text = PReportDate.Substring(0, 4) + "/" + PReportDate.Substring(4, 2) + "/" + PReportDate.Substring(6, 2);
-                //string ReportDate = fun.ds_index.Tables[0].Rows[0]["出報告日期"].ToString();                
-                //tb_DMS_ENT_User.Text = fun.ds_index.Tables[0].Rows[0]["申請人"].ToString();  
+                #endregion
+            }
+            catch (Exception z)
+            {
+                fun.Check_error = true;
+                System.Windows.Forms.MessageBox.Show(z.Message);
+            }
 
+        }
+
+        public void TxPJ_sub_()     //TestBOX與DB欄位的對應-檢驗項目
+        {
+            try
+            {
+                #region 內容
+                tb_DMS_Out_Item.Text = fun.All_TxPJ_NO;
+                //tb_DMS_Out_Item.Text = fun.ds_index.Tables[0].Rows[0]["外檢項目"].ToString();                
+                //tb_DMS_Self_Item.Text = fun.ds_index.Tables[0].Rows[0]["自檢項目"].ToString();
                 #endregion
             }
             catch (Exception z)
@@ -546,9 +571,9 @@ namespace DMS_ii
             DMS_DGV1_Column12.DataPropertyName = "審查結果日期";
             DMS_DGV1_Column13.DataPropertyName = "預計出報告日期";
             DMS_DGV1_Column14.DataPropertyName = "備註";
-            DMS_DGV1_Column15.DataPropertyName = "外檢項目";
+            //DMS_DGV1_Column15.DataPropertyName = "外檢項目";
             DMS_DGV1_Column16.DataPropertyName = "委外報告編號";
-            DMS_DGV1_Column17.DataPropertyName = "自檢項目";
+            //DMS_DGV1_Column17.DataPropertyName = "自檢項目";
             DMS_DGV1_Column18.DataPropertyName = "TAF實驗室報告編號";
             DMS_DGV1_Column19.DataPropertyName = "外檢價格";
             DMS_DGV1_Column20.DataPropertyName = "自檢價格";
@@ -603,12 +628,8 @@ namespace DMS_ii
                 if (fun.Check_error == false)
                 {
                     MessageBox.Show("已成功《刪除》資料", "DMS");
-
                 }
-            }            
-
-            
-
+            }
         }
 
         public void OpenFile(string x)          //打開檔案
@@ -677,10 +698,10 @@ namespace DMS_ii
             {
                 QueryOLOD += @"and B.[Out_NO] like N'%" + tb_DMS_Out_NO.Text + "%'"; ;
             }
-            if (tb_DMS_Out_Item.Text != "")     //外檢項目
-            {
-                QueryOLOD += @"and B.[Out_Item] like N'%" + tb_DMS_Out_Item.Text + "%'";
-            }
+            //if (tb_DMS_Out_Item.Text != "")     //外檢項目
+            //{
+            //    QueryOLOD += @"and B.[Out_Item] like N'%" + tb_DMS_Out_Item.Text + "%'";
+            //}
             if (tb_DMS_Out_Price.Text != "")     //外檢價格
             {
                 QueryOLOD += @"and B.[Out_Price] ='" + tb_DMS_Out_Price.Text + "'";
@@ -689,10 +710,10 @@ namespace DMS_ii
             {
                 QueryOLOD += @"and B.[Self_NO] like N'%" + tb_DMS_Self_NO.Text + "%'";
             }
-            if (tb_DMS_Self_Item.Text != "")     //自檢項目
-            {
-                QueryOLOD += @"and B.[Self_Item] like N'%" + tb_DMS_Self_Item.Text + "%'";
-            }
+            //if (tb_DMS_Self_Item.Text != "")     //自檢項目
+            //{
+            //    QueryOLOD += @"and B.[Self_Item] like N'%" + tb_DMS_Self_Item.Text + "%'";
+            //}
             if (tb_DMS_Self_Price.Text != "")     //自檢價格
             {
                 QueryOLOD += @"and B.[Self_Price] = '" + tb_DMS_Self_Price.Text + "'";
@@ -747,6 +768,10 @@ namespace DMS_ii
 
         }
 
+        public void DMS_TxPJ_GetValue(string x )        //取得TextPJ的值
+        {
+            tb_DMS_Out_Item.Text = x;
+        }
        
         
         //================================================================================================
@@ -808,7 +833,12 @@ namespace DMS_ii
                 if (MessageBox.Show("確定要新增？", "警告!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     GetSQL("新增", null);
-                    fun.DMS_insert(Query_DB, "資料《新增》成功!!", "DMS");
+                    fun.DMS_insert(Query_DB);
+                    if (fun.Check_error == false)
+                    {
+                        MessageBox.Show("資料《新增》成功!!", "DMS");
+                    }
+
                 }
                 #endregion
 
@@ -820,6 +850,7 @@ namespace DMS_ii
                 {
                     if (MessageBox.Show("確定要修改？", "警告!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
+                        fun.Check_error = false;
                         GetSQL("修改", null);
                         mBox = "資料《修改》成功!!";
                         FText = "DMS";
@@ -1029,13 +1060,14 @@ namespace DMS_ii
                         string s_ID = DMS_dataGridView1.CurrentRow.Cells[0].Value.ToString();
                         QueryStartDate = DMS_dataGridView1.CurrentRow.Cells[1].Value.ToString();
                         QueryEndDate = DMS_dataGridView1.CurrentRow.Cells[1].Value.ToString();
+
                         QuickQueryType = "C";
-
-                        GetSQL("左鍵查詢", s_ID);    //語法丟進fun.Query_DB                    
+                        fun.All_DOCNO_TxPJ = s_ID;
+                        GetSQL("左鍵查詢", s_ID);    //語法丟進fun.Query_DB
                         fun.ProductDB_ds(Query_DB);         //連接DB-執行DB指令
-                        //DGV2_SetColumns();          //自定顯示欄位
                         sub_();
-
+                        fun.TxPJ_Option_LeftQuery();        //DMS_檢驗項目讀取DB的方法-對應Textbox
+                        TxPJ_sub_();
                     }
                     
                 }
@@ -1155,8 +1187,22 @@ namespace DMS_ii
             }
         }
 
-        
+        private void tb_DMS_Self_Item_DoubleClick(object sender, EventArgs e)           //內檢項目DoubleClick
+        {
+                       
+            
+        }
 
+        private void tb_DMS_Out_Item_DoubleClick(object sender, EventArgs e)            //外檢項目DoubleClick
+        {
+            if (Status_info.Text == "修改" || Status_info.Text == "新增")
+            {
+                TextPJ_int aTPJ_int = new TextPJ_int(this);
+                aTPJ_int.TxPJ_UID = DMS_UID_Value.Text;         //UID傳值
+                aTPJ_int.TxPJ_DOCNO = tb_DMS_DOC_NO.Text;       //文件編號傳值
+                aTPJ_int.ShowDialog();
+            }
+        }
         
         
         //================================================================================================

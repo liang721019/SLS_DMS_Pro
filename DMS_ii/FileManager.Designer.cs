@@ -54,26 +54,6 @@
             this.DMS_tabControl1 = new System.Windows.Forms.TabControl();
             this.DMS_tabPage1 = new System.Windows.Forms.TabPage();
             this.DMS_dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.DMS_DGV1_Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DMS_DGV1_Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DMS_DGV1_Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DMS_DGV1_Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DMS_DGV1_Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DMS_DGV1_Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DMS_DGV1_Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DMS_DGV1_Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DMS_DGV1_Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DMS_DGV1_Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DMS_DGV1_Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DMS_DGV1_Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DMS_DGV1_Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DMS_DGV1_Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DMS_DGV1_Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DMS_DGV1_Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DMS_DGV1_Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DMS_DGV1_Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DMS_DGV1_Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DMS_DGV1_Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DMS_tabPage2 = new System.Windows.Forms.TabPage();
             this.DMS_dataGridView2 = new System.Windows.Forms.DataGridView();
             this.DMS_DGV2_Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -144,6 +124,24 @@
             this.label23 = new System.Windows.Forms.Label();
             this.tb_DMS_Out_Price = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.DMS_DGV1_Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_DGV1_Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_DGV1_Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_DGV1_Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_DGV1_Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_DGV1_Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_DGV1_Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_DGV1_Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_DGV1_Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_DGV1_Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_DGV1_Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_DGV1_Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_DGV1_Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_DGV1_Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_DGV1_Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_DGV1_Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_DGV1_Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_DGV1_Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DMS_panel2.SuspendLayout();
             this.DMS_toolStrip1.SuspendLayout();
             this.DMS_tabControl1.SuspendLayout();
@@ -380,9 +378,7 @@
             this.DMS_DGV1_Column12,
             this.DMS_DGV1_Column13,
             this.DMS_DGV1_Column14,
-            this.DMS_DGV1_Column15,
             this.DMS_DGV1_Column16,
-            this.DMS_DGV1_Column17,
             this.DMS_DGV1_Column18,
             this.DMS_DGV1_Column19,
             this.DMS_DGV1_Column20});
@@ -396,141 +392,6 @@
             this.DMS_dataGridView1.TabIndex = 0;
             this.DMS_dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DMS_dataGridView1_CellDoubleClick);
             this.DMS_dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DMS_dataGridView1_CellMouseClick);
-            // 
-            // DMS_DGV1_Column1
-            // 
-            this.DMS_DGV1_Column1.HeaderText = "委託單編號";
-            this.DMS_DGV1_Column1.Name = "DMS_DGV1_Column1";
-            this.DMS_DGV1_Column1.ReadOnly = true;
-            this.DMS_DGV1_Column1.Width = 120;
-            // 
-            // DMS_DGV1_Column2
-            // 
-            this.DMS_DGV1_Column2.HeaderText = "委託日期";
-            this.DMS_DGV1_Column2.Name = "DMS_DGV1_Column2";
-            this.DMS_DGV1_Column2.ReadOnly = true;
-            // 
-            // DMS_DGV1_Column3
-            // 
-            this.DMS_DGV1_Column3.HeaderText = "樣品名稱";
-            this.DMS_DGV1_Column3.Name = "DMS_DGV1_Column3";
-            this.DMS_DGV1_Column3.ReadOnly = true;
-            this.DMS_DGV1_Column3.Width = 150;
-            // 
-            // DMS_DGV1_Column4
-            // 
-            this.DMS_DGV1_Column4.HeaderText = "樣品批號";
-            this.DMS_DGV1_Column4.Name = "DMS_DGV1_Column4";
-            this.DMS_DGV1_Column4.ReadOnly = true;
-            this.DMS_DGV1_Column4.Width = 120;
-            // 
-            // DMS_DGV1_Column5
-            // 
-            this.DMS_DGV1_Column5.HeaderText = "訂單編號";
-            this.DMS_DGV1_Column5.Name = "DMS_DGV1_Column5";
-            this.DMS_DGV1_Column5.ReadOnly = true;
-            this.DMS_DGV1_Column5.Width = 110;
-            // 
-            // DMS_DGV1_Column6
-            // 
-            this.DMS_DGV1_Column6.HeaderText = "委託單位";
-            this.DMS_DGV1_Column6.Name = "DMS_DGV1_Column6";
-            this.DMS_DGV1_Column6.ReadOnly = true;
-            // 
-            // DMS_DGV1_Column7
-            // 
-            this.DMS_DGV1_Column7.HeaderText = "委託者";
-            this.DMS_DGV1_Column7.Name = "DMS_DGV1_Column7";
-            this.DMS_DGV1_Column7.ReadOnly = true;
-            // 
-            // DMS_DGV1_Column8
-            // 
-            this.DMS_DGV1_Column8.HeaderText = "送樣目的";
-            this.DMS_DGV1_Column8.Name = "DMS_DGV1_Column8";
-            this.DMS_DGV1_Column8.ReadOnly = true;
-            this.DMS_DGV1_Column8.Width = 150;
-            // 
-            // DMS_DGV1_Column9
-            // 
-            this.DMS_DGV1_Column9.HeaderText = "品保報告編號";
-            this.DMS_DGV1_Column9.Name = "DMS_DGV1_Column9";
-            this.DMS_DGV1_Column9.ReadOnly = true;
-            this.DMS_DGV1_Column9.Width = 160;
-            // 
-            // DMS_DGV1_Column10
-            // 
-            this.DMS_DGV1_Column10.HeaderText = "留樣編號";
-            this.DMS_DGV1_Column10.Name = "DMS_DGV1_Column10";
-            this.DMS_DGV1_Column10.ReadOnly = true;
-            this.DMS_DGV1_Column10.Width = 120;
-            // 
-            // DMS_DGV1_Column11
-            // 
-            this.DMS_DGV1_Column11.HeaderText = "審查結果判定";
-            this.DMS_DGV1_Column11.Name = "DMS_DGV1_Column11";
-            this.DMS_DGV1_Column11.ReadOnly = true;
-            this.DMS_DGV1_Column11.Width = 150;
-            // 
-            // DMS_DGV1_Column12
-            // 
-            this.DMS_DGV1_Column12.HeaderText = "審查結果日期";
-            this.DMS_DGV1_Column12.Name = "DMS_DGV1_Column12";
-            this.DMS_DGV1_Column12.ReadOnly = true;
-            this.DMS_DGV1_Column12.Width = 150;
-            // 
-            // DMS_DGV1_Column13
-            // 
-            this.DMS_DGV1_Column13.HeaderText = "預計出報告日期";
-            this.DMS_DGV1_Column13.Name = "DMS_DGV1_Column13";
-            this.DMS_DGV1_Column13.ReadOnly = true;
-            this.DMS_DGV1_Column13.Width = 160;
-            // 
-            // DMS_DGV1_Column14
-            // 
-            this.DMS_DGV1_Column14.HeaderText = "備註";
-            this.DMS_DGV1_Column14.Name = "DMS_DGV1_Column14";
-            this.DMS_DGV1_Column14.ReadOnly = true;
-            this.DMS_DGV1_Column14.Width = 150;
-            // 
-            // DMS_DGV1_Column15
-            // 
-            this.DMS_DGV1_Column15.HeaderText = "外檢項目";
-            this.DMS_DGV1_Column15.Name = "DMS_DGV1_Column15";
-            this.DMS_DGV1_Column15.ReadOnly = true;
-            this.DMS_DGV1_Column15.Width = 150;
-            // 
-            // DMS_DGV1_Column16
-            // 
-            this.DMS_DGV1_Column16.HeaderText = "委外報告編號";
-            this.DMS_DGV1_Column16.Name = "DMS_DGV1_Column16";
-            this.DMS_DGV1_Column16.ReadOnly = true;
-            this.DMS_DGV1_Column16.Width = 150;
-            // 
-            // DMS_DGV1_Column17
-            // 
-            this.DMS_DGV1_Column17.HeaderText = "自檢項目";
-            this.DMS_DGV1_Column17.Name = "DMS_DGV1_Column17";
-            this.DMS_DGV1_Column17.ReadOnly = true;
-            this.DMS_DGV1_Column17.Width = 150;
-            // 
-            // DMS_DGV1_Column18
-            // 
-            this.DMS_DGV1_Column18.HeaderText = "TAF實驗室報告編號";
-            this.DMS_DGV1_Column18.Name = "DMS_DGV1_Column18";
-            this.DMS_DGV1_Column18.ReadOnly = true;
-            this.DMS_DGV1_Column18.Width = 180;
-            // 
-            // DMS_DGV1_Column19
-            // 
-            this.DMS_DGV1_Column19.HeaderText = "外檢價格";
-            this.DMS_DGV1_Column19.Name = "DMS_DGV1_Column19";
-            this.DMS_DGV1_Column19.ReadOnly = true;
-            // 
-            // DMS_DGV1_Column20
-            // 
-            this.DMS_DGV1_Column20.HeaderText = "自檢價格";
-            this.DMS_DGV1_Column20.Name = "DMS_DGV1_Column20";
-            this.DMS_DGV1_Column20.ReadOnly = true;
             // 
             // DMS_tabPage2
             // 
@@ -983,6 +844,7 @@
             this.tb_DMS_Out_Item.Name = "tb_DMS_Out_Item";
             this.tb_DMS_Out_Item.Size = new System.Drawing.Size(591, 57);
             this.tb_DMS_Out_Item.TabIndex = 12;
+            this.tb_DMS_Out_Item.DoubleClick += new System.EventHandler(this.tb_DMS_Out_Item_DoubleClick);
             // 
             // tb_DMS_Order
             // 
@@ -1071,6 +933,7 @@
             this.tb_DMS_Self_Item.Name = "tb_DMS_Self_Item";
             this.tb_DMS_Self_Item.Size = new System.Drawing.Size(591, 57);
             this.tb_DMS_Self_Item.TabIndex = 14;
+            this.tb_DMS_Self_Item.DoubleClick += new System.EventHandler(this.tb_DMS_Self_Item_DoubleClick);
             // 
             // label22
             // 
@@ -1168,6 +1031,127 @@
             this.label14.Size = new System.Drawing.Size(77, 20);
             this.label14.TabIndex = 27;
             this.label14.Text = "外檢價格:";
+            // 
+            // DMS_DGV1_Column1
+            // 
+            this.DMS_DGV1_Column1.HeaderText = "委託單編號";
+            this.DMS_DGV1_Column1.Name = "DMS_DGV1_Column1";
+            this.DMS_DGV1_Column1.ReadOnly = true;
+            this.DMS_DGV1_Column1.Width = 120;
+            // 
+            // DMS_DGV1_Column2
+            // 
+            this.DMS_DGV1_Column2.HeaderText = "委託日期";
+            this.DMS_DGV1_Column2.Name = "DMS_DGV1_Column2";
+            this.DMS_DGV1_Column2.ReadOnly = true;
+            // 
+            // DMS_DGV1_Column3
+            // 
+            this.DMS_DGV1_Column3.HeaderText = "樣品名稱";
+            this.DMS_DGV1_Column3.Name = "DMS_DGV1_Column3";
+            this.DMS_DGV1_Column3.ReadOnly = true;
+            this.DMS_DGV1_Column3.Width = 150;
+            // 
+            // DMS_DGV1_Column4
+            // 
+            this.DMS_DGV1_Column4.HeaderText = "樣品批號";
+            this.DMS_DGV1_Column4.Name = "DMS_DGV1_Column4";
+            this.DMS_DGV1_Column4.ReadOnly = true;
+            this.DMS_DGV1_Column4.Width = 120;
+            // 
+            // DMS_DGV1_Column5
+            // 
+            this.DMS_DGV1_Column5.HeaderText = "訂單編號";
+            this.DMS_DGV1_Column5.Name = "DMS_DGV1_Column5";
+            this.DMS_DGV1_Column5.ReadOnly = true;
+            this.DMS_DGV1_Column5.Width = 110;
+            // 
+            // DMS_DGV1_Column6
+            // 
+            this.DMS_DGV1_Column6.HeaderText = "委託單位";
+            this.DMS_DGV1_Column6.Name = "DMS_DGV1_Column6";
+            this.DMS_DGV1_Column6.ReadOnly = true;
+            // 
+            // DMS_DGV1_Column7
+            // 
+            this.DMS_DGV1_Column7.HeaderText = "委託者";
+            this.DMS_DGV1_Column7.Name = "DMS_DGV1_Column7";
+            this.DMS_DGV1_Column7.ReadOnly = true;
+            // 
+            // DMS_DGV1_Column8
+            // 
+            this.DMS_DGV1_Column8.HeaderText = "送樣目的";
+            this.DMS_DGV1_Column8.Name = "DMS_DGV1_Column8";
+            this.DMS_DGV1_Column8.ReadOnly = true;
+            this.DMS_DGV1_Column8.Width = 150;
+            // 
+            // DMS_DGV1_Column9
+            // 
+            this.DMS_DGV1_Column9.HeaderText = "品保報告編號";
+            this.DMS_DGV1_Column9.Name = "DMS_DGV1_Column9";
+            this.DMS_DGV1_Column9.ReadOnly = true;
+            this.DMS_DGV1_Column9.Width = 160;
+            // 
+            // DMS_DGV1_Column10
+            // 
+            this.DMS_DGV1_Column10.HeaderText = "留樣編號";
+            this.DMS_DGV1_Column10.Name = "DMS_DGV1_Column10";
+            this.DMS_DGV1_Column10.ReadOnly = true;
+            this.DMS_DGV1_Column10.Width = 120;
+            // 
+            // DMS_DGV1_Column11
+            // 
+            this.DMS_DGV1_Column11.HeaderText = "審查結果判定";
+            this.DMS_DGV1_Column11.Name = "DMS_DGV1_Column11";
+            this.DMS_DGV1_Column11.ReadOnly = true;
+            this.DMS_DGV1_Column11.Width = 150;
+            // 
+            // DMS_DGV1_Column12
+            // 
+            this.DMS_DGV1_Column12.HeaderText = "審查結果日期";
+            this.DMS_DGV1_Column12.Name = "DMS_DGV1_Column12";
+            this.DMS_DGV1_Column12.ReadOnly = true;
+            this.DMS_DGV1_Column12.Width = 150;
+            // 
+            // DMS_DGV1_Column13
+            // 
+            this.DMS_DGV1_Column13.HeaderText = "預計出報告日期";
+            this.DMS_DGV1_Column13.Name = "DMS_DGV1_Column13";
+            this.DMS_DGV1_Column13.ReadOnly = true;
+            this.DMS_DGV1_Column13.Width = 160;
+            // 
+            // DMS_DGV1_Column14
+            // 
+            this.DMS_DGV1_Column14.HeaderText = "備註";
+            this.DMS_DGV1_Column14.Name = "DMS_DGV1_Column14";
+            this.DMS_DGV1_Column14.ReadOnly = true;
+            this.DMS_DGV1_Column14.Width = 150;
+            // 
+            // DMS_DGV1_Column16
+            // 
+            this.DMS_DGV1_Column16.HeaderText = "委外報告編號";
+            this.DMS_DGV1_Column16.Name = "DMS_DGV1_Column16";
+            this.DMS_DGV1_Column16.ReadOnly = true;
+            this.DMS_DGV1_Column16.Width = 150;
+            // 
+            // DMS_DGV1_Column18
+            // 
+            this.DMS_DGV1_Column18.HeaderText = "TAF實驗室報告編號";
+            this.DMS_DGV1_Column18.Name = "DMS_DGV1_Column18";
+            this.DMS_DGV1_Column18.ReadOnly = true;
+            this.DMS_DGV1_Column18.Width = 180;
+            // 
+            // DMS_DGV1_Column19
+            // 
+            this.DMS_DGV1_Column19.HeaderText = "外檢價格";
+            this.DMS_DGV1_Column19.Name = "DMS_DGV1_Column19";
+            this.DMS_DGV1_Column19.ReadOnly = true;
+            // 
+            // DMS_DGV1_Column20
+            // 
+            this.DMS_DGV1_Column20.HeaderText = "自檢價格";
+            this.DMS_DGV1_Column20.Name = "DMS_DGV1_Column20";
+            this.DMS_DGV1_Column20.ReadOnly = true;
             // 
             // FileManager
             // 
@@ -1313,9 +1297,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DMS_DGV1_Column12;
         private System.Windows.Forms.DataGridViewTextBoxColumn DMS_DGV1_Column13;
         private System.Windows.Forms.DataGridViewTextBoxColumn DMS_DGV1_Column14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DMS_DGV1_Column15;
         private System.Windows.Forms.DataGridViewTextBoxColumn DMS_DGV1_Column16;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DMS_DGV1_Column17;
         private System.Windows.Forms.DataGridViewTextBoxColumn DMS_DGV1_Column18;
         private System.Windows.Forms.DataGridViewTextBoxColumn DMS_DGV1_Column19;
         private System.Windows.Forms.DataGridViewTextBoxColumn DMS_DGV1_Column20;
