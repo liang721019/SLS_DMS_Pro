@@ -13,7 +13,7 @@ using System.Collections;
 
 namespace DMS_ii.binx
 {
-    public partial class TextPJ_int : Form
+    public partial class TextPJ_int: Form
     {
 
         init_function Txfun = new init_function();
@@ -51,7 +51,7 @@ namespace DMS_ii.binx
 
         public void default_start()     //form預設狀態
         {
-            this.Text = "檢驗項目";
+            this.Text = "檢驗項目-內檢";
             this.MaximizeBox = false;       //最大化
             this.MinimizeBox = false;       //最小化
             this.FormBorderStyle = FormBorderStyle.FixedSingle;     //限制使用者改變form大小
@@ -72,24 +72,26 @@ namespace DMS_ii.binx
         {
             Txfun.Check_error = false;
             #region 檢驗項目更新DB
-            Txfun.All_DOCNO_TxPJ = TxPJ_DOCNO;
-
-            foreach (Control obj in TextPJ_panel.Controls)
+            if (FileMan.Status_info.Text == "修改")
             {
-                if (obj.GetType() == typeof(Panel))
+                Txfun.All_DOCNO_TxPJ = TxPJ_DOCNO;
+
+                foreach (Control obj in TextPJ_panel.Controls)
                 {
-                    Txfun.TxPJ_Option_UPDB(((Panel)obj), TxPJ_UID);           //DMS_檢驗項目更新DB的方法         
+                    if (obj.GetType() == typeof(Panel))
+                    {
+                        Txfun.TxPJ_Option_UPDB(((Panel)obj), TxPJ_UID);           //DMS_檢驗項目更新DB的方法
+                    }
                 }
-            }
-            //Txfun.TxPJ_Option_UPDB(TextPJ_int_panel1, TxPJ_UID);      //DMS_檢驗項目更新DB的方法
-            //Txfun.TxPJ_Option_UPDB(TextPJ_int_panel2, TxPJ_UID);      //DMS_檢驗項目更新DB的方法 
+            }            
+            
             #endregion 
 
             if (Txfun.Check_error == false)
             {
                 MessageBox.Show("更新DB成功", "DMS");
                 Txfun.TxPJ_Option_Text_All(TextPJ_panel);
-                FileMan.DMS_TxPJ_GetValue(Txfun.All_TxPJ_Text); 
+                FileMan.DMS_TxPJ_Int_GetValue(Txfun.All_TxPJ_Text); 
                 this.Close();
             }
         }
