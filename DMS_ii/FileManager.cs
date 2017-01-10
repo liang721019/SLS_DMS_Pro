@@ -307,10 +307,11 @@ namespace DMS_ii
             DMS_panel2.Visible = false;         //檔案上傳的Panel不顯示
             DMS_MACLable.Visible = false;       //MAC_Lable不顯示
             DMS_MAC_Value.Visible = false;      //MAC值不顯示
-            DMS_IP_Value.Visible = false;       //IP位置不顯示            
-            fun.EoD_Panel_All(DMS_UP_Controls_panel, false);            
+            DMS_IP_Value.Visible = false;       //IP位置不顯示
+            DMS_file_ordinary1.Checked = true;      //預設普通件
+            DMS_Return_N.Checked = true;            //預設不退回檢驗樣品
+            fun.EoD_Panel_All(DMS_UP_Controls_panel, false);
 
-            
         }
 
         public void start_status(ToolStripButton xx)        //啟動狀態

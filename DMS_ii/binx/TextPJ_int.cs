@@ -51,15 +51,18 @@ namespace DMS_ii.binx
 
         public void default_start()     //form預設狀態
         {
+            this.Text = "檢驗項目";
             this.MaximizeBox = false;       //最大化
             this.MinimizeBox = false;       //最小化
             this.FormBorderStyle = FormBorderStyle.FixedSingle;     //限制使用者改變form大小
             this.AutoSize = false;          //自動調整大小
             Txfun.Check_error = false;
 
+            Txfun.TxPJ_Option_Panel(TextPJ_panel, BorderStyle.FixedSingle); 
+
             #region 檢驗項目讀取
             Txfun.All_DOCNO_TxPJ = TxPJ_DOCNO;
-            Txfun.TxPJ_Option_view(TextPJ_int_panel1);      //DMS_檢驗項目讀取DB的方法
+            Txfun.TxPJ_Option_view_All(TextPJ_panel);      //DMS_檢驗項目讀取DB的方法
             //Txfun.TxPJ_Option_view(TextPJ_int_panel2);      //DMS_檢驗項目讀取DB的方法
             #endregion            
             
@@ -70,16 +73,30 @@ namespace DMS_ii.binx
             Txfun.Check_error = false;
             #region 檢驗項目更新DB
             Txfun.All_DOCNO_TxPJ = TxPJ_DOCNO;
-            Txfun.TxPJ_Option_UPDB(TextPJ_int_panel1, TxPJ_UID);      //DMS_檢驗項目更新DB的方法            
-            
+
+            foreach (Control obj in TextPJ_panel.Controls)
+            {
+                if (obj.GetType() == typeof(Panel))
+                {
+                    Txfun.TxPJ_Option_UPDB(((Panel)obj), TxPJ_UID);           //DMS_檢驗項目更新DB的方法         
+                }
+            }
+            //Txfun.TxPJ_Option_UPDB(TextPJ_int_panel1, TxPJ_UID);      //DMS_檢驗項目更新DB的方法
+            //Txfun.TxPJ_Option_UPDB(TextPJ_int_panel2, TxPJ_UID);      //DMS_檢驗項目更新DB的方法 
             #endregion 
 
             if (Txfun.Check_error == false)
             {
-                Txfun.TxPJ_Option_Text(TextPJ_int_panel1);                
+                MessageBox.Show("更新DB成功", "DMS");
+                Txfun.TxPJ_Option_Text_All(TextPJ_panel);
                 FileMan.DMS_TxPJ_GetValue(Txfun.All_TxPJ_Text); 
                 this.Close();
             }
+        }
+
+        private void DMS_TxPJ_Cancel_button_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         

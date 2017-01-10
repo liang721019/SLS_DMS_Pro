@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FileManager));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DMS_panel2 = new System.Windows.Forms.Panel();
             this.bt_DMS_Update = new System.Windows.Forms.Button();
             this.DMS_Clear_FileUP_button = new System.Windows.Forms.Button();
@@ -54,6 +54,24 @@
             this.DMS_tabControl1 = new System.Windows.Forms.TabControl();
             this.DMS_tabPage1 = new System.Windows.Forms.TabPage();
             this.DMS_dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DMS_DGV1_Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_DGV1_Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_DGV1_Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_DGV1_Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_DGV1_Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_DGV1_Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_DGV1_Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_DGV1_Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_DGV1_Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_DGV1_Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_DGV1_Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_DGV1_Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_DGV1_Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_DGV1_Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_DGV1_Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_DGV1_Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_DGV1_Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_DGV1_Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DMS_tabPage2 = new System.Windows.Forms.TabPage();
             this.DMS_dataGridView2 = new System.Windows.Forms.DataGridView();
             this.DMS_DGV2_Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -120,28 +138,17 @@
             this.label22 = new System.Windows.Forms.Label();
             this.tb_DMS_Purpose = new System.Windows.Forms.TextBox();
             this.DMS_panel1 = new System.Windows.Forms.Panel();
+            this.DMS_panel3 = new System.Windows.Forms.Panel();
+            this.DMS_file_ordinary2 = new System.Windows.Forms.RadioButton();
+            this.DMS_file_ordinary1 = new System.Windows.Forms.RadioButton();
+            this.label24 = new System.Windows.Forms.Label();
+            this.DMS_Return_N = new System.Windows.Forms.RadioButton();
+            this.DMS_Return_Y = new System.Windows.Forms.RadioButton();
             this.tb_DMS_Self_Price = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.tb_DMS_Out_Price = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.DMS_DGV1_Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DMS_DGV1_Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DMS_DGV1_Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DMS_DGV1_Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DMS_DGV1_Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DMS_DGV1_Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DMS_DGV1_Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DMS_DGV1_Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DMS_DGV1_Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DMS_DGV1_Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DMS_DGV1_Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DMS_DGV1_Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DMS_DGV1_Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DMS_DGV1_Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DMS_DGV1_Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DMS_DGV1_Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DMS_DGV1_Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DMS_DGV1_Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DMS_panel4 = new System.Windows.Forms.Panel();
             this.DMS_panel2.SuspendLayout();
             this.DMS_toolStrip1.SuspendLayout();
             this.DMS_tabControl1.SuspendLayout();
@@ -153,6 +160,8 @@
             this.DMS_UP_Controls_panel.SuspendLayout();
             this.DMS_DGV2_contextMenuStrip.SuspendLayout();
             this.DMS_panel1.SuspendLayout();
+            this.DMS_panel3.SuspendLayout();
+            this.DMS_panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // DMS_panel2
@@ -163,7 +172,7 @@
             this.DMS_panel2.Controls.Add(this.label16);
             this.DMS_panel2.Controls.Add(this.DMS_FileUp);
             this.DMS_panel2.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.DMS_panel2.Location = new System.Drawing.Point(1099, 73);
+            this.DMS_panel2.Location = new System.Drawing.Point(1158, 73);
             this.DMS_panel2.Name = "DMS_panel2";
             this.DMS_panel2.Size = new System.Drawing.Size(392, 251);
             this.DMS_panel2.TabIndex = 1;
@@ -239,7 +248,7 @@
             this.toolStripSeparator6});
             this.DMS_toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.DMS_toolStrip1.Name = "DMS_toolStrip1";
-            this.DMS_toolStrip1.Size = new System.Drawing.Size(1506, 27);
+            this.DMS_toolStrip1.Size = new System.Drawing.Size(1550, 27);
             this.DMS_toolStrip1.TabIndex = 2;
             this.DMS_toolStrip1.Text = "toolStrip1";
             // 
@@ -336,7 +345,7 @@
             this.DMS_tabControl1.Location = new System.Drawing.Point(12, 476);
             this.DMS_tabControl1.Name = "DMS_tabControl1";
             this.DMS_tabControl1.SelectedIndex = 0;
-            this.DMS_tabControl1.Size = new System.Drawing.Size(1479, 387);
+            this.DMS_tabControl1.Size = new System.Drawing.Size(1523, 387);
             this.DMS_tabControl1.TabIndex = 3;
             this.DMS_tabControl1.TabStop = false;
             this.DMS_tabControl1.SelectedIndexChanged += new System.EventHandler(this.DMS_tabControl1_SelectedIndexChanged);
@@ -349,7 +358,7 @@
             this.DMS_tabPage1.Location = new System.Drawing.Point(4, 29);
             this.DMS_tabPage1.Name = "DMS_tabPage1";
             this.DMS_tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.DMS_tabPage1.Size = new System.Drawing.Size(1471, 354);
+            this.DMS_tabPage1.Size = new System.Drawing.Size(1515, 354);
             this.DMS_tabPage1.TabIndex = 0;
             this.DMS_tabPage1.Text = "查詢";
             // 
@@ -357,8 +366,8 @@
             // 
             this.DMS_dataGridView1.AllowUserToAddRows = false;
             this.DMS_dataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.DMS_dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.DMS_dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.DMS_dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -385,13 +394,134 @@
             this.DMS_dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.DMS_dataGridView1.Name = "DMS_dataGridView1";
             this.DMS_dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.DMS_dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.DMS_dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle14;
             this.DMS_dataGridView1.RowTemplate.Height = 24;
-            this.DMS_dataGridView1.Size = new System.Drawing.Size(1465, 348);
+            this.DMS_dataGridView1.Size = new System.Drawing.Size(1509, 348);
             this.DMS_dataGridView1.TabIndex = 0;
             this.DMS_dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DMS_dataGridView1_CellDoubleClick);
             this.DMS_dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DMS_dataGridView1_CellMouseClick);
+            // 
+            // DMS_DGV1_Column1
+            // 
+            this.DMS_DGV1_Column1.HeaderText = "委託單編號";
+            this.DMS_DGV1_Column1.Name = "DMS_DGV1_Column1";
+            this.DMS_DGV1_Column1.ReadOnly = true;
+            this.DMS_DGV1_Column1.Width = 120;
+            // 
+            // DMS_DGV1_Column2
+            // 
+            this.DMS_DGV1_Column2.HeaderText = "委託日期";
+            this.DMS_DGV1_Column2.Name = "DMS_DGV1_Column2";
+            this.DMS_DGV1_Column2.ReadOnly = true;
+            // 
+            // DMS_DGV1_Column3
+            // 
+            this.DMS_DGV1_Column3.HeaderText = "樣品名稱";
+            this.DMS_DGV1_Column3.Name = "DMS_DGV1_Column3";
+            this.DMS_DGV1_Column3.ReadOnly = true;
+            this.DMS_DGV1_Column3.Width = 150;
+            // 
+            // DMS_DGV1_Column4
+            // 
+            this.DMS_DGV1_Column4.HeaderText = "樣品批號";
+            this.DMS_DGV1_Column4.Name = "DMS_DGV1_Column4";
+            this.DMS_DGV1_Column4.ReadOnly = true;
+            this.DMS_DGV1_Column4.Width = 120;
+            // 
+            // DMS_DGV1_Column5
+            // 
+            this.DMS_DGV1_Column5.HeaderText = "訂單編號";
+            this.DMS_DGV1_Column5.Name = "DMS_DGV1_Column5";
+            this.DMS_DGV1_Column5.ReadOnly = true;
+            this.DMS_DGV1_Column5.Width = 110;
+            // 
+            // DMS_DGV1_Column6
+            // 
+            this.DMS_DGV1_Column6.HeaderText = "委託單位";
+            this.DMS_DGV1_Column6.Name = "DMS_DGV1_Column6";
+            this.DMS_DGV1_Column6.ReadOnly = true;
+            // 
+            // DMS_DGV1_Column7
+            // 
+            this.DMS_DGV1_Column7.HeaderText = "委託者";
+            this.DMS_DGV1_Column7.Name = "DMS_DGV1_Column7";
+            this.DMS_DGV1_Column7.ReadOnly = true;
+            // 
+            // DMS_DGV1_Column8
+            // 
+            this.DMS_DGV1_Column8.HeaderText = "送樣目的";
+            this.DMS_DGV1_Column8.Name = "DMS_DGV1_Column8";
+            this.DMS_DGV1_Column8.ReadOnly = true;
+            this.DMS_DGV1_Column8.Width = 150;
+            // 
+            // DMS_DGV1_Column9
+            // 
+            this.DMS_DGV1_Column9.HeaderText = "品保報告編號";
+            this.DMS_DGV1_Column9.Name = "DMS_DGV1_Column9";
+            this.DMS_DGV1_Column9.ReadOnly = true;
+            this.DMS_DGV1_Column9.Width = 160;
+            // 
+            // DMS_DGV1_Column10
+            // 
+            this.DMS_DGV1_Column10.HeaderText = "留樣編號";
+            this.DMS_DGV1_Column10.Name = "DMS_DGV1_Column10";
+            this.DMS_DGV1_Column10.ReadOnly = true;
+            this.DMS_DGV1_Column10.Width = 120;
+            // 
+            // DMS_DGV1_Column11
+            // 
+            this.DMS_DGV1_Column11.HeaderText = "審查結果判定";
+            this.DMS_DGV1_Column11.Name = "DMS_DGV1_Column11";
+            this.DMS_DGV1_Column11.ReadOnly = true;
+            this.DMS_DGV1_Column11.Width = 150;
+            // 
+            // DMS_DGV1_Column12
+            // 
+            this.DMS_DGV1_Column12.HeaderText = "審查結果日期";
+            this.DMS_DGV1_Column12.Name = "DMS_DGV1_Column12";
+            this.DMS_DGV1_Column12.ReadOnly = true;
+            this.DMS_DGV1_Column12.Width = 150;
+            // 
+            // DMS_DGV1_Column13
+            // 
+            this.DMS_DGV1_Column13.HeaderText = "預計出報告日期";
+            this.DMS_DGV1_Column13.Name = "DMS_DGV1_Column13";
+            this.DMS_DGV1_Column13.ReadOnly = true;
+            this.DMS_DGV1_Column13.Width = 160;
+            // 
+            // DMS_DGV1_Column14
+            // 
+            this.DMS_DGV1_Column14.HeaderText = "備註";
+            this.DMS_DGV1_Column14.Name = "DMS_DGV1_Column14";
+            this.DMS_DGV1_Column14.ReadOnly = true;
+            this.DMS_DGV1_Column14.Width = 150;
+            // 
+            // DMS_DGV1_Column16
+            // 
+            this.DMS_DGV1_Column16.HeaderText = "委外報告編號";
+            this.DMS_DGV1_Column16.Name = "DMS_DGV1_Column16";
+            this.DMS_DGV1_Column16.ReadOnly = true;
+            this.DMS_DGV1_Column16.Width = 150;
+            // 
+            // DMS_DGV1_Column18
+            // 
+            this.DMS_DGV1_Column18.HeaderText = "TAF實驗室報告編號";
+            this.DMS_DGV1_Column18.Name = "DMS_DGV1_Column18";
+            this.DMS_DGV1_Column18.ReadOnly = true;
+            this.DMS_DGV1_Column18.Width = 180;
+            // 
+            // DMS_DGV1_Column19
+            // 
+            this.DMS_DGV1_Column19.HeaderText = "外檢價格";
+            this.DMS_DGV1_Column19.Name = "DMS_DGV1_Column19";
+            this.DMS_DGV1_Column19.ReadOnly = true;
+            // 
+            // DMS_DGV1_Column20
+            // 
+            this.DMS_DGV1_Column20.HeaderText = "自檢價格";
+            this.DMS_DGV1_Column20.Name = "DMS_DGV1_Column20";
+            this.DMS_DGV1_Column20.ReadOnly = true;
             // 
             // DMS_tabPage2
             // 
@@ -400,7 +530,7 @@
             this.DMS_tabPage2.Location = new System.Drawing.Point(4, 29);
             this.DMS_tabPage2.Name = "DMS_tabPage2";
             this.DMS_tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.DMS_tabPage2.Size = new System.Drawing.Size(1471, 354);
+            this.DMS_tabPage2.Size = new System.Drawing.Size(1515, 354);
             this.DMS_tabPage2.TabIndex = 1;
             this.DMS_tabPage2.Text = "內容";
             // 
@@ -408,8 +538,8 @@
             // 
             this.DMS_dataGridView2.AllowUserToAddRows = false;
             this.DMS_dataGridView2.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.DMS_dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.DMS_dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle15;
             this.DMS_dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DMS_dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DMS_DGV2_Column1,
@@ -422,10 +552,10 @@
             this.DMS_dataGridView2.Location = new System.Drawing.Point(3, 3);
             this.DMS_dataGridView2.Name = "DMS_dataGridView2";
             this.DMS_dataGridView2.ReadOnly = true;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.DMS_dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.DMS_dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle16;
             this.DMS_dataGridView2.RowTemplate.Height = 24;
-            this.DMS_dataGridView2.Size = new System.Drawing.Size(1465, 348);
+            this.DMS_dataGridView2.Size = new System.Drawing.Size(1509, 348);
             this.DMS_dataGridView2.TabIndex = 0;
             this.DMS_dataGridView2.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DMS_dataGridView2_CellDoubleClick);
             this.DMS_dataGridView2.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DMS_dataGridView2_CellMouseDown);
@@ -483,7 +613,7 @@
             this.DMS_IP_Value});
             this.DMS_statusStrip1.Location = new System.Drawing.Point(0, 883);
             this.DMS_statusStrip1.Name = "DMS_statusStrip1";
-            this.DMS_statusStrip1.Size = new System.Drawing.Size(1506, 22);
+            this.DMS_statusStrip1.Size = new System.Drawing.Size(1550, 22);
             this.DMS_statusStrip1.TabIndex = 4;
             this.DMS_statusStrip1.Text = "statusStrip1";
             // 
@@ -530,7 +660,7 @@
             this.Status_info.AutoSize = true;
             this.Status_info.BackColor = System.Drawing.Color.White;
             this.Status_info.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.Status_info.Location = new System.Drawing.Point(1450, 885);
+            this.Status_info.Location = new System.Drawing.Point(1494, 885);
             this.Status_info.Name = "Status_info";
             this.Status_info.Size = new System.Drawing.Size(41, 20);
             this.Status_info.TabIndex = 105;
@@ -552,7 +682,7 @@
             this.DMS_UP_Controls_panel.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.DMS_UP_Controls_panel.Location = new System.Drawing.Point(0, 27);
             this.DMS_UP_Controls_panel.Name = "DMS_UP_Controls_panel";
-            this.DMS_UP_Controls_panel.Size = new System.Drawing.Size(1506, 40);
+            this.DMS_UP_Controls_panel.Size = new System.Drawing.Size(1550, 40);
             this.DMS_UP_Controls_panel.TabIndex = 112;
             // 
             // DMS_QueryClear_button
@@ -759,7 +889,7 @@
             // 
             this.tb_DMS_Result.Location = new System.Drawing.Point(851, 76);
             this.tb_DMS_Result.Name = "tb_DMS_Result";
-            this.tb_DMS_Result.Size = new System.Drawing.Size(207, 29);
+            this.tb_DMS_Result.Size = new System.Drawing.Size(235, 29);
             this.tb_DMS_Result.TabIndex = 9;
             // 
             // label8
@@ -775,7 +905,7 @@
             // 
             this.tb_DMS_Result_DATE.Location = new System.Drawing.Point(851, 111);
             this.tb_DMS_Result_DATE.Name = "tb_DMS_Result_DATE";
-            this.tb_DMS_Result_DATE.Size = new System.Drawing.Size(207, 29);
+            this.tb_DMS_Result_DATE.Size = new System.Drawing.Size(235, 29);
             this.tb_DMS_Result_DATE.TabIndex = 10;
             // 
             // label9
@@ -814,7 +944,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(751, 355);
+            this.label12.Location = new System.Drawing.Point(779, 355);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(125, 20);
             this.label12.TabIndex = 21;
@@ -832,7 +962,7 @@
             // 
             // dTP_DMS_PReportDate
             // 
-            this.dTP_DMS_PReportDate.Location = new System.Drawing.Point(882, 352);
+            this.dTP_DMS_PReportDate.Location = new System.Drawing.Point(910, 352);
             this.dTP_DMS_PReportDate.Name = "dTP_DMS_PReportDate";
             this.dTP_DMS_PReportDate.Size = new System.Drawing.Size(176, 29);
             this.dTP_DMS_PReportDate.TabIndex = 18;
@@ -866,7 +996,7 @@
             // 
             this.tb_DMS_Out_NO.Location = new System.Drawing.Point(851, 41);
             this.tb_DMS_Out_NO.Name = "tb_DMS_Out_NO";
-            this.tb_DMS_Out_NO.Size = new System.Drawing.Size(207, 29);
+            this.tb_DMS_Out_NO.Size = new System.Drawing.Size(235, 29);
             this.tb_DMS_Out_NO.TabIndex = 11;
             // 
             // label17
@@ -898,7 +1028,7 @@
             // 
             this.tb_DMS_Self_NO.Location = new System.Drawing.Point(851, 6);
             this.tb_DMS_Self_NO.Name = "tb_DMS_Self_NO";
-            this.tb_DMS_Self_NO.Size = new System.Drawing.Size(207, 29);
+            this.tb_DMS_Self_NO.Size = new System.Drawing.Size(235, 29);
             this.tb_DMS_Self_NO.TabIndex = 13;
             // 
             // label18
@@ -949,11 +1079,14 @@
             this.tb_DMS_Purpose.Location = new System.Drawing.Point(851, 146);
             this.tb_DMS_Purpose.Multiline = true;
             this.tb_DMS_Purpose.Name = "tb_DMS_Purpose";
-            this.tb_DMS_Purpose.Size = new System.Drawing.Size(207, 55);
+            this.tb_DMS_Purpose.Size = new System.Drawing.Size(235, 55);
             this.tb_DMS_Purpose.TabIndex = 5;
             // 
             // DMS_panel1
             // 
+            this.DMS_panel1.Controls.Add(this.DMS_panel4);
+            this.DMS_panel1.Controls.Add(this.DMS_panel3);
+            this.DMS_panel1.Controls.Add(this.label24);
             this.DMS_panel1.Controls.Add(this.tb_DMS_Self_Price);
             this.DMS_panel1.Controls.Add(this.label23);
             this.DMS_panel1.Controls.Add(this.tb_DMS_Out_Price);
@@ -997,14 +1130,72 @@
             this.DMS_panel1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.DMS_panel1.Location = new System.Drawing.Point(12, 73);
             this.DMS_panel1.Name = "DMS_panel1";
-            this.DMS_panel1.Size = new System.Drawing.Size(1078, 397);
+            this.DMS_panel1.Size = new System.Drawing.Size(1126, 397);
             this.DMS_panel1.TabIndex = 0;
+            // 
+            // DMS_panel3
+            // 
+            this.DMS_panel3.Controls.Add(this.DMS_file_ordinary2);
+            this.DMS_panel3.Controls.Add(this.DMS_file_ordinary1);
+            this.DMS_panel3.Location = new System.Drawing.Point(461, 355);
+            this.DMS_panel3.Name = "DMS_panel3";
+            this.DMS_panel3.Size = new System.Drawing.Size(194, 29);
+            this.DMS_panel3.TabIndex = 36;
+            // 
+            // DMS_file_ordinary2
+            // 
+            this.DMS_file_ordinary2.AutoSize = true;
+            this.DMS_file_ordinary2.Location = new System.Drawing.Point(84, 3);
+            this.DMS_file_ordinary2.Name = "DMS_file_ordinary2";
+            this.DMS_file_ordinary2.Size = new System.Drawing.Size(59, 24);
+            this.DMS_file_ordinary2.TabIndex = 32;
+            this.DMS_file_ordinary2.Text = "急件";
+            this.DMS_file_ordinary2.UseVisualStyleBackColor = true;
+            // 
+            // DMS_file_ordinary1
+            // 
+            this.DMS_file_ordinary1.AutoSize = true;
+            this.DMS_file_ordinary1.Location = new System.Drawing.Point(3, 3);
+            this.DMS_file_ordinary1.Name = "DMS_file_ordinary1";
+            this.DMS_file_ordinary1.Size = new System.Drawing.Size(75, 24);
+            this.DMS_file_ordinary1.TabIndex = 31;
+            this.DMS_file_ordinary1.Text = "普通件";
+            this.DMS_file_ordinary1.UseVisualStyleBackColor = true;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(736, 284);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(109, 20);
+            this.label24.TabIndex = 35;
+            this.label24.Text = "剩餘樣品退回:";
+            // 
+            // DMS_Return_N
+            // 
+            this.DMS_Return_N.AutoSize = true;
+            this.DMS_Return_N.Location = new System.Drawing.Point(50, 3);
+            this.DMS_Return_N.Name = "DMS_Return_N";
+            this.DMS_Return_N.Size = new System.Drawing.Size(43, 24);
+            this.DMS_Return_N.TabIndex = 34;
+            this.DMS_Return_N.Text = "否";
+            this.DMS_Return_N.UseVisualStyleBackColor = true;
+            // 
+            // DMS_Return_Y
+            // 
+            this.DMS_Return_Y.AutoSize = true;
+            this.DMS_Return_Y.Location = new System.Drawing.Point(1, 3);
+            this.DMS_Return_Y.Name = "DMS_Return_Y";
+            this.DMS_Return_Y.Size = new System.Drawing.Size(43, 24);
+            this.DMS_Return_Y.TabIndex = 33;
+            this.DMS_Return_Y.Text = "是";
+            this.DMS_Return_Y.UseVisualStyleBackColor = true;
             // 
             // tb_DMS_Self_Price
             // 
             this.tb_DMS_Self_Price.Location = new System.Drawing.Point(851, 207);
             this.tb_DMS_Self_Price.Name = "tb_DMS_Self_Price";
-            this.tb_DMS_Self_Price.Size = new System.Drawing.Size(207, 29);
+            this.tb_DMS_Self_Price.Size = new System.Drawing.Size(235, 29);
             this.tb_DMS_Self_Price.TabIndex = 30;
             // 
             // label23
@@ -1020,7 +1211,7 @@
             // 
             this.tb_DMS_Out_Price.Location = new System.Drawing.Point(851, 242);
             this.tb_DMS_Out_Price.Name = "tb_DMS_Out_Price";
-            this.tb_DMS_Out_Price.Size = new System.Drawing.Size(207, 29);
+            this.tb_DMS_Out_Price.Size = new System.Drawing.Size(235, 29);
             this.tb_DMS_Out_Price.TabIndex = 28;
             // 
             // label14
@@ -1032,132 +1223,20 @@
             this.label14.TabIndex = 27;
             this.label14.Text = "外檢價格:";
             // 
-            // DMS_DGV1_Column1
+            // DMS_panel4
             // 
-            this.DMS_DGV1_Column1.HeaderText = "委託單編號";
-            this.DMS_DGV1_Column1.Name = "DMS_DGV1_Column1";
-            this.DMS_DGV1_Column1.ReadOnly = true;
-            this.DMS_DGV1_Column1.Width = 120;
-            // 
-            // DMS_DGV1_Column2
-            // 
-            this.DMS_DGV1_Column2.HeaderText = "委託日期";
-            this.DMS_DGV1_Column2.Name = "DMS_DGV1_Column2";
-            this.DMS_DGV1_Column2.ReadOnly = true;
-            // 
-            // DMS_DGV1_Column3
-            // 
-            this.DMS_DGV1_Column3.HeaderText = "樣品名稱";
-            this.DMS_DGV1_Column3.Name = "DMS_DGV1_Column3";
-            this.DMS_DGV1_Column3.ReadOnly = true;
-            this.DMS_DGV1_Column3.Width = 150;
-            // 
-            // DMS_DGV1_Column4
-            // 
-            this.DMS_DGV1_Column4.HeaderText = "樣品批號";
-            this.DMS_DGV1_Column4.Name = "DMS_DGV1_Column4";
-            this.DMS_DGV1_Column4.ReadOnly = true;
-            this.DMS_DGV1_Column4.Width = 120;
-            // 
-            // DMS_DGV1_Column5
-            // 
-            this.DMS_DGV1_Column5.HeaderText = "訂單編號";
-            this.DMS_DGV1_Column5.Name = "DMS_DGV1_Column5";
-            this.DMS_DGV1_Column5.ReadOnly = true;
-            this.DMS_DGV1_Column5.Width = 110;
-            // 
-            // DMS_DGV1_Column6
-            // 
-            this.DMS_DGV1_Column6.HeaderText = "委託單位";
-            this.DMS_DGV1_Column6.Name = "DMS_DGV1_Column6";
-            this.DMS_DGV1_Column6.ReadOnly = true;
-            // 
-            // DMS_DGV1_Column7
-            // 
-            this.DMS_DGV1_Column7.HeaderText = "委託者";
-            this.DMS_DGV1_Column7.Name = "DMS_DGV1_Column7";
-            this.DMS_DGV1_Column7.ReadOnly = true;
-            // 
-            // DMS_DGV1_Column8
-            // 
-            this.DMS_DGV1_Column8.HeaderText = "送樣目的";
-            this.DMS_DGV1_Column8.Name = "DMS_DGV1_Column8";
-            this.DMS_DGV1_Column8.ReadOnly = true;
-            this.DMS_DGV1_Column8.Width = 150;
-            // 
-            // DMS_DGV1_Column9
-            // 
-            this.DMS_DGV1_Column9.HeaderText = "品保報告編號";
-            this.DMS_DGV1_Column9.Name = "DMS_DGV1_Column9";
-            this.DMS_DGV1_Column9.ReadOnly = true;
-            this.DMS_DGV1_Column9.Width = 160;
-            // 
-            // DMS_DGV1_Column10
-            // 
-            this.DMS_DGV1_Column10.HeaderText = "留樣編號";
-            this.DMS_DGV1_Column10.Name = "DMS_DGV1_Column10";
-            this.DMS_DGV1_Column10.ReadOnly = true;
-            this.DMS_DGV1_Column10.Width = 120;
-            // 
-            // DMS_DGV1_Column11
-            // 
-            this.DMS_DGV1_Column11.HeaderText = "審查結果判定";
-            this.DMS_DGV1_Column11.Name = "DMS_DGV1_Column11";
-            this.DMS_DGV1_Column11.ReadOnly = true;
-            this.DMS_DGV1_Column11.Width = 150;
-            // 
-            // DMS_DGV1_Column12
-            // 
-            this.DMS_DGV1_Column12.HeaderText = "審查結果日期";
-            this.DMS_DGV1_Column12.Name = "DMS_DGV1_Column12";
-            this.DMS_DGV1_Column12.ReadOnly = true;
-            this.DMS_DGV1_Column12.Width = 150;
-            // 
-            // DMS_DGV1_Column13
-            // 
-            this.DMS_DGV1_Column13.HeaderText = "預計出報告日期";
-            this.DMS_DGV1_Column13.Name = "DMS_DGV1_Column13";
-            this.DMS_DGV1_Column13.ReadOnly = true;
-            this.DMS_DGV1_Column13.Width = 160;
-            // 
-            // DMS_DGV1_Column14
-            // 
-            this.DMS_DGV1_Column14.HeaderText = "備註";
-            this.DMS_DGV1_Column14.Name = "DMS_DGV1_Column14";
-            this.DMS_DGV1_Column14.ReadOnly = true;
-            this.DMS_DGV1_Column14.Width = 150;
-            // 
-            // DMS_DGV1_Column16
-            // 
-            this.DMS_DGV1_Column16.HeaderText = "委外報告編號";
-            this.DMS_DGV1_Column16.Name = "DMS_DGV1_Column16";
-            this.DMS_DGV1_Column16.ReadOnly = true;
-            this.DMS_DGV1_Column16.Width = 150;
-            // 
-            // DMS_DGV1_Column18
-            // 
-            this.DMS_DGV1_Column18.HeaderText = "TAF實驗室報告編號";
-            this.DMS_DGV1_Column18.Name = "DMS_DGV1_Column18";
-            this.DMS_DGV1_Column18.ReadOnly = true;
-            this.DMS_DGV1_Column18.Width = 180;
-            // 
-            // DMS_DGV1_Column19
-            // 
-            this.DMS_DGV1_Column19.HeaderText = "外檢價格";
-            this.DMS_DGV1_Column19.Name = "DMS_DGV1_Column19";
-            this.DMS_DGV1_Column19.ReadOnly = true;
-            // 
-            // DMS_DGV1_Column20
-            // 
-            this.DMS_DGV1_Column20.HeaderText = "自檢價格";
-            this.DMS_DGV1_Column20.Name = "DMS_DGV1_Column20";
-            this.DMS_DGV1_Column20.ReadOnly = true;
+            this.DMS_panel4.Controls.Add(this.DMS_Return_Y);
+            this.DMS_panel4.Controls.Add(this.DMS_Return_N);
+            this.DMS_panel4.Location = new System.Drawing.Point(851, 281);
+            this.DMS_panel4.Name = "DMS_panel4";
+            this.DMS_panel4.Size = new System.Drawing.Size(235, 32);
+            this.DMS_panel4.TabIndex = 37;
             // 
             // FileManager
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(1506, 905);
+            this.ClientSize = new System.Drawing.Size(1550, 905);
             this.Controls.Add(this.DMS_panel1);
             this.Controls.Add(this.DMS_UP_Controls_panel);
             this.Controls.Add(this.Status_info);
@@ -1186,6 +1265,10 @@
             this.DMS_DGV2_contextMenuStrip.ResumeLayout(false);
             this.DMS_panel1.ResumeLayout(false);
             this.DMS_panel1.PerformLayout();
+            this.DMS_panel3.ResumeLayout(false);
+            this.DMS_panel3.PerformLayout();
+            this.DMS_panel4.ResumeLayout(false);
+            this.DMS_panel4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1301,5 +1384,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DMS_DGV1_Column18;
         private System.Windows.Forms.DataGridViewTextBoxColumn DMS_DGV1_Column19;
         private System.Windows.Forms.DataGridViewTextBoxColumn DMS_DGV1_Column20;
+        private System.Windows.Forms.RadioButton DMS_Return_N;
+        private System.Windows.Forms.RadioButton DMS_Return_Y;
+        private System.Windows.Forms.RadioButton DMS_file_ordinary2;
+        private System.Windows.Forms.RadioButton DMS_file_ordinary1;
+        private System.Windows.Forms.Panel DMS_panel3;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Panel DMS_panel4;
     }
 }
