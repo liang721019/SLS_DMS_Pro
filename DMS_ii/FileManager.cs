@@ -333,7 +333,7 @@ namespace DMS_ii
             DMS_file_Ordinary_QCheck.Visible = false;       //文件類型-查詢條件
             DMS_Return_QCheck.Visible = false;              //樣品退回-查詢條件
             DMS_RadioButton_QCheck();        //Open or close RadioButton的查詢條件
-            fun.EoD_Panel_All(DMS_UP_Controls_panel, false);
+            fun.EoD_Panel_All(DMS_UP_Controls_panel, false);        //關閉DMS_UP_Controls_panel內的所有控制項
 
         }
 
@@ -432,7 +432,7 @@ namespace DMS_ii
                 DMS_取消toolStripButton.Visible = false;
                 DMS_儲存toolStripButton.Enabled = false;
                 DMS_取消toolStripButton.Enabled = false;
-                fun.EoD_Panel_All(DMS_UP_Controls_panel, false);
+                fun.EoD_Panel_All(DMS_UP_Controls_panel, false);        //關閉DMS_UP_Controls_panel內的所有控制項
                 DMS_RadioButton_QCheck();       //Open or close RadioButton的查詢條件         
 
             }
@@ -915,12 +915,12 @@ namespace DMS_ii
 
         }
 
-        public void DMS_TxPJ_Out_GetValue(string x )        //取得TextPJ的值
+        public void DMS_TxPJ_Out_GetValue(string x )        //取得TextPJ-外檢的值
         {
             tb_DMS_Out_Item.Text = x;
         }
 
-        public void DMS_TxPJ_Int_GetValue(string x)        //取得TextPJ的值
+        public void DMS_TxPJ_Int_GetValue(string x)        //取得TextPJ-內檢的值
         {
             tb_DMS_Self_Item.Text = x;
         }
@@ -1340,26 +1340,40 @@ namespace DMS_ii
 
         private void tb_DMS_Self_Item_DoubleClick(object sender, EventArgs e)           //內檢項目DoubleClick
         {
-            if (Status_info.Text == "修改" || Status_info.Text == "新增")
+            if (tb_DMS_DOC_NO.Text != "")
             {
+                //if (Status_info.Text == "修改" || Status_info.Text == "新增" || Status_info.Text == "查詢")
+                //{
+                //    TextPJ_int aTPJ_int = new TextPJ_int(this);
+                //    aTPJ_int.TxPJ_UID = DMS_UID_Value.Text;         //UID傳值
+                //    aTPJ_int.TxPJ_DOCNO = tb_DMS_DOC_NO.Text;       //文件編號傳值
+                //    aTPJ_int.ShowDialog();
+                //}
                 TextPJ_int aTPJ_int = new TextPJ_int(this);
                 aTPJ_int.TxPJ_UID = DMS_UID_Value.Text;         //UID傳值
                 aTPJ_int.TxPJ_DOCNO = tb_DMS_DOC_NO.Text;       //文件編號傳值
                 aTPJ_int.ShowDialog();
             }
-                       
-            
         }
 
         private void tb_DMS_Out_Item_DoubleClick(object sender, EventArgs e)            //外檢項目DoubleClick
         {
-            if (Status_info.Text == "修改" || Status_info.Text == "新增")
+            if (tb_DMS_DOC_NO.Text != "")
             {
+                //if (Status_info.Text == "修改" || Status_info.Text == "新增" || Status_info.Text == "查詢")
+                //{
+                //    TextPJ_out aTPJ_out = new TextPJ_out(this);
+                //    aTPJ_out.TxPJ_UID = DMS_UID_Value.Text;         //UID傳值
+                //    aTPJ_out.TxPJ_DOCNO = tb_DMS_DOC_NO.Text;       //文件編號傳值
+                //    aTPJ_out.ShowDialog();
+                //}
                 TextPJ_out aTPJ_out = new TextPJ_out(this);
                 aTPJ_out.TxPJ_UID = DMS_UID_Value.Text;         //UID傳值
                 aTPJ_out.TxPJ_DOCNO = tb_DMS_DOC_NO.Text;       //文件編號傳值
                 aTPJ_out.ShowDialog();
+
             }
+            
         }
         
         
