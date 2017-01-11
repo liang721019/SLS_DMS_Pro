@@ -32,6 +32,7 @@ namespace DMS_ii.binx
             this.DMS_TxPJ_UPdate_button = new System.Windows.Forms.Button();
             this.TextPJ_panel = new System.Windows.Forms.Panel();
             this.TextPJ_int_panel5 = new System.Windows.Forms.Panel();
+            this.Ti1001 = new System.Windows.Forms.CheckBox();
             this.TextPJ_int_panel4 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.Ti0401 = new System.Windows.Forms.CheckBox();
@@ -58,7 +59,6 @@ namespace DMS_ii.binx
             this.Ti0105 = new System.Windows.Forms.CheckBox();
             this.Ti0106 = new System.Windows.Forms.CheckBox();
             this.Ti0107 = new System.Windows.Forms.CheckBox();
-            this.Ti1001 = new System.Windows.Forms.CheckBox();
             this.DMS_TxPJ_Cancel_button = new System.Windows.Forms.Button();
             this.TextPJ_panel.SuspendLayout();
             this.TextPJ_int_panel5.SuspendLayout();
@@ -99,6 +99,16 @@ namespace DMS_ii.binx
             this.TextPJ_int_panel5.Name = "TextPJ_int_panel5";
             this.TextPJ_int_panel5.Size = new System.Drawing.Size(641, 40);
             this.TextPJ_int_panel5.TabIndex = 47;
+            // 
+            // Ti1001
+            // 
+            this.Ti1001.AutoSize = true;
+            this.Ti1001.Location = new System.Drawing.Point(2, 8);
+            this.Ti1001.Name = "Ti1001";
+            this.Ti1001.Size = new System.Drawing.Size(108, 24);
+            this.Ti1001.TabIndex = 40;
+            this.Ti1001.Text = "安定性試驗";
+            this.Ti1001.UseVisualStyleBackColor = true;
             // 
             // TextPJ_int_panel4
             // 
@@ -365,16 +375,6 @@ namespace DMS_ii.binx
             this.Ti0107.TabIndex = 7;
             this.Ti0107.Text = "相對密度Relative density";
             this.Ti0107.UseVisualStyleBackColor = true;
-            // 
-            // Ti1001
-            // 
-            this.Ti1001.AutoSize = true;
-            this.Ti1001.Location = new System.Drawing.Point(2, 8);
-            this.Ti1001.Name = "Ti1001";
-            this.Ti1001.Size = new System.Drawing.Size(108, 24);
-            this.Ti1001.TabIndex = 40;
-            this.Ti1001.Text = "安定性試驗";
-            this.Ti1001.UseVisualStyleBackColor = true;
             // 
             // DMS_TxPJ_Cancel_button
             // 

@@ -40,8 +40,7 @@ namespace DMS_ii.binx
         {
             set;
             get;
-        }
-        
+        }        
 
         private void TextPJ_int_Load(object sender, EventArgs e)
         {
@@ -62,7 +61,8 @@ namespace DMS_ii.binx
             Txfun.All_DOCNO_TxPJ = TxPJ_DOCNO;
             Txfun.TxPJ_Option_view_All(TextPJ_panel);      //DMS_檢驗項目讀取DB的方法
             //Txfun.TxPJ_Option_view(TextPJ_int_panel2);      //DMS_檢驗項目讀取DB的方法
-            #endregion            
+            #endregion
+            #region 判斷是否要顯示CheckButton
             if (FileMan.Status_info.Text == "新增" || FileMan.Status_info.Text == "修改")
             {
                 Txfun.TxPJ_Controls_View_Method(TextPJ_panel, true);    
@@ -73,6 +73,7 @@ namespace DMS_ii.binx
                 Txfun.TxPJ_Controls_View_Method(TextPJ_panel, false);
                 DMS_TxPJ_UPdate_button.Visible = false;
             }
+            #endregion
         }       
 
         private void DMS_TxPJ_UPdate_button_Click(object sender, EventArgs e)
