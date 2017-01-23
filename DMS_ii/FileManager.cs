@@ -312,7 +312,7 @@ namespace DMS_ii
 
         public void default_status()        //default狀態
         {
-            this.Text = "文件管理系統";
+            this.Text = "檢驗文件管理系統";
             fun.check_MAC_OK = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;//視窗在中央打開
             fun.Disabled_Panel(DMS_panel1);
@@ -761,7 +761,7 @@ namespace DMS_ii
         public void OpenFile(string x)          //打開檔案
         {
             //Get_filename = DMS_dataGridView2.CurrentRow.Cells[2].Value.ToString();
-            Get_AllFileAcc = FileStorage_Location + "\\" + x;
+            Get_AllFileAcc = FileStorage_Location + "\\" + tb_DMS_DOC_NO.Text+ "\\" + x;
             fun.openPdf(Get_AllFileAcc);
         }
 
@@ -1117,22 +1117,33 @@ namespace DMS_ii
                 if (MessageBox.Show("確定要上傳檔案？", "警告!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     #region 確定上傳的內容
-                    fun.Check_error = false;                    
+                    fun.Check_error = false;
+                    
                     
                     for (int i = 0; i < DMS_FileUp.Items.Count; i++)
                     {
+
                         string DFU_x = DMS_FileUp.Items[0].ToString();
-                        string DFU_y = FileStorage_Location;            //檔案路徑
-                        string info_FileName = Path.GetFileName(DFU_x);        //取得檔名 
+                        string DFU_y = FileStorage_Location+"\\"+ tb_DMS_DOC_NO.Text;            //檔案路徑
+                        string info_FileName = Path.GetFileName(DFU_x);        //取得檔名
+                        #region 判斷是否有資料夾
+                        if (!System.IO.Directory.Exists(DFU_y))     //判斷是否有資料夾->沒有資料夾就新增
+                        {
+                            System.IO.Directory.CreateDirectory(DFU_y);      //新增資料夾
+                        }
+                        #endregion
+
                         #region DB-新增資料
                         if (fun.Check_error == false)
                         {
                             DMS_DBUPdate_FileUP(info_FileName);      //檔案上傳-新增DB
                         }
                         #endregion
+
                         #region 檔案上傳內容
                         if (fun.Check_error == false)
                         {
+                                                        
                             fun.DMS_File_UP(DFU_x, DFU_y);      //檔案COPY到指定目錄
                             if (fun.Check_error == false)
                             {
