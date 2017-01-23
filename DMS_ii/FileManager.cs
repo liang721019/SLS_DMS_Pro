@@ -348,7 +348,7 @@ namespace DMS_ii
                 fun.EoD_toolStripButton_Tab(DMS_toolStrip1, false);
                 tb_DMS_Out_Item.ReadOnly = true;
                 tb_DMS_Self_Item.ReadOnly = true;
-                tb_DMS_DOC_NO.Enabled = false;
+                tb_DMS_DOC_NO.Enabled = false;                
                 DMS_儲存toolStripButton.Visible = true;
                 DMS_取消toolStripButton.Visible = true;
                 DMS_儲存toolStripButton.Enabled = true;
@@ -401,6 +401,7 @@ namespace DMS_ii
                 DMS_Query_button.Enabled = true;
                 DMS_QueryClear_button.Enabled = true;                
                 dTP_DMS_PReportDate.Enabled = false;
+                dTP_DMS_DOC_DATE.Enabled = false;
                 DMS_RadioButton_QCheck();       //Open or close RadioButton的查詢條件
                 tb_DMS_DOC_NO.Focus();
                 DMS_tabControl1.SelectedIndex = 0;
