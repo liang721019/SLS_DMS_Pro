@@ -106,7 +106,7 @@ namespace DMS_ii.binx
             this.DMS_TxPJ_UPdate_button.Name = "DMS_TxPJ_UPdate_button";
             this.DMS_TxPJ_UPdate_button.Size = new System.Drawing.Size(93, 29);
             this.DMS_TxPJ_UPdate_button.TabIndex = 1;
-            this.DMS_TxPJ_UPdate_button.Text = "更新";
+            this.DMS_TxPJ_UPdate_button.Text = "確定";
             this.DMS_TxPJ_UPdate_button.UseVisualStyleBackColor = true;
             this.DMS_TxPJ_UPdate_button.Click += new System.EventHandler(this.DMS_TxPJ_UPdate_button_Click);
             // 
@@ -161,9 +161,9 @@ namespace DMS_ii.binx
             this.To0702.AutoSize = true;
             this.To0702.Location = new System.Drawing.Point(312, 11);
             this.To0702.Name = "To0702";
-            this.To0702.Size = new System.Drawing.Size(60, 24);
+            this.To0702.Size = new System.Drawing.Size(131, 24);
             this.To0702.TabIndex = 35;
-            this.To0702.Text = "其他";
+            this.To0702.Text = "酒類檢測-其他";
             this.To0702.UseVisualStyleBackColor = true;
             // 
             // TextPJ_int_panel6
@@ -239,9 +239,9 @@ namespace DMS_ii.binx
             this.To0502.AutoSize = true;
             this.To0502.Location = new System.Drawing.Point(237, 12);
             this.To0502.Name = "To0502";
-            this.To0502.Size = new System.Drawing.Size(60, 24);
+            this.To0502.Size = new System.Drawing.Size(99, 24);
             this.To0502.TabIndex = 29;
-            this.To0502.Text = "其他";
+            this.To0502.Text = "毒素-其他";
             this.To0502.UseVisualStyleBackColor = true;
             // 
             // TextPJ_int_panel4
@@ -322,9 +322,9 @@ namespace DMS_ii.binx
             this.To0406.AutoSize = true;
             this.To0406.Location = new System.Drawing.Point(210, 47);
             this.To0406.Name = "To0406";
-            this.To0406.Size = new System.Drawing.Size(60, 24);
+            this.To0406.Size = new System.Drawing.Size(147, 24);
             this.To0406.TabIndex = 26;
-            this.To0406.Text = "其他";
+            this.To0406.Text = "人工添加劑-其他";
             this.To0406.UseVisualStyleBackColor = true;
             // 
             // TextPJ_int_panel3
@@ -438,9 +438,9 @@ namespace DMS_ii.binx
             this.To0309.AutoSize = true;
             this.To0309.Location = new System.Drawing.Point(112, 71);
             this.To0309.Name = "To0309";
-            this.To0309.Size = new System.Drawing.Size(60, 24);
+            this.To0309.Size = new System.Drawing.Size(115, 24);
             this.To0309.TabIndex = 19;
-            this.To0309.Text = "其他";
+            this.To0309.Text = "重金屬-其他";
             this.To0309.UseVisualStyleBackColor = true;
             // 
             // TextPJ_int_panel2

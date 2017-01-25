@@ -80,24 +80,24 @@ namespace DMS_ii.binx
         {
             Txfun.Check_error = false;
             #region 檢驗項目更新DB
-            if (FileMan.Status_info.Text == "修改")
-            {
-                Txfun.All_DOCNO_TxPJ = TxPJ_DOCNO;
+            //if (FileMan.Status_info.Text == "修改")
+            //{
+            //    Txfun.All_DOCNO_TxPJ = TxPJ_DOCNO;
 
-                foreach (Control obj in TextPJ_panel.Controls)
-                {
-                    if (obj.GetType() == typeof(Panel))
-                    {
-                        Txfun.TxPJ_Option_UPDB(((Panel)obj), TxPJ_UID);           //DMS_檢驗項目更新DB的方法
-                    }
-                }
-            }            
+            //    foreach (Control obj in TextPJ_panel.Controls)
+            //    {
+            //        if (obj.GetType() == typeof(Panel))
+            //        {
+            //            Txfun.TxPJ_Option_UPDB(((Panel)obj), TxPJ_UID);           //DMS_檢驗項目更新DB的方法
+            //        }
+            //    }
+            //}            
             
             #endregion 
 
             if (Txfun.Check_error == false)
             {
-                MessageBox.Show("更新DB成功", "DMS");
+                //MessageBox.Show("更新DB成功", "DMS");
                 Txfun.TxPJ_Option_Text_All(TextPJ_panel);
                 FileMan.DMS_TxPJ_Int_GetValue(Txfun.All_TxPJ_Text); 
                 this.Close();

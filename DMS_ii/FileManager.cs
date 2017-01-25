@@ -186,11 +186,11 @@ namespace DMS_ii
                                     @"','" + tb_DMS_Result_DATE.Text.Trim() +               //審查結果-日期
                                     @"','" + dTP_DMS_PReportDate.Text +       //預計出報告日期
                                     @"','" + tb_DMS_Remark.Text.Trim() +               //備註                                    
-                                    @"','" + DMS_UID_Value.Text +        //建立者ID
+                                    @"','" + DMS_UID_Value.Text.Trim() +        //建立者ID
                                     @"','" + tb_DMS_Out_Item.Text.Trim() +        //外檢項目
                                     @"','" + tb_DMS_Out_NO.Text.Trim() +        //委外報告編號                                       
                                     @"','" + tb_DMS_Out_Price.Text.Trim() +        //外檢價格
-                                    //@"','" + tb_DMS_Self_Item.Text.Trim() +        //自檢項目
+                                    @"','" + tb_DMS_Self_Item.Text.Trim() +        //自檢項目
                                     @"','" + tb_DMS_Self_NO.Text.Trim() +        //TAF實驗室報告編號                                    
                                     @"','" + tb_DMS_Self_Price.Text.Trim() +        //自檢價格
                                     @"','" + DMS_Document_Type +        //普通件or急件
@@ -219,10 +219,10 @@ namespace DMS_ii
                                     @"','" + dTP_DMS_PReportDate.Text +       //預計出報告日期
                                     @"','" + tb_DMS_Remark.Text.Trim() +               //備註                                    
                                     @"','" + DMS_UID_Value.Text +        //建立者ID
-                                    //@"','" + tb_DMS_Out_Item.Text.Trim() +        //外檢項目 
+                                    @"','" + tb_DMS_Out_Item.Text.Trim() +        //外檢項目 
                                     @"','" + tb_DMS_Out_NO.Text.Trim() +        //委外報告編號
                                     @"','" + tb_DMS_Out_Price.Text.Trim() +        //外檢價格
-                                    //@"','" + tb_DMS_Self_Item.Text.Trim() +        //自檢項目
+                                    @"','" + tb_DMS_Self_Item.Text.Trim() +        //自檢項目
                                     @"','" + tb_DMS_Self_NO.Text.Trim() +        //TAF實驗室報告編號  
                                     @"','" + tb_DMS_Self_Price.Text.Trim() +        //自檢價格
                                     @"','" + DMS_Document_Type +        //普通件or急件
@@ -305,7 +305,18 @@ namespace DMS_ii
                         break;
                         #endregion
                     }
+                case "儲存-外檢項目":
+                    {
+                        #region 儲存外檢項目
 
+                        Query_DB = @"insert into [TEST_SLSYHI].[dbo].[SLS_DMS_ii_Text_int]
+                                        select *,null,null,null
+                                    from [TEST_SLSYHI].[dbo].[SLS_DMS_Split]('" + tb_DMS_Out_Item.Text.Trim() + "', ',','" + DMS_UID_Value.Text.Trim()+ "','106-001','外')";      //編號
+                        break;
+                        
+                        #endregion
+
+                    }
                 #endregion
             }
         }
@@ -1352,7 +1363,7 @@ namespace DMS_ii
 
         private void tb_DMS_Self_Item_DoubleClick(object sender, EventArgs e)           //內檢項目DoubleClick
         {
-            if (tb_DMS_DOC_NO.Text != "")
+            if (tb_DMS_DOC_NO.Text != "" || Status_info.Text == "新增")
             {
                 //if (Status_info.Text == "修改" || Status_info.Text == "新增" || Status_info.Text == "查詢")
                 //{
@@ -1362,15 +1373,15 @@ namespace DMS_ii
                 //    aTPJ_int.ShowDialog();
                 //}
                 TextPJ_int aTPJ_int = new TextPJ_int(this);
-                aTPJ_int.TxPJ_UID = DMS_UID_Value.Text;         //UID傳值
-                aTPJ_int.TxPJ_DOCNO = tb_DMS_DOC_NO.Text;       //文件編號傳值
+                aTPJ_int.TxPJ_UID = DMS_UID_Value.Text.Trim();         //UID傳值
+                aTPJ_int.TxPJ_DOCNO = tb_DMS_DOC_NO.Text.Trim();       //文件編號傳值
                 aTPJ_int.ShowDialog();
             }
         }
 
         private void tb_DMS_Out_Item_DoubleClick(object sender, EventArgs e)            //外檢項目DoubleClick
         {
-            if (tb_DMS_DOC_NO.Text != "")
+            if (tb_DMS_DOC_NO.Text != "" || Status_info.Text == "新增")
             {
                 //if (Status_info.Text == "修改" || Status_info.Text == "新增" || Status_info.Text == "查詢")
                 //{

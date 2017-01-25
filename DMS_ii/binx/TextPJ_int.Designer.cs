@@ -74,7 +74,7 @@ namespace DMS_ii.binx
             this.DMS_TxPJ_UPdate_button.Name = "DMS_TxPJ_UPdate_button";
             this.DMS_TxPJ_UPdate_button.Size = new System.Drawing.Size(93, 29);
             this.DMS_TxPJ_UPdate_button.TabIndex = 1;
-            this.DMS_TxPJ_UPdate_button.Text = "更新";
+            this.DMS_TxPJ_UPdate_button.Text = "確定";
             this.DMS_TxPJ_UPdate_button.UseVisualStyleBackColor = true;
             this.DMS_TxPJ_UPdate_button.Click += new System.EventHandler(this.DMS_TxPJ_UPdate_button_Click);
             // 
