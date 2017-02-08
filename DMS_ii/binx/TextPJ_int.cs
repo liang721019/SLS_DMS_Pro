@@ -24,13 +24,14 @@ namespace DMS_ii.binx
             InitializeComponent();            
             FileMan = FM;
         }
-        public string TxPJ_UID
+
+        public string TxPJ_UID      //使用者ID
         {
             set;
             get;
         }
 
-        public string TxPJ_DOCNO
+        public string TxPJ_DOCNO        //委託單編號
         {
             set;
             get;
@@ -76,7 +77,7 @@ namespace DMS_ii.binx
             #endregion
         }       
 
-        private void DMS_TxPJ_UPdate_button_Click(object sender, EventArgs e)
+        private void DMS_TxPJ_UPdate_button_Click(object sender, EventArgs e)       //確定
         {
             Txfun.Check_error = false;
             #region 檢驗項目更新DB
@@ -96,8 +97,7 @@ namespace DMS_ii.binx
             #endregion 
 
             if (Txfun.Check_error == false)
-            {
-                //MessageBox.Show("更新DB成功", "DMS");
+            {                
                 Txfun.TxPJ_Option_Text_All(TextPJ_panel);
                 FileMan.DMS_TxPJ_Int_GetValue(Txfun.All_TxPJ_Text); 
                 this.Close();

@@ -1412,16 +1412,10 @@ namespace DMS_ii
         {
             if (tb_DMS_DOC_NO.Text != "" || Status_info.Text == "新增")
             {
-                //if (Status_info.Text == "修改" || Status_info.Text == "新增" || Status_info.Text == "查詢")
-                //{
-                //    TextPJ_int aTPJ_int = new TextPJ_int(this);
-                //    aTPJ_int.TxPJ_UID = DMS_UID_Value.Text;         //UID傳值
-                //    aTPJ_int.TxPJ_DOCNO = tb_DMS_DOC_NO.Text;       //文件編號傳值
-                //    aTPJ_int.ShowDialog();
-                //}
+                
                 TextPJ_int aTPJ_int = new TextPJ_int(this);
                 aTPJ_int.TxPJ_UID = DMS_UID_Value.Text.Trim();         //UID傳值
-                aTPJ_int.TxPJ_DOCNO = tb_DMS_DOC_NO.Text.Trim();       //文件編號傳值
+                aTPJ_int.TxPJ_DOCNO = tb_DMS_DOC_NO.Text.Trim();       //委託單編號
                 aTPJ_int.ShowDialog();
             }
         }
@@ -1430,21 +1424,22 @@ namespace DMS_ii
         {
             if (tb_DMS_DOC_NO.Text != "" || Status_info.Text == "新增")
             {
-                //if (Status_info.Text == "修改" || Status_info.Text == "新增" || Status_info.Text == "查詢")
-                //{
-                //    TextPJ_out aTPJ_out = new TextPJ_out(this);
-                //    aTPJ_out.TxPJ_UID = DMS_UID_Value.Text;         //UID傳值
-                //    aTPJ_out.TxPJ_DOCNO = tb_DMS_DOC_NO.Text;       //文件編號傳值
-                //    aTPJ_out.ShowDialog();
-                //}
+                
                 TextPJ_out aTPJ_out = new TextPJ_out(this);
                 aTPJ_out.TxPJ_UID = DMS_UID_Value.Text;         //UID傳值
-                aTPJ_out.TxPJ_DOCNO = tb_DMS_DOC_NO.Text;       //文件編號傳值
+                aTPJ_out.TxPJ_DOCNO = tb_DMS_DOC_NO.Text;       //委託單編號
                 aTPJ_out.ShowDialog();
 
             }
             
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            fun.My_Local_File_ToListBox(DMS_FileUp);
+        }
+
+
         
         
         //================================================================================================
