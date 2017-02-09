@@ -277,9 +277,9 @@ namespace DMS_ii.binx
             this.Ti0207.AutoSize = true;
             this.Ti0207.Location = new System.Drawing.Point(374, 37);
             this.Ti0207.Name = "Ti0207";
-            this.Ti0207.Size = new System.Drawing.Size(196, 24);
+            this.Ti0207.Size = new System.Drawing.Size(229, 24);
             this.Ti0207.TabIndex = 7;
-            this.Ti0207.Text = "乳酸菌(Lactic acid bact";
+            this.Ti0207.Text = "乳酸菌(Lactic acid bacteria)";
             this.Ti0207.UseVisualStyleBackColor = true;
             // 
             // TextPJ_int_panel1

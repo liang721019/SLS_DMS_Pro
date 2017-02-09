@@ -44,6 +44,7 @@ namespace DMS_ii.binx
             this.To0501 = new System.Windows.Forms.CheckBox();
             this.To0502 = new System.Windows.Forms.CheckBox();
             this.TextPJ_int_panel4 = new System.Windows.Forms.Panel();
+            this.To0406_tb = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.To0401 = new System.Windows.Forms.CheckBox();
             this.To0402 = new System.Windows.Forms.CheckBox();
@@ -52,6 +53,7 @@ namespace DMS_ii.binx
             this.To0405 = new System.Windows.Forms.CheckBox();
             this.To0406 = new System.Windows.Forms.CheckBox();
             this.TextPJ_int_panel3 = new System.Windows.Forms.Panel();
+            this.To0309_tb = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.To0301 = new System.Windows.Forms.CheckBox();
             this.To0302 = new System.Windows.Forms.CheckBox();
@@ -63,6 +65,8 @@ namespace DMS_ii.binx
             this.To0308 = new System.Windows.Forms.CheckBox();
             this.To0309 = new System.Windows.Forms.CheckBox();
             this.TextPJ_int_panel2 = new System.Windows.Forms.Panel();
+            this.To0209_tb = new System.Windows.Forms.TextBox();
+            this.To0209 = new System.Windows.Forms.CheckBox();
             this.To0201 = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.To0202 = new System.Windows.Forms.CheckBox();
@@ -73,6 +77,8 @@ namespace DMS_ii.binx
             this.To0207 = new System.Windows.Forms.CheckBox();
             this.To0208 = new System.Windows.Forms.CheckBox();
             this.TextPJ_int_panel1 = new System.Windows.Forms.Panel();
+            this.To0108_tb = new System.Windows.Forms.TextBox();
+            this.To0108 = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.To0101 = new System.Windows.Forms.CheckBox();
             this.To0102 = new System.Windows.Forms.CheckBox();
@@ -82,6 +88,7 @@ namespace DMS_ii.binx
             this.To0106 = new System.Windows.Forms.CheckBox();
             this.To0107 = new System.Windows.Forms.CheckBox();
             this.TextPJ_int_panel8 = new System.Windows.Forms.Panel();
+            this.To1101_tb = new System.Windows.Forms.TextBox();
             this.To0801 = new System.Windows.Forms.CheckBox();
             this.To1101 = new System.Windows.Forms.CheckBox();
             this.To0802 = new System.Windows.Forms.CheckBox();
@@ -102,7 +109,7 @@ namespace DMS_ii.binx
             // 
             // DMS_TxPJ_UPdate_button
             // 
-            this.DMS_TxPJ_UPdate_button.Location = new System.Drawing.Point(875, 494);
+            this.DMS_TxPJ_UPdate_button.Location = new System.Drawing.Point(875, 513);
             this.DMS_TxPJ_UPdate_button.Name = "DMS_TxPJ_UPdate_button";
             this.DMS_TxPJ_UPdate_button.Size = new System.Drawing.Size(93, 29);
             this.DMS_TxPJ_UPdate_button.TabIndex = 1;
@@ -124,7 +131,7 @@ namespace DMS_ii.binx
             this.TextPJ_panel.Controls.Add(this.TextPJ_int_panel8);
             this.TextPJ_panel.Location = new System.Drawing.Point(12, 12);
             this.TextPJ_panel.Name = "TextPJ_panel";
-            this.TextPJ_panel.Size = new System.Drawing.Size(1118, 476);
+            this.TextPJ_panel.Size = new System.Drawing.Size(1118, 495);
             this.TextPJ_panel.TabIndex = 2;
             // 
             // TextPJ_int_panel7
@@ -246,6 +253,7 @@ namespace DMS_ii.binx
             // 
             // TextPJ_int_panel4
             // 
+            this.TextPJ_int_panel4.Controls.Add(this.To0406_tb);
             this.TextPJ_int_panel4.Controls.Add(this.label4);
             this.TextPJ_int_panel4.Controls.Add(this.To0401);
             this.TextPJ_int_panel4.Controls.Add(this.To0402);
@@ -253,10 +261,17 @@ namespace DMS_ii.binx
             this.TextPJ_int_panel4.Controls.Add(this.To0404);
             this.TextPJ_int_panel4.Controls.Add(this.To0405);
             this.TextPJ_int_panel4.Controls.Add(this.To0406);
-            this.TextPJ_int_panel4.Location = new System.Drawing.Point(3, 376);
+            this.TextPJ_int_panel4.Location = new System.Drawing.Point(3, 414);
             this.TextPJ_int_panel4.Name = "TextPJ_int_panel4";
             this.TextPJ_int_panel4.Size = new System.Drawing.Size(641, 78);
             this.TextPJ_int_panel4.TabIndex = 46;
+            // 
+            // To0406_tb
+            // 
+            this.To0406_tb.Location = new System.Drawing.Point(363, 42);
+            this.To0406_tb.Name = "To0406_tb";
+            this.To0406_tb.Size = new System.Drawing.Size(202, 29);
+            this.To0406_tb.TabIndex = 20;
             // 
             // label4
             // 
@@ -329,6 +344,7 @@ namespace DMS_ii.binx
             // 
             // TextPJ_int_panel3
             // 
+            this.TextPJ_int_panel3.Controls.Add(this.To0309_tb);
             this.TextPJ_int_panel3.Controls.Add(this.label3);
             this.TextPJ_int_panel3.Controls.Add(this.To0301);
             this.TextPJ_int_panel3.Controls.Add(this.To0302);
@@ -339,10 +355,17 @@ namespace DMS_ii.binx
             this.TextPJ_int_panel3.Controls.Add(this.To0307);
             this.TextPJ_int_panel3.Controls.Add(this.To0308);
             this.TextPJ_int_panel3.Controls.Add(this.To0309);
-            this.TextPJ_int_panel3.Location = new System.Drawing.Point(3, 264);
+            this.TextPJ_int_panel3.Location = new System.Drawing.Point(3, 304);
             this.TextPJ_int_panel3.Name = "TextPJ_int_panel3";
-            this.TextPJ_int_panel3.Size = new System.Drawing.Size(641, 106);
+            this.TextPJ_int_panel3.Size = new System.Drawing.Size(641, 104);
             this.TextPJ_int_panel3.TabIndex = 45;
+            // 
+            // To0309_tb
+            // 
+            this.To0309_tb.Location = new System.Drawing.Point(231, 69);
+            this.To0309_tb.Name = "To0309_tb";
+            this.To0309_tb.Size = new System.Drawing.Size(202, 29);
+            this.To0309_tb.TabIndex = 11;
             // 
             // label3
             // 
@@ -376,7 +399,7 @@ namespace DMS_ii.binx
             // To0303
             // 
             this.To0303.AutoSize = true;
-            this.To0303.Location = new System.Drawing.Point(312, 11);
+            this.To0303.Location = new System.Drawing.Point(293, 11);
             this.To0303.Name = "To0303";
             this.To0303.Size = new System.Drawing.Size(74, 24);
             this.To0303.TabIndex = 13;
@@ -386,7 +409,7 @@ namespace DMS_ii.binx
             // To0304
             // 
             this.To0304.AutoSize = true;
-            this.To0304.Location = new System.Drawing.Point(393, 11);
+            this.To0304.Location = new System.Drawing.Point(373, 11);
             this.To0304.Name = "To0304";
             this.To0304.Size = new System.Drawing.Size(72, 24);
             this.To0304.TabIndex = 14;
@@ -416,7 +439,7 @@ namespace DMS_ii.binx
             // To0307
             // 
             this.To0307.AutoSize = true;
-            this.To0307.Location = new System.Drawing.Point(312, 41);
+            this.To0307.Location = new System.Drawing.Point(293, 41);
             this.To0307.Name = "To0307";
             this.To0307.Size = new System.Drawing.Size(73, 24);
             this.To0307.TabIndex = 17;
@@ -426,7 +449,7 @@ namespace DMS_ii.binx
             // To0308
             // 
             this.To0308.AutoSize = true;
-            this.To0308.Location = new System.Drawing.Point(394, 41);
+            this.To0308.Location = new System.Drawing.Point(373, 41);
             this.To0308.Name = "To0308";
             this.To0308.Size = new System.Drawing.Size(204, 24);
             this.To0308.TabIndex = 18;
@@ -445,6 +468,8 @@ namespace DMS_ii.binx
             // 
             // TextPJ_int_panel2
             // 
+            this.TextPJ_int_panel2.Controls.Add(this.To0209_tb);
+            this.TextPJ_int_panel2.Controls.Add(this.To0209);
             this.TextPJ_int_panel2.Controls.Add(this.To0201);
             this.TextPJ_int_panel2.Controls.Add(this.label2);
             this.TextPJ_int_panel2.Controls.Add(this.To0202);
@@ -456,13 +481,30 @@ namespace DMS_ii.binx
             this.TextPJ_int_panel2.Controls.Add(this.To0208);
             this.TextPJ_int_panel2.Location = new System.Drawing.Point(3, 126);
             this.TextPJ_int_panel2.Name = "TextPJ_int_panel2";
-            this.TextPJ_int_panel2.Size = new System.Drawing.Size(641, 132);
+            this.TextPJ_int_panel2.Size = new System.Drawing.Size(641, 172);
             this.TextPJ_int_panel2.TabIndex = 44;
+            // 
+            // To0209_tb
+            // 
+            this.To0209_tb.Location = new System.Drawing.Point(233, 127);
+            this.To0209_tb.Name = "To0209_tb";
+            this.To0209_tb.Size = new System.Drawing.Size(200, 29);
+            this.To0209_tb.TabIndex = 10;
+            // 
+            // To0209
+            // 
+            this.To0209.AutoSize = true;
+            this.To0209.Location = new System.Drawing.Point(111, 129);
+            this.To0209.Name = "To0209";
+            this.To0209.Size = new System.Drawing.Size(115, 24);
+            this.To0209.TabIndex = 9;
+            this.To0209.Text = "微生物-其他";
+            this.To0209.UseVisualStyleBackColor = true;
             // 
             // To0201
             // 
             this.To0201.AutoSize = true;
-            this.To0201.Location = new System.Drawing.Point(112, 7);
+            this.To0201.Location = new System.Drawing.Point(111, 8);
             this.To0201.Name = "To0201";
             this.To0201.Size = new System.Drawing.Size(92, 24);
             this.To0201.TabIndex = 1;
@@ -481,7 +523,7 @@ namespace DMS_ii.binx
             // To0202
             // 
             this.To0202.AutoSize = true;
-            this.To0202.Location = new System.Drawing.Point(227, 7);
+            this.To0202.Location = new System.Drawing.Point(226, 8);
             this.To0202.Name = "To0202";
             this.To0202.Size = new System.Drawing.Size(141, 24);
             this.To0202.TabIndex = 2;
@@ -491,7 +533,7 @@ namespace DMS_ii.binx
             // To0203
             // 
             this.To0203.AutoSize = true;
-            this.To0203.Location = new System.Drawing.Point(374, 7);
+            this.To0203.Location = new System.Drawing.Point(373, 8);
             this.To0203.Name = "To0203";
             this.To0203.Size = new System.Drawing.Size(183, 24);
             this.To0203.TabIndex = 3;
@@ -501,7 +543,7 @@ namespace DMS_ii.binx
             // To0204
             // 
             this.To0204.AutoSize = true;
-            this.To0204.Location = new System.Drawing.Point(112, 37);
+            this.To0204.Location = new System.Drawing.Point(111, 38);
             this.To0204.Name = "To0204";
             this.To0204.Size = new System.Drawing.Size(215, 24);
             this.To0204.TabIndex = 4;
@@ -511,7 +553,7 @@ namespace DMS_ii.binx
             // To0205
             // 
             this.To0205.AutoSize = true;
-            this.To0205.Location = new System.Drawing.Point(338, 37);
+            this.To0205.Location = new System.Drawing.Point(346, 38);
             this.To0205.Name = "To0205";
             this.To0205.Size = new System.Drawing.Size(201, 24);
             this.To0205.TabIndex = 5;
@@ -521,35 +563,37 @@ namespace DMS_ii.binx
             // To0206
             // 
             this.To0206.AutoSize = true;
-            this.To0206.Location = new System.Drawing.Point(112, 67);
+            this.To0206.Location = new System.Drawing.Point(111, 68);
             this.To0206.Name = "To0206";
-            this.To0206.Size = new System.Drawing.Size(245, 24);
+            this.To0206.Size = new System.Drawing.Size(322, 24);
             this.To0206.TabIndex = 6;
-            this.To0206.Text = "金黃色葡萄球菌(Staphylococc";
+            this.To0206.Text = "金黃色葡萄球菌(Staphylococcus aureus)";
             this.To0206.UseVisualStyleBackColor = true;
             // 
             // To0207
             // 
             this.To0207.AutoSize = true;
-            this.To0207.Location = new System.Drawing.Point(374, 67);
+            this.To0207.Location = new System.Drawing.Point(111, 98);
             this.To0207.Name = "To0207";
-            this.To0207.Size = new System.Drawing.Size(196, 24);
+            this.To0207.Size = new System.Drawing.Size(229, 24);
             this.To0207.TabIndex = 7;
-            this.To0207.Text = "乳酸菌(Lactic acid bact";
+            this.To0207.Text = "乳酸菌(Lactic acid bacteria)";
             this.To0207.UseVisualStyleBackColor = true;
             // 
             // To0208
             // 
             this.To0208.AutoSize = true;
-            this.To0208.Location = new System.Drawing.Point(112, 97);
+            this.To0208.Location = new System.Drawing.Point(346, 98);
             this.To0208.Name = "To0208";
-            this.To0208.Size = new System.Drawing.Size(215, 24);
+            this.To0208.Size = new System.Drawing.Size(281, 24);
             this.To0208.TabIndex = 8;
-            this.To0208.Text = "李斯特菌(Listeria monocy";
+            this.To0208.Text = "李斯特菌(Listeria monocytogenes)";
             this.To0208.UseVisualStyleBackColor = true;
             // 
             // TextPJ_int_panel1
             // 
+            this.TextPJ_int_panel1.Controls.Add(this.To0108_tb);
+            this.TextPJ_int_panel1.Controls.Add(this.To0108);
             this.TextPJ_int_panel1.Controls.Add(this.label1);
             this.TextPJ_int_panel1.Controls.Add(this.To0101);
             this.TextPJ_int_panel1.Controls.Add(this.To0102);
@@ -562,6 +606,23 @@ namespace DMS_ii.binx
             this.TextPJ_int_panel1.Name = "TextPJ_int_panel1";
             this.TextPJ_int_panel1.Size = new System.Drawing.Size(641, 107);
             this.TextPJ_int_panel1.TabIndex = 43;
+            // 
+            // To0108_tb
+            // 
+            this.To0108_tb.Location = new System.Drawing.Point(474, 69);
+            this.To0108_tb.Name = "To0108_tb";
+            this.To0108_tb.Size = new System.Drawing.Size(152, 29);
+            this.To0108_tb.TabIndex = 9;
+            // 
+            // To0108
+            // 
+            this.To0108.AutoSize = true;
+            this.To0108.Location = new System.Drawing.Point(337, 71);
+            this.To0108.Name = "To0108";
+            this.To0108.Size = new System.Drawing.Size(131, 24);
+            this.To0108.TabIndex = 8;
+            this.To0108.Text = "理化性質-其他";
+            this.To0108.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -644,6 +705,7 @@ namespace DMS_ii.binx
             // 
             // TextPJ_int_panel8
             // 
+            this.TextPJ_int_panel8.Controls.Add(this.To1101_tb);
             this.TextPJ_int_panel8.Controls.Add(this.To0801);
             this.TextPJ_int_panel8.Controls.Add(this.To1101);
             this.TextPJ_int_panel8.Controls.Add(this.To0802);
@@ -654,6 +716,13 @@ namespace DMS_ii.binx
             this.TextPJ_int_panel8.Name = "TextPJ_int_panel8";
             this.TextPJ_int_panel8.Size = new System.Drawing.Size(454, 123);
             this.TextPJ_int_panel8.TabIndex = 42;
+            // 
+            // To1101_tb
+            // 
+            this.To1101_tb.Location = new System.Drawing.Point(104, 89);
+            this.To1101_tb.Name = "To1101_tb";
+            this.To1101_tb.Size = new System.Drawing.Size(202, 29);
+            this.To1101_tb.TabIndex = 50;
             // 
             // To0801
             // 
@@ -717,7 +786,7 @@ namespace DMS_ii.binx
             // 
             // DMS_TxPJ_Cancel_button
             // 
-            this.DMS_TxPJ_Cancel_button.Location = new System.Drawing.Point(1023, 494);
+            this.DMS_TxPJ_Cancel_button.Location = new System.Drawing.Point(1023, 513);
             this.DMS_TxPJ_Cancel_button.Name = "DMS_TxPJ_Cancel_button";
             this.DMS_TxPJ_Cancel_button.Size = new System.Drawing.Size(93, 29);
             this.DMS_TxPJ_Cancel_button.TabIndex = 3;
@@ -730,7 +799,7 @@ namespace DMS_ii.binx
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(1142, 529);
+            this.ClientSize = new System.Drawing.Size(1142, 554);
             this.Controls.Add(this.DMS_TxPJ_Cancel_button);
             this.Controls.Add(this.TextPJ_panel);
             this.Controls.Add(this.DMS_TxPJ_UPdate_button);
@@ -822,5 +891,12 @@ namespace DMS_ii.binx
         private System.Windows.Forms.Panel TextPJ_int_panel2;
         private System.Windows.Forms.Panel TextPJ_int_panel7;
         private System.Windows.Forms.Button DMS_TxPJ_Cancel_button;
+        private System.Windows.Forms.CheckBox To0209;
+        private System.Windows.Forms.CheckBox To0108;
+        private System.Windows.Forms.TextBox To0406_tb;
+        private System.Windows.Forms.TextBox To0309_tb;
+        private System.Windows.Forms.TextBox To0209_tb;
+        private System.Windows.Forms.TextBox To0108_tb;
+        private System.Windows.Forms.TextBox To1101_tb;
     }
 }

@@ -156,8 +156,11 @@ namespace DMS_ii
             get;
         }
 
-        
-
+        public DataTable sample_items
+        {
+            set;
+            get;
+        }
         
         #endregion
 
@@ -327,7 +330,13 @@ namespace DMS_ii
                         break;
                         
                         #endregion
-
+                    }
+                case "其他檢驗項目" :
+                    {
+                        #region 其他檢驗項目
+                        //Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_DMS_Other_Sample_items] '" + tb_DMS_DOC_NO.Text.Trim()+ "','"++"'" ;
+                        #endregion
+                        break;
                     }
                 #endregion
             }
@@ -1059,6 +1068,8 @@ namespace DMS_ii
                         mBox = "資料《修改》成功!!";
                         FText = "DMS";
                         fun.DMS_modify(Query_DB, mBox, FText);
+
+
                         //db_sum = SQL語法            
                         //mBox = 成功執行後的訊息
                         //FText = MessageBox.form.Text
@@ -1080,7 +1091,16 @@ namespace DMS_ii
         private void DMS_取消toolStripButton_Click(object sender, EventArgs e)
         {
             start_status(DMS_取消toolStripButton);        //啟動狀態
-            
+        }
+
+        private void DMS_匯出資料toolStripButton_Click(object sender, EventArgs e)
+        {
+            string[] text = new string[DMS_dataGridView1.ColumnCount];
+            for (int x = 0; x < DMS_dataGridView1.ColumnCount; x++) //把dataGridView2的標題列寫入到text陣列
+            {
+                text[x] = DMS_dataGridView1.Columns[x].HeaderText;
+            }
+            fun.output_xls(DMS_dataGridView1, text ,this.Text);
         }
 
         private void DMS_tabControl1_DoubleClick(object sender, EventArgs e)        //DMS_tabControl1雙擊二下
@@ -1438,9 +1458,6 @@ namespace DMS_ii
         {
             fun.My_Local_File_ToListBox(DMS_FileUp);
         }
-
-
-        
         
         //================================================================================================
         #endregion

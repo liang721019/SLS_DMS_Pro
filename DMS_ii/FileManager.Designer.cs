@@ -149,13 +149,13 @@
             this.tb_DMS_Self_Price = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.DMS_panel3 = new System.Windows.Forms.Panel();
-            this.DMS_file_ordinary1 = new System.Windows.Forms.RadioButton();
-            this.DMS_file_ordinary2 = new System.Windows.Forms.RadioButton();
             this.DMS_file_Ordinary_QCheck = new System.Windows.Forms.CheckBox();
+            this.DMS_file_ordinary2 = new System.Windows.Forms.RadioButton();
+            this.DMS_file_ordinary1 = new System.Windows.Forms.RadioButton();
             this.DMS_panel4 = new System.Windows.Forms.Panel();
-            this.DMS_Return_N = new System.Windows.Forms.RadioButton();
-            this.DMS_Return_Y = new System.Windows.Forms.RadioButton();
             this.DMS_Return_QCheck = new System.Windows.Forms.CheckBox();
+            this.DMS_Return_Y = new System.Windows.Forms.RadioButton();
+            this.DMS_Return_N = new System.Windows.Forms.RadioButton();
             this.label25 = new System.Windows.Forms.Label();
             this.tb_DMS_樣品數量 = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
@@ -167,6 +167,9 @@
             this.DMS_MFDate_QCheck = new System.Windows.Forms.CheckBox();
             this.DMS_EXPDate_QCheck = new System.Windows.Forms.CheckBox();
             this.DMS_panel1 = new System.Windows.Forms.Panel();
+            this.DMS_匯出資料toolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.DMS_panel2.SuspendLayout();
             this.DMS_toolStrip1.SuspendLayout();
             this.DMS_tabControl1.SuspendLayout();
@@ -264,7 +267,10 @@
             this.toolStripSeparator3,
             this.DMS_取消toolStripButton,
             this.DMS_儲存toolStripButton,
-            this.toolStripSeparator6});
+            this.toolStripSeparator6,
+            this.DMS_匯出資料toolStripButton,
+            this.toolStripSeparator4,
+            this.toolStripSeparator5});
             this.DMS_toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.DMS_toolStrip1.Name = "DMS_toolStrip1";
             this.DMS_toolStrip1.Size = new System.Drawing.Size(1550, 27);
@@ -1200,15 +1206,15 @@
             this.DMS_panel3.Size = new System.Drawing.Size(242, 32);
             this.DMS_panel3.TabIndex = 36;
             // 
-            // DMS_file_ordinary1
+            // DMS_file_Ordinary_QCheck
             // 
-            this.DMS_file_ordinary1.AutoSize = true;
-            this.DMS_file_ordinary1.Location = new System.Drawing.Point(3, 3);
-            this.DMS_file_ordinary1.Name = "DMS_file_ordinary1";
-            this.DMS_file_ordinary1.Size = new System.Drawing.Size(75, 24);
-            this.DMS_file_ordinary1.TabIndex = 31;
-            this.DMS_file_ordinary1.Text = "普通件";
-            this.DMS_file_ordinary1.UseVisualStyleBackColor = true;
+            this.DMS_file_Ordinary_QCheck.AutoSize = true;
+            this.DMS_file_Ordinary_QCheck.Location = new System.Drawing.Point(146, 4);
+            this.DMS_file_Ordinary_QCheck.Name = "DMS_file_Ordinary_QCheck";
+            this.DMS_file_Ordinary_QCheck.Size = new System.Drawing.Size(92, 24);
+            this.DMS_file_Ordinary_QCheck.TabIndex = 38;
+            this.DMS_file_Ordinary_QCheck.Text = "查詢條件";
+            this.DMS_file_Ordinary_QCheck.UseVisualStyleBackColor = true;
             // 
             // DMS_file_ordinary2
             // 
@@ -1220,15 +1226,15 @@
             this.DMS_file_ordinary2.Text = "急件";
             this.DMS_file_ordinary2.UseVisualStyleBackColor = true;
             // 
-            // DMS_file_Ordinary_QCheck
+            // DMS_file_ordinary1
             // 
-            this.DMS_file_Ordinary_QCheck.AutoSize = true;
-            this.DMS_file_Ordinary_QCheck.Location = new System.Drawing.Point(146, 4);
-            this.DMS_file_Ordinary_QCheck.Name = "DMS_file_Ordinary_QCheck";
-            this.DMS_file_Ordinary_QCheck.Size = new System.Drawing.Size(92, 24);
-            this.DMS_file_Ordinary_QCheck.TabIndex = 38;
-            this.DMS_file_Ordinary_QCheck.Text = "查詢條件";
-            this.DMS_file_Ordinary_QCheck.UseVisualStyleBackColor = true;
+            this.DMS_file_ordinary1.AutoSize = true;
+            this.DMS_file_ordinary1.Location = new System.Drawing.Point(3, 3);
+            this.DMS_file_ordinary1.Name = "DMS_file_ordinary1";
+            this.DMS_file_ordinary1.Size = new System.Drawing.Size(75, 24);
+            this.DMS_file_ordinary1.TabIndex = 31;
+            this.DMS_file_ordinary1.Text = "普通件";
+            this.DMS_file_ordinary1.UseVisualStyleBackColor = true;
             // 
             // DMS_panel4
             // 
@@ -1240,15 +1246,15 @@
             this.DMS_panel4.Size = new System.Drawing.Size(235, 32);
             this.DMS_panel4.TabIndex = 37;
             // 
-            // DMS_Return_N
+            // DMS_Return_QCheck
             // 
-            this.DMS_Return_N.AutoSize = true;
-            this.DMS_Return_N.Location = new System.Drawing.Point(50, 3);
-            this.DMS_Return_N.Name = "DMS_Return_N";
-            this.DMS_Return_N.Size = new System.Drawing.Size(43, 24);
-            this.DMS_Return_N.TabIndex = 34;
-            this.DMS_Return_N.Text = "否";
-            this.DMS_Return_N.UseVisualStyleBackColor = true;
+            this.DMS_Return_QCheck.AutoSize = true;
+            this.DMS_Return_QCheck.Location = new System.Drawing.Point(99, 4);
+            this.DMS_Return_QCheck.Name = "DMS_Return_QCheck";
+            this.DMS_Return_QCheck.Size = new System.Drawing.Size(92, 24);
+            this.DMS_Return_QCheck.TabIndex = 35;
+            this.DMS_Return_QCheck.Text = "查詢條件";
+            this.DMS_Return_QCheck.UseVisualStyleBackColor = true;
             // 
             // DMS_Return_Y
             // 
@@ -1260,15 +1266,15 @@
             this.DMS_Return_Y.Text = "是";
             this.DMS_Return_Y.UseVisualStyleBackColor = true;
             // 
-            // DMS_Return_QCheck
+            // DMS_Return_N
             // 
-            this.DMS_Return_QCheck.AutoSize = true;
-            this.DMS_Return_QCheck.Location = new System.Drawing.Point(99, 4);
-            this.DMS_Return_QCheck.Name = "DMS_Return_QCheck";
-            this.DMS_Return_QCheck.Size = new System.Drawing.Size(92, 24);
-            this.DMS_Return_QCheck.TabIndex = 35;
-            this.DMS_Return_QCheck.Text = "查詢條件";
-            this.DMS_Return_QCheck.UseVisualStyleBackColor = true;
+            this.DMS_Return_N.AutoSize = true;
+            this.DMS_Return_N.Location = new System.Drawing.Point(50, 3);
+            this.DMS_Return_N.Name = "DMS_Return_N";
+            this.DMS_Return_N.Size = new System.Drawing.Size(43, 24);
+            this.DMS_Return_N.TabIndex = 34;
+            this.DMS_Return_N.Text = "否";
+            this.DMS_Return_N.UseVisualStyleBackColor = true;
             // 
             // label25
             // 
@@ -1414,6 +1420,26 @@
             this.DMS_panel1.Name = "DMS_panel1";
             this.DMS_panel1.Size = new System.Drawing.Size(1101, 434);
             this.DMS_panel1.TabIndex = 0;
+            // 
+            // DMS_匯出資料toolStripButton
+            // 
+            this.DMS_匯出資料toolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.DMS_匯出資料toolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("DMS_匯出資料toolStripButton.Image")));
+            this.DMS_匯出資料toolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.DMS_匯出資料toolStripButton.Name = "DMS_匯出資料toolStripButton";
+            this.DMS_匯出資料toolStripButton.Size = new System.Drawing.Size(77, 24);
+            this.DMS_匯出資料toolStripButton.Text = "匯出資料";
+            this.DMS_匯出資料toolStripButton.Click += new System.EventHandler(this.DMS_匯出資料toolStripButton_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 27);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 27);
             // 
             // FileManager
             // 
@@ -1592,5 +1618,8 @@
         private System.Windows.Forms.CheckBox DMS_MFDate_QCheck;
         private System.Windows.Forms.CheckBox DMS_EXPDate_QCheck;
         private System.Windows.Forms.Panel DMS_panel1;
+        private System.Windows.Forms.ToolStripButton DMS_匯出資料toolStripButton;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
     }
 }

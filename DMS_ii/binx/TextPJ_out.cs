@@ -99,7 +99,9 @@ namespace DMS_ii.binx
             {
                 //MessageBox.Show("更新DB成功", "DMS");
                 Txfun.TxPJ_Option_Text_All(TextPJ_panel);
-                FileMan.DMS_TxPJ_Out_GetValue(Txfun.All_TxPJ_Text); 
+                FileMan.DMS_TxPJ_Out_GetValue(Txfun.All_TxPJ_Text);
+                
+
                 this.Close();
             }
         }
