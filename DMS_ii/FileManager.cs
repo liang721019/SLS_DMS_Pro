@@ -195,27 +195,27 @@ namespace DMS_ii
         {
             if (To0108_text != "")
             {
-                Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_DMS_Other_Sample_items] '" + x + "','To0108','" + To0108_text + "'";
+                Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_DMS_Update_Other_Sample_items] '" + x + "','To0108','" + To0108_text + "'";
                 fun.DMS_modify(Query_DB);
             }
             if (To0209_text != "")
             {
-                Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_DMS_Other_Sample_items] '" + x + "','To0209','" + To0209_text + "'";
+                Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_DMS_Update_Other_Sample_items] '" + x + "','To0209','" + To0209_text + "'";
                 fun.DMS_modify(Query_DB);
             }
             if (To0309_text != "")
             {
-                Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_DMS_Other_Sample_items] '" + x + "','To0309','" + To0309_text + "'";
+                Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_DMS_Update_Other_Sample_items] '" + x + "','To0309','" + To0309_text + "'";
                 fun.DMS_modify(Query_DB);
             }
             if (To0406_text != "")
             {
-                Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_DMS_Other_Sample_items] '" + x + "','To0406','" + To0406_text + "'";
+                Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_DMS_Update_Other_Sample_items] '" + x + "','To0406','" + To0406_text + "'";
                 fun.DMS_modify(Query_DB);
             }
             if (To1101_text != "")
             {
-                Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_DMS_Other_Sample_items] '" + x + "','To1101','" + To1101_text + "'";
+                Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_DMS_Update_Other_Sample_items] '" + x + "','To1101','" + To1101_text + "'";
                 fun.DMS_modify(Query_DB);
             }
         }       //更新DB其他檢驗項目-對應的值
@@ -1104,6 +1104,7 @@ namespace DMS_ii
                 {
                     GetSQL("新增", null);
                     fun.DMS_insert(Query_DB);
+                    sample_items_other_text(tb_DMS_DOC_NO.Text.Trim());     //把其他檢驗項目的Text存到DB中
                     if (fun.Check_error == false)
                     {
                         MessageBox.Show("資料《新增》成功!!", "DMS");
@@ -1128,7 +1129,7 @@ namespace DMS_ii
                         //FText = MessageBox.form.Text
                         if (fun.Check_error == false)
                         {
-                            MessageBox.Show("資料《修改》成功!!", "DMS");                            
+                            MessageBox.Show("資料《修改》成功!!", "DMS");
                         }
                     }
                 }
@@ -1490,6 +1491,9 @@ namespace DMS_ii
             {
                 
                 TextPJ_int aTPJ_int = new TextPJ_int(this);
+                //設定init_Staff 新視窗的相對位置#############
+                aTPJ_int.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+                //############################################
                 aTPJ_int.TxPJ_UID = DMS_UID_Value.Text.Trim();         //UID傳值
                 aTPJ_int.TxPJ_DOCNO = tb_DMS_DOC_NO.Text.Trim();       //委託單編號
                 aTPJ_int.ShowDialog();
@@ -1502,6 +1506,9 @@ namespace DMS_ii
             {
                 
                 TextPJ_out aTPJ_out = new TextPJ_out(this);
+                //設定init_Staff 新視窗的相對位置#############
+                aTPJ_out.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+                //############################################
                 aTPJ_out.TxPJ_UID = DMS_UID_Value.Text;         //UID傳值
                 aTPJ_out.TxPJ_DOCNO = tb_DMS_DOC_NO.Text;       //委託單編號
                 aTPJ_out.ShowDialog();

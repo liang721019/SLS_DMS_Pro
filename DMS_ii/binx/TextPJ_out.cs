@@ -60,6 +60,7 @@ namespace DMS_ii.binx
             #region 檢驗項目讀取
             Txfun.All_DOCNO_TxPJ = TxPJ_DOCNO;
             Txfun.TxPJ_Option_view_All(TextPJ_panel);      //DMS_檢驗項目讀取DB的方法
+            other_items_getvalue(TxPJ_DOCNO);
             //Txfun.TxPJ_Option_view(TextPJ_int_panel2);      //DMS_檢驗項目讀取DB的方法
             #endregion            
             #region 判斷是否要顯示CheckButton
@@ -76,6 +77,9 @@ namespace DMS_ii.binx
                 DMS_TxPJ_UPdate_button.Visible = false;
             }
             #endregion
+            #region
+
+            #endregion
         }
 
         public void other_items_value()         //其他檢驗項目的值
@@ -83,7 +87,7 @@ namespace DMS_ii.binx
             #region 內容
             if (To0108.Checked)
             {
-                FileMan.To0108_text = To0108_tb.Text;
+                FileMan.To0108_text = To0108_tb.Text;  
             }
             if (To0209.Checked)
             {
@@ -101,8 +105,42 @@ namespace DMS_ii.binx
             {
                 FileMan.To1101_text = To1101_tb.Text;
             }
+            #endregion
+        }
 
-            
+        public void other_items_getvalue(string x)         //其他檢驗項目的值
+        {
+            #region 內容
+            if (To0108.Checked)
+            {
+                Txfun.Query_DB = @"SELECT  [int_other]  FROM [TEST_SLSYHI].[dbo].[SLS_DMS_ii_Text_int]  where [DOC_NO] = '"+x+"' and [int_ID] = 'To0108'";
+                Txfun.DMS_TextPJ_ds(Txfun.Query_DB);
+                To0108_tb.Text = Txfun.ds_index.Tables[0].Rows[0]["int_other"].ToString();
+            }
+            if (To0209.Checked)
+            {
+                Txfun.Query_DB = @"SELECT  [int_other]  FROM [TEST_SLSYHI].[dbo].[SLS_DMS_ii_Text_int]  where [DOC_NO] = '" + x + "' and [int_ID] = 'To0209'";
+                Txfun.DMS_TextPJ_ds(Txfun.Query_DB);
+                To0209_tb.Text = Txfun.ds_index.Tables[0].Rows[0]["int_other"].ToString();
+            }
+            if (To0309.Checked)
+            {
+                Txfun.Query_DB = @"SELECT  [int_other]  FROM [TEST_SLSYHI].[dbo].[SLS_DMS_ii_Text_int]  where [DOC_NO] = '" + x + "' and [int_ID] = 'To0309'";
+                Txfun.DMS_TextPJ_ds(Txfun.Query_DB);
+                To0309_tb.Text = Txfun.ds_index.Tables[0].Rows[0]["int_other"].ToString();
+            }
+            if (To0406.Checked)
+            {
+                Txfun.Query_DB = @"SELECT  [int_other]  FROM [TEST_SLSYHI].[dbo].[SLS_DMS_ii_Text_int]  where [DOC_NO] = '" + x + "' and [int_ID] = 'To0406'";
+                Txfun.DMS_TextPJ_ds(Txfun.Query_DB);
+                To0406_tb.Text = Txfun.ds_index.Tables[0].Rows[0]["int_other"].ToString();
+            }
+            if (To1101.Checked)
+            {
+                Txfun.Query_DB = @"SELECT  [int_other]  FROM [TEST_SLSYHI].[dbo].[SLS_DMS_ii_Text_int]  where [DOC_NO] = '" + x + "' and [int_ID] = 'To1101'";
+                Txfun.DMS_TextPJ_ds(Txfun.Query_DB);
+                To1101_tb.Text = Txfun.ds_index.Tables[0].Rows[0]["int_other"].ToString();
+            }
             #endregion
         }
 
