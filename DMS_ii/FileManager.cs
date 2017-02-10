@@ -156,7 +156,31 @@ namespace DMS_ii
             get;
         }
 
-        public DataTable sample_items
+        public string To0108_text           //外檢-To0108其他
+        {
+            set;
+            get;
+        }
+
+        public string To0209_text           //外檢-To0209其他
+        {
+            set;
+            get;
+        }
+
+        public string To0309_text           //外檢-To0309其他
+        {
+            set;
+            get;
+        }
+
+        public string To0406_text           //外檢-To0406其他
+        {
+            set;
+            get;
+        }
+
+        public string To1101_text           //外檢-To1101其他
         {
             set;
             get;
@@ -166,6 +190,36 @@ namespace DMS_ii
 
         #region 方法
         //================================================================================================
+
+        public void sample_items_other_text(string x)
+        {
+            if (To0108_text != "")
+            {
+                Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_DMS_Other_Sample_items] '" + x + "','To0108','" + To0108_text + "'";
+                fun.DMS_modify(Query_DB);
+            }
+            if (To0209_text != "")
+            {
+                Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_DMS_Other_Sample_items] '" + x + "','To0209','" + To0209_text + "'";
+                fun.DMS_modify(Query_DB);
+            }
+            if (To0309_text != "")
+            {
+                Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_DMS_Other_Sample_items] '" + x + "','To0309','" + To0309_text + "'";
+                fun.DMS_modify(Query_DB);
+            }
+            if (To0406_text != "")
+            {
+                Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_DMS_Other_Sample_items] '" + x + "','To0406','" + To0406_text + "'";
+                fun.DMS_modify(Query_DB);
+            }
+            if (To1101_text != "")
+            {
+                Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_DMS_Other_Sample_items] '" + x + "','To1101','" + To1101_text + "'";
+                fun.DMS_modify(Query_DB);
+            }
+        }       //更新DB其他檢驗項目-對應的值
+
         public void GetSQL(string  uu , string rr )
         {
             switch (uu)
@@ -394,7 +448,7 @@ namespace DMS_ii
                 fun.EoD_toolStripButton_Tab(DMS_toolStrip1, false);
                 tb_DMS_Out_Item.ReadOnly = true;
                 tb_DMS_Self_Item.ReadOnly = true;
-                tb_DMS_DOC_NO.Enabled = false;                
+                tb_DMS_DOC_NO.ReadOnly = true;
                 DMS_儲存toolStripButton.Visible = true;
                 DMS_取消toolStripButton.Visible = true;
                 DMS_儲存toolStripButton.Enabled = true;
@@ -411,7 +465,7 @@ namespace DMS_ii
                 fun.EoD_toolStripButton_Tab(DMS_toolStrip1, false);
                 tb_DMS_Out_Item.ReadOnly = true;
                 tb_DMS_Self_Item.ReadOnly = true;
-                tb_DMS_DOC_NO.Enabled = false;
+                tb_DMS_DOC_NO.ReadOnly = true;
                 DMS_儲存toolStripButton.Visible = true;
                 DMS_取消toolStripButton.Visible = true;
                 DMS_儲存toolStripButton.Enabled = true;
@@ -448,6 +502,9 @@ namespace DMS_ii
                 DMS_QueryClear_button.Enabled = true;                
                 dTP_DMS_PReportDate.Enabled = false;
                 dTP_DMS_DOC_DATE.Enabled = false;
+                tb_DMS_DOC_NO.ReadOnly = false;
+                tb_DMS_Out_Item.ReadOnly = true;
+                tb_DMS_Self_Item.ReadOnly = true;
                 DMS_RadioButton_QCheck();       //Open or close RadioButton的查詢條件
                 tb_DMS_DOC_NO.Focus();
                 DMS_tabControl1.SelectedIndex = 0;
@@ -469,9 +526,9 @@ namespace DMS_ii
 
             }
             else if (xx == DMS_取消toolStripButton)
-            {                
-                Status_info.Visible = false;
+            {
                 Status_info.Text = "";
+                Status_info.Visible = false;
                 fun.Disabled_Panel(DMS_panel1);
                 fun.EoD_toolStripButton_Tab(DMS_toolStrip1, true);
                 fun.EoD_Panel_CheckBOX(DMS_panel1, false);
@@ -480,7 +537,7 @@ namespace DMS_ii
                 DMS_儲存toolStripButton.Enabled = false;
                 DMS_取消toolStripButton.Enabled = false;
                 fun.EoD_Panel_All(DMS_UP_Controls_panel, false);        //關閉DMS_UP_Controls_panel內的所有控制項
-                DMS_RadioButton_QCheck();       //Open or close RadioButton的查詢條件         
+                DMS_RadioButton_QCheck();       //Open or close RadioButton的查詢條件
 
             }
         }
@@ -1054,7 +1111,6 @@ namespace DMS_ii
 
                 }
                 #endregion
-
             }
             else if (Status_info.Text == "修改")
             {
@@ -1064,15 +1120,16 @@ namespace DMS_ii
                     if (MessageBox.Show("確定要修改？", "警告!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         fun.Check_error = false;
-                        GetSQL("修改", null);
-                        mBox = "資料《修改》成功!!";
-                        FText = "DMS";
-                        fun.DMS_modify(Query_DB, mBox, FText);
-
-
+                        GetSQL("修改", null);                        
+                        fun.DMS_modify(Query_DB);
+                        sample_items_other_text(tb_DMS_DOC_NO.Text.Trim());     //把其他檢驗項目的Text存到DB中
                         //db_sum = SQL語法            
                         //mBox = 成功執行後的訊息
                         //FText = MessageBox.form.Text
+                        if (fun.Check_error == false)
+                        {
+                            MessageBox.Show("資料《修改》成功!!", "DMS");                            
+                        }
                     }
                 }
                 else
@@ -1081,7 +1138,6 @@ namespace DMS_ii
                 }
                 
                 #endregion
-
             }
             start_status(DMS_儲存toolStripButton);        //啟動狀態
 
@@ -1454,10 +1510,10 @@ namespace DMS_ii
             
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void DMS_File_UP_Manually_Click(object sender, EventArgs e)
         {
             fun.My_Local_File_ToListBox(DMS_FileUp);
-        }
+        }           //選擇檔案
         
         //================================================================================================
         #endregion

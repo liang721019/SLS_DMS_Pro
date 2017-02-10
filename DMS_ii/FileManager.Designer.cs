@@ -206,7 +206,7 @@
             this.DMS_File_UP_Manually.TabIndex = 113;
             this.DMS_File_UP_Manually.Text = "選擇檔案";
             this.DMS_File_UP_Manually.UseVisualStyleBackColor = true;
-            this.DMS_File_UP_Manually.Click += new System.EventHandler(this.button1_Click);
+            this.DMS_File_UP_Manually.Click += new System.EventHandler(this.DMS_File_UP_Manually_Click);
             // 
             // DMS_Clear_FileUP_button
             // 

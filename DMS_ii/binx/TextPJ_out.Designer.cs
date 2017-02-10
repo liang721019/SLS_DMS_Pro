@@ -545,9 +545,9 @@ namespace DMS_ii.binx
             this.To0204.AutoSize = true;
             this.To0204.Location = new System.Drawing.Point(111, 38);
             this.To0204.Name = "To0204";
-            this.To0204.Size = new System.Drawing.Size(215, 24);
+            this.To0204.Size = new System.Drawing.Size(214, 24);
             this.To0204.TabIndex = 4;
-            this.To0204.Text = "黴菌(Mold)/酵母菌(Yeast)";
+            this.To0204.Text = "黴菌(Mold)\\酵母菌(Yeast)";
             this.To0204.UseVisualStyleBackColor = true;
             // 
             // To0205
@@ -749,9 +749,9 @@ namespace DMS_ii.binx
             this.To0802.AutoSize = true;
             this.To0802.Location = new System.Drawing.Point(165, 3);
             this.To0802.Name = "To0802";
-            this.To0802.Size = new System.Drawing.Size(179, 24);
+            this.To0802.Size = new System.Drawing.Size(178, 24);
             this.To0802.TabIndex = 37;
-            this.To0802.Text = "動物用藥/抗生素檢測";
+            this.To0802.Text = "動物用藥\\抗生素檢測";
             this.To0802.UseVisualStyleBackColor = true;
             // 
             // To1001

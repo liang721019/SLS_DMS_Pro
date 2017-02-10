@@ -113,7 +113,7 @@ namespace DMS_ii
                         fun.Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_DMS_Login_ModifyPWD] '" +
                                         DMS_LoginMOD_ID_tb.Text +
                                         @"','" + App_LoginNewPW + "'";
-                        fun.DMS_modify(fun.Query_DB, null, null);
+                        fun.DMS_modify(fun.Query_DB);
                         if (!fun.Check_error)
                         {
                             MessageBox.Show("密碼修改成功!!", this.Text);

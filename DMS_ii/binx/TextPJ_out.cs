@@ -66,15 +66,45 @@ namespace DMS_ii.binx
             if (FileMan.Status_info.Text == "新增" || FileMan.Status_info.Text == "修改")
             {
                 Txfun.TxPJ_Controls_View_Method(TextPJ_panel, true);
+                Txfun.EoD_Panel_txt_all(TextPJ_panel, false);
                 DMS_TxPJ_UPdate_button.Visible = true;
             }
             else
             {
                 Txfun.TxPJ_Controls_View_Method(TextPJ_panel, false);
+                Txfun.EoD_Panel_txt_all(TextPJ_panel, true);
                 DMS_TxPJ_UPdate_button.Visible = false;
             }
             #endregion
-        }       
+        }
+
+        public void other_items_value()         //其他檢驗項目的值
+        {
+            #region 內容
+            if (To0108.Checked)
+            {
+                FileMan.To0108_text = To0108_tb.Text;
+            }
+            if (To0209.Checked)
+            {
+                FileMan.To0209_text = To0209_tb.Text;
+            }
+            if (To0309.Checked)
+            {
+                FileMan.To0309_text = To0309_tb.Text;
+            }
+            if (To0406.Checked)
+            {
+                FileMan.To0406_text = To0406_tb.Text;
+            }
+            if (To1101.Checked)
+            {
+                FileMan.To1101_text = To1101_tb.Text;
+            }
+
+            
+            #endregion
+        }
 
         private void DMS_TxPJ_UPdate_button_Click(object sender, EventArgs e)
         {
@@ -100,8 +130,7 @@ namespace DMS_ii.binx
                 //MessageBox.Show("更新DB成功", "DMS");
                 Txfun.TxPJ_Option_Text_All(TextPJ_panel);
                 FileMan.DMS_TxPJ_Out_GetValue(Txfun.All_TxPJ_Text);
-                
-
+                other_items_value();                //其他檢驗項目的值
                 this.Close();
             }
         }
