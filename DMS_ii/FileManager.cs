@@ -1258,7 +1258,19 @@ namespace DMS_ii
                         #region 判斷是否有資料夾
                         if (!System.IO.Directory.Exists(DFU_y))     //判斷是否有資料夾->沒有資料夾就新增
                         {
-                            System.IO.Directory.CreateDirectory(DFU_y);      //新增資料夾
+                            try
+                            {
+                                System.IO.Directory.CreateDirectory(DFU_y);      //新增資料夾                                
+                            }
+                            catch (UnauthorizedAccessException)
+                            {
+                                MessageBox.Show("使用者沒有<新增資料夾>權限!!", "警告!!");
+                            }
+                            catch(Exception ex)
+                            {
+                                MessageBox.Show(ex.Message, "警告!!");
+                            }
+                            
                         }
                         #endregion
 
