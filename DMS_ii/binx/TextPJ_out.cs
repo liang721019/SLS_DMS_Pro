@@ -60,11 +60,16 @@ namespace DMS_ii.binx
             #region 檢驗項目讀取
             Txfun.All_DOCNO_TxPJ = TxPJ_DOCNO;
             Txfun.TxPJ_Option_view_All(TextPJ_panel);      //DMS_檢驗項目讀取DB的方法
-            other_items_getvalue(TxPJ_DOCNO);
-            //Txfun.TxPJ_Option_view(TextPJ_int_panel2);      //DMS_檢驗項目讀取DB的方法
+            other_items_getvalue(TxPJ_DOCNO);              //DMS_從DB讀取其他檢驗項目的值            
             #endregion            
             #region 判斷是否要顯示CheckButton
-            if (FileMan.Status_info.Text == "新增" || FileMan.Status_info.Text == "修改")
+            if (FileMan.Status_info.Text == "新增" )
+            {
+                Txfun.TxPJ_Controls_View_Method(TextPJ_panel, true);
+                Txfun.EoD_Panel_txt_all(TextPJ_panel, false);
+                DMS_TxPJ_UPdate_button.Visible = true;
+            }
+            else if (FileMan.Status_info.Text == "修改")
             {
                 Txfun.TxPJ_Controls_View_Method(TextPJ_panel, true);
                 Txfun.EoD_Panel_txt_all(TextPJ_panel, false);
@@ -77,69 +82,67 @@ namespace DMS_ii.binx
                 DMS_TxPJ_UPdate_button.Visible = false;
             }
             #endregion
-            #region
-
-            #endregion
+            
         }
 
         public void other_items_value()         //其他檢驗項目的值
         {
             #region 內容
-            if (To0108.Checked)
+            if (To01O.Checked)
             {
-                FileMan.To0108_text = To0108_tb.Text;  
+                FileMan.To01O_text = To01O_tb.Text;  
             }
-            if (To0209.Checked)
+            if (To02O.Checked)
             {
-                FileMan.To0209_text = To0209_tb.Text;
+                FileMan.To02O_text = To02O_tb.Text;
             }
-            if (To0309.Checked)
+            if (To03O.Checked)
             {
-                FileMan.To0309_text = To0309_tb.Text;
+                FileMan.To03O_text = To03O_tb.Text;
             }
-            if (To0406.Checked)
+            if (To04O.Checked)
             {
-                FileMan.To0406_text = To0406_tb.Text;
+                FileMan.To04O_text = To04O_tb.Text;
             }
-            if (To1101.Checked)
+            if (To11O.Checked)
             {
-                FileMan.To1101_text = To1101_tb.Text;
+                FileMan.To11O_text = To11O_tb.Text;
             }
             #endregion
         }
 
-        public void other_items_getvalue(string x)         //其他檢驗項目的值
+        public void other_items_getvalue(string x)         //從DB讀取其他檢驗項目的值
         {
             #region 內容
-            if (To0108.Checked)
+            if (To01O.Checked)
             {
-                Txfun.Query_DB = @"SELECT  [int_other]  FROM [TEST_SLSYHI].[dbo].[SLS_DMS_ii_Text_int]  where [DOC_NO] = '"+x+"' and [int_ID] = 'To0108'";
+                Txfun.Query_DB = @"SELECT  [int_other]  FROM [TEST_SLSYHI].[dbo].[SLS_DMS_ii_Text_int]  where [DOC_NO] = '"+x+"' and [int_ID] = 'To01O'";
                 Txfun.DMS_TextPJ_ds(Txfun.Query_DB);
-                To0108_tb.Text = Txfun.ds_index.Tables[0].Rows[0]["int_other"].ToString();
+                To01O_tb.Text = Txfun.ds_index.Tables[0].Rows[0]["int_other"].ToString();
             }
-            if (To0209.Checked)
+            if (To02O.Checked)
             {
-                Txfun.Query_DB = @"SELECT  [int_other]  FROM [TEST_SLSYHI].[dbo].[SLS_DMS_ii_Text_int]  where [DOC_NO] = '" + x + "' and [int_ID] = 'To0209'";
+                Txfun.Query_DB = @"SELECT  [int_other]  FROM [TEST_SLSYHI].[dbo].[SLS_DMS_ii_Text_int]  where [DOC_NO] = '" + x + "' and [int_ID] = 'To02O'";
                 Txfun.DMS_TextPJ_ds(Txfun.Query_DB);
-                To0209_tb.Text = Txfun.ds_index.Tables[0].Rows[0]["int_other"].ToString();
+                To02O_tb.Text = Txfun.ds_index.Tables[0].Rows[0]["int_other"].ToString();
             }
-            if (To0309.Checked)
+            if (To03O.Checked)
             {
-                Txfun.Query_DB = @"SELECT  [int_other]  FROM [TEST_SLSYHI].[dbo].[SLS_DMS_ii_Text_int]  where [DOC_NO] = '" + x + "' and [int_ID] = 'To0309'";
+                Txfun.Query_DB = @"SELECT  [int_other]  FROM [TEST_SLSYHI].[dbo].[SLS_DMS_ii_Text_int]  where [DOC_NO] = '" + x + "' and [int_ID] = 'To03O'";
                 Txfun.DMS_TextPJ_ds(Txfun.Query_DB);
-                To0309_tb.Text = Txfun.ds_index.Tables[0].Rows[0]["int_other"].ToString();
+                To03O_tb.Text = Txfun.ds_index.Tables[0].Rows[0]["int_other"].ToString();
             }
-            if (To0406.Checked)
+            if (To04O.Checked)
             {
-                Txfun.Query_DB = @"SELECT  [int_other]  FROM [TEST_SLSYHI].[dbo].[SLS_DMS_ii_Text_int]  where [DOC_NO] = '" + x + "' and [int_ID] = 'To0406'";
+                Txfun.Query_DB = @"SELECT  [int_other]  FROM [TEST_SLSYHI].[dbo].[SLS_DMS_ii_Text_int]  where [DOC_NO] = '" + x + "' and [int_ID] = 'To04O'";
                 Txfun.DMS_TextPJ_ds(Txfun.Query_DB);
-                To0406_tb.Text = Txfun.ds_index.Tables[0].Rows[0]["int_other"].ToString();
+                To04O_tb.Text = Txfun.ds_index.Tables[0].Rows[0]["int_other"].ToString();
             }
-            if (To1101.Checked)
+            if (To11O.Checked)
             {
-                Txfun.Query_DB = @"SELECT  [int_other]  FROM [TEST_SLSYHI].[dbo].[SLS_DMS_ii_Text_int]  where [DOC_NO] = '" + x + "' and [int_ID] = 'To1101'";
+                Txfun.Query_DB = @"SELECT  [int_other]  FROM [TEST_SLSYHI].[dbo].[SLS_DMS_ii_Text_int]  where [DOC_NO] = '" + x + "' and [int_ID] = 'To11O'";
                 Txfun.DMS_TextPJ_ds(Txfun.Query_DB);
-                To1101_tb.Text = Txfun.ds_index.Tables[0].Rows[0]["int_other"].ToString();
+                To11O_tb.Text = Txfun.ds_index.Tables[0].Rows[0]["int_other"].ToString();
             }
             #endregion
         }

@@ -44,16 +44,16 @@ namespace DMS_ii.binx
             this.To0501 = new System.Windows.Forms.CheckBox();
             this.To0502 = new System.Windows.Forms.CheckBox();
             this.TextPJ_int_panel4 = new System.Windows.Forms.Panel();
-            this.To0406_tb = new System.Windows.Forms.TextBox();
+            this.To04O_tb = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.To0401 = new System.Windows.Forms.CheckBox();
             this.To0402 = new System.Windows.Forms.CheckBox();
             this.To0403 = new System.Windows.Forms.CheckBox();
             this.To0404 = new System.Windows.Forms.CheckBox();
             this.To0405 = new System.Windows.Forms.CheckBox();
-            this.To0406 = new System.Windows.Forms.CheckBox();
+            this.To04O = new System.Windows.Forms.CheckBox();
             this.TextPJ_int_panel3 = new System.Windows.Forms.Panel();
-            this.To0309_tb = new System.Windows.Forms.TextBox();
+            this.To03O_tb = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.To0301 = new System.Windows.Forms.CheckBox();
             this.To0302 = new System.Windows.Forms.CheckBox();
@@ -63,10 +63,10 @@ namespace DMS_ii.binx
             this.To0306 = new System.Windows.Forms.CheckBox();
             this.To0307 = new System.Windows.Forms.CheckBox();
             this.To0308 = new System.Windows.Forms.CheckBox();
-            this.To0309 = new System.Windows.Forms.CheckBox();
+            this.To03O = new System.Windows.Forms.CheckBox();
             this.TextPJ_int_panel2 = new System.Windows.Forms.Panel();
-            this.To0209_tb = new System.Windows.Forms.TextBox();
-            this.To0209 = new System.Windows.Forms.CheckBox();
+            this.To02O_tb = new System.Windows.Forms.TextBox();
+            this.To02O = new System.Windows.Forms.CheckBox();
             this.To0201 = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.To0202 = new System.Windows.Forms.CheckBox();
@@ -77,8 +77,8 @@ namespace DMS_ii.binx
             this.To0207 = new System.Windows.Forms.CheckBox();
             this.To0208 = new System.Windows.Forms.CheckBox();
             this.TextPJ_int_panel1 = new System.Windows.Forms.Panel();
-            this.To0108_tb = new System.Windows.Forms.TextBox();
-            this.To0108 = new System.Windows.Forms.CheckBox();
+            this.To01O_tb = new System.Windows.Forms.TextBox();
+            this.To01O = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.To0101 = new System.Windows.Forms.CheckBox();
             this.To0102 = new System.Windows.Forms.CheckBox();
@@ -88,9 +88,9 @@ namespace DMS_ii.binx
             this.To0106 = new System.Windows.Forms.CheckBox();
             this.To0107 = new System.Windows.Forms.CheckBox();
             this.TextPJ_int_panel8 = new System.Windows.Forms.Panel();
-            this.To1101_tb = new System.Windows.Forms.TextBox();
+            this.To11O_tb = new System.Windows.Forms.TextBox();
             this.To0801 = new System.Windows.Forms.CheckBox();
-            this.To1101 = new System.Windows.Forms.CheckBox();
+            this.To11O = new System.Windows.Forms.CheckBox();
             this.To0802 = new System.Windows.Forms.CheckBox();
             this.To1001 = new System.Windows.Forms.CheckBox();
             this.To0901 = new System.Windows.Forms.CheckBox();
@@ -253,25 +253,25 @@ namespace DMS_ii.binx
             // 
             // TextPJ_int_panel4
             // 
-            this.TextPJ_int_panel4.Controls.Add(this.To0406_tb);
+            this.TextPJ_int_panel4.Controls.Add(this.To04O_tb);
             this.TextPJ_int_panel4.Controls.Add(this.label4);
             this.TextPJ_int_panel4.Controls.Add(this.To0401);
             this.TextPJ_int_panel4.Controls.Add(this.To0402);
             this.TextPJ_int_panel4.Controls.Add(this.To0403);
             this.TextPJ_int_panel4.Controls.Add(this.To0404);
             this.TextPJ_int_panel4.Controls.Add(this.To0405);
-            this.TextPJ_int_panel4.Controls.Add(this.To0406);
+            this.TextPJ_int_panel4.Controls.Add(this.To04O);
             this.TextPJ_int_panel4.Location = new System.Drawing.Point(3, 414);
             this.TextPJ_int_panel4.Name = "TextPJ_int_panel4";
             this.TextPJ_int_panel4.Size = new System.Drawing.Size(641, 78);
             this.TextPJ_int_panel4.TabIndex = 46;
             // 
-            // To0406_tb
+            // To04O_tb
             // 
-            this.To0406_tb.Location = new System.Drawing.Point(363, 42);
-            this.To0406_tb.Name = "To0406_tb";
-            this.To0406_tb.Size = new System.Drawing.Size(202, 29);
-            this.To0406_tb.TabIndex = 20;
+            this.To04O_tb.Location = new System.Drawing.Point(363, 42);
+            this.To04O_tb.Name = "To04O_tb";
+            this.To04O_tb.Size = new System.Drawing.Size(202, 29);
+            this.To04O_tb.TabIndex = 20;
             // 
             // label4
             // 
@@ -332,19 +332,19 @@ namespace DMS_ii.binx
             this.To0405.Text = "人工色素";
             this.To0405.UseVisualStyleBackColor = true;
             // 
-            // To0406
+            // To04O
             // 
-            this.To0406.AutoSize = true;
-            this.To0406.Location = new System.Drawing.Point(210, 47);
-            this.To0406.Name = "To0406";
-            this.To0406.Size = new System.Drawing.Size(147, 24);
-            this.To0406.TabIndex = 26;
-            this.To0406.Text = "人工添加劑-其他";
-            this.To0406.UseVisualStyleBackColor = true;
+            this.To04O.AutoSize = true;
+            this.To04O.Location = new System.Drawing.Point(210, 47);
+            this.To04O.Name = "To04O";
+            this.To04O.Size = new System.Drawing.Size(147, 24);
+            this.To04O.TabIndex = 26;
+            this.To04O.Text = "人工添加劑-其他";
+            this.To04O.UseVisualStyleBackColor = true;
             // 
             // TextPJ_int_panel3
             // 
-            this.TextPJ_int_panel3.Controls.Add(this.To0309_tb);
+            this.TextPJ_int_panel3.Controls.Add(this.To03O_tb);
             this.TextPJ_int_panel3.Controls.Add(this.label3);
             this.TextPJ_int_panel3.Controls.Add(this.To0301);
             this.TextPJ_int_panel3.Controls.Add(this.To0302);
@@ -354,18 +354,18 @@ namespace DMS_ii.binx
             this.TextPJ_int_panel3.Controls.Add(this.To0306);
             this.TextPJ_int_panel3.Controls.Add(this.To0307);
             this.TextPJ_int_panel3.Controls.Add(this.To0308);
-            this.TextPJ_int_panel3.Controls.Add(this.To0309);
+            this.TextPJ_int_panel3.Controls.Add(this.To03O);
             this.TextPJ_int_panel3.Location = new System.Drawing.Point(3, 304);
             this.TextPJ_int_panel3.Name = "TextPJ_int_panel3";
             this.TextPJ_int_panel3.Size = new System.Drawing.Size(641, 104);
             this.TextPJ_int_panel3.TabIndex = 45;
             // 
-            // To0309_tb
+            // To03O_tb
             // 
-            this.To0309_tb.Location = new System.Drawing.Point(231, 69);
-            this.To0309_tb.Name = "To0309_tb";
-            this.To0309_tb.Size = new System.Drawing.Size(202, 29);
-            this.To0309_tb.TabIndex = 11;
+            this.To03O_tb.Location = new System.Drawing.Point(231, 69);
+            this.To03O_tb.Name = "To03O_tb";
+            this.To03O_tb.Size = new System.Drawing.Size(202, 29);
+            this.To03O_tb.TabIndex = 11;
             // 
             // label3
             // 
@@ -456,20 +456,20 @@ namespace DMS_ii.binx
             this.To0308.Text = "甲基汞(Methyl mercury)";
             this.To0308.UseVisualStyleBackColor = true;
             // 
-            // To0309
+            // To03O
             // 
-            this.To0309.AutoSize = true;
-            this.To0309.Location = new System.Drawing.Point(112, 71);
-            this.To0309.Name = "To0309";
-            this.To0309.Size = new System.Drawing.Size(115, 24);
-            this.To0309.TabIndex = 19;
-            this.To0309.Text = "重金屬-其他";
-            this.To0309.UseVisualStyleBackColor = true;
+            this.To03O.AutoSize = true;
+            this.To03O.Location = new System.Drawing.Point(112, 71);
+            this.To03O.Name = "To03O";
+            this.To03O.Size = new System.Drawing.Size(115, 24);
+            this.To03O.TabIndex = 19;
+            this.To03O.Text = "重金屬-其他";
+            this.To03O.UseVisualStyleBackColor = true;
             // 
             // TextPJ_int_panel2
             // 
-            this.TextPJ_int_panel2.Controls.Add(this.To0209_tb);
-            this.TextPJ_int_panel2.Controls.Add(this.To0209);
+            this.TextPJ_int_panel2.Controls.Add(this.To02O_tb);
+            this.TextPJ_int_panel2.Controls.Add(this.To02O);
             this.TextPJ_int_panel2.Controls.Add(this.To0201);
             this.TextPJ_int_panel2.Controls.Add(this.label2);
             this.TextPJ_int_panel2.Controls.Add(this.To0202);
@@ -484,22 +484,22 @@ namespace DMS_ii.binx
             this.TextPJ_int_panel2.Size = new System.Drawing.Size(641, 172);
             this.TextPJ_int_panel2.TabIndex = 44;
             // 
-            // To0209_tb
+            // To02O_tb
             // 
-            this.To0209_tb.Location = new System.Drawing.Point(233, 127);
-            this.To0209_tb.Name = "To0209_tb";
-            this.To0209_tb.Size = new System.Drawing.Size(200, 29);
-            this.To0209_tb.TabIndex = 10;
+            this.To02O_tb.Location = new System.Drawing.Point(233, 127);
+            this.To02O_tb.Name = "To02O_tb";
+            this.To02O_tb.Size = new System.Drawing.Size(200, 29);
+            this.To02O_tb.TabIndex = 10;
             // 
-            // To0209
+            // To02O
             // 
-            this.To0209.AutoSize = true;
-            this.To0209.Location = new System.Drawing.Point(111, 129);
-            this.To0209.Name = "To0209";
-            this.To0209.Size = new System.Drawing.Size(115, 24);
-            this.To0209.TabIndex = 9;
-            this.To0209.Text = "微生物-其他";
-            this.To0209.UseVisualStyleBackColor = true;
+            this.To02O.AutoSize = true;
+            this.To02O.Location = new System.Drawing.Point(111, 129);
+            this.To02O.Name = "To02O";
+            this.To02O.Size = new System.Drawing.Size(115, 24);
+            this.To02O.TabIndex = 9;
+            this.To02O.Text = "微生物-其他";
+            this.To02O.UseVisualStyleBackColor = true;
             // 
             // To0201
             // 
@@ -592,8 +592,8 @@ namespace DMS_ii.binx
             // 
             // TextPJ_int_panel1
             // 
-            this.TextPJ_int_panel1.Controls.Add(this.To0108_tb);
-            this.TextPJ_int_panel1.Controls.Add(this.To0108);
+            this.TextPJ_int_panel1.Controls.Add(this.To01O_tb);
+            this.TextPJ_int_panel1.Controls.Add(this.To01O);
             this.TextPJ_int_panel1.Controls.Add(this.label1);
             this.TextPJ_int_panel1.Controls.Add(this.To0101);
             this.TextPJ_int_panel1.Controls.Add(this.To0102);
@@ -607,22 +607,22 @@ namespace DMS_ii.binx
             this.TextPJ_int_panel1.Size = new System.Drawing.Size(641, 107);
             this.TextPJ_int_panel1.TabIndex = 43;
             // 
-            // To0108_tb
+            // To01O_tb
             // 
-            this.To0108_tb.Location = new System.Drawing.Point(474, 69);
-            this.To0108_tb.Name = "To0108_tb";
-            this.To0108_tb.Size = new System.Drawing.Size(152, 29);
-            this.To0108_tb.TabIndex = 9;
+            this.To01O_tb.Location = new System.Drawing.Point(474, 69);
+            this.To01O_tb.Name = "To01O_tb";
+            this.To01O_tb.Size = new System.Drawing.Size(152, 29);
+            this.To01O_tb.TabIndex = 9;
             // 
-            // To0108
+            // To01O
             // 
-            this.To0108.AutoSize = true;
-            this.To0108.Location = new System.Drawing.Point(337, 71);
-            this.To0108.Name = "To0108";
-            this.To0108.Size = new System.Drawing.Size(131, 24);
-            this.To0108.TabIndex = 8;
-            this.To0108.Text = "理化性質-其他";
-            this.To0108.UseVisualStyleBackColor = true;
+            this.To01O.AutoSize = true;
+            this.To01O.Location = new System.Drawing.Point(337, 71);
+            this.To01O.Name = "To01O";
+            this.To01O.Size = new System.Drawing.Size(131, 24);
+            this.To01O.TabIndex = 8;
+            this.To01O.Text = "理化性質-其他";
+            this.To01O.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -705,9 +705,9 @@ namespace DMS_ii.binx
             // 
             // TextPJ_int_panel8
             // 
-            this.TextPJ_int_panel8.Controls.Add(this.To1101_tb);
+            this.TextPJ_int_panel8.Controls.Add(this.To11O_tb);
             this.TextPJ_int_panel8.Controls.Add(this.To0801);
-            this.TextPJ_int_panel8.Controls.Add(this.To1101);
+            this.TextPJ_int_panel8.Controls.Add(this.To11O);
             this.TextPJ_int_panel8.Controls.Add(this.To0802);
             this.TextPJ_int_panel8.Controls.Add(this.To1001);
             this.TextPJ_int_panel8.Controls.Add(this.To0901);
@@ -717,12 +717,12 @@ namespace DMS_ii.binx
             this.TextPJ_int_panel8.Size = new System.Drawing.Size(454, 123);
             this.TextPJ_int_panel8.TabIndex = 42;
             // 
-            // To1101_tb
+            // To11O_tb
             // 
-            this.To1101_tb.Location = new System.Drawing.Point(104, 89);
-            this.To1101_tb.Name = "To1101_tb";
-            this.To1101_tb.Size = new System.Drawing.Size(202, 29);
-            this.To1101_tb.TabIndex = 50;
+            this.To11O_tb.Location = new System.Drawing.Point(104, 89);
+            this.To11O_tb.Name = "To11O_tb";
+            this.To11O_tb.Size = new System.Drawing.Size(202, 29);
+            this.To11O_tb.TabIndex = 50;
             // 
             // To0801
             // 
@@ -734,15 +734,15 @@ namespace DMS_ii.binx
             this.To0801.Text = "多重農藥殘留檢測";
             this.To0801.UseVisualStyleBackColor = true;
             // 
-            // To1101
+            // To11O
             // 
-            this.To1101.AutoSize = true;
-            this.To1101.Location = new System.Drawing.Point(3, 93);
-            this.To1101.Name = "To1101";
-            this.To1101.Size = new System.Drawing.Size(92, 24);
-            this.To1101.TabIndex = 41;
-            this.To1101.Text = "其它檢驗";
-            this.To1101.UseVisualStyleBackColor = true;
+            this.To11O.AutoSize = true;
+            this.To11O.Location = new System.Drawing.Point(3, 93);
+            this.To11O.Name = "To11O";
+            this.To11O.Size = new System.Drawing.Size(92, 24);
+            this.To11O.TabIndex = 41;
+            this.To11O.Text = "其它檢驗";
+            this.To11O.UseVisualStyleBackColor = true;
             // 
             // To0802
             // 
@@ -833,7 +833,7 @@ namespace DMS_ii.binx
 
         private System.Windows.Forms.Button DMS_TxPJ_UPdate_button;
         private System.Windows.Forms.Panel TextPJ_panel;
-        private System.Windows.Forms.CheckBox To1101;
+        private System.Windows.Forms.CheckBox To11O;
         private System.Windows.Forms.CheckBox To1001;
         private System.Windows.Forms.CheckBox To0902;
         private System.Windows.Forms.CheckBox To0901;
@@ -848,13 +848,13 @@ namespace DMS_ii.binx
         private System.Windows.Forms.CheckBox To0502;
         private System.Windows.Forms.CheckBox To0501;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.CheckBox To0406;
+        private System.Windows.Forms.CheckBox To04O;
         private System.Windows.Forms.CheckBox To0405;
         private System.Windows.Forms.CheckBox To0404;
         private System.Windows.Forms.CheckBox To0403;
         private System.Windows.Forms.CheckBox To0402;
         private System.Windows.Forms.CheckBox To0401;
-        private System.Windows.Forms.CheckBox To0309;
+        private System.Windows.Forms.CheckBox To03O;
         private System.Windows.Forms.CheckBox To0308;
         private System.Windows.Forms.CheckBox To0307;
         private System.Windows.Forms.CheckBox To0306;
@@ -891,12 +891,12 @@ namespace DMS_ii.binx
         private System.Windows.Forms.Panel TextPJ_int_panel2;
         private System.Windows.Forms.Panel TextPJ_int_panel7;
         private System.Windows.Forms.Button DMS_TxPJ_Cancel_button;
-        private System.Windows.Forms.CheckBox To0209;
-        private System.Windows.Forms.CheckBox To0108;
-        private System.Windows.Forms.TextBox To0406_tb;
-        private System.Windows.Forms.TextBox To0309_tb;
-        private System.Windows.Forms.TextBox To0209_tb;
-        private System.Windows.Forms.TextBox To0108_tb;
-        private System.Windows.Forms.TextBox To1101_tb;
+        private System.Windows.Forms.CheckBox To02O;
+        private System.Windows.Forms.CheckBox To01O;
+        private System.Windows.Forms.TextBox To04O_tb;
+        private System.Windows.Forms.TextBox To03O_tb;
+        private System.Windows.Forms.TextBox To02O_tb;
+        private System.Windows.Forms.TextBox To01O_tb;
+        private System.Windows.Forms.TextBox To11O_tb;
     }
 }

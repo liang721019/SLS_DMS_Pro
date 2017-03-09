@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FileManager));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DMS_panel2 = new System.Windows.Forms.Panel();
             this.DMS_File_UP_Manually = new System.Windows.Forms.Button();
             this.DMS_Clear_FileUP_button = new System.Windows.Forms.Button();
@@ -51,6 +51,9 @@
             this.DMS_取消toolStripButton = new System.Windows.Forms.ToolStripButton();
             this.DMS_儲存toolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.DMS_匯出資料toolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.DMS_tabControl1 = new System.Windows.Forms.TabControl();
             this.DMS_tabPage1 = new System.Windows.Forms.TabPage();
             this.DMS_dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -95,6 +98,7 @@
             this.DMS_IP_Value = new System.Windows.Forms.ToolStripStatusLabel();
             this.Status_info = new System.Windows.Forms.Label();
             this.DMS_UP_Controls_panel = new System.Windows.Forms.Panel();
+            this.DMS_BPM匯入資料Button = new System.Windows.Forms.Button();
             this.DMS_QueryClear_button = new System.Windows.Forms.Button();
             this.DMS_Query_CB = new System.Windows.Forms.ComboBox();
             this.DMS_Query_button = new System.Windows.Forms.Button();
@@ -167,9 +171,6 @@
             this.DMS_MFDate_QCheck = new System.Windows.Forms.CheckBox();
             this.DMS_EXPDate_QCheck = new System.Windows.Forms.CheckBox();
             this.DMS_panel1 = new System.Windows.Forms.Panel();
-            this.DMS_匯出資料toolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.DMS_panel2.SuspendLayout();
             this.DMS_toolStrip1.SuspendLayout();
             this.DMS_tabControl1.SuspendLayout();
@@ -359,6 +360,26 @@
             this.toolStripSeparator6.Name = "toolStripSeparator6";
             this.toolStripSeparator6.Size = new System.Drawing.Size(6, 27);
             // 
+            // DMS_匯出資料toolStripButton
+            // 
+            this.DMS_匯出資料toolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.DMS_匯出資料toolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("DMS_匯出資料toolStripButton.Image")));
+            this.DMS_匯出資料toolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.DMS_匯出資料toolStripButton.Name = "DMS_匯出資料toolStripButton";
+            this.DMS_匯出資料toolStripButton.Size = new System.Drawing.Size(77, 24);
+            this.DMS_匯出資料toolStripButton.Text = "匯出資料";
+            this.DMS_匯出資料toolStripButton.Click += new System.EventHandler(this.DMS_匯出資料toolStripButton_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 27);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 27);
+            // 
             // DMS_tabControl1
             // 
             this.DMS_tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -391,8 +412,8 @@
             // 
             this.DMS_dataGridView1.AllowUserToAddRows = false;
             this.DMS_dataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.DMS_dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.DMS_dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
             this.DMS_dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -425,8 +446,8 @@
             this.DMS_dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.DMS_dataGridView1.Name = "DMS_dataGridView1";
             this.DMS_dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.DMS_dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.DMS_dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle26;
             this.DMS_dataGridView1.RowTemplate.Height = 24;
             this.DMS_dataGridView1.Size = new System.Drawing.Size(1509, 370);
             this.DMS_dataGridView1.TabIndex = 0;
@@ -609,8 +630,8 @@
             // 
             this.DMS_dataGridView2.AllowUserToAddRows = false;
             this.DMS_dataGridView2.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.DMS_dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.DMS_dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle27;
             this.DMS_dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DMS_dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DMS_DGV2_Column1,
@@ -623,8 +644,8 @@
             this.DMS_dataGridView2.Location = new System.Drawing.Point(3, 3);
             this.DMS_dataGridView2.Name = "DMS_dataGridView2";
             this.DMS_dataGridView2.ReadOnly = true;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.DMS_dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.DMS_dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle28;
             this.DMS_dataGridView2.RowTemplate.Height = 24;
             this.DMS_dataGridView2.Size = new System.Drawing.Size(1509, 370);
             this.DMS_dataGridView2.TabIndex = 0;
@@ -704,8 +725,8 @@
             // DMS_UID_Value
             // 
             this.DMS_UID_Value.Name = "DMS_UID_Value";
-            this.DMS_UID_Value.Size = new System.Drawing.Size(32, 17);
-            this.DMS_UID_Value.Text = "root";
+            this.DMS_UID_Value.Size = new System.Drawing.Size(56, 17);
+            this.DMS_UID_Value.Text = "USER_ID";
             // 
             // DMS_MACLable
             // 
@@ -755,6 +776,17 @@
             this.DMS_UP_Controls_panel.Name = "DMS_UP_Controls_panel";
             this.DMS_UP_Controls_panel.Size = new System.Drawing.Size(1550, 40);
             this.DMS_UP_Controls_panel.TabIndex = 112;
+            // 
+            // DMS_BPM匯入資料Button
+            // 
+            this.DMS_BPM匯入資料Button.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.DMS_BPM匯入資料Button.Location = new System.Drawing.Point(1268, 0);
+            this.DMS_BPM匯入資料Button.Name = "DMS_BPM匯入資料Button";
+            this.DMS_BPM匯入資料Button.Size = new System.Drawing.Size(146, 27);
+            this.DMS_BPM匯入資料Button.TabIndex = 119;
+            this.DMS_BPM匯入資料Button.Text = "從BPM匯入資料";
+            this.DMS_BPM匯入資料Button.UseVisualStyleBackColor = true;
+            this.DMS_BPM匯入資料Button.Click += new System.EventHandler(this.DMS_BPM匯入資料Button_Click);
             // 
             // DMS_QueryClear_button
             // 
@@ -1421,31 +1453,12 @@
             this.DMS_panel1.Size = new System.Drawing.Size(1101, 434);
             this.DMS_panel1.TabIndex = 0;
             // 
-            // DMS_匯出資料toolStripButton
-            // 
-            this.DMS_匯出資料toolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.DMS_匯出資料toolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("DMS_匯出資料toolStripButton.Image")));
-            this.DMS_匯出資料toolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.DMS_匯出資料toolStripButton.Name = "DMS_匯出資料toolStripButton";
-            this.DMS_匯出資料toolStripButton.Size = new System.Drawing.Size(77, 24);
-            this.DMS_匯出資料toolStripButton.Text = "匯出資料";
-            this.DMS_匯出資料toolStripButton.Click += new System.EventHandler(this.DMS_匯出資料toolStripButton_Click);
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 27);
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 27);
-            // 
             // FileManager
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(1550, 964);
+            this.Controls.Add(this.DMS_BPM匯入資料Button);
             this.Controls.Add(this.DMS_panel1);
             this.Controls.Add(this.DMS_UP_Controls_panel);
             this.Controls.Add(this.Status_info);
@@ -1621,5 +1634,6 @@
         private System.Windows.Forms.ToolStripButton DMS_匯出資料toolStripButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.Button DMS_BPM匯入資料Button;
     }
 }

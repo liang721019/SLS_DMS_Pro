@@ -156,31 +156,31 @@ namespace DMS_ii
             get;
         }
 
-        public string To0108_text           //外檢-To0108其他
+        public string To01O_text           //外檢-To0108其他
         {
             set;
             get;
         }
 
-        public string To0209_text           //外檢-To0209其他
+        public string To02O_text           //外檢-To0209其他
         {
             set;
             get;
         }
 
-        public string To0309_text           //外檢-To0309其他
+        public string To03O_text           //外檢-To0309其他
         {
             set;
             get;
         }
 
-        public string To0406_text           //外檢-To0406其他
+        public string To04O_text           //外檢-To0406其他
         {
             set;
             get;
         }
 
-        public string To1101_text           //外檢-To1101其他
+        public string To11O_text           //外檢-To1101其他
         {
             set;
             get;
@@ -193,29 +193,29 @@ namespace DMS_ii
 
         public void sample_items_other_text(string x)
         {
-            if (To0108_text != "")
+            if (To01O_text != "")
             {
-                Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_DMS_Update_Other_Sample_items] '" + x + "','To0108','" + To0108_text + "'";
+                Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_DMS_Update_Other_Sample_items] '" + x + "','To01O','" + To01O_text + "'";
                 fun.DMS_modify(Query_DB);
             }
-            if (To0209_text != "")
+            if (To02O_text != "")
             {
-                Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_DMS_Update_Other_Sample_items] '" + x + "','To0209','" + To0209_text + "'";
+                Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_DMS_Update_Other_Sample_items] '" + x + "','To02O','" + To02O_text + "'";
                 fun.DMS_modify(Query_DB);
             }
-            if (To0309_text != "")
+            if (To03O_text != "")
             {
-                Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_DMS_Update_Other_Sample_items] '" + x + "','To0309','" + To0309_text + "'";
+                Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_DMS_Update_Other_Sample_items] '" + x + "','To03O','" + To03O_text + "'";
                 fun.DMS_modify(Query_DB);
             }
-            if (To0406_text != "")
+            if (To04O_text != "")
             {
-                Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_DMS_Update_Other_Sample_items] '" + x + "','To0406','" + To0406_text + "'";
+                Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_DMS_Update_Other_Sample_items] '" + x + "','To04O','" + To04O_text + "'";
                 fun.DMS_modify(Query_DB);
             }
-            if (To1101_text != "")
+            if (To11O_text != "")
             {
-                Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_DMS_Update_Other_Sample_items] '" + x + "','To1101','" + To1101_text + "'";
+                Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_DMS_Update_Other_Sample_items] '" + x + "','To11O','" + To11O_text + "'";
                 fun.DMS_modify(Query_DB);
             }
         }       //更新DB其他檢驗項目-對應的值
@@ -403,6 +403,7 @@ namespace DMS_ii
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;//視窗在中央打開
             fun.Disabled_Panel(DMS_panel1);
             fun.EoD_Panel_CheckBOX(DMS_panel1, false);
+            DMS_BPM匯入資料Button.Visible = false;
             DMS_儲存toolStripButton.Visible = false;
             DMS_取消toolStripButton.Visible = false;            
             fun.Format_Panel_dTP(DMS_panel1, "yyyy/MM/dd");     //自訂日期格式
@@ -434,6 +435,7 @@ namespace DMS_ii
             #endregion
             DMS_RadioButton_QCheck();        //Open or close RadioButton的查詢條件
             fun.EoD_Panel_All(DMS_UP_Controls_panel, false);        //關閉DMS_UP_Controls_panel內的所有控制項
+            Login_check_bt();        //依登入的使用者設定button顯示狀態
 
         }
 
@@ -538,7 +540,6 @@ namespace DMS_ii
                 DMS_取消toolStripButton.Enabled = false;
                 fun.EoD_Panel_All(DMS_UP_Controls_panel, false);        //關閉DMS_UP_Controls_panel內的所有控制項
                 DMS_RadioButton_QCheck();       //Open or close RadioButton的查詢條件
-
             }
         }
 
@@ -820,6 +821,23 @@ namespace DMS_ii
             
         }
 
+        public void Login_check_bt()        //依登入的使用者設定button顯示狀態
+        {
+            fun.Query_DB = @"select [DMS_BPMinput]  from [TEST_SLSYHI].[dbo].[SLS_Employees] where [EMP_ID] = '" + DMS_UID_Value.Text + "' and [DMS_BPMinput] = 'Y'";
+            fun.ProductDB_ds(fun.Query_DB);
+            if (fun.ds_index.Tables[0].Rows.Count == 1)     //DMS_BPM匯入資料Button
+            {
+                DMS_BPM匯入資料Button.Enabled = true;      //<BPM匯入資料>打開
+                DMS_BPM匯入資料Button.Visible = true;      //<BPM匯入資料>打開
+            }
+            else
+            {
+                DMS_BPM匯入資料Button.Enabled = false;      //<BPM匯入資料>關閉
+                DMS_BPM匯入資料Button.Visible = false;      //<BPM匯入資料>關閉
+                
+            }
+        }
+
         public void DateC(string x, string y)         //日期轉換20161203轉成2016/12/03
         {
             x = y.Substring(0, 4) + "/" + y.Substring(4, 2) + "/" + y.Substring(6, 2);
@@ -959,10 +977,12 @@ namespace DMS_ii
                 #region 內容
                 if (DMS_file_ordinary1.Checked)
                 {
+                    //普通件
                     QueryOLOD += @"and A.[Document_Type] = '01'";
                 }
                 else if (DMS_file_ordinary2.Checked)
                 {
+                    //急件
                     QueryOLOD += @"and A.[Document_Type] = '02'";
                 }
                 #endregion
@@ -973,10 +993,12 @@ namespace DMS_ii
                 #region 內容
                 if (DMS_Return_Y.Checked)
                 {
+                    //樣品是否退回-是
                     QueryOLOD += @"and A.[Sample_Return] = 'Y'";
                 }
                 else if (DMS_Return_N.Checked)
                 {
+                    //樣品是否退回-否
                     QueryOLOD += @"and A.[Sample_Return] = 'N'";
                 }
 
@@ -1201,6 +1223,11 @@ namespace DMS_ii
         private void DMS_QueryClear_button_Click(object sender, EventArgs e)        //清除Button
         {
             start_status(DMS_QueryClear_button); 
+        }
+
+        private void DMS_BPM匯入資料Button_Click(object sender, EventArgs e)        //BPM匯入資料
+        {
+
         }
 
         private void bt_DMS_Update_Click(object sender, EventArgs e)        //更新
@@ -1529,10 +1556,12 @@ namespace DMS_ii
             
         }
 
-        private void DMS_File_UP_Manually_Click(object sender, EventArgs e)
+        private void DMS_File_UP_Manually_Click(object sender, EventArgs e)             //選擇檔案
         {
             fun.My_Local_File_ToListBox(DMS_FileUp);
-        }           //選擇檔案
+        }
+
+        
         
         //================================================================================================
         #endregion
