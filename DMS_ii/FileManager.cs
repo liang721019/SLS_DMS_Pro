@@ -1112,8 +1112,6 @@ namespace DMS_ii
             {
                 MessageBox.Show("沒有文件編號!!","DMS");
             }
-                                  
-
         }
 
         private void DMS_儲存toolStripButton_Click(object sender, EventArgs e)

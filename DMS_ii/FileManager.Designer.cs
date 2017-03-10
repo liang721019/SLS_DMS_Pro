@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FileManager));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DMS_panel2 = new System.Windows.Forms.Panel();
             this.DMS_File_UP_Manually = new System.Windows.Forms.Button();
             this.DMS_Clear_FileUP_button = new System.Windows.Forms.Button();
@@ -98,8 +98,8 @@
             this.DMS_IP_Value = new System.Windows.Forms.ToolStripStatusLabel();
             this.Status_info = new System.Windows.Forms.Label();
             this.DMS_UP_Controls_panel = new System.Windows.Forms.Panel();
-            this.DMS_BPM匯入資料Button = new System.Windows.Forms.Button();
             this.DMS_QueryClear_button = new System.Windows.Forms.Button();
+            this.DMS_BPM匯入資料Button = new System.Windows.Forms.Button();
             this.DMS_Query_CB = new System.Windows.Forms.ComboBox();
             this.DMS_Query_button = new System.Windows.Forms.Button();
             this.dTP_Query_EndDate = new System.Windows.Forms.DateTimePicker();
@@ -412,8 +412,8 @@
             // 
             this.DMS_dataGridView1.AllowUserToAddRows = false;
             this.DMS_dataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.DMS_dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.DMS_dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DMS_dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -446,8 +446,8 @@
             this.DMS_dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.DMS_dataGridView1.Name = "DMS_dataGridView1";
             this.DMS_dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.DMS_dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.DMS_dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.DMS_dataGridView1.RowTemplate.Height = 24;
             this.DMS_dataGridView1.Size = new System.Drawing.Size(1509, 370);
             this.DMS_dataGridView1.TabIndex = 0;
@@ -630,8 +630,8 @@
             // 
             this.DMS_dataGridView2.AllowUserToAddRows = false;
             this.DMS_dataGridView2.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.DMS_dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.DMS_dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.DMS_dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DMS_dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DMS_DGV2_Column1,
@@ -644,8 +644,8 @@
             this.DMS_dataGridView2.Location = new System.Drawing.Point(3, 3);
             this.DMS_dataGridView2.Name = "DMS_dataGridView2";
             this.DMS_dataGridView2.ReadOnly = true;
-            dataGridViewCellStyle28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.DMS_dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.DMS_dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.DMS_dataGridView2.RowTemplate.Height = 24;
             this.DMS_dataGridView2.Size = new System.Drawing.Size(1509, 370);
             this.DMS_dataGridView2.TabIndex = 0;
@@ -765,6 +765,7 @@
             this.DMS_UP_Controls_panel.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.DMS_UP_Controls_panel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.DMS_UP_Controls_panel.Controls.Add(this.DMS_QueryClear_button);
+            this.DMS_UP_Controls_panel.Controls.Add(this.DMS_BPM匯入資料Button);
             this.DMS_UP_Controls_panel.Controls.Add(this.DMS_Query_CB);
             this.DMS_UP_Controls_panel.Controls.Add(this.DMS_Query_button);
             this.DMS_UP_Controls_panel.Controls.Add(this.dTP_Query_EndDate);
@@ -777,17 +778,6 @@
             this.DMS_UP_Controls_panel.Size = new System.Drawing.Size(1550, 40);
             this.DMS_UP_Controls_panel.TabIndex = 112;
             // 
-            // DMS_BPM匯入資料Button
-            // 
-            this.DMS_BPM匯入資料Button.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.DMS_BPM匯入資料Button.Location = new System.Drawing.Point(1268, 0);
-            this.DMS_BPM匯入資料Button.Name = "DMS_BPM匯入資料Button";
-            this.DMS_BPM匯入資料Button.Size = new System.Drawing.Size(146, 27);
-            this.DMS_BPM匯入資料Button.TabIndex = 119;
-            this.DMS_BPM匯入資料Button.Text = "從BPM匯入資料";
-            this.DMS_BPM匯入資料Button.UseVisualStyleBackColor = true;
-            this.DMS_BPM匯入資料Button.Click += new System.EventHandler(this.DMS_BPM匯入資料Button_Click);
-            // 
             // DMS_QueryClear_button
             // 
             this.DMS_QueryClear_button.Location = new System.Drawing.Point(97, 5);
@@ -797,6 +787,17 @@
             this.DMS_QueryClear_button.Text = "清除";
             this.DMS_QueryClear_button.UseVisualStyleBackColor = true;
             this.DMS_QueryClear_button.Click += new System.EventHandler(this.DMS_QueryClear_button_Click);
+            // 
+            // DMS_BPM匯入資料Button
+            // 
+            this.DMS_BPM匯入資料Button.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.DMS_BPM匯入資料Button.Location = new System.Drawing.Point(1387, 6);
+            this.DMS_BPM匯入資料Button.Name = "DMS_BPM匯入資料Button";
+            this.DMS_BPM匯入資料Button.Size = new System.Drawing.Size(146, 27);
+            this.DMS_BPM匯入資料Button.TabIndex = 119;
+            this.DMS_BPM匯入資料Button.Text = "從BPM匯入資料";
+            this.DMS_BPM匯入資料Button.UseVisualStyleBackColor = true;
+            this.DMS_BPM匯入資料Button.Click += new System.EventHandler(this.DMS_BPM匯入資料Button_Click);
             // 
             // DMS_Query_CB
             // 
@@ -1458,7 +1459,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(1550, 964);
-            this.Controls.Add(this.DMS_BPM匯入資料Button);
             this.Controls.Add(this.DMS_panel1);
             this.Controls.Add(this.DMS_UP_Controls_panel);
             this.Controls.Add(this.Status_info);
