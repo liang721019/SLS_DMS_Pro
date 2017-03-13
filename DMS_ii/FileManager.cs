@@ -1225,7 +1225,17 @@ namespace DMS_ii
 
         private void DMS_BPM匯入資料Button_Click(object sender, EventArgs e)        //BPM匯入資料
         {
-
+            Query_DB = @"EXEC [TEST_SLSYHI].[dbo].[SLS_DMS_Sync] '" + DMS_UID_Value.Text+ "'";
+            fun.Check_error = false;
+            fun.DMS_insert(Query_DB);
+            if (fun.Check_error)
+            {
+                MessageBox.Show("ERROR !!!\n從BPM匯入資料失敗!!!\n", this.Text);
+            }
+            else
+            {
+                MessageBox.Show("從BPM匯入資料成功!!!\n", this.Text);
+            }
         }
 
         private void bt_DMS_Update_Click(object sender, EventArgs e)        //更新

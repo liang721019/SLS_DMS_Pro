@@ -99,13 +99,13 @@
             this.Status_info = new System.Windows.Forms.Label();
             this.DMS_UP_Controls_panel = new System.Windows.Forms.Panel();
             this.DMS_QueryClear_button = new System.Windows.Forms.Button();
-            this.DMS_BPM匯入資料Button = new System.Windows.Forms.Button();
             this.DMS_Query_CB = new System.Windows.Forms.ComboBox();
             this.DMS_Query_button = new System.Windows.Forms.Button();
             this.dTP_Query_EndDate = new System.Windows.Forms.DateTimePicker();
             this.dTP_Query_StartDate = new System.Windows.Forms.DateTimePicker();
             this.label15 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.DMS_BPM匯入資料Button = new System.Windows.Forms.Button();
             this.DMS_DGV2_contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.開啟檔案ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DMS_tStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -765,7 +765,6 @@
             this.DMS_UP_Controls_panel.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.DMS_UP_Controls_panel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.DMS_UP_Controls_panel.Controls.Add(this.DMS_QueryClear_button);
-            this.DMS_UP_Controls_panel.Controls.Add(this.DMS_BPM匯入資料Button);
             this.DMS_UP_Controls_panel.Controls.Add(this.DMS_Query_CB);
             this.DMS_UP_Controls_panel.Controls.Add(this.DMS_Query_button);
             this.DMS_UP_Controls_panel.Controls.Add(this.dTP_Query_EndDate);
@@ -787,17 +786,6 @@
             this.DMS_QueryClear_button.Text = "清除";
             this.DMS_QueryClear_button.UseVisualStyleBackColor = true;
             this.DMS_QueryClear_button.Click += new System.EventHandler(this.DMS_QueryClear_button_Click);
-            // 
-            // DMS_BPM匯入資料Button
-            // 
-            this.DMS_BPM匯入資料Button.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.DMS_BPM匯入資料Button.Location = new System.Drawing.Point(1387, 6);
-            this.DMS_BPM匯入資料Button.Name = "DMS_BPM匯入資料Button";
-            this.DMS_BPM匯入資料Button.Size = new System.Drawing.Size(146, 27);
-            this.DMS_BPM匯入資料Button.TabIndex = 119;
-            this.DMS_BPM匯入資料Button.Text = "從BPM匯入資料";
-            this.DMS_BPM匯入資料Button.UseVisualStyleBackColor = true;
-            this.DMS_BPM匯入資料Button.Click += new System.EventHandler(this.DMS_BPM匯入資料Button_Click);
             // 
             // DMS_Query_CB
             // 
@@ -854,6 +842,17 @@
             this.label13.Size = new System.Drawing.Size(13, 20);
             this.label13.TabIndex = 109;
             this.label13.Text = ":";
+            // 
+            // DMS_BPM匯入資料Button
+            // 
+            this.DMS_BPM匯入資料Button.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.DMS_BPM匯入資料Button.Location = new System.Drawing.Point(1268, 0);
+            this.DMS_BPM匯入資料Button.Name = "DMS_BPM匯入資料Button";
+            this.DMS_BPM匯入資料Button.Size = new System.Drawing.Size(146, 27);
+            this.DMS_BPM匯入資料Button.TabIndex = 119;
+            this.DMS_BPM匯入資料Button.Text = "從BPM匯入資料";
+            this.DMS_BPM匯入資料Button.UseVisualStyleBackColor = true;
+            this.DMS_BPM匯入資料Button.Click += new System.EventHandler(this.DMS_BPM匯入資料Button_Click);
             // 
             // DMS_DGV2_contextMenuStrip
             // 
@@ -1459,6 +1458,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(1550, 964);
+            this.Controls.Add(this.DMS_BPM匯入資料Button);
             this.Controls.Add(this.DMS_panel1);
             this.Controls.Add(this.DMS_UP_Controls_panel);
             this.Controls.Add(this.Status_info);
