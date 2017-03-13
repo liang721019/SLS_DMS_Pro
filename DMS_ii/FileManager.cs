@@ -241,7 +241,7 @@ namespace DMS_ii
                                     @"','" + tb_DMS_KEEP_NO.Text.Trim() +               //留樣編號
                                     @"','" + tb_DMS_Result.Text.Trim() +               //審查結果-判定
                                     @"','" + tb_DMS_Result_DATE.Text.Trim() +               //審查結果-日期
-                                    @"','" + dTP_DMS_PReportDate.Text +       //預計出報告日期
+                                    //@"','" + dTP_DMS_PReportDate.Text +       //預計出報告日期
                                     @"','" + tb_DMS_Remark.Text.Trim() +               //備註                                    
                                     @"','" + DMS_UID_Value.Text.Trim() +        //建立者ID
                                     @"','" + tb_DMS_Out_Item.Text.Trim() +        //外檢項目
@@ -255,7 +255,7 @@ namespace DMS_ii
                                     @"','" + tb_DMS_樣品數量.Text.Trim() +        //樣品數量
                                     @"','" + dTP_DMS_製造日期.Text +        //製造日期
                                     @"','" + dTP_DMS_有效日期.Text +        //有效日期
-                                    @"','" + dTP_DMS_送樣日期.Text +        //送樣日期
+                                    //@"','" + dTP_DMS_送樣日期.Text +        //送樣日期
                                     @"'";
                         break;
                         #endregion
@@ -277,7 +277,7 @@ namespace DMS_ii
                                     @"','" + tb_DMS_KEEP_NO.Text.Trim() +               //留樣編號
                                     @"','" + tb_DMS_Result.Text.Trim() +               //審查結果-判定
                                     @"','" + tb_DMS_Result_DATE.Text.Trim() +               //審查結果-日期
-                                    @"','" + dTP_DMS_PReportDate.Text +       //預計出報告日期
+                                    //@"','" + dTP_DMS_PReportDate.Text +       //預計出報告日期
                                     @"','" + tb_DMS_Remark.Text.Trim() +               //備註                                    
                                     @"','" + DMS_UID_Value.Text +        //建立者ID
                                     @"','" + tb_DMS_Out_Item.Text.Trim() +        //外檢項目 
@@ -291,7 +291,7 @@ namespace DMS_ii
                                     @"','" + tb_DMS_樣品數量.Text.Trim() +        //樣品數量
                                     @"','" + dTP_DMS_製造日期.Text +        //製造日期
                                     @"','" + dTP_DMS_有效日期.Text +        //有效日期
-                                    @"','" + dTP_DMS_送樣日期.Text +        //送樣日期
+                                    //@"','" + dTP_DMS_送樣日期.Text +        //送樣日期
                                     @"'";
                                     
                         break;
@@ -324,34 +324,36 @@ namespace DMS_ii
                 case "查詢":
                     {
                         #region 查詢內容
-                        Query_DB = @"SELECT   A.[DOC_NO]		AS 委託單編號
-			                                ,A.[DOC_DATE]	AS 委託日期
-			                                ,A.[SAMPLE]		AS 樣品名稱
-			                                ,A.[BATCH_NO]	AS 樣品批號
-			                                ,A.[ORDER_NO]	AS 訂單編號
-			                                ,A.[ENT_DEPT]	AS 委託單位
-			                                ,A.[ENT_USER]	AS 委託者
-			                                ,A.[PURPOS]		AS 送樣目的
-			                                ,A.[REPORT_NO]	AS 品保報告編號
-			                                ,A.[KEEP_NO]	AS 留樣編號
-			                                ,A.[RESULT]		AS 審查結果判定
-			                                ,A.[RESULT_DATE]	AS 審查結果日期
-			                                ,A.[REPORT_DATE]	AS 預計出報告日期
-			                                ,A.[REMARK]			AS 備註
-                                            ,A.[Sample_Query]	AS 樣品數量
-				                            ,A.[MFDate]		AS 製造日期
-				                            ,A.[EXPDate]	AS 有效日期
-				                            ,A.[Preparation_Date]	AS 送樣日期
-                                            ,A.[Document_Type]	AS 文件類型
-				                            ,A.[Sample_Return]	AS 樣品退回	                                
-			                                ,B.[Out_NO]			AS 委外報告編號
-                                            ,B.[Out_Price]		AS 外檢價格			                                
-			                                ,B.[Self_NO]		AS TAF實驗室報告編號
-                                            ,B.[Self_Price]		AS 自檢價格
-	                                FROM [TEST_SLSYHI].[dbo].[SLS_DMS_ii]	AS A
-	                                left join [TEST_SLSYHI].[dbo].[SLS_DMS_ii_Detail_SampleAnalysis]	AS B
-	                                on A.[DOC_NO] = B.[DOC_NO]
-	                                where A.[DEL_Flag] = 'N'";
+                        Query_DB = @"SELECT      A.[DOC_NO]		AS 委託單編號
+			                                    ,A.[DOC_DATE]	AS 委託日期
+			                                    ,A.[SAMPLE]		AS 樣品名稱
+			                                    ,A.[BATCH_NO]	AS 樣品批號
+			                                    ,A.[ORDER_NO]	AS 訂單編號
+			                                    ,A.[ENT_DEPT]	AS 委託單位
+			                                    ,A.[ENT_USER]	AS 委託者
+			                                    ,A.[PURPOSE]		AS 送樣目的
+			                                    ,A.[SUPPLIER]	AS 生產供應商
+			                                    ,A.[SMP_TYPE]		AS 樣品型態
+			                                    ,A.[SAVE_METHOD]	AS 儲存方式
+			                                    ,A.[REPORT_NO]	AS 品保報告編號
+			                                    ,A.[KEEP_NO]	AS 留樣編號
+			                                    ,A.[RESULT]		AS 審查結果判定
+			                                    ,A.[RESULT_DATE]	AS 審查結果日期			                                    
+			                                    ,A.[REMARK]			AS 備註
+			                                    ,A.[Sample_Query]	AS 樣品數量
+			                                    ,A.[MFDate]		AS 製造日期
+			                                    ,A.[EXPDate]	AS 有效日期			                                    
+			                                    ,A.[Document_Type]	AS 文件類型
+			                                    ,A.[Sample_Return]	AS 樣品退回	
+			                                    ,A.[BPM_DOC_NO]		AS BPM表單編號                                
+			                                    ,B.[Out_NO]			AS 委外報告編號
+			                                    ,B.[Out_Price]		AS 外檢價格			                                
+			                                    ,B.[Self_NO]		AS TAF實驗室報告編號
+			                                    ,B.[Self_Price]		AS 自檢價格
+	                                    FROM [TEST_SLSYHI].[dbo].[SLS_DMS_ii]	AS A
+	                                    left join [TEST_SLSYHI].[dbo].[SLS_DMS_ii_Detail_SampleAnalysis]	AS B
+	                                    on A.[DOC_NO] = B.[DOC_NO]
+	                                    where A.[DEL_Flag] = 'N'";                        
                         
                         break;
                         #endregion                        
@@ -703,26 +705,30 @@ namespace DMS_ii
                 dTP_DMS_DOC_DATE.Text = fun.ds_index.Tables[0].Rows[0]["委託日期"].ToString();
                 tb_DMS_SAMPLE.Text = fun.ds_index.Tables[0].Rows[0]["樣品名稱"].ToString();
                 tb_DMS_BATCH_NO.Text = fun.ds_index.Tables[0].Rows[0]["樣品批號"].ToString();
+                tb_DMS_Order.Text = fun.ds_index.Tables[0].Rows[0]["訂單編號"].ToString();
                 tb_DMS_ENT_Dent.Text = fun.ds_index.Tables[0].Rows[0]["委託單位"].ToString();
                 tb_DMS_ENT_User.Text = fun.ds_index.Tables[0].Rows[0]["委託者"].ToString();
                 tb_DMS_Purpose.Text = fun.ds_index.Tables[0].Rows[0]["送樣目的"].ToString();
+                tb_DMS_SUPPLIER.Text = fun.ds_index.Tables[0].Rows[0]["生產供應商"].ToString();
+                tb_DMS_SMP_TYPE.Text = fun.ds_index.Tables[0].Rows[0]["樣品型態"].ToString();
+                SAVE_METHOD.Text = fun.ds_index.Tables[0].Rows[0]["儲存方式"].ToString();
+                
                 tb_DMS_Report_NO.Text = fun.ds_index.Tables[0].Rows[0]["品保報告編號"].ToString();
-                tb_DMS_Order.Text = fun.ds_index.Tables[0].Rows[0]["訂單編號"].ToString();
                 tb_DMS_KEEP_NO.Text = fun.ds_index.Tables[0].Rows[0]["留樣編號"].ToString();
                 tb_DMS_Result.Text = fun.ds_index.Tables[0].Rows[0]["審查結果判定"].ToString();
                 tb_DMS_Result_DATE.Text = fun.ds_index.Tables[0].Rows[0]["審查結果日期"].ToString();
-                dTP_DMS_PReportDate.Text = fun.ds_index.Tables[0].Rows[0]["預計出報告日期"].ToString();
+                tb_DMS_Remark.Text = fun.ds_index.Tables[0].Rows[0]["備註"].ToString();
                 tb_DMS_樣品數量.Text = fun.ds_index.Tables[0].Rows[0]["樣品數量"].ToString();
                 dTP_DMS_製造日期.Text = fun.ds_index.Tables[0].Rows[0]["製造日期"].ToString();
                 dTP_DMS_有效日期.Text = fun.ds_index.Tables[0].Rows[0]["有效日期"].ToString();
-                dTP_DMS_送樣日期.Text = fun.ds_index.Tables[0].Rows[0]["送樣日期"].ToString();
-                tb_DMS_Remark.Text = fun.ds_index.Tables[0].Rows[0]["備註"].ToString();
                 tb_DMS_Out_NO.Text = fun.ds_index.Tables[0].Rows[0]["委外報告編號"].ToString();
-                //tb_DMS_Out_Item.Text = fun.ds_index.Tables[0].Rows[0]["外檢項目"].ToString();
                 tb_DMS_Out_Price.Text = fun.ds_index.Tables[0].Rows[0]["外檢價格"].ToString();
                 tb_DMS_Self_NO.Text = fun.ds_index.Tables[0].Rows[0]["TAF實驗室報告編號"].ToString();
-                //tb_DMS_Self_Item.Text = fun.ds_index.Tables[0].Rows[0]["自檢項目"].ToString();
                 tb_DMS_Self_Price.Text = fun.ds_index.Tables[0].Rows[0]["自檢價格"].ToString();
+                //dTP_DMS_PReportDate.Text = fun.ds_index.Tables[0].Rows[0]["預計出報告日期"].ToString();
+                //tb_DMS_Self_Item.Text = fun.ds_index.Tables[0].Rows[0]["自檢項目"].ToString();
+                //tb_DMS_Out_Item.Text = fun.ds_index.Tables[0].Rows[0]["外檢項目"].ToString();
+                //dTP_DMS_送樣日期.Text = fun.ds_index.Tables[0].Rows[0]["送樣日期"].ToString();
                 #region 從DB取得radioButton的值
                 if (fun.ds_index.Tables[0].Rows[0]["文件類型"].ToString() == "01")
                 {
@@ -782,23 +788,26 @@ namespace DMS_ii
             DMS_DGV1_Column6.DataPropertyName = "委託單位";
             DMS_DGV1_Column7.DataPropertyName = "委託者";
             DMS_DGV1_Column8.DataPropertyName = "送樣目的";
-            DMS_DGV1_Column9.DataPropertyName = "品保報告編號";
-            DMS_DGV1_Column10.DataPropertyName = "留樣編號";
-            DMS_DGV1_Column11.DataPropertyName = "審查結果判定";
-            DMS_DGV1_Column12.DataPropertyName = "審查結果日期";
-            DMS_DGV1_Column13.DataPropertyName = "預計出報告日期";
-            DMS_DGV1_Column14.DataPropertyName = "備註";
-            DMS_DGV1_Column15.DataPropertyName = "樣品數量";
-            DMS_DGV1_Column16.DataPropertyName = "製造日期";
-            DMS_DGV1_Column17.DataPropertyName = "有效日期";
-            DMS_DGV1_Column18.DataPropertyName = "送樣日期";
-            DMS_DGV1_Column19.DataPropertyName = "文件類型";
-            DMS_DGV1_Column20.DataPropertyName = "樣品退回";
-            DMS_DGV1_Column21.DataPropertyName = "委外報告編號";
-            //DMS_DGV1_Column17.DataPropertyName = "自檢項目";
-            DMS_DGV1_Column22.DataPropertyName = "TAF實驗室報告編號";
-            DMS_DGV1_Column23.DataPropertyName = "外檢價格";
-            DMS_DGV1_Column24.DataPropertyName = "自檢價格";
+            DMS_DGV1_Column12.DataPropertyName = "生產供應商";
+            DMS_DGV1_Column13.DataPropertyName = "樣品型態";
+            DMS_DGV1_Column14.DataPropertyName = "儲存方式";
+            DMS_DGV1_Column15.DataPropertyName = "品保報告編號";         
+            DMS_DGV1_Column16.DataPropertyName = "留樣編號";
+            DMS_DGV1_Column17.DataPropertyName = "審查結果判定";
+            DMS_DGV1_Column18.DataPropertyName = "審查結果日期";            
+            DMS_DGV1_Column19.DataPropertyName = "備註";
+            DMS_DGV1_Column20.DataPropertyName = "樣品數量";
+            DMS_DGV1_Column21.DataPropertyName = "製造日期";
+            DMS_DGV1_Column22.DataPropertyName = "有效日期";           
+            DMS_DGV1_Column23.DataPropertyName = "文件類型";
+            DMS_DGV1_Column24.DataPropertyName = "樣品退回";            
+            DMS_DGV1_Column25.DataPropertyName = "委外報告編號";            
+            DMS_DGV1_Column26.DataPropertyName = "TAF實驗室報告編號";
+            DMS_DGV1_Column27.DataPropertyName = "外檢價格";
+            DMS_DGV1_Column28.DataPropertyName = "自檢價格";
+            DMS_DGV1_Column29.DataPropertyName = "BPM表單編號";
+            //DMS_DGV1_Column13.DataPropertyName = "預計出報告日期";
+            //DMS_DGV1_Column20.DataPropertyName = "送樣日期";
             DMS_DGV1_Column1.Frozen = true; //凍結窗格
             DMS_DGV1_Column2.Frozen = true; //凍結窗格
             DMS_DGV1_Column3.Frozen = true; //凍結窗格
@@ -892,31 +901,52 @@ namespace DMS_ii
             {
                 QueryOLOD += @"and A.[DOC_DATE] BETWEEN '" + dTP_Query_StartDate.Text + "' and '"+dTP_Query_EndDate.Text+"'";
             }
-            if (DMS_Query_CB.Text == "預計出報告日期")       //委託日期
-            {
-                QueryOLOD += @"and A.[REPORT_DATE] BETWEEN '" + dTP_Query_StartDate.Text + "' and '" + dTP_Query_EndDate.Text + "'";
-            }
-            
-            if (tb_DMS_BATCH_NO.Text != "")     //樣品批號
-            {
-                QueryOLOD += @"and A.[BATCH_NO]  like N'%" + tb_DMS_BATCH_NO.Text + "%'";
-            }
+            //if (DMS_Query_CB.Text == "預計出報告日期")       //委託日期
+            //{
+            //    QueryOLOD += @"and A.[REPORT_DATE] BETWEEN '" + dTP_Query_StartDate.Text + "' and '" + dTP_Query_EndDate.Text + "'";
+            //}
             if (tb_DMS_SAMPLE.Text != "")     //樣品名稱
             {
                 QueryOLOD += @"and A.[SAMPLE] like N'%" + tb_DMS_SAMPLE.Text + "%'";
             }
+            if (tb_DMS_BATCH_NO.Text != "")     //樣品批號
+            {
+                QueryOLOD += @"and A.[BATCH_NO]  like N'%" + tb_DMS_BATCH_NO.Text + "%'";
+            }            
             if (tb_DMS_Order.Text != "")     //訂單編號
             {
                 QueryOLOD += @"and A.[ORDER_NO] like N'%" + tb_DMS_Order.Text + "%'";
             }
-            if (tb_DMS_Report_NO.Text != "")     //品保報告編號
+            if (tb_DMS_ENT_Dent.Text != "")     //委託單位
             {
-                QueryOLOD += @"and A.[REPORT_NO] like N'%" + tb_DMS_Report_NO.Text + "%'";
+                QueryOLOD += @"and A.[ENT_DEPT] like N'%" + tb_DMS_ENT_Dent.Text + "%'";
+            }
+            if (tb_DMS_ENT_User.Text != "")     //委託者
+            {
+                QueryOLOD += @"and A.[ENT_USER] like N'%" + tb_DMS_ENT_User.Text + "%'";
             }
             if (tb_DMS_Purpose.Text != "")     //送樣目的
             {
                 QueryOLOD += @"and A.[PURPOS] like N'%" + tb_DMS_Purpose.Text + "%'";
             }
+            if (tb_DMS_SUPPLIER.Text != "")     //生產供應商
+            {
+                QueryOLOD += @"and A.[SUPPLIER] like N'%" + tb_DMS_Purpose.Text + "%'";
+            }
+            if (tb_DMS_SMP_TYPE.Text != "")     //樣品型態
+            {
+                QueryOLOD += @"and A.[SMP_TYPE] like N'%" + tb_DMS_Purpose.Text + "%'";
+            }
+            if (SAVE_METHOD.Text != "")     //儲存方式
+            {
+                QueryOLOD += @"and A.[SAVE_METHOD] like N'%" + tb_DMS_Purpose.Text + "%'";
+            }
+
+            if (tb_DMS_Report_NO.Text != "")     //品保報告編號
+            {
+                QueryOLOD += @"and A.[REPORT_NO] like N'%" + tb_DMS_Report_NO.Text + "%'";
+            }
+            
             if (tb_DMS_KEEP_NO.Text != "")     //留樣編號
             {
                 QueryOLOD += @"and A.[KEEP_NO] like N'%" + tb_DMS_KEEP_NO.Text + "%'";
@@ -938,38 +968,45 @@ namespace DMS_ii
             {
                 QueryOLOD += @"and A.[Sample_Query] = '" + tb_DMS_樣品數量.Text + "'";
             }
-
-            if (DMS_Query_CB.Text == "送樣日期")       //送樣日期
+            if (DMS_MFDate_QCheck.Checked == true)      //製造日期
             {
-                QueryOLOD += @"and A.[Preparation_Date] BETWEEN '" + dTP_Query_StartDate.Text + "' and '" + dTP_Query_EndDate.Text + "'";
+                #region 內容
+                QueryOLOD += @"and A.[MFDate] = '" + dTP_DMS_製造日期.Text + "'";
+
+                #endregion
             }
+
+            if (DMS_EXPDate_QCheck.Checked == true)     //有效日期
+            {
+                #region 內容
+                QueryOLOD += @"and A.[MFDate] = '" + dTP_DMS_有效日期.Text + "'";
+                #endregion
+            }
+
+            //if (DMS_Query_CB.Text == "送樣日期")       //送樣日期
+            //{
+            //    QueryOLOD += @"and A.[Preparation_Date] BETWEEN '" + dTP_Query_StartDate.Text + "' and '" + dTP_Query_EndDate.Text + "'";
+            //}
             
             if (tb_DMS_Out_NO.Text != "")     //委外報告編號
             {
-                QueryOLOD += @"and B.[Out_NO] like N'%" + tb_DMS_Out_NO.Text + "%'"; ;
+                QueryOLOD += @"and A.[Out_NO] like N'%" + tb_DMS_Out_NO.Text + "%'"; ;
             }
             
             if (tb_DMS_Out_Price.Text != "")     //外檢價格
             {
-                QueryOLOD += @"and B.[Out_Price] ='" + tb_DMS_Out_Price.Text + "'";
+                QueryOLOD += @"and A.[Out_Price] ='" + tb_DMS_Out_Price.Text + "'";
             }
             if (tb_DMS_Self_NO.Text != "")     //TAF實驗室報告編號
             {
-                QueryOLOD += @"and B.[Self_NO] like N'%" + tb_DMS_Self_NO.Text + "%'";
+                QueryOLOD += @"and A.[Self_NO] like N'%" + tb_DMS_Self_NO.Text + "%'";
             }
             
             if (tb_DMS_Self_Price.Text != "")     //自檢價格
             {
-                QueryOLOD += @"and B.[Self_Price] = '" + tb_DMS_Self_Price.Text + "'";
+                QueryOLOD += @"and A.[Self_Price] = '" + tb_DMS_Self_Price.Text + "'";
             }
-            if (tb_DMS_ENT_Dent.Text != "")     //委託單位
-            {
-                QueryOLOD += @"and A.[ENT_DEPT] like N'%" + tb_DMS_ENT_Dent.Text + "%'";
-            }
-            if (tb_DMS_ENT_User.Text != "")     //委託者
-            {
-                QueryOLOD += @"and A.[ENT_USER] like N'%" + tb_DMS_ENT_User.Text + "%'";
-            }
+            
             #region CheckedBox查詢條件
 
             if (DMS_file_Ordinary_QCheck.Checked == true)
@@ -1005,23 +1042,10 @@ namespace DMS_ii
                 #endregion
             }
 
-            if (DMS_MFDate_QCheck.Checked == true)
-            {
-                #region 內容
-                QueryOLOD += @"and A.[MFDate] = '" + dTP_DMS_製造日期.Text+ "'";
-
-                #endregion
-            }
-
-            if (DMS_EXPDate_QCheck.Checked == true)
-            {
-                #region 內容
-                QueryOLOD += @"and A.[MFDate] = '" + dTP_DMS_有效日期.Text + "'";
-                #endregion
-            }
+            
             #endregion
 
-            QueryOLOD += "order by 1";
+            QueryOLOD += @"order by 1";
 
             #endregion
         }
@@ -1031,7 +1055,7 @@ namespace DMS_ii
             DMS_Query_CB.Items.Add("無日期");
             DMS_Query_CB.Items.Add("委託日期");
             DMS_Query_CB.Items.Add("送樣日期");
-            DMS_Query_CB.Items.Add("預計出報告日期");
+            //DMS_Query_CB.Items.Add("預計出報告日期");
             DMS_Query_CB.SelectedIndex = 0;            
 
         }
@@ -1235,15 +1259,6 @@ namespace DMS_ii
             else
             {
                 MessageBox.Show("從BPM匯入資料成功!!!\n", this.Text);
-            }
-        }
-
-        private void bt_DMS_Update_Click(object sender, EventArgs e)        //更新
-        {
-            if (tb_DMS_DOC_NO.Text != "")
-            {
-                GetSQL("DGV1_檔案查詢", tb_DMS_DOC_NO.Text);    //語法丟進fun.Query_DB
-                fun.xxx_DB(Query_DB, DMS_dataGridView2);         //連接DB-執行DB指令
             }
         }
 
