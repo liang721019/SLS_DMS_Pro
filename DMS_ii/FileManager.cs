@@ -273,6 +273,9 @@ namespace DMS_ii
                                     @"','" + tb_DMS_ENT_Dent.Text.Trim() +               //委託單位
                                     @"','" + tb_DMS_ENT_User.Text.Trim() +               //委託者
                                     @"','" + tb_DMS_Purpose.Text.Trim() +               //送樣目的
+                                    @"','" + tb_DMS_SUPPLIER.Text.Trim() +               //生產/供應商
+                                    @"','" + tb_DMS_SMP_TYPE.Text.Trim() +               //樣品型態
+                                    @"','" + SAVE_METHOD.Text.Trim() +               //儲存方式
                                     @"','" + tb_DMS_Report_NO.Text.Trim() +               //品保報告/編號
                                     @"','" + tb_DMS_KEEP_NO.Text.Trim() +               //留樣編號
                                     @"','" + tb_DMS_Result.Text.Trim() +               //審查結果-判定
@@ -332,9 +335,12 @@ namespace DMS_ii
 			                                    ,A.[ENT_DEPT]	AS 委託單位
 			                                    ,A.[ENT_USER]	AS 委託者
 			                                    ,A.[PURPOSE]		AS 送樣目的
+                                                ,A.[PURPOSE_OR]		AS 送樣目的其他
 			                                    ,A.[SUPPLIER]	AS 生產供應商
 			                                    ,A.[SMP_TYPE]		AS 樣品型態
+                                                ,A.[SMP_TYPE_OR]		AS 樣品型態其他
 			                                    ,A.[SAVE_METHOD]	AS 儲存方式
+                                                ,A.[SAVE_METHOD_OR]	    AS 儲存方式其他
 			                                    ,A.[REPORT_NO]	AS 品保報告編號
 			                                    ,A.[KEEP_NO]	AS 留樣編號
 			                                    ,A.[RESULT]		AS 審查結果判定
@@ -408,8 +414,8 @@ namespace DMS_ii
             DMS_BPM匯入資料Button.Visible = false;
             DMS_儲存toolStripButton.Visible = false;
             DMS_取消toolStripButton.Visible = false;            
-            fun.Format_Panel_dTP(DMS_panel1, "yyyy/MM/dd");     //自訂日期格式
-            fun.Format_Panel_dTP(DMS_UP_Controls_panel, "yyyy/MM/dd");          //自訂日期格式
+            fun.Format_Panel_dTP(DMS_panel1, "yyyy-MM-dd");     //自訂日期格式
+            fun.Format_Panel_dTP(DMS_UP_Controls_panel, "yyyy-MM-dd");          //自訂日期格式
             DGV1_SetColumns();          //DGV1自定顯示欄位
             DGV2_SetColumns();           //DGV2自定顯示欄位
             Status_info.Visible = false;        //狀態不顯示
@@ -563,7 +569,10 @@ namespace DMS_ii
             }
             else if (x == DMS_QueryClear_button)
             {
-                fun.clearAir(DMS_panel1);
+                fun.clearAir(DMS_panel1);                
+                fun.EoD_Panel_CheckBOX_Clear(DMS_panel1, false);
+                DMS_Return_QCheck.Checked = false;
+                DMS_file_Ordinary_QCheck.Checked = false;
             }
         }
 
@@ -788,9 +797,12 @@ namespace DMS_ii
             DMS_DGV1_Column6.DataPropertyName = "委託單位";
             DMS_DGV1_Column7.DataPropertyName = "委託者";
             DMS_DGV1_Column8.DataPropertyName = "送樣目的";
-            DMS_DGV1_Column12.DataPropertyName = "生產供應商";
-            DMS_DGV1_Column13.DataPropertyName = "樣品型態";
-            DMS_DGV1_Column14.DataPropertyName = "儲存方式";
+            DMS_DGV1_Column9.DataPropertyName = "送樣目的其他";
+            DMS_DGV1_Column10.DataPropertyName = "生產供應商";
+            DMS_DGV1_Column11.DataPropertyName = "樣品型態";
+            DMS_DGV1_Column12.DataPropertyName = "樣品型態其他";
+            DMS_DGV1_Column13.DataPropertyName = "儲存方式";
+            DMS_DGV1_Column14.DataPropertyName = "儲存方式其他";
             DMS_DGV1_Column15.DataPropertyName = "品保報告編號";         
             DMS_DGV1_Column16.DataPropertyName = "留樣編號";
             DMS_DGV1_Column17.DataPropertyName = "審查結果判定";
@@ -927,19 +939,23 @@ namespace DMS_ii
             }
             if (tb_DMS_Purpose.Text != "")     //送樣目的
             {
-                QueryOLOD += @"and A.[PURPOS] like N'%" + tb_DMS_Purpose.Text + "%'";
+                //QueryOLOD += @"and A.[PURPOSE] like N'%" + tb_DMS_Purpose.Text + "%' or A.[PURPOSE_OR] like N'%" + tb_DMS_Purpose.Text + "%'" ;
+                QueryOLOD += @"and A.[PURPOSE] like N'%" + tb_DMS_Purpose.Text + "%'";
+                
             }
             if (tb_DMS_SUPPLIER.Text != "")     //生產供應商
             {
-                QueryOLOD += @"and A.[SUPPLIER] like N'%" + tb_DMS_Purpose.Text + "%'";
+                QueryOLOD += @"and A.[SUPPLIER] like N'%" + tb_DMS_SUPPLIER.Text + "%'";
             }
             if (tb_DMS_SMP_TYPE.Text != "")     //樣品型態
             {
-                QueryOLOD += @"and A.[SMP_TYPE] like N'%" + tb_DMS_Purpose.Text + "%'";
+                //QueryOLOD += @"and A.[SMP_TYPE] like N'%" + tb_DMS_SMP_TYPE.Text + "%'or A.[SMP_TYPE_OR] like N'%" + tb_DMS_SMP_TYPE.Text + "%'";
+                QueryOLOD += @"and A.[SMP_TYPE] like N'%" + tb_DMS_SMP_TYPE.Text + "%'";
             }
             if (SAVE_METHOD.Text != "")     //儲存方式
             {
-                QueryOLOD += @"and A.[SAVE_METHOD] like N'%" + tb_DMS_Purpose.Text + "%'";
+                //QueryOLOD += @"and A.[SAVE_METHOD] like N'%" + SAVE_METHOD.Text + "%'or A.[SAVE_METHOD_OR] like N'%" + SAVE_METHOD.Text + "%' ";
+                QueryOLOD += @"and A.[SAVE_METHOD] like N'%" + SAVE_METHOD.Text + "%'";
             }
 
             if (tb_DMS_Report_NO.Text != "")     //品保報告編號
@@ -990,21 +1006,21 @@ namespace DMS_ii
             
             if (tb_DMS_Out_NO.Text != "")     //委外報告編號
             {
-                QueryOLOD += @"and A.[Out_NO] like N'%" + tb_DMS_Out_NO.Text + "%'"; ;
+                QueryOLOD += @"and B.[Out_NO] like N'%" + tb_DMS_Out_NO.Text + "%'"; ;
             }
             
             if (tb_DMS_Out_Price.Text != "")     //外檢價格
             {
-                QueryOLOD += @"and A.[Out_Price] ='" + tb_DMS_Out_Price.Text + "'";
+                QueryOLOD += @"and B.[Out_Price] ='" + tb_DMS_Out_Price.Text + "'";
             }
             if (tb_DMS_Self_NO.Text != "")     //TAF實驗室報告編號
             {
-                QueryOLOD += @"and A.[Self_NO] like N'%" + tb_DMS_Self_NO.Text + "%'";
+                QueryOLOD += @"and B.[Self_NO] like N'%" + tb_DMS_Self_NO.Text + "%'";
             }
             
             if (tb_DMS_Self_Price.Text != "")     //自檢價格
             {
-                QueryOLOD += @"and A.[Self_Price] = '" + tb_DMS_Self_Price.Text + "'";
+                QueryOLOD += @"and B.[Self_Price] = '" + tb_DMS_Self_Price.Text + "'";
             }
             
             #region CheckedBox查詢條件
@@ -1583,7 +1599,6 @@ namespace DMS_ii
         {
             fun.My_Local_File_ToListBox(DMS_FileUp);
         }
-
         
         
         //================================================================================================
