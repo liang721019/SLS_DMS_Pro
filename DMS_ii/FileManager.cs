@@ -185,6 +185,11 @@ namespace DMS_ii
             set;
             get;
         }
+
+        private bool DMS_ToT(string x , string y )         //判斷是否能執行程式
+        {
+            return (x == "105070" && y == "DMS_ii") ? true : false; 
+        }
         
         #endregion
 
@@ -1104,16 +1109,28 @@ namespace DMS_ii
         {
             tb_DMS_Self_Item.Text = x;
         }
-       
+        
         
         //================================================================================================
         #endregion
 
         private void FileManager_Load(object sender, EventArgs e)
-        {             
-            default_status();
-            fun.ReMAC(DMS_MAC_Value, DMS_IP_Value);
-            QueryComboBox();         //查詢工具列的ComboBox選項            
+        {
+            string user_Name = "105070";
+            string Prog_ID = "DMS_ii";
+            if (DMS_ToT(user_Name, Prog_ID))
+            {
+                default_status();
+                fun.ReMAC(DMS_MAC_Value, DMS_IP_Value);
+                QueryComboBox();         //查詢工具列的ComboBox選項
+            }
+            else
+            {
+                if (MessageBox.Show("設定有問題!!\n無法啟動程式!!\n", "警告!!", MessageBoxButtons.OK, MessageBoxIcon.Question) == DialogResult.OK)
+                {
+                    this.Close();
+                }
+            }
         }
         
         #region Button

@@ -16,7 +16,7 @@ namespace DMS_ii
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login_main());
+            Application.Run(new FileManager());
         }
     }
 }
