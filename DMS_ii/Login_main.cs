@@ -48,43 +48,43 @@ namespace DMS_ii
 
         private void DMS_Login_Button_Click(object sender, EventArgs e)     //登入
         {
-            if (DMS_Login_ServerCB.Text != "")
-            {
-                if (DMS_Login_ServerCB.Text == "PRD")
-                {
-                    #region 內容
-                    App_LoginPW = fun.desEncrypt_A(DMS_Login_PWD_tb.Text, "naturalbiokeyLogin");
-                    fun.Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_DMS_Login] '" +
-                                        DMS_Login_ID_tb.Text +
-                                        @"','" + App_LoginPW + "'";
-                    fun.ProductDB_ds(fun.Query_DB);
-                    if (fun.ds_index.Tables[0].Rows.Count != 0)
-                    {
-                        //MessageBox.Show("登入成功!!");
-                        FileManager FM = new FileManager();
-                        FM.DMS_Service_ENV = DMS_Login_ServerCB.Text;       //server
-                        FM.DMS_UID = DMS_Login_ID_tb.Text;          //使用者ID
-                        this.Hide();
-                        FM.ShowDialog(this);
-                        this.Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show("帳密不正確!!", this.Text);
-                    }
-                    #endregion
-                }
-                else
-                {
-                    MessageBox.Show("伺服器目前沒開放!!\n請選擇其他伺服器", this.Text);
-                }
-                
-            }
-            else
-            {
-                MessageBox.Show("請選擇伺服器!!", this.Text);
+            //if (DMS_Login_ServerCB.Text != "")
+            //{
+            //    if (DMS_Login_ServerCB.Text == "PRD")
+            //    {
+            //        #region 內容
+            //        App_LoginPW = fun.desEncrypt_A(DMS_Login_PWD_tb.Text, "naturalbiokeyLogin");
+            //        fun.Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_DMS_Login] '" +
+            //                            DMS_Login_ID_tb.Text +
+            //                            @"','" + App_LoginPW + "'";
+            //        fun.ProductDB_ds(fun.Query_DB);
+            //        if (fun.ds_index.Tables[0].Rows.Count != 0)
+            //        {
+            //            //MessageBox.Show("登入成功!!");
+            //            FileManager FM = new FileManager();
+            //            FM.DMS_Service_ENV = DMS_Login_ServerCB.Text;       //server
+            //            FM.DMS_UID = DMS_Login_ID_tb.Text;          //使用者ID
+            //            this.Hide();
+            //            FM.ShowDialog(this);
+            //            this.Close();
+            //        }
+            //        else
+            //        {
+            //            MessageBox.Show("帳密不正確!!", this.Text);
+            //        }
+            //        #endregion
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("伺服器目前沒開放!!\n請選擇其他伺服器", this.Text);
+            //    }
 
-            } 
+            //}
+            //else
+            //{
+            //    MessageBox.Show("請選擇伺服器!!", this.Text);
+
+            //} 
         }
 
         private void DMS_Login_Cancel_Click(object sender, EventArgs e)     //取消

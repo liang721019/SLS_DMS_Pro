@@ -26,9 +26,9 @@ namespace DMS_ii
 
         private void 文件管理ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            FileManager FM = new FileManager();
-            FM.MdiParent = this;
-            FM.Show();           
+            //FileManager FM = new FileManager();
+            //FM.MdiParent = this;
+            //FM.Show();           
             
         }
 
