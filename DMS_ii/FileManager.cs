@@ -24,6 +24,10 @@ namespace DMS_ii
             user_Name = All_x[0];
             Prog_ID = All_x[1];
         }
+        public FileManager()
+        {
+            InitializeComponent();
+        }
         
         #region 變數
 
@@ -190,11 +194,11 @@ namespace DMS_ii
 
         private bool DMS_ToT(string x , string y )         //判斷是否能執行程式
         {
-            //fun.Query_DB = @"SELECT count([EMP_ID]) count  FROM [TEST_SLSYHI].[dbo].[SLS_Employees] where [EMP_ID] = '" + x + @"'and [DMS_Login] = 'Y'";
-            //fun.ProductDB_ds(fun.Query_DB);
-            //string ds_count = fun.ds_index.Tables[0].Rows[0]["count"].ToString();
+            fun.Query_DB = @"SELECT count([EMP_ID]) count  FROM [TEST_SLSYHI].[dbo].[SLS_Employees] where [EMP_ID] = '" + x + @"'and [DMS_Login] = 'Y'";
+            fun.ProductDB_ds(fun.Query_DB);
+            string ds_count = fun.ds_index.Tables[0].Rows[0]["count"].ToString();
 
-            return (x == "105070" && y == "DMS_ii") ? true : false; 
+            return (ds_count == "0" && y == "DMS_ii") ? true : false; 
         }
         private string user_Name
         {
@@ -1133,10 +1137,6 @@ namespace DMS_ii
 
         private void FileManager_Load(object sender, EventArgs e)
         {
-            //default_status();
-            //fun.ReMAC(DMS_MAC_Value, DMS_IP_Value);
-            //QueryComboBox();         //查詢工具列的ComboBox選項
-
             //string user_Name = "105070";
             //string Prog_ID = "DMS_ii";
             if (DMS_ToT(user_Name, Prog_ID))

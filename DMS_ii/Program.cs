@@ -17,7 +17,15 @@ namespace DMS_ii
             //MessageBox.Show(All_x + "," + All_y);            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FileManager(All_x));
+            //Application.Run(new FileManager(All_x));
+            if (All_x.Length == 0)
+            {
+                Application.Run(new FileManager());
+            }
+            else
+            {
+                Application.Run(new FileManager(All_x));
+            }
         }
     }
 }
