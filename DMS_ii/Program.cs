@@ -18,13 +18,13 @@ namespace DMS_ii
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new FileManager(All_x));
-            if (All_x.Length == 0)
+            if (All_x.Length >= 2)
             {
-                Application.Run(new FileManager());
+                Application.Run(new FileManager(All_x));
             }
             else
             {
-                Application.Run(new FileManager(All_x));
+                Application.Run(new FileManager());
             }
         }
     }
