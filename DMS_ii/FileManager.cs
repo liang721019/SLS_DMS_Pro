@@ -196,11 +196,11 @@ namespace DMS_ii
 
         private bool DMS_ToT(string x , string y )         //判斷是否能執行程式
         {
-            //fun.Query_DB = @"SELECT count([EMP_ID]) count  FROM [TEST_SLSYHI].[dbo].[SLS_Employees] where [EMP_ID] = '" + x + @"'and [DMS_Login] = 'Y'";
-            //fun.ProductDB_ds(fun.Query_DB);
-            //string ds_count = fun.ds_index.Tables[0].Rows[0]["count"].ToString();
+            fun.Query_DB = @"SELECT count([EMP_ID]) count  FROM [TEST_SLSYHI].[dbo].[SLS_Employees] where [EMP_ID] = '" + x + @"'and [DMS_Login] = 'Y'";
+            fun.ProductDB_ds(fun.Query_DB);
+            string ds_count = fun.ds_index.Tables[0].Rows[0]["count"].ToString();
 
-            return (x == "105070" && y == "DMS_ii") ? true : false; 
+            return (ds_count != "0" && y == "DMS_ii") ? true : false; 
         }
         private string user_Name
         {
