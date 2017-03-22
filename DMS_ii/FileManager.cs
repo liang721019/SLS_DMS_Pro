@@ -194,7 +194,7 @@ namespace DMS_ii
             get;
         }
 
-        private bool DMS_ToT(string x , string y )         //判斷是否能執行程式
+        private bool DMS_ToT(string x , string y )         //用批次檔執行時~判斷是否能執行程式
         {
             fun.Query_DB = @"SELECT count([EMP_ID]) count  FROM [TEST_SLSYHI].[dbo].[SLS_Employees] where [EMP_ID] = '" + x + @"'and [DMS_Login] = 'Y'";
             fun.ProductDB_ds(fun.Query_DB);
