@@ -237,6 +237,9 @@ namespace DMS_ii
                                     @"','" + tb_DMS_ENT_Dent.Text.Trim() +               //委託單位
                                     @"','" + tb_DMS_ENT_User.Text.Trim() +               //委託者
                                     @"','" + tb_DMS_Purpose.Text.Trim() +               //送樣目的
+                                    @"','" + tb_DMS_SUPPLIER.Text.Trim() +               //生產/供應商
+                                    @"','" + tb_DMS_SMP_TYPE.Text.Trim() +               //樣品型態
+                                    @"','" + SAVE_METHOD.Text.Trim() +               //儲存方式
                                     @"','" + tb_DMS_Report_NO.Text.Trim() +               //品保報告/編號
                                     @"','" + tb_DMS_KEEP_NO.Text.Trim() +               //留樣編號
                                     @"','" + tb_DMS_Result.Text.Trim() +               //審查結果-判定
