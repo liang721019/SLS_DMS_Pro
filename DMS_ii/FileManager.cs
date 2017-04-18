@@ -413,7 +413,7 @@ namespace DMS_ii
             fun.check_MAC_OK = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;//視窗在中央打開
             fun.Disabled_Panel(DMS_panel1);
-            fun.EoD_Panel_CheckBOX(DMS_panel1, false);
+            fun.EoD_Panel_CheckBOX_View(DMS_panel1, false);
             DMS_BPM匯入資料Button.Visible = false;
             DMS_儲存toolStripButton.Visible = false;
             DMS_取消toolStripButton.Visible = false;            
@@ -544,7 +544,7 @@ namespace DMS_ii
                 Status_info.Visible = false;
                 fun.Disabled_Panel(DMS_panel1);
                 fun.EoD_toolStripButton_Tab(DMS_toolStrip1, true);
-                fun.EoD_Panel_CheckBOX(DMS_panel1, false);
+                fun.EoD_Panel_CheckBOX_View(DMS_panel1, false);
                 DMS_儲存toolStripButton.Visible = false;
                 DMS_取消toolStripButton.Visible = false;
                 DMS_儲存toolStripButton.Enabled = false;

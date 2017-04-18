@@ -22,9 +22,9 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <UpdateUrl>\\192.168.100.210\exe_update\DMS_ii\Text\</UpdateUrl>
+    <UpdateUrl>\\192.168.100.210\exe_update\DMS_ii\PRD\</UpdateUrl>
     <PublisherName>SLS</PublisherName>
-    <MinimumRequiredVersion>1.0.0.26</MinimumRequiredVersion>
+    <MinimumRequiredVersion>1.0.0.28</MinimumRequiredVersion>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <ApplicationRevision>28</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
