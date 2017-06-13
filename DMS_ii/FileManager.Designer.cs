@@ -95,10 +95,9 @@
             this.DMS_DGV2_Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DMS_DGV2_Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DMS_statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.DMS_Service_ENVtoolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.DMS_Service_ENV = new System.Windows.Forms.ToolStripStatusLabel();
             this.DMS_UIDLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.DMS_UID_Value = new System.Windows.Forms.ToolStripStatusLabel();
-            this.DMS_MACLable = new System.Windows.Forms.ToolStripStatusLabel();
             this.DMS_MAC_Value = new System.Windows.Forms.ToolStripStatusLabel();
             this.DMS_IP_Value = new System.Windows.Forms.ToolStripStatusLabel();
             this.Status_info = new System.Windows.Forms.Label();
@@ -745,10 +744,9 @@
             // 
             this.DMS_statusStrip1.BackColor = System.Drawing.Color.White;
             this.DMS_statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.DMS_Service_ENVtoolStripStatusLabel,
+            this.DMS_Service_ENV,
             this.DMS_UIDLabel,
             this.DMS_UID_Value,
-            this.DMS_MACLable,
             this.DMS_MAC_Value,
             this.DMS_IP_Value});
             this.DMS_statusStrip1.Location = new System.Drawing.Point(0, 990);
@@ -757,11 +755,11 @@
             this.DMS_statusStrip1.TabIndex = 4;
             this.DMS_statusStrip1.Text = "statusStrip1";
             // 
-            // DMS_Service_ENVtoolStripStatusLabel
+            // DMS_Service_ENV
             // 
-            this.DMS_Service_ENVtoolStripStatusLabel.Name = "DMS_Service_ENVtoolStripStatusLabel";
-            this.DMS_Service_ENVtoolStripStatusLabel.Size = new System.Drawing.Size(111, 17);
-            this.DMS_Service_ENVtoolStripStatusLabel.Text = "DMS_Service_ENV";
+            this.DMS_Service_ENV.Name = "DMS_Service_ENV";
+            this.DMS_Service_ENV.Size = new System.Drawing.Size(111, 17);
+            this.DMS_Service_ENV.Text = "DMS_Service_ENV";
             // 
             // DMS_UIDLabel
             // 
@@ -775,12 +773,6 @@
             this.DMS_UID_Value.Name = "DMS_UID_Value";
             this.DMS_UID_Value.Size = new System.Drawing.Size(56, 17);
             this.DMS_UID_Value.Text = "USER_ID";
-            // 
-            // DMS_MACLable
-            // 
-            this.DMS_MACLable.Name = "DMS_MACLable";
-            this.DMS_MACLable.Size = new System.Drawing.Size(45, 17);
-            this.DMS_MACLable.Text = "MAC : ";
             // 
             // DMS_MAC_Value
             // 
@@ -1617,7 +1609,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.DataGridView DMS_dataGridView2;
         private System.Windows.Forms.StatusStrip DMS_statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel DMS_MACLable;
         private System.Windows.Forms.ToolStripButton DMS_儲存toolStripButton;
         private System.Windows.Forms.ToolStripButton DMS_取消toolStripButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
@@ -1637,7 +1628,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DMS_DGV2_Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn DMS_DGV2_Column6;
         private System.Windows.Forms.ToolStripStatusLabel DMS_UIDLabel;
-        public System.Windows.Forms.ToolStripStatusLabel DMS_Service_ENVtoolStripStatusLabel;
+        public System.Windows.Forms.ToolStripStatusLabel DMS_Service_ENV;
         private System.Windows.Forms.ToolStripMenuItem 開啟檔案ToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator DMS_tStripSeparator1;
         private System.Windows.Forms.ToolStripSeparator DMS_tStripSeparator2;

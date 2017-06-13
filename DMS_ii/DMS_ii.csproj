@@ -76,6 +76,9 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="LOGIN">
+      <HintPath>..\..\LOGIN\LOGIN\bin\Debug\LOGIN.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -100,6 +103,18 @@
     <Compile Include="binx\TextPJ_out.Designer.cs">
       <DependentUpon>TextPJ_out.cs</DependentUpon>
     </Compile>
+    <Compile Include="DMS_ii_DB.cs">
+      <DependentUpon>DMS_ii_DB.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DMS_ii_DB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DMS_ii_DB.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DMS_ii_LOGIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="DMS_main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,12 +126,6 @@
     </Compile>
     <Compile Include="FileManager.Designer.cs">
       <DependentUpon>FileManager.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Login_main.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Login_main.Designer.cs">
-      <DependentUpon>Login_main.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -132,9 +141,6 @@
     <EmbeddedResource Include="FileManager.resx">
       <DependentUpon>FileManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login_main.resx">
-      <DependentUpon>Login_main.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -144,6 +150,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="DMS_ii_DB.xsc">
+      <DependentUpon>DMS_ii_DB.xsd</DependentUpon>
+    </None>
+    <None Include="DMS_ii_DB.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DMS_ii_DB.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DMS_ii_DB.xss">
+      <DependentUpon>DMS_ii_DB.xsd</DependentUpon>
+    </None>
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>PublicSettingsSingleFileGenerator</Generator>

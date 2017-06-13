@@ -17,6 +17,7 @@ namespace DMS_ii
     public partial class FileManager : Form
     {
         init_function fun = new init_function();
+        DMS_ii_DB sysds = new DMS_ii_DB();     //系統共用Dataset
 
         public FileManager()
         {
@@ -24,6 +25,14 @@ namespace DMS_ii
         }
         
         #region 變數
+        //********************************************************************//
+        public DMS_ii_DB DMS_DB             //系統共用Dataset
+        {            
+            get
+            {
+                return sysds;
+            }
+        }
 
         public string Query_DB      //SQL語法變數
         {
@@ -42,23 +51,25 @@ namespace DMS_ii
             set;
             get;
         }
+
         public string FText         //訊息標頭
         {
             set;
             get;
         }
 
-        public string DMS_Service_ENV       //伺服器環境
-        {
-            set
-            {
-                DMS_Service_ENVtoolStripStatusLabel.Text = value;
-            }
-            get
-            {
-                return DMS_Service_ENVtoolStripStatusLabel.Text;
-            }
-        }
+        //public string DMS_ServiceT_ENV       //伺服器環境
+        //{
+        //    set
+        //    {
+        //        DMS_ServiceT_ENV.Text = value;
+        //    }
+        //    get
+        //    {
+        //        return DMS_ServiceT_ENV.Text;
+        //    }
+        //}
+
         public string DMS_UID           //使用者ID
         {
             set
@@ -94,7 +105,7 @@ namespace DMS_ii
         {
             get 
             {
-                Query_DB = @"SELECT [info_2] AS FileAccess FROM [TEST_SLSYHI].[dbo].[SLS_DMS_ENVinfo] where [info_1] = '"+DMS_Service_ENVtoolStripStatusLabel.Text+"'";
+                Query_DB = @"SELECT [info_2] AS FileAccess FROM [TEST_SLSYHI].[dbo].[SLS_DMS_ENVinfo] where [info_1] = '"+DMS_Service_ENV.Text+"'";
                 fun.ProductDB_ds(Query_DB);
                 //fun.ds_index.Tables[0].Rows[0]["FileAccess"].ToString();
                 //fun.ds_index.Tables[0].Rows[0]["編號"].ToString(); 
@@ -185,7 +196,7 @@ namespace DMS_ii
             set;
             get;
         }
-        
+        //********************************************************************//
         #endregion
 
         #region 方法
@@ -422,8 +433,7 @@ namespace DMS_ii
             DGV1_SetColumns();          //DGV1自定顯示欄位
             DGV2_SetColumns();           //DGV2自定顯示欄位
             Status_info.Visible = false;        //狀態不顯示
-            DMS_panel2.Visible = false;         //檔案上傳的Panel不顯示
-            DMS_MACLable.Visible = false;       //MAC_Lable不顯示
+            DMS_panel2.Visible = false;         //檔案上傳的Panel不顯示            
             DMS_MAC_Value.Visible = false;      //MAC值不顯示
             DMS_IP_Value.Visible = false;       //IP位置不顯示
             DMS_file_ordinary1.Checked = true;      //預設普通件
@@ -664,49 +674,49 @@ namespace DMS_ii
             #endregion
         }
 
-        public void SYS_Status_Key()            //判斷是否能使用本系統
-        {
-            #region 判斷是否能使用本系統
-            fun.Query_DB = @"SELECT [MAC_EID] AS 員工編號 FROM [TEST_SLSYHI].[dbo].[SLS_AssetMAC] where [MAC_address] = '" + DMS_MAC_Value.Text + "'";
-            fun.ProductDB_ds(fun.Query_DB);
-            if (fun.ds_index.Tables[0].Rows.Count != 0)
-            {
-                DMS_UID_Value.Text = fun.ds_index.Tables[0].Rows[0]["員工編號"].ToString();
-                fun.check_Login(DMS_MAC_Value.Text);         //確認是否能使用本系統
-                #region 確認是否有管理者的權限
-                if (fun.check_MAC_OK)
-                {
-                    #region 內容-確認是否有管理者的權限
-                    fun.check_MAC(DMS_MAC_Value.Text);           //確認是否有管理者的權限
-                    if (fun.check_MAC_OK)
-                    {
+        //public void SYS_Status_Key()            //判斷是否能使用本系統
+        //{
+        //    #region 判斷是否能使用本系統
+        //    fun.Query_DB = @"SELECT [MAC_EID] AS 員工編號 FROM [TEST_SLSYHI].[dbo].[SLS_AssetMAC] where [MAC_address] = '" + DMS_MAC_Value.Text + "'";
+        //    fun.ProductDB_ds(fun.Query_DB);
+        //    if (fun.ds_index.Tables[0].Rows.Count != 0)
+        //    {
+        //        DMS_UID_Value.Text = fun.ds_index.Tables[0].Rows[0]["員工編號"].ToString();
+        //        fun.check_Login(DMS_MAC_Value.Text);         //確認是否能使用本系統
+        //        #region 確認是否有管理者的權限
+        //        if (fun.check_MAC_OK)
+        //        {
+        //            #region 內容-確認是否有管理者的權限
+        //            fun.check_MAC(DMS_MAC_Value.Text);           //確認是否有管理者的權限
+        //            if (fun.check_MAC_OK)
+        //            {
                         
 
-                    }
-                    else
-                    {
+        //            }
+        //            else
+        //            {
 
-                    }
-                    #endregion
+        //            }
+        //            #endregion
 
-                }
-                else
-                {
-                    MessageBox.Show("無權限使用系統!!請跟管理員申請!!", "資產管理系統");
-                    this.Close();
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show("無權限使用系統!!請跟管理員申請!!", "資產管理系統");
+        //            this.Close();
 
-                }
+        //        }
 
-                #endregion
-            }
-            else
-            {
-                MessageBox.Show("無權限使用系統!!請跟管理員申請!!", "資產管理系統");
-                this.Close();
-            }
-            #endregion
+        //        #endregion
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("無權限使用系統!!請跟管理員申請!!", "資產管理系統");
+        //        this.Close();
+        //    }
+        //    #endregion
 
-        }
+        //}
 
         public void sub_()      //TestBOX與DB欄位的對應
         {
