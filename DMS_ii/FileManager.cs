@@ -23,6 +23,12 @@ namespace DMS_ii
         {
             InitializeComponent();
         }
+
+        private void FileManager_Load(object sender, EventArgs e)
+        {
+            default_status();            
+            QueryComboBox();         //查詢工具列的ComboBox選項            
+        }
         
         #region 變數
         //********************************************************************//
@@ -196,6 +202,35 @@ namespace DMS_ii
             set;
             get;
         }
+
+        private string Local_PCNAME          //取得本機電腦名稱
+        {
+            get
+            {
+                return Environment.MachineName;
+            }
+        }
+
+        private string Local_USERNAME        //取得登入win使用者名稱
+        {
+            get
+            {
+                return Environment.UserName;
+            }
+        }
+
+        public string Local_MYMAC             //取得本機MAC位置
+        {
+            set;
+            get;
+        }
+
+        public string Local_MYIP              //取得本機IP
+        {
+            set;
+            get;
+        }
+
         //********************************************************************//
         #endregion
 
@@ -425,6 +460,10 @@ namespace DMS_ii
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;//視窗在中央打開
             fun.Disabled_Panel(DMS_panel1);
             fun.EoD_Panel_CheckBOX_View(DMS_panel1, false);
+
+            fun.ReMAC(DMS_MAC_Value, DMS_IP_Value);     //取得本機MAC及IP
+            Login_log("登入成功");             //在DB記錄登入狀態
+
             DMS_BPM匯入資料Button.Visible = false;
             DMS_儲存toolStripButton.Visible = false;
             DMS_取消toolStripButton.Visible = false;            
@@ -587,6 +626,20 @@ namespace DMS_ii
                 DMS_Return_QCheck.Checked = false;
                 DMS_file_Ordinary_QCheck.Checked = false;
             }
+        }
+
+        private void Login_log(string x)        //在DB記錄登入狀態
+        {
+            Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_LOGIN_Log] '" + DMS_UID_Value.Text +     //帳號
+                        "','" + this.Text +         //使用程式
+                        "','" + x +                 //使用狀態
+                        "','***內網****" + DMS_IP_Value.Text.Substring(DMS_IP_Value.Text.Length - 4, 4) +          //使用者IP
+                        "','" +                          //使用者MAC
+                        "','" + DMS_Service_ENV.Text +    //SERVER_NAME
+                        "','" + Local_PCNAME +      //Client電腦名稱
+                        "','" + Local_USERNAME +     //Client登入使用者名稱;
+                        "'";
+            fun.DB_insert(Query_DB);
         }
 
         public void DMS_RBValue()           //RadioButton取值
@@ -1120,14 +1173,7 @@ namespace DMS_ii
        
         
         //================================================================================================
-        #endregion
-
-        private void FileManager_Load(object sender, EventArgs e)
-        {             
-            default_status();
-            fun.ReMAC(DMS_MAC_Value, DMS_IP_Value);
-            QueryComboBox();         //查詢工具列的ComboBox選項            
-        }
+        #endregion        
         
         #region Button
         //================================================================================================

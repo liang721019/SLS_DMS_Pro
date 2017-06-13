@@ -21,9 +21,7 @@ namespace DMS_ii
 
         public override void V_login_SetENV()      //設定LOGIN變數
         {
-            base.V_login_SetENV();
-            //Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_QS_Login] '" +
-            //                ID_Login + @"','" + App_LoginPW + "'";
+            base.V_login_SetENV();            
             Query_DB = @"select * from [dbo].[SLS_DMS_LOGINTemp]('" + ID_Login + "','" + App_LoginPW + "')";
             LOD_DT = DMS_LOGIN_DT;
 
@@ -40,10 +38,7 @@ namespace DMS_ii
                 FileManager FM = new FileManager();
                 //設定init_Staff 新視窗的相對位置#############
                 FM.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-                //############################################
-                //string Query_DB = @"select * from [dbo].[SLS_QS_LOGINTemp]('" + UID + "')";
-                //QiQ.fun.USER_INFO(Query_DB, QiQ.QSiiDB.Tables["SLS_QS_ii_LOGIN"]);        //登入後載入使用者資訊至DS
-                //LOD_DT =>this.LOD.SLS_QS_LOGIN
+                //############################################                
                 DataRow FMDR = FM.DMS_DB.DMS_ii_LOGIN.NewRow();
                 FMDR["EMP_ID"] = LOD_DT.Rows[0]["EMP_ID"];
                 FMDR["EMP_Name"] = LOD_DT.Rows[0]["EMP_Name"];
