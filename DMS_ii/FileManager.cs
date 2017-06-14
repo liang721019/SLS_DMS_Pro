@@ -462,7 +462,7 @@ namespace DMS_ii
             fun.EoD_Panel_CheckBOX_View(DMS_panel1, false);
 
             fun.ReMAC(DMS_MAC_Value, DMS_IP_Value);     //取得本機MAC及IP
-            Login_log("登入成功");             //在DB記錄登入狀態
+            SYS_log("登入成功");             //在DB記錄登入狀態
 
             DMS_BPM匯入資料Button.Visible = false;
             DMS_儲存toolStripButton.Visible = false;
@@ -628,18 +628,17 @@ namespace DMS_ii
             }
         }
 
-        private void Login_log(string x)        //在DB記錄登入狀態
+        private void SYS_log(string x)        //在DB記錄執行狀態
         {
-            Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_LOGIN_Log] '" + DMS_UID_Value.Text +     //帳號
-                        "','" + this.Text +         //使用程式
-                        "','" + x +                 //使用狀態
-                        "','***內網****" + DMS_IP_Value.Text.Substring(DMS_IP_Value.Text.Length - 4, 4) +          //使用者IP
-                        "','" +                          //使用者MAC
-                        "','" + DMS_Service_ENV.Text +    //SERVER_NAME
-                        "','" + Local_PCNAME +      //Client電腦名稱
-                        "','" + Local_USERNAME +     //Client登入使用者名稱;
-                        "'";
-            fun.DB_insert(Query_DB);
+            fun.Local_ID = DMS_UID_Value.Text;
+            fun.Local_SYS = this.Text;
+            fun.Local_PROC_NAME = x;
+            fun.Local_MYIP = DMS_IP_Value.Text.Substring(DMS_IP_Value.Text.Length - 4, 4);
+            fun.Local_MYMAC = "";
+            fun.Local_HOST_NAME = DMS_Service_ENV.Text;
+            fun.Local_PCNAME = Environment.MachineName;
+            fun.Local_USERNAME = Environment.UserName;
+            fun.Login_log();
         }
 
         public void DMS_RBValue()           //RadioButton取值
