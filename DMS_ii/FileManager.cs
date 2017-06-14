@@ -630,10 +630,12 @@ namespace DMS_ii
 
         private void SYS_log(string x)        //在DB記錄執行狀態
         {
+            int N = DMS_IP_Value.Text.LastIndexOf(".");
+            int Q = DMS_IP_Value.Text.Length;
             fun.Local_ID = DMS_UID_Value.Text;
             fun.Local_SYS = this.Text;
             fun.Local_PROC_NAME = x;
-            fun.Local_MYIP = DMS_IP_Value.Text.Substring(DMS_IP_Value.Text.Length - 4, 4);
+            fun.Local_MYIP = DMS_IP_Value.Text.Substring(N, Q-N);
             fun.Local_MYMAC = "";
             fun.Local_HOST_NAME = DMS_Service_ENV.Text;
             fun.Local_PCNAME = Environment.MachineName;
